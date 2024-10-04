@@ -1,10 +1,9 @@
 <duixml>
 	<UIGroupItem resid="item.general.grouped" layout="borderlayout()" capabilities="selectable|focusable" padding="rect(0,0,0,0)" background="themeable(dtb(ItemsView::ListView, 6, 1), argb(0,0,0,0))">
-		
 		<UIGroupHeader id="atom(UIGroupHeader)" layoutpos="top" customlayout="viewareaawarelayout(borderlayout)" background="argb(0,0,0,0)">
 			<element layoutpos="left" layout="borderlayout()" font="iconfont;100%">
-				<UIProperty layoutpos="client" id="atom(GroupName)" propertycanonicalname="System.ItemNameDisplay" EnableHitHighlighting="false" contentalign="middleleft|endellipsis"/>
-				<UICount layoutpos="right" contentalign="middleleft"/>
+				<UIProperty layoutpos="client" id="atom(GroupName)" propertycanonicalname="System.ItemNameDisplay" EnableHitHighlighting="false" contentalign="bottomleft|endellipsis"/>
+				<UICount layoutpos="right" contentalign="bottomleft"/>
 			</element>
 			<UIBase layoutpos="client" customlayout="centeringlayout()" padding="rect(5rp,2rp,5rp,0rp)">
 				<element id="atom(UIGroupSeparator)" layoutpos="2"/>
@@ -13,21 +12,21 @@
 				<UIExpandoButton layoutpos="left" id="atom(UIGroupButton)" contentalign="middleleft" active="mouse|nosyncfocus"/>
 			</element>
 		</UIGroupHeader>
-		<clipper id="atom(UICollectionHost)" layoutpos="bottom" layout="filllayout()" padding="rect(0,2rp,0,0)"/>
+		<clipper id="atom(UICollectionHost)" layoutpos="bottom" layout="filllayout()" padding="rect(0,2rp,0,6rp)"/>
 	</UIGroupItem>
 	<UICollection resid="collection.general.grouped" layout="borderlayout()" UIItemCreationPropMap="item.general.grouped" DevirtualizeItems="true">
 		<ItemRowLayout id="atom(UIItemsHost)" layoutpos="top"/>
 	</UICollection>
 	<UIItem resid="item.general.fetching" content="resstr(0xA100, library(explorerframe.dll))"/>
 	<UIItem resid="item.general.grouped.fetching" capabilities="selectable|focusable" content="resstr(0xA100, library(explorerframe.dll))"/>
-	<UIGroupItem resid="item.general.grouped.location" layout="borderlayout()" capabilities="selectable|focusable"  padding="rect(0,0,0,0)" background="themeable(dtb(ItemsView::ListView, 6, 1), argb(0,0,0,0))">
-		<UIGroupHeader id="atom(UIGroupHeader)" layoutpos="top" customlayout="viewareaawarelayout(borderlayout)"  background="argb(0,0,0,0)">
+	<UIGroupItem resid="item.general.grouped.location" layout="borderlayout()" capabilities="selectable|focusable" padding="rect(0,0,0,0)" background="themeable(dtb(ItemsView::ListView, 6, 1), argb(0,0,0,0))">
+		<UIGroupHeader id="atom(UIGroupHeader)" layoutpos="top" customlayout="viewareaawarelayout(borderlayout)" background="argb(0,0,0,0)">
 			<element layoutpos="top" layout="borderlayout()">
 				<element layoutpos="left" layout="borderlayout()" font="iconfont;100%">
-					<UIProperty layoutpos="left" id="atom(GroupName)" propertycanonicalname="System.ItemNameDisplay" UseRootScope="true" EnableHitHighlighting="false" contentalign="middleleft|endellipsis"/>
-					<UICount layoutpos="left" ZeroText="resstr(0xA204, library(explorerframe.dll))" contentalign="middleleft"/>
-					<element layoutpos="left"  contentalign="middleleft" content=" | " />
-					<UIProperty id="atom(GroupLocation)" layoutpos="client" propertycanonicalname="System.ItemFolderPathDisplay" UseRootScope="true" EnableHitHighlighting="false" contentalign="middleleft|endellipsis"/>
+					<UIProperty layoutpos="left" id="atom(GroupName)" propertycanonicalname="System.ItemNameDisplay" UseRootScope="true" EnableHitHighlighting="false" contentalign="bottomleft|endellipsis"/>
+					<UICount layoutpos="left" ZeroText="resstr(0xA204, library(explorerframe.dll))" contentalign="bottomleft"/>
+					<element layoutpos="left" contentalign="bottomleft" content="•"/>
+					<UIProperty id="atom(GroupLocation)" layoutpos="client" propertycanonicalname="System.ItemFolderPathDisplay" UseRootScope="true" EnableHitHighlighting="false" contentalign="bottomleft|endellipsis"/>
 				</element>
 				<UIBase layoutpos="client" customlayout="centeringlayout()" padding="rect(5rp,2rp,5rp,0rp)">
 					<element id="atom(UIGroupSeparator)" layoutpos="2"/>
@@ -37,7 +36,7 @@
 				</element>
 			</element>
 		</UIGroupHeader>
-		<clipper id="atom(UICollectionHost)" layoutpos="bottom" layout="filllayout()" padding="rect(0,2rp,0,0)"/>
+		<clipper id="atom(UICollectionHost)" layoutpos="bottom" layout="filllayout()" padding="rect(0,2rp,0,6rp)"/>
 	</UIGroupItem>
 	<UICollection resid="collection.general.grouped.location" layout="borderlayout()" UIItemCreationPropMap="item.general.grouped.location" DevirtualizeItems="true" LogicalImageSize="16">
 		<ItemRowLayout id="atom(UIItemsHost)" layoutpos="top"/>
@@ -164,7 +163,6 @@
 		<UIProgressProperty propertycanonicalname="System.StorageProviderTransferProgress" layout="flowlayout(0, 2, 0, 2)" contentalign="left" height="2rp" padding="rect(0rp,0rp,0rp,0rp)" sheet="dynamic.progressbar"/>
 	</UIBase>
 	<UIItem resid="item.tiles.recent" class="item.tiles.recent" layout="borderlayout()" capabilities="selectable|focusable|renameable" tooltip="true" infotipcallback="true" padding="rect(6rp,2rp,6rp,2rp)">
-		
 		<UICheckbox class="item.row.checkbox" layoutpos="left" contentalign="middleleft"/>
 		<UIImage layoutpos="left" contentalign="middleright" padding="rect(0,1rp,2rp,1rp)"/>
 		<UISmartPropertyCollection layoutpos="left" tooltip="false" sheet="smart.recent"/>
@@ -302,7 +300,7 @@
 			<element id="atom(UICollectionHost)" layout="filllayout()"/>
 		</LineScroller>
 	</UIRootItem>
-	<UIItemsView resid="ItemsView" visible="true" layout="filllayout()" sheet="ItemsView" background="gradient(rgb(255, 255, 255),rgb(244, 245, 250),rgb(199, 215, 233),4)"/>
+	<UIItemsView resid="ItemsView" visible="true" layout="filllayout()" sheet="ItemsView" background="gradient(rgb(255, 255, 255),rgb(244, 245, 250),rgb(199, 215, 233),4)" padding="rect(4rp,0,4rp,0)"/>
 	<UIColumnHeader resid="UIColumnHeader" layout="filllayout()" layoutpos="left">
 		<element id="atom(ContentContainer)" layout="borderlayout()">
 			<element id="atom(CheckboxSpace)" layoutpos="left"/>
@@ -566,7 +564,7 @@
 					<ItemGridLayout columnwidth="20rp"/>
 				</if>
 			</if>
-			<UIGroupHeader padding="rect(20rp,10rp,10rp,10rp)" foreground="themeable(gtc(ItemsView::ListView, 6, 0, 3825), windowtext)"/>
+			<UIGroupHeader padding="rect(20rp,5rp,5rp,5rp)" foreground="themeable(gtc(ItemsView::ListView, 6, 0, 3825), windowtext)"/>
 			<if keyfocused="true">
 				<UIGroupHeader background="themeable(dtb(ItemsView, 3, 1), argb(0,0,0,0))" contentalign="themeable(topleft, focusrect)"/>
 			</if>
@@ -724,7 +722,7 @@
 				<element fontface="Marlett" content="themeable(dtb(ItemsView::ListView, 8, 1), '6')" visible="false"/>
 			</if>
 			<if id="atom(UIGroupButton)">
-				<UIExpandoButton contentalign="middlecenter" fontface="Marlett" padding="rect(2rp, 0, 2rp, 0)"/>
+				<UIExpandoButton contentalign="middlecenter" fontface="Marlett" padding="rect(2rp, 2rp, 2rp, 2rp)"/>
 				<if class="GroupCollapsed">
 					<UIExpandoButton content="themeable(dtb(ItemsView::ListView, 8, 1), '6')"/>
 					<if mousefocused="true">
