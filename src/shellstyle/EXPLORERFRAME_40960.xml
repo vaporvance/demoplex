@@ -300,7 +300,7 @@
 			<element id="atom(UICollectionHost)" layout="filllayout()"/>
 		</LineScroller>
 	</UIRootItem>
-	<UIItemsView resid="ItemsView" visible="true" layout="filllayout()" sheet="ItemsView" background="gradient(rgb(255, 255, 255),rgb(244, 245, 250),rgb(199, 215, 233),4)" padding="rect(4rp,0,4rp,0)"/>
+	<UIItemsView resid="ItemsView" visible="true" layout="filllayout()" sheet="ItemsView" background="gradient(rgb(255, 255, 255),rgb(244, 245, 250),rgb(199, 215, 233),4)"/>
 	<UIColumnHeader resid="UIColumnHeader" layout="filllayout()" layoutpos="left">
 		<element id="atom(ContentContainer)" layout="borderlayout()">
 			<element id="atom(CheckboxSpace)" layoutpos="left"/>
