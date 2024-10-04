@@ -1,0 +1,91 @@
+<!-- Turn modern status bar to the win32 style -->
+<duixml>
+	<Element resid="StatusBarModule" background="themeable(dtb(Status, 0, 0), window)" height="16rp" layout="flowlayout(0,2,2,0)" sheet="StatusBarModule" padding="rect(1rp,0,1rp,0)">
+		<Element id="atom(PropertyFieldList)" layoutpos="client">
+			<Element id="atom(Overflowbutton)" width="1rp" layoutpos="right"/>
+		</Element>
+		<Element id="atom(ButtonList)" layoutpos="none">
+			<SelectorNoDefault id="atom(ViewButtonsGroup)" layoutpos="left" layout="flowlayout(0,2,1,0)">
+				<SelectorButton id="atom(ViewMode_Details)" layoutpos="left" content="icon(0xf616,sysmetric(49),sysmetric(50),1,1,library(shell32.dll))"/>
+				<SelectorButton id="atom(ViewMode_LargeIcons)" layoutpos="left" content="icon(0xf620,sysmetric(49),sysmetric(50),library(shell32.dll))"/>
+			</SelectorNoDefault>
+		</Element>
+	</Element>
+	<Element resid="PropertyField" class="PropertyField" layoutpos="left" layout="borderlayout()" padding="rect(4rp,0,4rp,0)">
+		<MetadataLabel id="atom(PropertyLabel)" layoutpos="left" active="inactive"/>
+		<MetadataElement id="atom(PropertyValue)" layoutpos="left" layout="borderlayout()"/>
+	</Element>
+	<Element resid="PropertyStaticTextField" class="PropertyField" layoutpos="left" layout="borderlayout()" padding="rect(4rp,0,4rp,0)">
+		<MetadataLabel id="atom(PropertyLabel)" layoutpos="left" active="inactive"/>
+		<MetadataLabel id="atom(PropertyValue)" layoutpos="left" active="mouse"/>
+	</Element>
+	<Element resid="ButtonField" class="PropertyField" layoutpos="left" layout="borderlayout()">
+		<MetadataLabel id="atom(PropertyLabel)" layoutpos="left" active="inactive"/>
+		<PropertyButton id="atom(PropertyButton)" layoutpos="left" layout="borderlayout()">
+			<Element id="atom(PropertyIcon)" layoutpos="left"/>
+			<Element id="atom(PropertyText)" layoutpos="left"/>
+		</PropertyButton>
+	</Element>
+	<Element resid="FieldSeparator" id="atom(FieldSeparator)" layout="borderlayout()" layoutpos="left">
+		<Element id="atom(FieldSeparatorInner)" class="Separator" layoutpos="client"/>
+	</Element>
+	<stylesheets>
+		<style resid="StatusBarModule">
+			<Element background="argb(0,0,0,0)"/>
+			<StatusBarModuleInner accessible="true" accrole="statusbar" accname="resstr(0x7AC3, library(shell32.dll))"/>
+			<SelectorNoDefault accessible="true" accrole="grouping"/>
+			<if id="atom(ViewButtonsGroup)">
+				<SelectorNoDefault accname="resstr(0x9546, library(shell32.dll))"/>
+			</if>
+			<SelectorButton accessible="true" accrole="radiobutton"/>
+			<if id="atom(ViewMode_Details)">
+				<SelectorButton accname="resstr(0x7AC9, library(shell32.dll))" accdesc="resstr(0x8CA1, library(shell32.dll))"/>
+			</if>
+			<if id="atom(ViewMode_LargeIcons)">
+				<SelectorButton accname="resstr(0x7AC7, library(shell32.dll))" accdesc="resstr(0x8CA0, library(shell32.dll))"/>
+			</if>
+			<MetadataLabel accessible="true" accrole="statictext" accstate="0x00000040"/>
+			<if class="PropertyField">
+				<Element accessible="true" accrole="grouping" accname="resstr(0x9545, library(shell32.dll))"/>
+			</if>
+			<PropertyButton accessible="true" accrole="pushbutton"/>
+			<if id="atom(PropertyIcon)">
+				<Element padding="rect(2rp,1rp,2rp,1rp)"/>
+			</if>
+			<StatusBarModuleInner background="themeable(gtc(ExplorerStatusBar, 0, 0, 3802), window)" foreground="themeable(gtc(ExplorerStatusBar, 0, 0, 3803), windowtext)" textglowsize="4" CompositedText="true"/>
+			<SelectorButton background="themeable(dtb(Toolbar, 1, 1), argb(0, 0, 0, 0))" padding="rect(3rp, 3rp, 3rp, 3rp)" PressedPaddingShift="1rp" contentalign="middlecenter" tooltip="true"/>
+			<if keyfocused="true">
+				<SelectorButton background="themeable(dtb(Toolbar, 1, 2), argb(0, 0, 0, 0))" contentalign="themeable(middlecenter, middlecenter | focusrect)"/>
+			</if>
+			<if mousefocused="true">
+				<SelectorButton background="themeable(dtb(Toolbar, 1, 2), dfc(4, 0x0010|0x1000))"/>
+			</if>
+			<if Pressed="true">
+				<SelectorButton background="themeable(dtb(Toolbar, 1, 3), dfc(4, 0x0010|0x0200))"/>
+			</if>
+			<PropertyButton background="themeable(dtb(Toolbar, 1, 1), argb(0, 0, 0, 0))" padding="rect(3rp, 3rp, 3rp, 3rp)" PressedPaddingShift="1rp" contentalign="middlecenter" tooltip="true"/>
+			<if keyfocused="true">
+				<PropertyButton background="themeable(dtb(Toolbar, 1, 2), argb(0, 0, 0, 0))" contentalign="themeable(middlecenter, middlecenter | focusrect)"/>
+			</if>
+			<if mousefocused="true">
+				<PropertyButton background="themeable(dtb(Toolbar, 1, 2), dfc(4, 0x0010|0x1000))"/>
+			</if>
+			<if Pressed="true">
+				<PropertyButton background="themeable(dtb(Toolbar, 1, 3), dfc(4, 0x0010|0x0200))"/>
+			</if>
+			<if id="atom(FieldSeparator)">
+				<Element background="argb(0,0,0,0)" margin="themeable(rect(3rp, 0, 3rp, 0),rect(8rp, 0, 8rp, 0))" width="1rp"/>
+			</if>
+			<if id="atom(PropertyFieldList)">
+				<Element font="gtf(TEXTSTYLE, 4, 0)"/>
+			</if>
+			<if class="Separator">
+				<Element background="themeable(dtb(Status, 1, 0), window)"/>
+			</if>
+			<MetadataLabel contentalign="middleleft"/>
+			<MetadataElement contentalign="middleleft"/>
+			<MetadataDisplayElement contentalign="middleleft"/>
+			<InplaceEdit contentalign="middleleft"/>
+		</style>
+	</stylesheets>
+</duixml>

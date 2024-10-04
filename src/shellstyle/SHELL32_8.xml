@@ -1,0 +1,27 @@
+<duixml>
+	<Element resid="PreviewEditMetadata" id="atom(PreviewEditMetadata)" layout="flowlayout(0, 0, 0, 0)">
+		<CCPushButton minsize="size(78rp, 19rp)" width="78rp" height="19rp" padding="rect(0, 0, 10rp, 0)" id="atom(PreviewSaveMetadata)" content="resstr(0x9563, library(shell32.dll))" accessible="true" accrole="pushbutton"/>
+		<CCPushButton minsize="size(78rp, 19rp)" width="78rp" height="19rp" id="atom(PreviewCancelMetadata)" content="resstr(0x9564, library(shell32.dll))" accessible="true" accrole="pushbutton"/>
+	</Element>
+	<Element resid="PreviewForceLoadMetadataContainer" id="atom(PreviewForceLoadMetadataContainer)" layout="flowlayout(0, 2, 0, 2)">
+		<Button content="resstr(0x9560, library(shell32.dll))" id="atom(PreviewForceLoadMetadata)" accessible="true" accrole="pushbutton"/>
+	</Element>
+	<Element resid="PreviewMetadataSpacer" id="atom(PreviewMetadataSpacer)"/>
+	<Element resid="PreviewSelectionInvatation" id="atom(PreviewSelectionInvatation)" content="resstr(0x956B, library(shell32.dll))"/>
+	<Element resid="PreviewUSB3CanBeFaster" id="atom(PreviewUSB3CanBeFaster)" content="resstr(0x956C, library(shell32.dll))" contentalign="wrapleft" accessible="true" accrole="statictext"/>
+	<Element resid="PreviewUSB3Connected" id="atom(PreviewUSB3Connected)" content="resstr(0x956D, library(shell32.dll))" contentalign="wrapleft" accessible="true" accrole="statictext"/>
+	<Element resid="PreviewItemCountTitle" layout="borderlayout()">
+		<MetadataLabel layoutpos="left" id="atom(ItemCountLabel)" active="inactive"/>
+	</Element>
+	<Element resid="PreviewMetadataTitle" layout="borderlayout()">
+		<MetadataElement layoutpos="left" id="atom(PreviewMetadataTitleControl)" layout="borderlayout()"/>
+	</Element>
+	<Element resid="PreviewMetadataSubTitle" layout="borderlayout()">
+		<MetadataElement layoutpos="left" id="atom(PreviewMetadataSubTitleControl)" layout="borderlayout()"/>
+	</Element>
+	<Element resid="PreviewMetadataRow" id="atom(PreviewMetadataRow)" accessible="true" accname="resstr(0x9555, library(shell32.dll))" accrole="grouping" layout="borderlayout()">
+		<MetadataLabel layoutpos="left" id="atom(PreviewMetadataLabel)" active="mouse"/>
+		<MetadataElement layoutpos="left" id="atom(PreviewMetadataControl)" padding="rect(2rp, 0, 0, 0)" layout="borderlayout()"/>
+	</Element>
+	<Element resid="PreviewMetadata"/>
+</duixml>

@@ -1,0 +1,431 @@
+<!-- Improved modern file dialog a bit -->
+<duixml>
+	<hwndelement resid="idTileHost" sheet="idTileStyle" layout="filllayout()" visible="true" accessible="true" accrole="dialog">
+		<Element id="atom(eltRoot)" layout="borderlayout()" sheet="idTileStyle">
+			<Element id="atom(eltFooterArea)" layout="borderlayout()" layoutpos="bottom" background="themeable(dtb(TaskDialog, 8, 0), window)">
+				<Element layout="flowlayout(0)" layoutpos="bottom" padding="rect(26rp,11rp,26rp,11rp)">
+					<checkbutton id="atom(eltDisplayModeBtn)">
+						<Element id="atom(eltDisplayMode)" padding="rect(5rp,0rp,5rp,0rp)"/>
+					</checkbutton>
+					<checkbutton id="atom(eltDisplayModeBtnFocusHolder)" width="0" height="0" accessible="false"/>
+				</Element>
+				<Element layoutpos="bottom" height="1rp" background="threedlightshadow"/>
+			</Element>
+			<Element id="atom(eltScrollArea)" layout="borderlayout()" layoutpos="top">
+				<scrollviewer id="atom(eltScroll)" YScrollable="true" XScrollable="false" YBarVisibility="AsNeeded" XBarVisibility="Never">
+					<operationtilearea id="atom(eltTileArea)" width="447rp" layout="borderlayout()"/>
+				</scrollviewer>
+			</Element>
+		</Element>
+	</hwndelement>
+	<Element resid="idOperationTile" layout="borderlayout()" layoutpos="none" visible="false" margin="rect(0rp,0rp,0rp,0rp)" accrole="grouping" accessible="true">
+		<Element layout="borderlayout()" layoutpos="top">
+			<Element id="atom(eltTileContents)" layout="filllayout()" layoutpos="left">
+				<button id="atom(animationTileContentsSrc)" layout="filllayout()" layoutpos="none" active="keyboard|mouse">
+					<Element id="atom(animationTileContentsSrcInner)" layoutpos="absolute" x="0" y="0" visible="true" active="keyboard|mouse"/>
+				</button>
+				<button id="atom(animationTileContentsDst)" layout="filllayout()" layoutpos="none" active="keyboard|mouse">
+					<Element id="atom(animationTileContentsDstInner)" layoutpos="absolute" x="0" y="0" visible="true" active="keyboard|mouse"/>
+				</button>
+				<Element id="atom(eltRegularTile)" layout="verticalflowlayout(0,0,3)" layoutpos="top" padding="rect(26rp,12rp,6rp,12rp)">
+					<operationtileheader id="atom(eltRegularTileHeader)" layout="borderlayout()" padding="rect(0rp,0rp,3rp,0rp)"/>
+					<Element layout="borderlayout()" margin="rect(0,2rp,0,0)" padding="rect(0,0,2rp,0)">
+						<Element layout="borderlayout()" layoutpos="right">
+							<Element layout="borderlayout()" layoutpos="bottom">
+								<checkbutton id="atom(eltCancelButton)" layoutpos="right" padding="rect(1rp,1rp,1rp,1rp)" accrole="pushbutton"/>
+								<pausebutton id="atom(eltPauseButton)" layoutpos="right" margin="rect(0,0,28rp,0)" padding="rect(1rp,1rp,1rp,1rp)" direction="ltr"/>
+							</Element>
+						</Element>
+						<Element id="atom(eltSummary)" layoutpos="left" font="gtf(TaskDialogStyle, 2, 0)" foreground="windowtext" contentalign="middleleft|wordellipsis" padding="rect(0,0,5rp,1rp)" tooltip="true" active="mouse" accessible="true" accrole="statictext"/>
+					</Element>
+					<Element id="atom(eltHumanEnthusiastTransitionAnimationArea)" layoutpos="left" layout="filllayout()">
+						<button id="atom(animationProgressSrc)" layout="filllayout()" layoutpos="none" active="keyboard|mouse">
+							<Element id="atom(animationProgressSrcInner)" layoutpos="absolute" x="0" y="0" visible="true" active="keyboard|mouse"/>
+						</button>
+						<button id="atom(animationProgressDst)" layout="filllayout()" layoutpos="none" active="keyboard|mouse">
+							<Element id="atom(animationProgressDstInner)" layoutpos="absolute" x="0" y="0" visible="true" active="keyboard|mouse"/>
+						</button>
+						<Element id="atom(eltDetails)" layout="verticalflowlayout(0,0,0)" layoutpos="top" padding="rect(0,3rp,3rp,3rp)">
+							<Element id="atom(eltChartArea)" layout="borderlayout()">
+								<chartview id="atom(eltRateChart)" layoutpos="client" height="85rp" width="395rp" background="window" active="inactive" accessible="true" accrole="pane" accname="resstr(0x81bf, library(shell32.dll))"/>
+							</Element>
+							<Element layout="flowlayout(0)" margin="rect(0rp,10rp,0rp,0rp)">
+								<Element id="atom(eltItemNameLabel)" content="resstr(0x81c4, library(shell32.dll))" margin="rect(0rp,0rp,5rp,0rp)" accessible="true" accrole="statictext" accname="resstr(0x81c4, library(shell32.dll))"/>
+								<shellitemlink id="atom(eltItemName)" accrole="statictext" shellexec="false" active="inactive" sheet="om_style"/>
+							</Element>
+							<Element layout="flowlayout(0)" margin="rect(0rp,1rp,0rp,0rp)">
+								<Element id="atom(eltTimeRemainingLabel)" content="resstr(0x81c6, library(shell32.dll))" margin="rect(0rp,0rp,5rp,0rp)" accessible="true" accrole="statictext" accname="resstr(0x81c6, library(shell32.dll))"/>
+								<Element id="atom(eltTimeRemaining)" accessible="true" accrole="statictext"/>
+							</Element>
+							<Element layout="flowlayout(0)" margin="rect(0rp,1rp,0rp,0rp)">
+								<Element id="atom(eltItemsRemainingLabel)" content="resstr(0x81c5, library(shell32.dll))" margin="rect(0rp,0rp,5rp,0rp)" accessible="true" accrole="statictext" accname="resstr(0x81c5, library(shell32.dll))"/>
+								<Element id="atom(eltItemsRemaining)" accessible="true" accrole="statictext"/>
+							</Element>
+						</Element>
+						<Element id="atom(eltProgressBarContainer)" layout="borderlayout()" layoutpos="top" visible="true" padding="rect(0,8rp,3rp,3rp)">
+							<ccprogressbar id="atom(eltProgressBar)" layoutpos="client" height="15rp" width="395rp" margin="rect(0rp,0rp,5rp,0rp)" visible="true" active="inactive" accessible="true" accname="resstr(0x81be, library(shell32.dll))"/>
+						</Element>
+					</Element>
+				</Element>
+				<Element id="atom(eltInterruptPane)" layout="borderlayout()" layoutpos="none" padding="rect(26rp,12rp,9rp,15rp)"/>
+			</Element>
+			<Element layoutpos="client"/>
+		</Element>
+		<Element id="atom(eltDivider)" layoutpos="none" height="1rp" background="themeable(dtb(TaskDialog, 8, 0), window)"/>
+	</Element>
+	<Element id="atom(eltConfirmationInterrupt)" resid="idOperationInterrupt" layout="borderlayout()">
+		<Element id="atom(eltInterruptDescription)" class="interrupt" layoutpos="top" contentalign="wrapleft" accessible="true" accrole="statictext"/>
+		<Element layout="flowlayout(0)" layoutpos="client" margin="rect(0rp,5rp,0rp,0rp)">
+			<Element id="atom(eltItemIcon)" margin="rect(0rp,0rp,5rp,0rp)"/>
+			<Element layout="verticalflowlayout(0,2,0)">
+				<Element id="atom(eltItemName)" class="interrupt" contentalign="wrapleft|editcontrol" accessible="true" accrole="statictext"/>
+				<Element id="atom(eltItemProps)" class="interrupt" contentalign="wrapleft" accessible="true" accrole="statictext"/>
+			</Element>
+		</Element>
+		<Element layout="borderlayout()" layoutpos="bottom" margin="rect(0rp,10rp,0rp,0rp)">
+			<Element layoutpos="top" layout="flowlayout(0)">
+				<CheckboxElement id="atom(eltInterruptDoForAll)" layout="borderlayout()" padding="rect(0rp,11rp,0rp,8rp)" layoutpos="none" Enabled="false" active="mouseandkeyboard" sheet="om_style">
+					<Element id="atom(eltInterruptDoForAllLabel)" layoutpos="left" content="resstr(0x81c7, library(shell32.dll))" shortcut="auto"/>
+				</CheckboxElement>
+			</Element>
+			<Element layout="flowlayout(0)" layoutpos="right" padding="rect(0rp,0rp,0rp,0rp)">
+				<Element id="atom(eltCustomCmds)" layout="flowlayout(0)"/>
+				<Element id="atom(eltInterruptButtonsContainer)" layout="flowlayout(0)">
+					<interruptresponsebutton3d id="atom(eltInterruptElevateBtn)" buttonresponse="elevate" layout="flowlayout()" accname="resstr(0x81e6, library(shell32.dll))">
+						<Element id="atom(shieldIcon)" layoutpos="left" active="mouse" content="icon(78, sysmetric(49),sysmetric(50), library(imageres.dll))"/>
+						<Element id="atom(commandTurnOff)" layoutpos="left" content="resstr(0x81cd, library(shell32.dll))" margin="rect(4rp,0,0,0)" shortcut="auto"/>
+					</interruptresponsebutton3d>
+					<interruptresponsebutton3d id="atom(eltInterruptDeleteBtn)" buttonresponse="delete" content="resstr(0x81ce, library(shell32.dll))"/>
+					<interruptresponsebutton3d id="atom(eltInterruptRetryBtn)" buttonresponse="retry" content="resstr(0x81cf, library(shell32.dll))"/>
+					<interruptresponsebutton3d id="atom(eltInterruptOKBtn)" buttonresponse="ok" content="resstr(0x81c9, library(shell32.dll))"/>
+					<interruptresponsebutton3d id="atom(eltInterruptYesBtn)" buttonresponse="yes" content="resstr(0x81c8, library(shell32.dll))"/>
+					<interruptresponsebutton3d id="atom(eltInterruptSkipBtn)" buttonresponse="skip" content="resstr(0x81ca, library(shell32.dll))"/>
+					<interruptresponsebutton3d id="atom(eltInterruptNoBtn)" buttonresponse="no" content="resstr(0x81d0, library(shell32.dll))"/>
+					<interruptresponsebutton3d id="atom(eltInterruptCancelBtn)" buttonresponse="cancel" content="resstr(0x81cc, library(shell32.dll))"/>
+				</Element>
+			</Element>
+		</Element>
+	</Element>
+	<Element id="atom(eltConflictInterrupt)" resid="idConflictInterrupt" layout="borderlayout()" layoutpos="client">
+		<operationtileheader id="atom(eltInterruptTileHeader)" layout="borderlayout()" padding="rect(0rp,0rp,3rp, 0rp)" layoutpos="top"/>
+		<Element id="atom(eltConflictInterruptDescription)" layoutpos="top" margin="rect(0,9rp,0,0)" contentalign="wrapleft|endellipsis|wordellipsis" accessible="true" accrole="statictext"/>
+		<Element id="atom(eltItemTileContainer)" layoutpos="client" layout="verticalflowlayout(0,3,3)" margin="rect(10rp,14rp,0,0)"/>
+	</Element>
+	<Element id="atom(eltConflictInterrupt)" resid="idCustomConflictInterrupt" layout="borderlayout()" layoutpos="client">
+		<Element layoutpos="bottom" layout="flowlayout(0)">
+			<CheckboxElement id="atom(eltInterruptDoForAll)" layout="borderlayout()" padding="rect(0rp,11rp,0rp,8rp)" layoutpos="none" Enabled="false" active="mouseandkeyboard" sheet="om_style">
+				<Element id="atom(eltInterruptDoForAllLabel)" layoutpos="left" content="resstr(0x81c7, library(shell32.dll))" shortcut="auto"/>
+			</CheckboxElement>
+		</Element>
+		<Element layout="borderlayout()" layoutpos="client">
+			<Element id="atom(eltConflictInterruptDescription)" layoutpos="top" margin="rect(0,9rp,0,0)" contentalign="wrapleft|endellipsis|wordellipsis" accessible="true" accrole="statictext"/>
+			<Element id="atom(eltItemTileContainer)" layoutpos="client" layout="verticalflowlayout(0,3,3)" margin="rect(10rp,14rp,0,0)"/>
+		</Element>
+	</Element>
+	<conflictitemtile resid="idItemTile" class="interruptbuttonclass" layout="borderlayout()">
+		<Element id="atom(idTileIcon)" layoutpos="left" contentalign="middleleft"/>
+		<Element id="atom(idTileSubText)" layoutpos="none" Enabled="false" contentalign="wrapleft | bottomleft | endellipsis | wordellipsis" padding="rect(5rp,0,0,0)"/>
+		<Element id="atom(idTileAction)" layoutpos="client" contentalign="middleleft | endellipsis" padding="rect(5rp,0,0,0)" shortcut="auto"/>
+	</conflictitemtile>
+	<Element resid="idTileHeader" id="atom(eltTileHeader)" layoutpos="left" layout="flowlayout(0)">
+		<shellitemlinkfitter id="atom(eltLocations)">
+			<Element id="atom(eltStartText)" layoutpos="none" accessible="true" accrole="statictext"/>
+			<shellitemlink id="atom(eltFirstLocation)" layoutpos="none" sheet="om_style"/>
+			<Element id="atom(eltMiddleText)" layoutpos="none" accessible="true" accrole="statictext"/>
+			<shellitemlink id="atom(eltSecondLocation)" layoutpos="none" sheet="om_style"/>
+			<Element id="atom(eltEndText)" layoutpos="none" accessible="true" accrole="statictext"/>
+		</shellitemlinkfitter>
+	</Element>
+	<stylesheets>
+		<style resid="om_style">
+			<Element background="20575" overhang="false" contentalign="middleleft | endellipsis" font="gtf(TaskDialogStyle, 4, 0)"/>
+			<shellitemlink background="20575" overhang="false" contentalign="middleleft | endellipsis" font="gtf(TaskDialogStyle, 4, 0)" accessible="true" tooltip="true" accrole="link"/>
+			<CheckboxElement CheckboxInnerAlign="middleleft" accessible="true" accrole="checkbutton"/>
+			<if Enabled="false">
+				<Element foreground="themeable(graytext, windowtext)"/>
+			</if>
+			<if Enabled="true">
+				<unless active="inactive">
+					<shellitemlink foreground="hotlight" cursor="hand"/>
+					<if keyfocused="true">
+						<shellitemlink contentalign="focusrect | middleleft | endellipsis"/>
+					</if>
+					<if mousefocused="true">
+						<shellitemlink fontstyle="underline" foreground="gtc(CONTROLPANELSTYLE,8,2,3803)"/>
+					</if>
+				</unless>
+			</if>
+			<if Enabled="false">
+				<shellitemlink foreground="themeable(graytext, windowtext)"/>
+			</if>
+			<if id="atom(CBE_Glyph)">
+				<CheckboxButtonElement width="themeable(-1, sysmetric(71))" height="themeable(-1, sysmetric(72))" margin="rect(0,0,2rp,0)" padding="rect(0,0,2rp,0)"/>
+				<if contentalign="topleft">
+					<CheckboxButtonElement padding="rect(0,3rp,2rp,0)"/>
+				</if>
+				<if GlyphAspect="Checkbox">
+					<CheckboxButtonElement background="themeable(argb(0,0,0,0), dfc(4, 0x0000))" content="themeable(dtb(Button, 3, 1), argb(0,0,0,0))"/>
+					<if mousefocused="true">
+						<CheckboxButtonElement content="themeable(dtb(Button, 3, 2), argb(0,0,0,0))"/>
+					</if>
+					<if CheckboxElementMouseWithin="true">
+						<CheckboxButtonElement content="themeable(dtb(Button, 3, 2), argb(0,0,0,0))"/>
+					</if>
+					<if Pressed="true">
+						<CheckboxButtonElement background="themeable(argb(0,0,0,0), dfc(4, 0x0000 | 0x0200))" content="themeable(dtb(Button, 3, 3), argb(0,0,0,0))"/>
+					</if>
+					<if Enabled="false">
+						<CheckboxButtonElement background="themeable(argb(0,0,0,0), dfc(4, 0x0000 | 0x0100))" content="themeable(dtb(Button, 3, 4), argb(0,0,0,0))"/>
+					</if>
+					<if selected="true">
+						<CheckboxButtonElement background="themeable(argb(0,0,0,0), dfc(4, 0x0000 | 0x0400))" content="themeable(dtb(Button, 3, 5), argb(0,0,0,0))"/>
+						<if mousefocused="true">
+							<CheckboxButtonElement content="themeable(dtb(Button, 3, 6), argb(0,0,0,0))"/>
+						</if>
+						<if CheckboxElementMouseWithin="true">
+							<CheckboxButtonElement content="themeable(dtb(Button, 3, 6), argb(0,0,0,0))"/>
+						</if>
+						<if Pressed="true">
+							<CheckboxButtonElement background="themeable(argb(0,0,0,0), dfc(4, 0x0000 | 0x0400 | 0x0200))" content="themeable(dtb(Button, 3, 7), argb(0,0,0,0))"/>
+						</if>
+						<if Enabled="false">
+							<CheckboxButtonElement background="themeable(argb(0,0,0,0), dfc(4, 0x0000 | 0x0400 | 0x0100))" content="themeable(dtb(Button, 3, 8), argb(0,0,0,0))"/>
+						</if>
+					</if>
+					<if class="mixed">
+						<CheckboxButtonElement background="themeable(argb(0,0,0,0), dfc(4, 0x0008))" content="themeable(dtb(Button, 3, 9), argb(0,0,0,0))"/>
+						<if mousefocused="true">
+							<CheckboxButtonElement content="themeable(dtb(Button, 3, 10), argb(0,0,0,0))"/>
+						</if>
+						<if CheckboxElementMouseWithin="true">
+							<CheckboxButtonElement content="themeable(dtb(Button, 3, 10), argb(0,0,0,0))"/>
+						</if>
+						<if Pressed="true">
+							<CheckboxButtonElement background="themeable(argb(0,0,0,0), dfc(4, 0x0008 | 0x0200))" content="themeable(dtb(Button, 3, 11), argb(0,0,0,0))"/>
+						</if>
+						<if Enabled="false">
+							<CheckboxButtonElement background="themeable(argb(0,0,0,0), dfc(4, 0x0008 | 0x0100))" content="themeable(dtb(Button, 3, 12), argb(0,0,0,0))"/>
+						</if>
+					</if>
+				</if>
+				<if GlyphAspect="Radio">
+					<CheckboxButtonElement background="themeable(argb(0,0,0,0), dfc(4, 0x0004))" content="themeable(dtb(Button, 2, 1), argb(0,0,0,0))"/>
+					<if mousefocused="true">
+						<CheckboxButtonElement content="themeable(dtb(Button, 2, 2), argb(0,0,0,0))"/>
+					</if>
+					<if CheckboxElementMouseWithin="true">
+						<CheckboxButtonElement content="themeable(dtb(Button, 2, 2), argb(0,0,0,0))"/>
+					</if>
+					<if Pressed="true">
+						<CheckboxButtonElement background="themeable(argb(0,0,0,0), dfc(4, 0x0004 | 0x0200))" content="themeable(dtb(Button, 2, 3), argb(0,0,0,0))"/>
+					</if>
+					<if Enabled="false">
+						<CheckboxButtonElement background="themeable(argb(0,0,0,0), dfc(4, 0x0004 | 0x0100))" content="themeable(dtb(Button, 2, 4), argb(0,0,0,0))"/>
+					</if>
+					<if selected="true">
+						<CheckboxButtonElement background="themeable(argb(0,0,0,0), dfc(4, 0x0004 | 0x0400))" content="themeable(dtb(Button, 2, 5), argb(0,0,0,0))"/>
+						<if mousefocused="true">
+							<CheckboxButtonElement content="themeable(dtb(Button, 2, 6), argb(0,0,0,0))"/>
+						</if>
+						<if CheckboxElementMouseWithin="true">
+							<CheckboxButtonElement content="themeable(dtb(Button, 2, 6), argb(0,0,0,0))"/>
+						</if>
+						<if Pressed="true">
+							<CheckboxButtonElement background="themeable(argb(0,0,0,0), dfc(4, 0x0004 | 0x0400 | 0x0200))" content="themeable(dtb(Button, 2, 7), argb(0,0,0,0))"/>
+						</if>
+						<if Enabled="false">
+							<CheckboxButtonElement background="themeable(argb(0,0,0,0), dfc(4, 0x0004 | 0x0400 | 0x0100))" content="themeable(dtb(Button, 2, 8), argb(0,0,0,0))"/>
+						</if>
+					</if>
+				</if>
+			</if>
+			<if id="atom(CBE_Content)">
+				<CheckboxContentElement contentalign="middleleft" overhang="false" padding="rect(1rp,1rp,1rp,1rp)"/>
+				<if keyfocused="true">
+					<CheckboxContentElement contentalign="middleleft|focusrect"/>
+				</if>
+				<if showfocusrectonkeywithin="true" keywithin="true">
+					<CheckboxContentElement contentalign="middleleft|focusrect"/>
+				</if>
+			</if>
+		</style>
+		<style resid="idTileStyle">
+			<operationtilehost background="20575"/>
+			<Element background="20575" overhang="false" contentalign="middleleft | endellipsis" font="gtf(TaskDialogStyle, 4, 0)"/>
+			<accessiblebutton background="20575" overhang="false" accessible="true" accrole="pushbutton"/>
+			<conflictitemtile background="20575" overhang="false" accessible="true" accrole="pushbutton"/>
+			<checkbutton background="20575" overhang="false" contentalign="middlecenter" accessible="true" accrole="checkbutton"/>
+			<pausebutton background="20575" overhang="false" contentalign="middlecenter" accessible="true" accrole="checkbutton"/>
+			<if id="atom(eltRoot)">
+				<Element background="themeable(dtb(TaskDialog, 1, 0), threedface)"/>
+			</if>
+			<if id="atom(eltScrollArea)">
+				<Element background="dtb(TaskDialog, 1, 0)"/>
+			</if>
+			<if class="ScrollViewer">
+				<CCHScrollBar layoutpos="ninebottom" accessible="true" accrole="scrollbar"/>
+				<CCVScrollBar layoutpos="nineright" accessible="true" accrole="scrollbar"/>
+				<viewer layoutpos="nineclient"/>
+			</if>
+			<if class="interrupt">
+				<Element foreground="windowtext"/>
+			</if>
+			<if id="atom(eltPauseButton)">
+				<pausebutton tooltip="true" content="dtb(Pause, 1, 1)" accname="resstr(0x8096, library(shell32.dll))" accdesc="resstr(0x8096, library(shell32.dll))"/>
+				<if state="PausedOrResuming">
+					<pausebutton tooltip="true" content="dtb(Pause, 1, 7)" accname="resstr(0x8095, library(shell32.dll))" accdesc="resstr(0x8095, library(shell32.dll))"/>
+				</if>
+				<if keyfocused="true">
+					<pausebutton contentalign="focusrect"/>
+				</if>
+				<if Enabled="false">
+					<pausebutton content="dtb(Pause, 1, 5)"/>
+					<if state="PausedOrResuming">
+						<pausebutton content="dtb(Pause, 1, 6)"/>
+					</if>
+				</if>
+				<if Enabled="true">
+					<if mousefocused="true">
+						<pausebutton content="dtb(Pause, 1, 2)"/>
+					</if>
+					<if Pressed="true">
+						<pausebutton content="dtb(Pause, 1, 3)"/>
+					</if>
+					<if state="PausedOrResuming">
+						<if mousefocused="true">
+							<pausebutton content="dtb(Pause, 1, 4)"/>
+						</if>
+						<if Pressed="true">
+							<pausebutton content="dtb(Pause, 1, 8)"/>
+						</if>
+					</if>
+				</if>
+			</if>
+			<if id="atom(eltCancelButton)">
+				<checkbutton tooltip="true" content="dtb(CopyClose, 1, 1)" accname="resstr(0x81bd, library(shell32.dll))" accdesc="resstr(0x8097, library(shell32.dll))"/>
+				<if keyfocused="true">
+					<checkbutton contentalign="focusrect"/>
+				</if>
+				<if mousefocused="true">
+					<checkbutton content="dtb(CopyClose, 1, 2)"/>
+				</if>
+				<if Enabled="false">
+					<checkbutton content="dtb(CopyClose, 1, 5)"/>
+					<if Pressed="true">
+						<checkbutton content="dtb(CopyClose, 1, 4)"/>
+					</if>
+					<if selected="true">
+						<checkbutton content="dtb(CopyClose, 1, 4)"/>
+					</if>
+				</if>
+				<if Enabled="true">
+					<if Pressed="true">
+						<checkbutton content="dtb(CopyClose, 1, 3)"/>
+					</if>
+					<if selected="true">
+						<checkbutton content="dtb(CopyClose, 1, 3)"/>
+					</if>
+				</if>
+			</if>
+			<if id="atom(eltDisplayModeBtn)">
+				<checkbutton tooltip="true" content="dtb(TaskDialog, 13, 1)" contentalign="middleleft" accdesc="resstr(0x80E0, library(shell32.dll))" accname="resstr(0x80E0, library(shell32.dll))"/>
+				<if Enabled="true">
+					<if mousefocused="true">
+						<checkbutton content="dtb(TaskDialog, 13, 2)"/>
+					</if>
+					<if keyfocused="true">
+						<checkbutton content="dtb(TaskDialog, 13, 2)"/>
+					</if>
+					<if pressed="true">
+						<checkbutton content="dtb(TaskDialog, 13, 3)"/>
+					</if>
+					<if selected="true">
+						<checkbutton content="dtb(TaskDialog, 13, 4)" accdesc="resstr(0x80E1, library(shell32.dll))" accname="resstr(0x80E1, library(shell32.dll))"/>
+						<if mousefocused="true">
+							<checkbutton content="dtb(TaskDialog, 13, 5)"/>
+						</if>
+						<if keyfocused="true">
+							<checkbutton content="dtb(TaskDialog, 13, 5)"/>
+						</if>
+						<if pressed="true">
+							<checkbutton content="dtb(TaskDialog, 13, 6)"/>
+						</if>
+					</if>
+				</if>
+				<if Enabled="false">
+					<checkbutton content="dtb(TaskDialog, 13, 7)"/>
+					<if selected="true">
+						<checkbutton content="dtb(TaskDialog, 13, 8)" accname="resstr(0x80E1, library(shell32.dll))"/>
+					</if>
+				</if>
+			</if>
+			<if id="atom(eltDisplayMode)">
+				<Element content="resstr(0x80E0, library(shell32.dll))" contentalign="middleleft" foreground="windowtext"/>
+				<if class="buttonfocus">
+					<Element contentalign="middleleft | focusrect"/>
+				</if>
+				<if selected="true">
+					<Element content="resstr(0x80E1, library(shell32.dll))"/>
+				</if>
+				<if Enabled="false">
+					<Element foreground="graytext"/>
+				</if>
+			</if>
+			<if class="KeepSourceTileIcon">
+				<Element content="icon(16802, sysmetric(49), sysmetric(50), library(shell32.dll))"/>
+			</if>
+			<if class="SkipTileIcon">
+				<Element content="icon(16803, sysmetric(49), sysmetric(50), library(shell32.dll))"/>
+			</if>
+			<if class="DecideForEachTileIcon">
+				<Element content="icon(16801, sysmetric(49), sysmetric(50), library(shell32.dll))"/>
+			</if>
+			<if class="CustomCommandIcon">
+				<Element content="icon(16805, sysmetric(49), sysmetric(50), 1, 1, library(shell32.dll))"/>
+			</if>
+			<if id="atom(idTileAction)">
+				<Element font="gtf(TaskDialogStyle, 2, 0)" foreground="themeable(gtc(ItemsView, 4, 11, 3803), windowtext)"/>
+				<if keyfocused="true">
+					<Element foreground="themeable(gtc(ItemsView, 4, 12, 3803), highlighttext)"/>
+				</if>
+			</if>
+			<if id="atom(idTileSubText)">
+				<Element font="gtf(TaskDialogStyle, 4, 0)" foreground="themeable(gtc(ItemsView, 4, 11, 3803), windowtext)"/>
+				<if keyfocused="true">
+					<Element foreground="themeable(gtc(ItemsView, 4, 12, 3803), highlighttext)"/>
+				</if>
+			</if>
+			<if id="atom(eltConflictInterruptDescription)">
+				<Element font="gtf(TaskDialogStyle, 2, 0)"/>
+			</if>
+			<if class="interruptbuttonclass">
+				<conflictitemtile padding="rect(10rp,10rp,10rp,10rp)" contentalign="middlecenter"/>
+				<if mousefocused="true">
+					<conflictitemtile background="themeable(dtb(Explorer::ListView, 1, 2), highlight)"/>
+				</if>
+				<if keyfocused="true">
+					<conflictitemtile background="themeable(dtb(Explorer::ListView, 1, 6), highlight)" contentalign="middlecenter | focusrect"/>
+				</if>
+				<if Pressed="true">
+					<conflictitemtile padding="rect(11rp,11rp,9rp,9rp)"/>
+				</if>
+			</if>
+			<interruptresponsebutton3d background="dtb(button, 1, 1)" foreground="themeable(gtc(Button, 1, 1, 3803), buttontext)" contentalign="middlecenter" padding="rect(5rp,5rp,5rp,5rp)" overhang="false" accessible="true" shortcut="auto" layoutpos="none" margin="rect(10rp, 10rp, 10rp, 10rp)" accrole="pushbutton" minsize="size(93rp,26rp)"/>
+			<if keyfocused="true">
+				<interruptresponsebutton3d contentalign="middlecenter | focusrect"/>
+			</if>
+			<if selected="true">
+				<interruptresponsebutton3d background="dtb(button, 1, 5)" foreground="themeable(gtc(Button, 1, 5, 3803), buttontext)"/>
+			</if>
+			<if mousefocused="true">
+				<interruptresponsebutton3d background="dtb(button, 1, 2)" foreground="themeable(gtc(Button, 1, 2, 3803), buttontext)"/>
+			</if>
+			<if Pressed="true">
+				<interruptresponsebutton3d background="dtb(button, 1, 3)" foreground="themeable(gtc(Button, 1, 3, 3803), buttontext)" padding="rect(6rp,6rp,4rp,4rp)"/>
+			</if>
+			<if Enabled="false">
+				<interruptresponsebutton3d background="dtb(button, 1, 4)" foreground="themeable(gtc(Button, 1, 4, 3803), graytext)"/>
+			</if>
+		</style>
+	</stylesheets>
+</duixml>

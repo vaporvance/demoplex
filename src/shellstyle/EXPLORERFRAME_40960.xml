@@ -1,0 +1,1574 @@
+<duixml>
+	<UIGroupItem resid="item.general.grouped" layout="borderlayout()" capabilities="selectable|focusable" padding="rect(0,0,0,0)" background="themeable(dtb(ItemsView::ListView, 6, 1), argb(0,0,0,0))">
+		
+		<UIGroupHeader id="atom(UIGroupHeader)" layoutpos="top" customlayout="viewareaawarelayout(borderlayout)" background="argb(0,0,0,0)">
+			<element layoutpos="left" layout="borderlayout()" font="iconfont;100%">
+				<UIProperty layoutpos="client" id="atom(GroupName)" propertycanonicalname="System.ItemNameDisplay" EnableHitHighlighting="false" contentalign="middleleft|endellipsis"/>
+				<UICount layoutpos="right" contentalign="middleleft"/>
+			</element>
+			<UIBase layoutpos="client" customlayout="centeringlayout()" padding="rect(5rp,2rp,5rp,0rp)">
+				<element id="atom(UIGroupSeparator)" layoutpos="2"/>
+			</UIBase>
+			<element layoutpos="right" layout="borderlayout()">
+				<UIExpandoButton layoutpos="left" id="atom(UIGroupButton)" contentalign="middleleft" active="mouse|nosyncfocus"/>
+			</element>
+		</UIGroupHeader>
+		<clipper id="atom(UICollectionHost)" layoutpos="bottom" layout="filllayout()" padding="rect(0,2rp,0,0)"/>
+	</UIGroupItem>
+	<UICollection resid="collection.general.grouped" layout="borderlayout()" UIItemCreationPropMap="item.general.grouped" DevirtualizeItems="true">
+		<ItemRowLayout id="atom(UIItemsHost)" layoutpos="top"/>
+	</UICollection>
+	<UIItem resid="item.general.fetching" content="resstr(0xA100, library(explorerframe.dll))"/>
+	<UIItem resid="item.general.grouped.fetching" capabilities="selectable|focusable" content="resstr(0xA100, library(explorerframe.dll))"/>
+	<UIGroupItem resid="item.general.grouped.location" layout="borderlayout()" capabilities="selectable|focusable"  padding="rect(0,0,0,0)" background="themeable(dtb(ItemsView::ListView, 6, 1), argb(0,0,0,0))">
+		<UIGroupHeader id="atom(UIGroupHeader)" layoutpos="top" customlayout="viewareaawarelayout(borderlayout)"  background="argb(0,0,0,0)">
+			<element layoutpos="top" layout="borderlayout()">
+				<element layoutpos="left" layout="borderlayout()" font="iconfont;100%">
+					<UIProperty layoutpos="left" id="atom(GroupName)" propertycanonicalname="System.ItemNameDisplay" UseRootScope="true" EnableHitHighlighting="false" contentalign="middleleft|endellipsis"/>
+					<UICount layoutpos="left" ZeroText="resstr(0xA204, library(explorerframe.dll))" contentalign="middleleft"/>
+					<element layoutpos="left"  contentalign="middleleft" content=" | " />
+					<UIProperty id="atom(GroupLocation)" layoutpos="client" propertycanonicalname="System.ItemFolderPathDisplay" UseRootScope="true" EnableHitHighlighting="false" contentalign="middleleft|endellipsis"/>
+				</element>
+				<UIBase layoutpos="client" customlayout="centeringlayout()" padding="rect(5rp,2rp,5rp,0rp)">
+					<element id="atom(UIGroupSeparator)" layoutpos="2"/>
+				</UIBase>
+				<element layoutpos="right" layout="borderlayout()">
+					<UIExpandoButton layoutpos="left" id="atom(UIGroupButton)" contentalign="middleleft" active="mouse|nosyncfocus"/>
+				</element>
+			</element>
+		</UIGroupHeader>
+		<clipper id="atom(UICollectionHost)" layoutpos="bottom" layout="filllayout()" padding="rect(0,2rp,0,0)"/>
+	</UIGroupItem>
+	<UICollection resid="collection.general.grouped.location" layout="borderlayout()" UIItemCreationPropMap="item.general.grouped.location" DevirtualizeItems="true" LogicalImageSize="16">
+		<ItemRowLayout id="atom(UIItemsHost)" layoutpos="top"/>
+	</UICollection>
+	<UIItem resid="item.smallicons" class="item.smallicons" layout="borderlayout()" capabilities="selectable|focusable|renameable" tooltip="true" infotipcallback="true">
+		<UICheckbox class="item.row.checkbox" layoutpos="left" contentalign="middleleft"/>
+		<UIProperty layoutpos="left" propertycanonicalname="System.StorageProviderUIStatus"/>
+		<UIImage padding="rect(0,2rp,0,2rp)" layoutpos="left"/>
+		<UIBase layoutpos="left" customlayout="featureenabledlayout(Feature_CloudFileStateIcon,0)">
+			<UIProperty id="atom(FileName)" propertycanonicalname="System.ItemNameDisplay" padding="rect(0,2rp,0,2rp)" layoutpos="left" tooltip="false" minsize="size(260rp,0rp)" contentalign="middleleft|endellipsis" MaxPixelWidth="260rp"/>
+		</UIBase>
+		<UIBase layoutpos="left" customlayout="featureenabledlayout(Feature_CloudFileStateIcon,1)">
+			<UIProperty id="atom(FileName)" propertycanonicalname="System.ItemNameDisplay" padding="rect(0,2rp,0,2rp)" layoutpos="left" tooltip="false" minsize="size(202rp,0rp)" contentalign="middleleft|endellipsis" MaxPixelWidth="202rp"/>
+		</UIBase>
+		<UIBase layoutpos="right" customlayout="firstvisibleelementonlylayout()" minsize="size(0rp,0rp)" visibleminsize="size(58rp,20rp)">
+			<UIProgressProperty propertycanonicalname="System.StorageProviderTransferProgress" layout="flowlayout(0, 2, 0, 2)" contentalign="middleleft" height="6rp" MaxPixelWidth="58rp"/>
+			<UIProperty propertycanonicalname="System.StorageProviderUIStatus" contentalign="middleleft" iconsize="10rp" icondisplaylimit="-1" MaxPixelWidth="58rp"/>
+		</UIBase>
+	</UIItem>
+	<UICollection resid="collection.smallicons" layout="borderlayout()" UIItemCreationPropMap="item.smallicons">
+		<ItemGridLayout id="atom(UIItemsHost)" layoutpos="top" padding="rect(12rp,0,12rp,0)" columnwidth="308rp" itemspacing="size(1rp,1rp)"/>
+	</UICollection>
+	<UIRootItem resid="rootitem.smallicons" layout="filllayout()" UICollectionCreationPropMap="*=collection.smallicons,grouped=collection.general.grouped,grouped.location=collection.general.grouped.location">
+		<LineScroller>
+			<UIViewHeader layoutpos="top" customlayout="overflowlayout()" Resizable="false">
+				<button id="atom(Overflowbutton)" active="mouseandkeyboard|nosyncfocus"/>
+			</UIViewHeader>
+			<element id="atom(UICollectionHost)" layout="filllayout()"/>
+		</LineScroller>
+	</UIRootItem>
+	<UIItem resid="item.list" class="item.list" layout="borderlayout()" capabilities="selectable|focusable|renameable" tooltip="true" infotipcallback="true">
+		<UICheckbox class="item.row.checkbox" layoutpos="left" contentalign="middleleft"/>
+		<UIImage layoutpos="left"/>
+		<UIProperty id="atom(FileName)" propertycanonicalname="System.ItemNameDisplay" padding="rect(0,2rp,0,2rp)" layoutpos="left" tooltip="false"/>
+		<UIBase layoutpos="right" customlayout="firstvisibleelementonlylayout()" minsize="size(0rp,0rp)" visibleminsize="size(58rp,20rp)">
+			<UIProgressProperty propertycanonicalname="System.StorageProviderTransferProgress" layout="flowlayout(0, 2, 0, 2)" contentalign="middleleft" height="6rp" MaxPixelWidth="58rp"/>
+			<UIProperty propertycanonicalname="System.StorageProviderUIStatus" contentalign="middleleft" minsize="size(58rp,0rp)" iconsize="10rp" icondisplaylimit="2" MaxPixelWidth="58rp"/>
+		</UIBase>
+	</UIItem>
+	<UIGroupItem resid="item.list.grouped" virtualdirection="horizontal" layout="borderlayout()" capabilities="selectable|focusable" UICollectionCreationPropMap="*=collection.list.insidegroup">
+		<UIGroupHeader id="atom(UIGroupHeader)" layoutpos="top" customlayout="floatingheaderlayout()" padding="rect(4rp,4rp,4rp,4rp)">
+			<element layoutpos="left" layout="borderlayout()" font="iconfont;100%">
+				<UIProperty layoutpos="client" MaxPixelWidth="280rp" id="atom(GroupName)" propertycanonicalname="System.ItemNameDisplay" EnableHitHighlighting="false" contentalign="middleleft|endellipsis"/>
+				<UICount layoutpos="right" ZeroText="resstr(0xA204, library(explorerframe.dll))" contentalign="middleleft"/>
+			</element>
+			<UIBase layoutpos="client" customlayout="centeringlayout()" padding="rect(2rp,2rp,6rp,0rp)" minsize="size(16rp,0rp)">
+				<element id="atom(UIGroupSeparator)" layoutpos="2"/>
+			</UIBase>
+		</UIGroupHeader>
+		<element id="atom(UICollectionHost)" layoutpos="client" layout="filllayout()"/>
+	</UIGroupItem>
+	<UICollection resid="collection.list.groups" LogicalImageSize="16" virtualdirection="horizontal" layout="borderlayout()" UIItemCreationPropMap="item.list.grouped" DevirtualizeItems="true">
+		<ItemRowLayout id="atom(UIItemsHost)" layoutpos="left" virtualdirection="horizontal" padding="rect(12rp,0,12rp,0)" SeparatorLineHeight="1rp" SeparatorPadding="rect(4rp,0rp,9rp,0rp)"/>
+	</UICollection>
+	<UICollection resid="collection.list.ungrouped" LogicalImageSize="16" virtualdirection="horizontal" layout="borderlayout()" UIItemCreationPropMap="item.list">
+		<ItemGridLayout id="atom(UIItemsHost)" class="itemgridlayout.rowstylelayout" virtualdirection="horizontal" alignmentmode="none" layoutpos="left" padding="rect(12rp,0,12rp,0)" itemspacing="size(10rp,1rp)" itemminsize="size(60rp,0rp)" itemmaxsize="size(800rp,0rp)"/>
+	</UICollection>
+	<UICollection resid="collection.list.insidegroup" LogicalImageSize="16" virtualdirection="horizontal" layout="borderlayout()" UIItemCreationPropMap="item.list">
+		<ItemGridLayout id="atom(UIItemsHost)" class="itemgridlayout.rowstylelayout" virtualdirection="horizontal" alignmentmode="none" layoutpos="client" itemspacing="size(10rp,1rp)" itemminsize="size(60rp,0rp)" itemmaxsize="size(800rp,0rp)"/>
+	</UICollection>
+	<UIGroupItem resid="item.list.grouped.location" virtualdirection="horizontal" layout="borderlayout()" capabilities="selectable|focusable" UICollectionCreationPropMap="*=collection.list.insidegroup" padding="rect(0rp,0rp,16rp,0rp)">
+		<UIGroupHeader id="atom(UIGroupHeader)" layoutpos="top" customlayout="floatingheaderlayout()" padding="rect(4rp,4rp,4rp,4rp)">
+			<element layoutpos="client" layout="borderlayout()">
+				<UIBase layoutpos="top" customlayout="horizontalborderlayout()">
+					<element layoutpos="left" layout="borderlayout()" font="iconfont;100%">
+						<UICount layoutpos="right" ZeroText="resstr(0xA204, library(explorerframe.dll))" contentalign="middleleft"/>
+						<UIProperty layoutpos="client" id="atom(GroupName)" MaxPixelWidth="280rp" propertycanonicalname="System.ItemNameDisplay" UseRootScope="true" EnableHitHighlighting="false" contentalign="middleleft|endellipsis"/>
+					</element>
+					<UIBase layoutpos="client" customlayout="centeringlayout()" padding="rect(2rp,2rp,6rp,0rp)" minsize="size(16rp,0)">
+						<element id="atom(UIGroupSeparator)" layoutpos="2"/>
+					</UIBase>
+				</UIBase>
+				<UIProperty id="atom(GroupLocation)" layoutpos="top" MaxPixelWidth="280rp" propertycanonicalname="System.ItemFolderPathDisplay" UseRootScope="true" EnableHitHighlighting="false" contentalign="middleleft|endellipsis"/>
+			</element>
+		</UIGroupHeader>
+		<element id="atom(UICollectionHost)" layoutpos="client" layout="filllayout()"/>
+	</UIGroupItem>
+	<UICollection resid="collection.list.grouped.location" virtualdirection="horizontal" layout="borderlayout()" UIItemCreationPropMap="item.list.grouped.location" DevirtualizeItems="true" LogicalImageSize="16">
+		<ItemRowLayout layoutpos="left" id="atom(UIItemsHost)" virtualdirection="horizontal" padding="rect(12rp,0,12rp,0)"/>
+	</UICollection>
+	<UIRootItem resid="rootitem.list" layout="filllayout()" UICollectionCreationPropMap="*=collection.list.ungrouped,grouped=collection.list.groups,grouped.location=collection.list.grouped.location">
+		<LineScroller virtualdirection="horizontal">
+			<UIViewHeader layoutpos="top" customlayout="overflowlayout()" Resizable="false">
+				<button id="atom(Overflowbutton)" active="mouseandkeyboard|nosyncfocus"/>
+			</UIViewHeader>
+			<element id="atom(UICollectionHost)" layout="filllayout()"/>
+		</LineScroller>
+	</UIRootItem>
+	<UIItem resid="item.tiles" layout="flowlayout(0,2,0,2)" capabilities="selectable|focusable|renameable" tooltip="true" infotipcallback="true">
+		<UIBase layoutpos="left" customlayout="featureenabledlayout(Feature_CloudFileStateIcon,1)">
+			<UIBase layoutpos="left" customlayout="firstvisibleelementonlylayout()" contentalign="middleright" minsize="size(0rp,0rp)" visibleminsize="size(34rp,52rp)">
+				<UIProperty layoutpos="right" propertycanonicalname="System.StorageProviderUIStatus" contentalign="middleright" minsize="size(16rp,0rp)" padding="rect(0,0,6rp,0)" iconsize="10rp" icondisplaylimit="2"/>
+			</UIBase>
+		</UIBase>
+		<element layout="filllayout()" contentalign="middleright">
+			<UIImage contentalign="middleright" padding="rect(0,0,3rp,0)"/>
+			<element layout="ninegridlayout()">
+				<UICheckbox class="item.grid.checkbox" margin="rect(0,0,0,0)" padding="rect(0,0,0,0)" layoutpos="ninetopleft"/>
+			</element>
+		</element>
+		<element layout="borderlayout()">
+			<UIProperty id="atom(FileName)" propertycanonicalname="System.ItemNameDisplay" layoutpos="top" contentalign="topleft|wrapleft|endellipsis|editcontrol" tooltip="false" maxnumtextlines="2"/>
+			<UITilesPropertyCollection layoutpos="top" layout="borderlayout()" tooltip="false" width="202rp"/>
+		</element>
+	</UIItem>
+	<UIItem resid="item.tiles.frequent" layout="flowlayout(0,2,0,2)" capabilities="selectable|focusable|renameable" tooltip="true" infotipcallback="true">
+		<UIBase layoutpos="left" customlayout="featureenabledlayout(Feature_CloudFileStateIcon,1)">
+			<UIBase layoutpos="left" customlayout="firstvisibleelementonlylayout()" contentalign="middleright" minsize="size(0rp,0rp)" visibleminsize="size(34rp,52rp)">
+				<UIProperty layoutpos="right" propertycanonicalname="System.StorageProviderUIStatus" contentalign="middleright" minsize="size(16rp,0rp)" padding="rect(0,0,6rp,0)" iconsize="10rp" icondisplaylimit="1"/>
+			</UIBase>
+		</UIBase>
+		<element layout="filllayout()" contentalign="middleright">
+			<UIImage contentalign="middleright" padding="rect(0,0,3rp,0)"/>
+			<element layout="ninegridlayout()">
+				<UICheckbox class="item.grid.checkbox" margin="rect(0,0,0,0)" padding="rect(0,0,0,0)" layoutpos="ninetopleft"/>
+			</element>
+		</element>
+		<element layout="borderlayout()">
+			<UIProperty id="atom(FileName)" propertycanonicalname="System.ItemNameDisplay" layoutpos="top" contentalign="topleft|wrapleft|endellipsis|editcontrol" tooltip="false" maxnumtextlines="2"/>
+			<UITilesPropertyCollection layoutpos="top" layout="borderlayout()" tooltip="false" width="202rp"/>
+		</element>
+	</UIItem>
+	<UIBase resid="item.tiles.syncprogress" layoutpos="left" customlayout="firstvisibleelementonlylayout()" minsize="size(157rp,2rp)" visibleminsize="size(157rp,2rp)">
+		<UIProgressProperty propertycanonicalname="System.StorageProviderTransferProgress" layout="flowlayout(0, 2, 0, 2)" contentalign="left" height="2rp" padding="rect(0rp,0rp,0rp,0rp)" sheet="dynamic.progressbar"/>
+	</UIBase>
+	<UIItem resid="item.tiles.recent" class="item.tiles.recent" layout="borderlayout()" capabilities="selectable|focusable|renameable" tooltip="true" infotipcallback="true" padding="rect(6rp,2rp,6rp,2rp)">
+		
+		<UICheckbox class="item.row.checkbox" layoutpos="left" contentalign="middleleft"/>
+		<UIImage layoutpos="left" contentalign="middleright" padding="rect(0,1rp,2rp,1rp)"/>
+		<UISmartPropertyCollection layoutpos="left" tooltip="false" sheet="smart.recent"/>
+	</UIItem>
+	<UIItem resid="item.tiles.recent.thirdcolumn" layout="borderlayout()" padding="rect(4rp,0,0,0)" capabilities="selectable|focusable|renameable" tooltip="true" infotipcallback="true">
+		<UICheckbox layoutpos="left" contentalign="middleleft"/>
+		<UIProperty layoutpos="left" propertycanonicalname="System.StorageProviderUIStatus" iconsize="10rp" icondisplaylimit="1" width="16rp" height="16rp"/>
+		<UIImage layoutpos="left" contentalign="middleright" padding="rect(0,1rp,2rp,1rp)"/>
+		<UISmartPropertyCollection layoutpos="left" tooltip="false" sheet="smart.recent.thirdcolumn"/>
+	</UIItem>
+	<UICollection resid="collection.tiles" LogicalImageSize="48" layout="borderlayout()" UIItemCreationPropMap="item.tiles">
+		<ItemGridLayout id="atom(UIItemsHost)" layoutpos="top" padding="rect(12rp,0,12rp,0)" columnwidth="250rp" itemspacing="size(4rp,4rp)"/>
+	</UICollection>
+	<UICollection resid="collection.tiles.frequent" LogicalImageSize="48" layout="borderlayout()" UIItemCreationPropMap="item.tiles.frequent">
+		<ItemGridLayout id="atom(UIItemsHost)" layoutpos="top" padding="rect(12rp,0,12rp,0)" columnwidth="250rp" itemspacing="size(4rp,4rp)"/>
+	</UICollection>
+	<UICollection resid="collection.tiles.recent" LogicalImageSize="16" layout="borderlayout()" UIItemCreationPropMap="System.LayoutPattern.ContentViewModeForBrowse:*=item.tiles.recent,beta=item.tiles.recent.thirdcolumn">
+		<ItemRowLayout id="atom(UIItemsHost)" layoutpos="top" padding="rect(12rp,0,12rp,0)" class="collection.tiles.recent"/>
+	</UICollection>
+	<UIRootItem resid="rootitem.tiles" layout="filllayout()" UICollectionCreationPropMap="*=collection.tiles,recent=collection.tiles.recent,frequent=collection.tiles.frequent,grouped=collection.general.grouped,grouped.location=collection.general.grouped.location">
+		<LineScroller>
+			<UIViewHeader layoutpos="top" customlayout="overflowlayout()" Resizable="false">
+				<button id="atom(Overflowbutton)" active="mouseandkeyboard|nosyncfocus"/>
+			</UIViewHeader>
+			<element id="atom(UICollectionHost)" layout="filllayout()"/>
+		</LineScroller>
+	</UIRootItem>
+	<UIItem resid="item.icons" customlayout="baselinelayout()" capabilities="selectable|focusable|renameable|filenameoptional" tooltip="true" infotipcallback="true">
+		<element id="atom(Baseline)" layout="filllayout()" layoutpos="top">
+			<UIImage id="atom(BaselineImage)" UseImageHeight="true" contentalign="bottomcenter"/>
+			<element layout="ninegridlayout()">
+				<UICheckbox class="item.grid.checkbox" margin="rect(0,0,0,0)" padding="rect(0,0,0,0)" layoutpos="ninetopleft"/>
+			</element>
+		</element>
+		<element layout="flowlayout(0, 0, 2, 0)">
+			<UIProperty id="atom(StateIcons)" propertycanonicalname="System.StorageProviderUIStatus" padding="rect(0,4rp,0,0)" contentalign="topleft" iconsize="10rp" icondisplaylimit="2"/>
+			<UIProperty id="atom(FileName)" propertycanonicalname="System.ItemNameDisplay" contentalign="topcenter|wrapleft|endellipsis|editcontrol" tooltip="false" maxnumtextlines="4"/>
+		</element>
+		<UIProgressProperty id="atom(footer)" propertycanonicalname="System.StorageProviderTransferProgress" layout="filllayout()" height="14rp" padding="rect(0rp,0rp,0rp,8rp)"/>
+	</UIItem>
+	<UICollection resid="collection.icons" layout="borderlayout()" UIItemCreationPropMap="item.icons">
+		<ItemGridLayout id="atom(UIItemsHost)" layoutpos="top" padding="rect(12rp,0,12rp,0)" alignmentmode="baseline|justify|jaggedbottom" minimumicontextwidth="74rp" itemspacing="size(1rp,1rp)"/>
+	</UICollection>
+	<UIRootItem resid="rootitem.icons" layout="filllayout()" UICollectionCreationPropMap="*=collection.icons,grouped=collection.general.grouped,grouped.location=collection.general.grouped.location">
+		<LineScroller>
+			<UIViewHeader layoutpos="top" customlayout="overflowlayout()" Resizable="false">
+				<button id="atom(Overflowbutton)" active="mouseandkeyboard|nosyncfocus"/>
+			</UIViewHeader>
+			<element id="atom(UICollectionHost)" layout="filllayout()"/>
+		</LineScroller>
+	</UIRootItem>
+	<UIItem resid="item.details" class="item.details" layout="borderlayout()" capabilities="selectable|focusable|renameable" tooltip="true" infotipcallback="true">
+		<UICheckbox class="item.row.checkbox" layoutpos="left" contentalign="middleleft"/>
+		<UIImage layoutpos="left" padding="rect(0,1rp,2rp,2rp)"/>
+		<UIDetailsPropertyCollection layoutpos="left" tooltip="false" sheet="details"/>
+	</UIItem>
+	<UIBase resid="item.details.syncstatus" layoutpos="right" customlayout="firstvisibleelementonlylayout()" minsize="size(0rp,0rp)" visibleminsize="size(34rp,22rp)">
+		<UIProgressProperty propertycanonicalname="System.StorageProviderTransferProgress" layout="flowlayout(0, 2, 0, 2)" contentalign="middleleft" height="2rp" padding="rect(5rp,0rp,0rp,0rp)" sheet="dynamic.progressbar"/>
+		<UIProperty propertycanonicalname="System.StorageProviderUIStatus" contentalign="middleleft" padding="rect(5rp,0rp,0rp,0rp)" iconsize="10rp" icondisplaylimit="-1"/>
+	</UIBase>
+	<UIProperty resid="property.details.default" padding="rect(4rp,0,6rp,0)" active="keyboard"/>
+	<UIProperty resid="property.details.first" padding="rect(0,0,6rp,0)"/>
+	<UICollection resid="collection.details" LogicalImageSize="16" layout="borderlayout()" UIItemCreationPropMap="item.details">
+		<ItemRowLayout id="atom(UIItemsHost)" class="collection.details" layoutpos="top" padding="rect(12rp,0,12rp,0)" UseItemWidth="true"/>
+	</UICollection>
+	<UICollection resid="collection.details.grouped" LogicalImageSize="16" layout="borderlayout()" UIItemCreationPropMap="item.general.grouped" DevirtualizeItems="true">
+		<ItemRowLayout id="atom(UIItemsHost)" layoutpos="top"/>
+	</UICollection>
+	<UICollection resid="collection.details.grouped.location" layout="borderlayout()" UIItemCreationPropMap="item.general.grouped.location" DevirtualizeItems="true" LogicalImageSize="16">
+		<ItemRowLayout id="atom(UIItemsHost)" layoutpos="top"/>
+	</UICollection>
+	<UIRootItem resid="rootitem.details" columnpadding="10rp" layout="filllayout()" UICollectionCreationPropMap="*=collection.details,grouped=collection.details.grouped,grouped.location=collection.details.grouped.location">
+		<LineScroller pinning="PinVert">
+			<linkedviewer layoutpos="top" xscrollable="true" yscrollable="false">
+				<UIViewHeader layout="borderlayout()" Resizable="true"/>
+			</linkedviewer>
+			<element id="atom(UICollectionHost)" layout="filllayout()"/>
+		</LineScroller>
+	</UIRootItem>
+	<UISmartProperty resid="property.smart.labeled" id="atom(LabeledSmartProperty)" layout="borderlayout()" ShowLabel="true">
+		<element id="atom(PropertyLabel)" layoutpos="left" tooltip="true"/>
+		<UIProperty id="atom(PropertyValue)" layoutpos="left"/>
+	</UISmartProperty>
+	<UIItem resid="item.smart.alpha" layout="borderlayout()" padding="rect(0,0,0,0)" capabilities="selectable|focusable|renameable" tooltip="true" infotipcallback="true">
+		<UICheckbox class="item.grid.checkbox" layoutpos="left" contentalign="middleleft" padding="rect(4rp,0,0,0)"/>
+		<UIBase layoutpos="left" customlayout="featureenabledlayout(Feature_CloudFileStateIcon,1)">
+			<UIBase layoutpos="left" customlayout="firstvisibleelementonlylayout()" minsize="size(0rp,0rp)" contentalign="middleright" visibleminsize="size(30rp,49rp)">
+				<UIProperty layoutpos="right" propertycanonicalname="System.StorageProviderUIStatus" contentalign="middleright" minsize="size(16rp,49rp)" padding="rect(0,0,6rp,0)" iconsize="10rp" icondisplaylimit="2"/>
+			</UIBase>
+		</UIBase>
+		<UIImage layoutpos="left" padding="rect(4rp,7rp,0,5rp)" contentalign="topcenter"/>
+		<UISmartPropertyCollection layoutpos="left" sheet="smart.alpha.3row" padding="rect(0,5rp,4rp,5rp)" tooltip="true"/>
+	</UIItem>
+	<UIItem resid="item.smart.beta" layout="borderlayout()" padding="rect(0,0,0,0)" capabilities="selectable|focusable|renameable" tooltip="true" infotipcallback="true">
+		<UICheckbox class="item.grid.checkbox" layoutpos="left" contentalign="middleleft" padding="rect(4rp,0,0,0)"/>
+		<UIBase layoutpos="left" customlayout="featureenabledlayout(Feature_CloudFileStateIcon,1)">
+			<UIBase layoutpos="left" customlayout="firstvisibleelementonlylayout()" minsize="size(0rp,0rp)" contentalign="middleright" visibleminsize="size(30rp,49rp)">
+				<UIProperty layoutpos="right" propertycanonicalname="System.StorageProviderUIStatus" contentalign="middleright" minsize="size(16rp,49rp)" padding="rect(0,0,6rp,0)" iconsize="10rp" icondisplaylimit="2"/>
+			</UIBase>
+		</UIBase>
+		<UIImage layoutpos="left" padding="rect(4rp,7rp,0,5rp)" contentalign="topcenter"/>
+		<UISmartPropertyCollection layoutpos="left" sheet="smart.beta.2row" padding="rect(0,5rp,4rp,5rp)" tooltip="true"/>
+	</UIItem>
+	<UIItem resid="item.smart.gamma" layout="borderlayout()" padding="rect(0,0,0,0)" capabilities="selectable|focusable|renameable" tooltip="true" infotipcallback="true">
+		<UICheckbox class="item.grid.checkbox" layoutpos="left" contentalign="middleleft" padding="rect(4rp,0,0,0)"/>
+		<UIBase layoutpos="left" customlayout="featureenabledlayout(Feature_CloudFileStateIcon,1)">
+			<UIBase layoutpos="left" customlayout="firstvisibleelementonlylayout()" minsize="size(0rp,0rp)" contentalign="middleright" visibleminsize="size(30rp,49rp)">
+				<UIProperty layoutpos="right" propertycanonicalname="System.StorageProviderUIStatus" contentalign="middleright" minsize="size(16rp,49rp)" padding="rect(0,0,6rp,0)" iconsize="10rp" icondisplaylimit="2"/>
+			</UIBase>
+		</UIBase>
+		<UIImage layoutpos="left" padding="rect(4rp,7rp,0,5rp)" contentalign="topcenter"/>
+		<UISmartPropertyCollection layoutpos="left" sheet="smart.gamma.2row" padding="rect(0,5rp,4rp,5rp)" tooltip="true"/>
+	</UIItem>
+	<UIItem resid="item.smart.delta" layout="borderlayout()" padding="rect(0,0,0,0)" capabilities="selectable|focusable|renameable" tooltip="true" infotipcallback="true">
+		<UICheckbox class="item.grid.checkbox" layoutpos="left" contentalign="middleleft" padding="rect(4rp,0,0,0)"/>
+		<UIBase layoutpos="left" customlayout="featureenabledlayout(Feature_CloudFileStateIcon,1)">
+			<UIBase layoutpos="left" customlayout="firstvisibleelementonlylayout()" minsize="size(0rp,0rp)" contentalign="middleright" visibleminsize="size(30rp,49rp)">
+				<UIProperty layoutpos="right" propertycanonicalname="System.StorageProviderUIStatus" contentalign="middleright" minsize="size(16rp,49rp)" padding="rect(0,0,6rp,0)" iconsize="10rp" icondisplaylimit="2"/>
+			</UIBase>
+		</UIBase>
+		<UIImage layoutpos="left" padding="rect(4rp,7rp,0,5rp)" contentalign="topcenter"/>
+		<UISmartPropertyCollection layoutpos="left" sheet="smart.delta.2row" padding="rect(0,5rp,4rp,5rp)" tooltip="true"/>
+	</UIItem>
+	<UICollection resid="collection.smart.browse" LogicalImageSize="32" layout="borderlayout()" UIItemCreationPropMap="System.LayoutPattern.ContentViewModeForBrowse:*=item.smart.alpha,~=item.general.fetching,beta=item.smart.beta,gamma=item.smart.gamma,delta=item.smart.delta">
+		<ItemRowLayout id="atom(UIItemsHost)" class="collection.smart" layoutpos="top" padding="rect(12rp,0,12rp,0)"/>
+	</UICollection>
+	<UICollection resid="collection.smart.search" LogicalImageSize="32" layout="borderlayout()" UIItemCreationPropMap="System.LayoutPattern.ContentViewModeForSearch:*=item.smart.alpha,~=item.general.fetching,beta=item.smart.beta,gamma=item.smart.gamma,delta=item.smart.delta">
+		<ItemRowLayout id="atom(UIItemsHost)" class="collection.smart" layoutpos="top" padding="rect(12rp,0,12rp,0)"/>
+	</UICollection>
+	<UIRootItem resid="rootitem.smart" layout="filllayout()" UICollectionCreationPropMap="*=collection.smart.browse,sorted.search.*=collection.smart.search,grouped=collection.general.grouped,grouped.location=collection.general.grouped.location">
+		<LineScroller>
+			<UIViewHeader layoutpos="top" customlayout="overflowlayout()" Resizable="false">
+				<button id="atom(Overflowbutton)" active="mouseandkeyboard|nosyncfocus"/>
+			</UIViewHeader>
+			<element id="atom(UICollectionHost)" layout="filllayout()"/>
+		</LineScroller>
+	</UIRootItem>
+	<UIItemsView resid="ItemsView" visible="true" layout="filllayout()" sheet="ItemsView" background="gradient(rgb(255, 255, 255),rgb(244, 245, 250),rgb(199, 215, 233),4)"/>
+	<UIColumnHeader resid="UIColumnHeader" layout="filllayout()" layoutpos="left">
+		<element id="atom(ContentContainer)" layout="borderlayout()">
+			<element id="atom(CheckboxSpace)" layoutpos="left"/>
+			<element id="atom(DropDownSpace)" layoutpos="right"/>
+			<element id="atom(ContentArrowContainer)" layoutpos="left" layout="borderlayout()">
+				<element id="atom(Content)" layoutpos="client" contentalign="middleleft|endellipsis"/>
+				<element id="atom(SortArrow)" layoutpos="right"/>
+				<element id="atom(SortArrow_Classic)" layoutpos="right"/>
+			</element>
+		</element>
+		<element id="atom(DropDownContainer)" layout="borderlayout()" padding="rect(4rp,0,0,0)">
+			<UIColumnHeaderCheckbox id="atom(ColumnHeaderCheckbox)" layoutpos="left" contentalign="middleleft" active="mouse|nosyncfocus"/>
+			<button id="atom(DropDown)" class="UIColumnHeader" layoutpos="right" active="mouse|nosyncfocus"/>
+		</element>
+	</UIColumnHeader>
+	<UIMarqueeSelector resid="Marquee" layoutpos="absolute" visible="false"/>
+	<UIRenameTextElement resid="RenameEdit" layoutpos="absolute" borderthickness="rect(1rp,1rp,1rp,1rp)"/>
+	<UITryHarder resid="TryHarderBottom" id="atom(footer)" layoutpos="client" customlayout="viewareaawarelayout(borderlayout)" padding="rect(0rp,10rp,2rp,4rp)" scrollticks="2">
+		<element id="atom(TH_TextInvite)" layoutpos="top" contentalign="wrapleft" padding="rect(16rp,2rp,2rp,0rp)" content="resstr(0xA201, library(explorerframe.dll))"/>
+		<element id="atom(TH_Buttons)" layoutpos="top" layout="flowlayout()" padding="rect(16rp,2rp,2rp,0rp)"/>
+	</UITryHarder>
+	<UITryHarder resid="TryHarderRight" id="atom(footer)" layoutpos="client" layout="borderlayout()" padding="rect(0rp,0rp,2rp,4rp)" scrollticks="1">
+		<element id="atom(TH_Separator)" class="TryHarderRight" layoutpos="left"/>
+		<element id="atom(TH_TextInvite)" class="TryHarderRight" layoutpos="top" padding="rect(2rp,4rp,0,0)" contentalign="wrapleft" content="resstr(0xA201, library(explorerframe.dll))"/>
+		<UIBase id="atom(TH_Buttons)" layoutpos="top" customlayout="viewareaawarelayout(verticalflowlayout,1,0,0,0)" padding="rect(16rp,2rp,2rp,0rp)" minsize="size(0,26rp)"/>
+	</UITryHarder>
+	<UITryHarderButton tooltip="true" resid="TryHarderButton" layout="flowlayout(0)" padding="rect(5rp,6rp,7rp,4rp)">
+		<element id="atom(TH_Icon)" layoutpos="left" height="16rp" width="16rp" contentalign="middleleft"/>
+		<element id="atom(TH_Text)" layoutpos="left" contentalign="wrapleft|wordellipsis" padding="rect(2rp,0rp,0rp,0rp)"/>
+	</UITryHarderButton>
+	<LineScroller resid="LineScrollerParts" layout="ninegridlayout()" realxanchor="0" realxtarget="0" realyanchor="0" realytarget="0" active="mouse" pinning="pinboth">
+		<LineHScrollBar id="atom(HorizontalScrollBar)" layoutpos="none"/>
+		<LineVScrollBar id="atom(VerticalScrollBar)" layoutpos="none"/>
+		<element id="atom(ViewerContainer)" layout="borderlayout()" layoutpos="client">
+			<LineViewer layoutpos="client" class="LineScroller" active="mouse"/>
+		</element>
+		<element id="atom(ScrollTip)" layoutpos="absolute" visible="false" width="190rp" padding="rect(3rp,3rp,3rp,3rp)" layout="borderlayout()">
+			<element id="atom(ScrollTipLine1)" layoutpos="top" contentalign="endellipsis"/>
+			<element id="atom(ScrollTipLine2)" layoutpos="top" contentalign="endellipsis"/>
+		</element>
+	</LineScroller>
+	<UIBase resid="EmptyText" id="atom(header)" layoutpos="top" customlayout="viewareaawarelayout(borderlayout)">
+		<element id="atom(EmptyText)" layoutpos="top" contentalign="wrapcenter" padding="rect(0,9rp,0,9rp)"/>
+	</UIBase>
+	<FadeElement resid="searchhit" id="atom(SearchHit)" layoutpos="absolute"/>
+	<UIBase resid="SubsetFooter" id="atom(footer)" layoutpos="top" customlayout="viewareaawarelayout(filllayout)" padding="rect(16rp,2rp,0,0)">
+		<UISubsetFooter id="atom(SubsetFooter)" layoutpos="left" active="mouseandkeyboard"/>
+	</UIBase>
+	<element resid="typeahead" id="atom(TypeAhead)" layoutpos="absolute" contentalign="middlecenter|endellipsis"/>
+	<UIBase resid="SubsetFooterRight" id="atom(footer)" layoutpos="bottom" layout="borderlayout()" padding="rect(16rp,0,0,0)">
+		<UISubsetFooter id="atom(SubsetFooter)" layoutpos="left" active="mouseandkeyboard"/>
+	</UIBase>
+	<ModernProgressBar resid="progressbar" id="atom(ProgressBar)" determinate="true" autoheight="false" layoutpos="none"/>
+	<stylesheets>
+		<style resid="ItemsView">
+			<button background="20575" contentalign="topleft"/>
+			<clipper background="20575" contentalign="topleft"/>
+			<element background="20575" contentalign="topleft"/>
+			<FadeElement background="20575" contentalign="topleft"/>
+			<ItemGridLayout background="20575" contentalign="topleft"/>
+			<ItemRowLayout background="20575" contentalign="topleft"/>
+			<LineVScrollBar background="20575" contentalign="topleft"/>
+			<LineHScrollBar background="20575" contentalign="topleft"/>
+			<LineViewer background="20575" contentalign="topleft"/>
+			<LineScroller background="20575" contentalign="topleft"/>
+			<linkedviewer background="20575" contentalign="topleft"/>
+			<PaintSurrogate background="20575" contentalign="topleft"/>
+			<Resizer background="20575" contentalign="topleft"/>
+			<UIBase background="20575" contentalign="topleft"/>
+			<UICheckbox background="20575" contentalign="topleft"/>
+			<UICollection background="20575" contentalign="topleft"/>
+			<UIColumnHeader background="20575" contentalign="topleft"/>
+			<UIColumnHeaderCheckbox background="20575" contentalign="topleft"/>
+			<UICount background="20575" contentalign="topleft"/>
+			<UIDetailsPropertyCollection background="20575" contentalign="topleft"/>
+			<UIExpandoButton background="20575" contentalign="topleft"/>
+			<UIGroupItem background="20575" contentalign="topleft"/>
+			<UIGroupHeader background="20575" contentalign="topleft"/>
+			<UIViewHeader background="20575" contentalign="topleft"/>
+			<UIImage background="20575" contentalign="topleft"/>
+			<UIItem background="20575" contentalign="topleft"/>
+			<UIItemsView background="20575" contentalign="topleft"/>
+			<UIMarqueeSelector background="20575" contentalign="topleft"/>
+			<UIProperty background="20575" contentalign="topleft"/>
+			<UIProgressProperty background="20575" contentalign="topleft"/>
+			<UISmartProperty background="20575" contentalign="topleft"/>
+			<UISmartPropertyCollection background="20575" contentalign="topleft"/>
+			<UISubsetFooter background="20575" contentalign="topleft"/>
+			<UIRenameTextElement background="20575" contentalign="topleft"/>
+			<UIRootItem background="20575" contentalign="topleft"/>
+			<UITilesPropertyCollection background="20575" contentalign="topleft"/>
+			<UITryHarder background="20575" contentalign="topleft"/>
+			<UITryHarderButton background="20575" contentalign="topleft"/>
+			<UIItemsView accessible="true" accrole="list" accname="resstr(0xA103, library(explorerframe.dll))"/>
+			<LineHScrollBar accessible="true" accname="resstr(0xA101, library(explorerframe.dll))"/>
+			<LineVScrollBar accessible="true" accname="resstr(0xA102, library(explorerframe.dll))"/>
+			<UIItem accessible="true" accrole="listitem"/>
+			<UIGroupItem accessible="true" accrole="grouping"/>
+			<UIGroupHeader accessible="true"/>
+			<UIExpandoButton accessible="true" accrole="pushbutton" accname="resstr(0xA104, library(explorerframe.dll))"/>
+			<if class="GroupExpanded">
+				<UIExpandoButton accname="resstr(0xA105, library(explorerframe.dll))"/>
+			</if>
+			<UIViewHeader accessible="true" accrole="columnheader" accname="resstr(0xA106, library(explorerframe.dll))"/>
+			<UIColumnHeader accessible="true" accrole="splitbutton"/>
+			<if class="Filtered">
+				<UIColumnHeader accitemstatus="resstr(0xA10B, library(explorerframe.dll))"/>
+			</if>
+			<if SortDirection="Ascending">
+				<UIColumnHeader accitemstatus="resstr(0xA10C, library(explorerframe.dll))"/>
+				<if class="Filtered">
+					<UIColumnHeader accitemstatus="resstr(0xA10D, library(explorerframe.dll))"/>
+				</if>
+			</if>
+			<if SortDirection="Descending">
+				<UIColumnHeader accitemstatus="resstr(0xA10E, library(explorerframe.dll))"/>
+				<if class="Filtered">
+					<UIColumnHeader accitemstatus="resstr(0xA10F, library(explorerframe.dll))"/>
+				</if>
+			</if>
+			<if class="UIColumnHeader">
+				<button accessible="true" accrole="pushbutton" accname="resstr(0xA107, library(explorerframe.dll))"/>
+			</if>
+			<if class="UIColumnHeaderFiltered">
+				<button accessible="true" accrole="pushbutton" accname="resstr(0xA108, library(explorerframe.dll))"/>
+			</if>
+			<UIProperty accessible="true" accrole="text"/>
+			<if id="atom(GroupName)" UseGroupZoom="true">
+				<UIProperty accrole="link"/>
+			</if>
+			<UICount accessible="true" accrole="text" accname="resstr(0xA109, library(explorerframe.dll))"/>
+			<UIImage accessible="true" accrole="graphic"/>
+			<if id="atom(EmptyText)">
+				<element accessible="true" accrole="statictext" foreground="themeable(gtc(ItemsView, 5, 0, 3803), windowtext)"/>
+			</if>
+			<UITryHarder accessible="true" accrole="toolbar" accname="resstr(0xA201, library(explorerframe.dll))"/>
+			<UITryHarderButton accessible="true" accrole="pushbutton"/>
+			<if id="atom(Overflowbutton)">
+				<button accessible="true" accrole="pushbutton" accname="resstr(0xA10A, library(explorerframe.dll))"/>
+			</if>
+			<UISubsetFooter accessible="true" accrole="link"/>
+			<UIItem tooltipmaxwidth="400"/>
+			<UIProperty tooltip="true" tooltipmaxwidth="400"/>
+			<LineHScrollBar layoutpos="ninebottom"/>
+			<LineVScrollBar layoutpos="nineright"/>
+			<UIItemsView background="themeable(gtc(ItemsView, 0, 0, 3802), window)" foreground="themeable(gtc(ItemsView, 0, 0, 3803), windowtext)"/>
+			<UIRootItem font="iconfont"/>
+			<UIItem padding="rect(4rp,2rp,4rp,2rp)"/>
+			<if keyfocused="true">
+				<if ShowFocusRect="true">
+					<UIItem background="themeable(dtb(ItemsView, 3, 1), argb(0,0,0,0))" contentalign="themeable(topleft, focusrect)"/>
+				</if>
+			</if>
+			<if drophighlight="true">
+				<UIItem background="themeable(dtb(ItemsView::ListView, 1, 3), highlight)" foreground="themeable(gtc(ItemsView, 0, 0, 3803), highlightText)"/>
+				<if keyfocused="true">
+					<UIItem background="themeable(dtb(ItemsView::ListView, 1, 6), highlight)"/>
+				</if>
+			</if>
+			<if mousefocused="true">
+				<UIItem background="themeable(dtb(ItemsView::ListView, 1, 2), argb(0,0,0,0))"/>
+				<if keyfocused="true">
+					<if ShowFocusRect="true">
+						<UIItem background="themeable(dtb(ItemsView, 3, 2), argb(0,0,0,0))"/>
+					</if>
+				</if>
+			</if>
+			<if UnderlineMode="Hover" mousefocused="true">
+				<UIItem fontstyle="underline" cursor="hand"/>
+				<if selected="false" encrypted="false" compressed="false" disconnected="false">
+					<UIItem foreground="themeable(gtc(ItemsView, 0, 0, 3803), hotlight)"/>
+				</if>
+			</if>
+			<if UnderlineMode="Always">
+				<UIItem fontstyle="underline" cursor="hand"/>
+				<if selected="false" encrypted="false" compressed="false" disconnected="false" mousefocused="true">
+					<UIItem foreground="themeable(gtc(ItemsView, 0, 0, 3803), hotlight)"/>
+				</if>
+			</if>
+			<if UnderlineMode="Never">
+				<UIItem cursor="hand"/>
+			</if>
+			<if compressed="true">
+				<UIItem foreground="themeable(gtc(ItemsView, 4, 5, 3803), blue)"/>
+				<if selected="true">
+					<UIItem foreground="themeable(gtc(ItemsView, 4, 6, 3803), highlightText)"/>
+				</if>
+			</if>
+			<if encrypted="true">
+				<UIItem foreground="themeable(gtc(ItemsView, 4, 7, 3803), argb(0,19,146,13))"/>
+				<if selected="true">
+					<UIItem foreground="themeable(gtc(ItemsView, 4, 8, 3803), highlightText)"/>
+				</if>
+			</if>
+			<if disconnected="true">
+				<UIItem foreground="themeable(gtc(ItemsView, 4, 9, 3803), argb(0,122,122,122))"/>
+				<if selected="true">
+					<UIItem foreground="themeable(gtc(ItemsView, 4, 10, 3803), argb(0,122,122,122))"/>
+				</if>
+			</if>
+			<if selected="true">
+				<if encrypted="false" compressed="false" disconnected="false">
+					<UIItem foreground="themeable(gtc(ItemsView, 4, 3, 3803), highlighttext)"/>
+				</if>
+				<if WindowActive="false">
+					<if drophighlight="false">
+						<UIItem background="themeable(dtb(ItemsView::ListView, 1, 5), highlight)"/>
+					</if>
+					<if mousefocused="true">
+						<UIItem background="themeable(dtb(ItemsView::ListView, 1, 6), highlight)"/>
+					</if>
+				</if>
+				<if WindowActive="true">
+					<UIItem background="themeable(dtb(ItemsView::ListView, 1, 3), highlight)"/>
+					<if drophighlight="true">
+						<UIItem background="themeable(dtb(ItemsView::ListView, 1, 6), highlight)"/>
+					</if>
+					<if mousefocused="true">
+						<UIItem background="themeable(dtb(ItemsView::ListView, 1, 6), highlight)"/>
+					</if>
+					<if keyfocused="true">
+						<UIItem background="themeable(dtb(ItemsView::ListView, 1, 6), highlight)"/>
+					</if>
+				</if>
+			</if>
+			<if tabletmode="true">
+				<if class="item.list">
+					<UIItem padding="rect(4rp,5rp,4rp,5rp)"/>
+				</if>
+				<if class="item.details">
+					<UIItem padding="rect(4rp,5rp,0,5rp)"/>
+				</if>
+				<if class="item.smallicons">
+					<UIItem padding="rect(4rp,5rp,4rp,5rp)"/>
+				</if>
+				<if class="item.tiles.recent">
+					<UIItem padding="rect(4rp,5rp,0,5rp)"/>
+				</if>
+			</if>
+			<if tabletmode="false">
+				<if class="item.list">
+					<UIItem padding="rect(4rp,0,4rp,0)"/>
+				</if>
+				<if class="item.details">
+					<UIItem padding="rect(4rp,0,0,0)"/>
+				</if>
+				<if class="item.smallicons">
+					<UIItem padding="rect(4rp,0,4rp,0)"/>
+				</if>
+				<if class="item.tiles.recent">
+					<UIItem padding="rect(4rp,0,0,0)"/>
+				</if>
+			</if>
+			<if tabletmode="true">
+				<if class="itemgridlayout.rowstylelayout">
+					<ItemGridLayout columnwidth="32rp"/>
+				</if>
+			</if>
+			<if tabletmode="false">
+				<if class="itemgridlayout.rowstylelayout">
+					<ItemGridLayout columnwidth="20rp"/>
+				</if>
+			</if>
+			<UIGroupHeader padding="rect(20rp,10rp,10rp,10rp)" foreground="themeable(gtc(ItemsView::ListView, 6, 0, 3825), windowtext)"/>
+			<if keyfocused="true">
+				<UIGroupHeader background="themeable(dtb(ItemsView, 3, 1), argb(0,0,0,0))" contentalign="themeable(topleft, focusrect)"/>
+			</if>
+			<if class="GroupCollapsed">
+				<UIGroupHeader background="themeable(dtb(ItemsView::ListView, 6, 9), argb(0,0,0,0))"/>
+				<if mousefocused="true">
+					<UIGroupHeader background="themeable(dtb(ItemsView::ListView, 6, 10), argb(0,0,0,0))"/>
+					<if keyfocused="true">
+						<UIGroupHeader background="themeable(dtb(ItemsView::ListView, 6, 9), argb(0,0,0,0))"/>
+					</if>
+				</if>
+				<if selected="true">
+					<UIGroupHeader foreground="themeable(gtc(ItemsView::ListView, 6, 0, 3825), highlightText)"/>
+					<if WindowActive="false">
+						<UIGroupHeader background="themeable(dtb(ItemsView::ListView, 6, 13), highlight)"/>
+						<if mousefocused="true">
+							<UIGroupHeader background="themeable(dtb(ItemsView::ListView, 6, 14), highlight)"/>
+						</if>
+					</if>
+					<if WindowActive="true">
+						<UIGroupHeader background="themeable(dtb(ItemsView::ListView, 6, 11), highlight)"/>
+						<if mousefocused="true">
+							<UIGroupHeader background="themeable(dtb(ItemsView::ListView, 6, 12), highlight)"/>
+						</if>
+					</if>
+				</if>
+			</if>
+			<if class="GroupExpanded">
+				<UIGroupHeader background="themeable(dtb(ItemsView::ListView, 6, 1), argb(0,0,0,0))"/>
+				<if mousefocused="true">
+					<UIGroupHeader background="themeable(dtb(ItemsView::ListView, 6, 2), argb(0,0,0,0))"/>
+					<if keyfocused="true">
+						<UIGroupHeader background="themeable(dtb(ItemsView::ListView, 6, 1), argb(0,0,0,0))"/>
+					</if>
+				</if>
+				<if selected="true">
+					<if WindowActive="false">
+						<UIGroupHeader background="themeable(dtb(ItemsView::ListView, 6, 5), argb(0,0,0,0))"/>
+						<if mousefocused="true">
+							<UIGroupHeader background="themeable(dtb(ItemsView::ListView, 6, 6), argb(0,0,0,0))"/>
+						</if>
+					</if>
+					<if WindowActive="true">
+						<UIGroupHeader background="themeable(dtb(ItemsView::ListView, 6, 3), argb(0,0,0,0))"/>
+						<if keyfocused="true">
+							<UIGroupHeader background="themeable(dtb(ItemsView::ListView, 6, 1), argb(0,0,0,0))"/>
+						</if>
+						<if mousefocused="true">
+							<UIGroupHeader background="themeable(dtb(ItemsView::ListView, 6, 4), argb(0,0,0,0))"/>
+							<if keyfocused="true">
+								<UIGroupHeader background="themeable(dtb(ItemsView::ListView, 6, 2), argb(0,0,0,0))"/>
+							</if>
+						</if>
+					</if>
+				</if>
+			</if>
+			<if class="GroupSubset">
+				<UIGroupHeader background="themeable(dtb(ItemsView::ListView, 6, 1), argb(0,0,0,0))"/>
+				<if mousefocused="true">
+					<UIGroupHeader background="themeable(dtb(ItemsView::ListView, 6, 2), argb(0,0,0,0))"/>
+					<if keyfocused="true">
+						<UIGroupHeader background="themeable(dtb(ItemsView::ListView, 6, 1), argb(0,0,0,0))"/>
+					</if>
+				</if>
+				<if selected="true">
+					<if WindowActive="false">
+						<UIGroupHeader background="themeable(dtb(ItemsView::ListView, 6, 5), argb(0,0,0,0))"/>
+						<if mousefocused="true">
+							<UIGroupHeader background="themeable(dtb(ItemsView::ListView, 6, 6), argb(0,0,0,0))"/>
+						</if>
+					</if>
+					<if WindowActive="true">
+						<UIGroupHeader background="themeable(dtb(ItemsView::ListView, 6, 3), argb(0,0,0,0))"/>
+						<if keyfocused="true">
+							<UIGroupHeader background="themeable(dtb(ItemsView::ListView, 6, 1), argb(0,0,0,0))"/>
+						</if>
+						<if mousefocused="true">
+							<UIGroupHeader background="themeable(dtb(ItemsView::ListView, 6, 4), argb(0,0,0,0))"/>
+							<if keyfocused="true">
+								<UIGroupHeader background="themeable(dtb(ItemsView::ListView, 6, 2), argb(0,0,0,0))"/>
+							</if>
+						</if>
+					</if>
+				</if>
+			</if>
+			<if ShowSelectedHeader="true">
+				<UIGroupHeader background="themeable(dtb(ItemsView::ListView, 6, 12), highlight)" foreground="themeable(gtc(ItemsView::ListView, 6, 0, 3825), highlightText)"/>
+			</if>
+			<if id="atom(UIGroupSeparator)">
+				<if class="GroupNoExpando">
+					<element height="1rp" background="themeable(dtb(ItemsView::ListView, 7, 1), windowtext)"/>
+				</if>
+				<if class="GroupCollapsed">
+					<element height="1rp" background="themeable(dtb(ItemsView::ListView, 7, 9), windowtext)"/>
+					<if mousefocused="true">
+						<element background="themeable(dtb(ItemsView::ListView, 7, 10), windowtext)"/>
+					</if>
+					<if selected="true">
+						<if WindowActive="false">
+							<element background="themeable(dtb(ItemsView::ListView, 7, 13), highlighttext)"/>
+							<if mousefocused="true">
+								<element background="themeable(dtb(ItemsView::ListView, 7, 14), highlighttext)"/>
+							</if>
+						</if>
+						<if WindowActive="true">
+							<element background="themeable(dtb(ItemsView::ListView, 7, 11), highlighttext)"/>
+							<if mousefocused="true">
+								<element background="themeable(dtb(ItemsView::ListView, 7, 12), highlighttext)"/>
+							</if>
+						</if>
+					</if>
+				</if>
+				<if class="GroupExpanded">
+					<element height="1rp" background="themeable(dtb(ItemsView::ListView, 7, 1), windowtext)"/>
+					<if mousefocused="true">
+						<element background="themeable(dtb(ItemsView::ListView, 7, 2), windowtext)"/>
+					</if>
+					<if selected="true">
+						<if WindowActive="false">
+							<element background="themeable(dtb(ItemsView::ListView, 7, 5), windowtext)"/>
+							<if mousefocused="true">
+								<element background="themeable(dtb(ItemsView::ListView, 7, 6), windowtext)"/>
+							</if>
+						</if>
+						<if WindowActive="true">
+							<element background="themeable(dtb(ItemsView::ListView, 7, 3), windowtext)"/>
+							<if mousefocused="true">
+								<element background="themeable(dtb(ItemsView::ListView, 7, 4), windowtext)"/>
+							</if>
+						</if>
+					</if>
+				</if>
+				<if class="GroupSubset">
+					<element height="1rp" background="themeable(dtb(ItemsView::ListView, 7, 1), windowtext)"/>
+					<if mousefocused="true">
+						<element background="themeable(dtb(ItemsView::ListView, 7, 2), windowtext)"/>
+					</if>
+					<if selected="true">
+						<if WindowActive="false">
+							<element background="themeable(dtb(ItemsView::ListView, 7, 5), windowtext)"/>
+							<if mousefocused="true">
+								<element background="themeable(dtb(ItemsView::ListView, 7, 6), windowtext)"/>
+							</if>
+						</if>
+						<if WindowActive="true">
+							<element background="themeable(dtb(ItemsView::ListView, 7, 3), windowtext)"/>
+							<if mousefocused="true">
+								<element background="themeable(dtb(ItemsView::ListView, 7, 4), windowtext)"/>
+							</if>
+						</if>
+					</if>
+				</if>
+			</if>
+			<if id="atom(UIGroupButtonSpacer)">
+				<element fontface="Marlett" content="themeable(dtb(ItemsView::ListView, 8, 1), '6')" visible="false"/>
+			</if>
+			<if id="atom(UIGroupButton)">
+				<UIExpandoButton contentalign="middlecenter" fontface="Marlett" padding="rect(2rp, 0, 2rp, 0)"/>
+				<if class="GroupCollapsed">
+					<UIExpandoButton content="themeable(dtb(ItemsView::ListView, 8, 1), '6')"/>
+					<if mousefocused="true">
+						<UIExpandoButton content="themeable(dtb(ItemsView::ListView, 8, 2), '6')"/>
+					</if>
+					<if pressed="true">
+						<UIExpandoButton content="themeable(dtb(ItemsView::ListView, 8, 3), '6')"/>
+					</if>
+				</if>
+				<if class="GroupExpanded">
+					<UIExpandoButton content="themeable(dtb(ItemsView::ListView, 9, 1), '5')"/>
+					<if mousefocused="true">
+						<UIExpandoButton content="themeable(dtb(ItemsView::ListView, 9, 2), '5')"/>
+					</if>
+					<if pressed="true">
+						<UIExpandoButton content="themeable(dtb(ItemsView::ListView, 9, 3), '5')"/>
+					</if>
+				</if>
+				<if class="GroupSubset">
+					<UIExpandoButton content="themeable(dtb(ItemsView, 2, 1), '6')"/>
+					<if mousefocused="true">
+						<UIExpandoButton content="themeable(dtb(ItemsView, 2, 2), '6')"/>
+					</if>
+					<if pressed="true">
+						<UIExpandoButton content="themeable(dtb(ItemsView, 2, 3), '6')"/>
+					</if>
+				</if>
+			</if>
+			<if id="atom(GroupName)" UseGroupZoom="true" mousefocused="true">
+				<UIProperty cursor="hand" fontstyle="underline"/>
+				<if selected="false">
+					<UIProperty foreground="themeable(gtc(ItemsView::ListView, 6, 0, 3825), hotlight)"/>
+				</if>
+			</if>
+			<if id="atom(GroupLocation)">
+				<UIProperty font="iconfont" foreground="themeable(gtc(ItemsView::ListView, 6, 0, 3826), hotlight)"/>
+			</if>
+			<UIProperty contentalign="middleleft|endellipsis"/>
+			<UITilesPropertyCollection foreground="themeable(gtc(ItemsView, 4, 1, 3803), windowtext)"/>
+			<if selected="true">
+				<UITilesPropertyCollection foreground="themeable(gtc(ItemsView, 4, 4, 3803), highlighttext)"/>
+			</if>
+			<UIImage contentalign="middlecenter"/>
+			<if id="atom(SearchHit)">
+				<FadeElement background="themeable(dtb(ItemsView, 1, 2), argb(0,0,0,0))" initialbackground="themeable(dtb(ItemsView, 1, 1), argb(0,0,0,0))" bordercolor="themeable(argb(0,0,0,0), windowtext)" borderthickness="themeable(rect(0,0,0,0), rect(1,1,1,1))"/>
+				<if selected="true">
+					<FadeElement background="themeable(dtb(ItemsView, 1, 4), argb(0,0,0,0))" initialbackground="themeable(dtb(ItemsView, 1, 3), argb(0,0,0,0))" bordercolor="themeable(argb(0,0,0,0), highlighttext)" borderthickness="themeable(rect(0,0,0,0), rect(1,1,1,1))"/>
+				</if>
+			</if>
+			<if id="atom(ScrollTip)">
+				<element background="themeable(dtb(Tooltip, 1, 0), infobackground)" foreground="themeable(gtc(Tooltip, 1, 0, 3803), infotext)" borderthickness="themeable(rect(0,0,0,0), rect(1rp,1rp,1rp,1rp))" bordercolor="infotext"/>
+			</if>
+			<if id="atom(TypeAhead)">
+				<element background="argb(255,75,75,75)" foreground="argb(255,255,255,255)"/>
+				<element background="themeable(dtb(ItemsView::Header, 1, 1), dfc(4, 0x0010))" foreground="themeable(gtc(CommandModule, 3, 1, 3803), windowtext)"/>
+			</if>
+			<UICollection padding="rect(0,1rp,0,0)"/>
+			<if class="collection.details">
+				<ItemRowLayout SeparatorPadding="themeable(rect(0,0,0,-1rp), rect(0,0,0,0))"/>
+			</if>
+			<if class="collection.smart">
+				<ItemRowLayout SeparatorLine="themeable(rgb(220, 220, 220), gradient(window, windowtext, window, 3))" SeparatorLineHeight="1rp" SeparatorPadding="themeable(rect(4rp,-1rp,9rp,-1rp), rect(4rp,0,9rp,-1rp))"/>
+			</if>
+			<if TopCollection="true">
+				<UICollection padding="rect(0,6rp,0,0)"/>
+			</if>
+			<if class="collection.tiles.recent">
+				<ItemRowLayout SeparatorPadding="themeable(rect(0,0,0,-1rp), rect(0,0,0,0))"/>
+			</if>
+			<UIViewHeader background="themeable(dtb(ItemsView::Header, 0, 1), dfc(4, 0x0010))"/>
+			<UIColumnHeader minwidth="60rp" foreground="themeable(gtc(ItemsView::Header, 1, 0, 3803), windowtext)"/>
+			<if SortedBy="true">
+				<UIColumnHeader background="themeable(dtb(ItemsView::Header, 1, 4), dfc(4, 0x0010))"/>
+				<if EnableActivation="true">
+					<if mousewithin="true">
+						<UIColumnHeader background="themeable(dtb(ItemsView::Header, 1, 5), dfc(4, 0x0010 | 0x1000))"/>
+					</if>
+					<if keyfocused="true">
+						<UIColumnHeader background="themeable(dtb(ItemsView::Header, 1, 5), dfc(4, 0x0010 | 0x1000))"/>
+					</if>
+					<if selected="true">
+						<UIColumnHeader background="themeable(dtb(ItemsView::Header, 1, 5), dfc(4, 0x0010 | 0x1000))"/>
+					</if>
+					<if pressed="true">
+						<UIColumnHeader background="themeable(dtb(ItemsView::Header, 1, 6), dfc(4, 0x0010 | 0x0200))"/>
+					</if>
+				</if>
+			</if>
+			<if SortedBy="false">
+				<UIColumnHeader background="themeable(dtb(ItemsView::Header, 1, 1), dfc(4, 0x0010))"/>
+				<if EnableActivation="true">
+					<if mousewithin="true">
+						<UIColumnHeader background="themeable(dtb(ItemsView::Header, 1, 2), dfc(4, 0x0010 | 0x1000))"/>
+					</if>
+					<if keyfocused="true">
+						<UIColumnHeader background="themeable(dtb(ItemsView::Header, 1, 2), dfc(4, 0x0010 | 0x1000))"/>
+					</if>
+					<if selected="true">
+						<UIColumnHeader background="themeable(dtb(ItemsView::Header, 1, 2), dfc(4, 0x0010 | 0x1000))"/>
+					</if>
+					<if pressed="true">
+						<UIColumnHeader background="themeable(dtb(ItemsView::Header, 1, 3), dfc(4, 0x0010 | 0x0200))"/>
+					</if>
+				</if>
+			</if>
+			<if id="atom(SortArrow)">
+				<element layoutpos="themeable(left, none)" contentalign="middlecenter" padding="rect(6rp,0,0,0)"/>
+				<if class="SortAscending">
+					<element content="themeable(dtb(ItemsView::Header, 4, 1), '')"/>
+				</if>
+				<if class="SortDescending">
+					<element content="themeable(dtb(ItemsView::Header, 4, 2), '')"/>
+				</if>
+			</if>
+			<if id="atom(SortArrow_Classic)">
+				<element layoutpos="themeable(none, left)" contentalign="middlecenter" fontface="Marlett" foreground="themeable(gtc(ItemsView, 0, 0, 3803), graytext)"/>
+				<if class="SortAscending">
+					<element content="themeable('', '5')"/>
+				</if>
+				<if class="SortDescending">
+					<element content="themeable('', '6')"/>
+				</if>
+			</if>
+			<if id="atom(ContentContainer)">
+				<element padding="themeable(rect(4rp,5rp,5rp,5rp), rect(4rp,5rp,4rp,5rp))"/>
+			</if>
+			<if id="atom(ContentArrowContainer)" keyfocused="true">
+				<element contentalign="themeable(topleft, focusrect)"/>
+			</if>
+			<if id="atom(DropDownContainer)">
+				<element padding="themeable(rect(0,0,1rp,0), rect(0,0,0,0))"/>
+			</if>
+			<if class="UIColumnHeader">
+				<Resizer width="10rp" margin="themeable(rect(-1rp,0,0,0), rect(0,0,0,0))"/>
+				<button width="themeable(15rp, sysmetric(10))" background="themeable(dtb(ItemsView::Header, 5, 1), argb(0,0,0,0))" contentalign="middlecenter" fontface="Marlett"/>
+				<if mousefocused="true">
+					<button background="themeable(dtb(ItemsView::Header, 5, 3), dfc(4, 0x0010 | 0x1000))" content="themeable('', '6')"/>
+				</if>
+				<if mousefocused="false" selected="true">
+					<button background="themeable(dtb(ItemsView::Header, 5, 2), dfc(4, 0x0010 | 0x1000))" content="themeable('', '6')"/>
+				</if>
+				<if pressed="true">
+					<button background="themeable(dtb(ItemsView::Header, 5, 3), dfc(4, 0x0010 | 0x0200))" content="themeable('', '6')"/>
+				</if>
+			</if>
+			<if class="UIColumnHeaderFiltered">
+				<button width="themeable(15rp, sysmetric(10))" background="themeable(dtb(ItemsView::Header, 6, 1), dfc(4, 0x0010))" contentalign="middlecenter" fontface="Marlett" content="themeable('', 'a')"/>
+				<if mousefocused="true">
+					<button background="themeable(dtb(ItemsView::Header, 6, 3), dfc(4, 0x0010 | 0x1000))"/>
+				</if>
+				<if mousefocused="false" selected="true">
+					<button background="themeable(dtb(ItemsView::Header, 6, 2), dfc(4, 0x0010 | 0x1000))"/>
+				</if>
+				<if pressed="true">
+					<button background="themeable(dtb(ItemsView::Header, 6, 2), dfc(4, 0x0010 | 0x0200))"/>
+				</if>
+			</if>
+			<if id="atom(Overflowbutton)">
+				<button width="themeable(20rp, sysmetric(10))" layoutpos="right" background="themeable(dtb(ItemsView::Header, 7, 1), dfc(4, 0x0010))" contentalign="middlecenter" fontface="Marlett" content="themeable('', '4')"/>
+				<if mousewithin="true">
+					<button background="themeable(dtb(ItemsView::Header, 7, 2), dfc(4, 0x0010 | 0x1000))"/>
+				</if>
+				<if keyfocused="true">
+					<button background="themeable(dtb(ItemsView::Header, 7, 2), dfc(4, 0x0010 | 0x1000))"/>
+				</if>
+				<if pressed="true">
+					<button background="themeable(dtb(ItemsView::Header, 7, 2), dfc(4, 0x0010 | 0x0200))"/>
+				</if>
+			</if>
+			<if id="atom(TH_TextInvite)">
+				<element background="themeable(dtb(TryHarder, 0, 0), argb(0,0,0,0))" foreground="themeable(gtc(TryHarder, 0, 0, 3803), windowtext)"/>
+			</if>
+			<if class="TryHarderRight">
+				<if id="atom(TH_Separator)">
+					<element width="themeable(gtmet(TryHarder, 2, 0, 2416), 18rp)" background="themeable(dtb(TryHarder, 2, 0), argb(0,0,0,0))"/>
+				</if>
+				<if id="atom(TH_TextInvite)">
+					<element background="themeable(gtc(Communications::Rebar, 0, 0, 3803), argb(0,0,0,0))" foreground="themeable(gtc(TryHarder, 0, 0, 3803), windowtext)"/>
+				</if>
+			</if>
+			<UITryHarderButton foreground="themeable(gtc(TryHarder, 1, 1, 3803), windowtext)" cursor="themeable(arrow, hand)"/>
+			<if keyfocused="true">
+				<UITryHarderButton background="themeable(dtb(ItemsView, 3, 1), argb(0,0,0,0))" contentalign="themeable(topleft, focusrect)"/>
+			</if>
+			<if mousefocused="true">
+				<UITryHarderButton background="themeable(dtb(ItemsView::ListView, 1, 2), argb(0,0,0,0))" foreground="themeable(gtc(TryHarder, 1, 1, 3803), hotlight)" fontstyle="themeable(none, underline)"/>
+				<if keyfocused="true">
+					<UITryHarderButton background="themeable(dtb(ItemsView::ListView, 1, 6), argb(0,0,0,0))"/>
+				</if>
+			</if>
+			<UIMarqueeSelector background="hotlight" bordercolor="highlight" borderthickness="rect(1rp,1rp,1rp,1rp)" alpha="85"/>
+			<UIRenameTextElement bordercolor="themeable(gtc(EditComposited::Edit, 0, 0, 3803), windowtext)"/>
+			<UISubsetFooter foreground="themeable(gtc(CONTROLPANELSTYLE, 7, 1, 3803), hotlight)"/>
+			<if mousefocused="true">
+				<UISubsetFooter foreground="themeable(gtc(CONTROLPANELSTYLE, 7, 2, 3803), highlight)" fontstyle="underline" cursor="hand"/>
+			</if>
+			<if keyfocused="true">
+				<UISubsetFooter background="themeable(dtb(ItemsView, 3, 1), argb(0,0,0,0))" contentalign="themeable(topleft, focusrect)"/>
+			</if>
+			<if showcheckboxes="true">
+				<UICheckbox width="themeable(-1, sysmetric(71))" height="themeable(-1, sysmetric(72))" margin="rect(2rp,6rp,2rp,6rp)" background="themeable(argb(0,0,0,0), dfc(4, 0x0000))" content="themeable(dtb(Button, 3, 1), argb(0,0,0,0))"/>
+				<if selected="true">
+					<UICheckbox background="themeable(argb(0,0,0,0), dfc(4, 0x0000 | 0x0400))" content="themeable(dtb(Button, 3, 5), argb(0,0,0,0))"/>
+				</if>
+				<if tabletmode="true">
+					<UICheckbox visible="true"/>
+					<if class="item.row.checkbox">
+						<UICheckbox padding="rect(6rp,0,6rp,0)"/>
+					</if>
+				</if>
+				<if tabletmode="false">
+					<if mousefocused="false" selected="false" selectionmode="false">
+						<UICheckbox visible="false"/>
+					</if>
+				</if>
+				<if mousefocused="true" hoveredover="true" selected="false">
+					<UICheckbox content="themeable(dtb(Button, 3, 2), argb(0,0,0,0))"/>
+				</if>
+				<if mousefocused="true" hoveredover="true" selected="true">
+					<UICheckbox content="themeable(dtb(Button, 3, 6), argb(0,0,0,0))"/>
+				</if>
+				<if alwayshidecheckbox="true">
+					<UICheckbox visible="false"/>
+				</if>
+			</if>
+			<if showcheckboxes="false">
+				<UICheckbox width="0rp" height="0rp" visible="false"/>
+			</if>
+			<if id="atom(CheckboxSpace)">
+				<element width="sysmetric(71)" height="sysmetric(72)" margin="rect(2rp,6rp,2rp,6rp)"/>
+			</if>
+			<if showcheckboxes="true">
+				<UIColumnHeaderCheckbox width="themeable(-1, sysmetric(71))" height="themeable(-1, sysmetric(72))" margin="rect(2rp,6rp,2rp,6rp)" background="themeable(argb(0,0,0,0), dfc(4, 0x0000))" content="themeable(dtb(Button, 3, 1), argb(0,0,0,0))"/>
+				<if selected="true">
+					<UIColumnHeaderCheckbox background="themeable(argb(0,0,0,0), dfc(4, 0x0000 | 0x0400))" content="themeable(dtb(Button, 3, 5), argb(0,0,0,0))"/>
+				</if>
+				<if mousefocused="true" hoveredover="true" selected="false">
+					<UIColumnHeaderCheckbox content="themeable(dtb(Button, 3, 2), argb(0,0,0,0))"/>
+				</if>
+				<if mousefocused="true" hoveredover="true" selected="true">
+					<UIColumnHeaderCheckbox content="themeable(dtb(Button, 3, 6), argb(0,0,0,0))"/>
+				</if>
+			</if>
+			<if id="atom(ProgressBar)">
+				<ModernProgressBar foreground="themeable(gtc(ItemsView, 4, 13, 3803), buttontext)" background="themeable(gtc(ItemsView, 4, 13, 3802), buttonface)" width="84rp" height="3rp" padding="rect(2rp, 2rp, 2rp, 2rp)"/>
+			</if>
+		</style>
+		<style resid="dynamic.progressbar">
+			<if id="atom(ProgressBar)">
+				<ModernProgressBar foreground="themeable(gtc(ItemsView, 4, 13, 3803), buttontext)" background="themeable(gtc(ItemsView, 4, 13, 3802), buttonface)" height="2rp" padding="rect(0rp, 0rp, 0rp, 0rp)"/>
+			</if>
+		</style>
+		<style resid="details">
+			<FadeElement background="20575" contentalign="topleft"/>
+			<PaintSurrogate background="20575" contentalign="topleft"/>
+			<UIProperty background="20575" contentalign="topleft"/>
+			<UIDetailsPropertyCollection background="20575" contentalign="topleft"/>
+			<button background="20575" contentalign="topleft"/>
+			<clipper background="20575" contentalign="topleft"/>
+			<element background="20575" contentalign="topleft"/>
+			<UIProperty height="22rp" accessible="true" accrole="text" tooltip="true" tooltipmaxwidth="400" contentalign="middleleft|endellipsis|editcontrol" maxnumtextlines="1"/>
+			<if active="keyboard">
+				<if keyfocused="true">
+					<UIProperty background="themeable(dtb(ItemsView, 6, 1), argb(0,0,0,0))"/>
+				</if>
+			</if>
+			<if id="atom(FileName)">
+				<UIProperty foreground="themeable(gtc(ItemsView, 4, 2, 3803), windowtext)"/>
+				<if selected="true" encrypted="false" compressed="false" disconnected="false">
+					<UIProperty foreground="themeable(gtc(ItemsView, 4, 3, 3803), highlighttext)"/>
+				</if>
+				<if encrypted="true">
+					<UIProperty foreground="themeable(gtc(ItemsView, 4, 7, 3803), argb(0,19,146,13))"/>
+					<if selected="true">
+						<UIProperty foreground="themeable(gtc(ItemsView, 4, 8, 3803), highlightText)"/>
+					</if>
+				</if>
+				<if compressed="true">
+					<UIProperty foreground="themeable(gtc(ItemsView, 4, 5, 3803), blue)"/>
+					<if selected="true">
+						<UIProperty foreground="themeable(gtc(ItemsView, 4, 6, 3803), highlightText)"/>
+					</if>
+				</if>
+				<if disconnected="true">
+					<UIProperty foreground="themeable(gtc(ItemsView, 4, 9, 3803), argb(0,122,122,122))"/>
+					<if selected="true">
+						<UIProperty foreground="themeable(gtc(ItemsView, 4, 10, 3803), argb(0,122,122,122))"/>
+					</if>
+				</if>
+			</if>
+			<if id="atom(ProgressBar)">
+				<ModernProgressBar foreground="themeable(gtc(ItemsView, 4, 13, 3803), buttontext)" background="themeable(gtc(ItemsView, 4, 13, 3802), buttonface)" width="58rp" height="3rp" padding="rect(2rp, 2rp, 2rp, 2rp)"/>
+			</if>
+			<unless id="atom(FileName)">
+				<UIProperty foreground="themeable(gtc(ItemsView, 4, 1, 3803), windowtext)"/>
+				<if selected="true">
+					<UIProperty foreground="themeable(gtc(ItemsView, 4, 4, 3803), highlighttext)"/>
+				</if>
+			</unless>
+			<if id="atom(SearchHit)">
+				<FadeElement background="themeable(dtb(ItemsView, 1, 2), argb(0,0,0,0))" initialbackground="themeable(dtb(ItemsView, 1, 1), argb(0,0,0,0))" bordercolor="themeable(argb(0,0,0,0), windowtext)" borderthickness="themeable(rect(0,0,0,0), rect(1,1,1,1))"/>
+				<if selected="true">
+					<FadeElement background="themeable(dtb(ItemsView, 1, 4), argb(0,0,0,0))" initialbackground="themeable(dtb(ItemsView, 1, 3), argb(0,0,0,0))" bordercolor="themeable(argb(0,0,0,0), highlighttext)" borderthickness="themeable(rect(0,0,0,0), rect(1,1,1,1))"/>
+				</if>
+			</if>
+		</style>
+		<style resid="smart.alpha.3row">
+			<FadeElement background="20575" contentalign="topleft"/>
+			<PaintSurrogate background="20575" contentalign="topleft"/>
+			<UIProperty background="20575" contentalign="topleft"/>
+			<UISmartProperty background="20575" contentalign="topleft"/>
+			<UISmartPropertyCollection background="20575" contentalign="topleft"/>
+			<button background="20575" contentalign="topleft"/>
+			<clipper background="20575" contentalign="topleft"/>
+			<element background="20575" contentalign="topleft"/>
+			<UISmartProperty accessible="true" accrole="text"/>
+			<UISmartPropertyCollection columncount="1" maxwidth="900rp" contentalign="middleleft"/>
+			<UISmartProperty column="1" padding="rect(5rp,0,5rp,1rp)" contentalign="endellipsis" tooltip="true" tooltipmaxwidth="400"/>
+			<if id="atom(LabeledSmartProperty)">
+				<UISmartProperty accessible="false"/>
+			</if>
+			<UIProperty contentalign="endellipsis" tooltip="true" tooltipmaxwidth="400" accessible="true" accrole="text"/>
+			<if id="atom(PropertyLabel)">
+				<element foreground="themeable(gtc(ItemsView, 4, 1, 3803), windowtext)"/>
+				<if selected="true">
+					<element foreground="themeable(gtc(ItemsView, 4, 4, 3803), highlighttext)"/>
+				</if>
+			</if>
+			<unless propertyindex="0">
+				<UISmartProperty foreground="themeable(gtc(ItemsView, 0, 0, 3803), windowtext)"/>
+				<if selected="true">
+					<UISmartProperty foreground="themeable(gtc(ItemsView, 4, 3, 3803), highlighttext)"/>
+				</if>
+			</unless>
+			<if propertyindex="0">
+				<UISmartProperty IncreaseFontSize="true"/>
+			</if>
+			<UIProgressProperty column="1" height="10rp" contentalign="topleft"/>
+			<if id="atom(ProgressBar)">
+				<ModernProgressBar padding="rect(7rp,0rp,5rp,8rp)" foreground="themeable(gtc(ItemsView, 4, 13, 3803), buttontext)" background="themeable(gtc(ItemsView, 4, 13, 3802), buttonface)"/>
+			</if>
+			<if id="atom(SearchHit)">
+				<FadeElement background="themeable(dtb(ItemsView, 1, 2), argb(0,0,0,0))" initialbackground="themeable(dtb(ItemsView, 1, 1), argb(0,0,0,0))" bordercolor="themeable(argb(0,0,0,0), windowtext)" borderthickness="themeable(rect(0,0,0,0), rect(1,1,1,1))"/>
+				<if selected="true">
+					<FadeElement background="themeable(dtb(ItemsView, 1, 4), argb(0,0,0,0))" initialbackground="themeable(dtb(ItemsView, 1, 3), argb(0,0,0,0))" bordercolor="themeable(argb(0,0,0,0), highlighttext)" borderthickness="themeable(rect(0,0,0,0), rect(1,1,1,1))"/>
+				</if>
+			</if>
+			<UISmartPropertyCollection rowcount="4" widthpatternmap="0=0-350width,351=351-700width,701=701+width"/>
+			<if propertyindex="3">
+				<UISmartProperty foreground="themeable(gtc(ItemsView, 4, 1, 3803), windowtext)"/>
+				<if selected="true">
+					<UISmartProperty foreground="themeable(gtc(ItemsView, 4, 4, 3803), highlighttext)"/>
+				</if>
+			</if>
+			<if widthpattern="0-350width">
+				<if propertyindex="0">
+					<UISmartProperty row="1"/>
+				</if>
+				<if propertyindex="3">
+					<UISmartProperty row="2" rowspancount="2" contentalign="wrapleft|endellipsis|editcontrol" maxnumtextlines="2"/>
+				</if>
+				<if propertyindex="2">
+					<UISmartProperty row="4"/>
+				</if>
+				<UIProgressProperty row="4"/>
+			</if>
+			<if propwidthpattern="351-700width">
+				<UISmartPropertyCollection columncount="2" columnspercent="60"/>
+			</if>
+			<if widthpattern="351-700width">
+				<if propertyindex="0">
+					<UISmartProperty row="1"/>
+				</if>
+				<if propertyindex="1">
+					<UISmartProperty row="1" column="2" minvisiblewidth="100rp"/>
+				</if>
+				<if propertyindex="3">
+					<UISmartProperty row="2" rowspancount="2" contentalign="wrapleft|endellipsis|editcontrol" maxnumtextlines="2"/>
+				</if>
+				<if propertyindex="4">
+					<UISmartProperty row="2" column="2" minvisiblewidth="100rp"/>
+				</if>
+				<if propertyindex="2">
+					<UISmartProperty row="4"/>
+				</if>
+				<if propertyindex="6">
+					<UISmartProperty row="4" column="2" minvisiblewidth="100rp"/>
+				</if>
+				<if propertyindex="5">
+					<UISmartProperty row="3" column="2" minvisiblewidth="100rp"/>
+				</if>
+				<UIProgressProperty row="4"/>
+			</if>
+			<if propwidthpattern="701+width">
+				<UISmartPropertyCollection columncount="3" columnspercent="60;-1;40" columnsmax="300;300;300"/>
+			</if>
+			<if widthpattern="701+width">
+				<if propertyindex="0">
+					<UISmartProperty row="1" columnspancount="2"/>
+				</if>
+				<if propertyindex="1">
+					<UISmartProperty row="1" column="3" minvisiblewidth="100rp"/>
+				</if>
+				<if propertyindex="3">
+					<UISmartProperty row="2" rowspancount="2" columnspancount="2" contentalign="wrapleft|endellipsis|editcontrol" maxnumtextlines="2"/>
+				</if>
+				<if propertyindex="4">
+					<UISmartProperty row="2" column="3" minvisiblewidth="100rp"/>
+				</if>
+				<if propertyindex="2">
+					<UISmartProperty row="4" columnspancount="2"/>
+				</if>
+				<if propertyindex="6">
+					<UISmartProperty row="4" column="3" minvisiblewidth="100rp"/>
+				</if>
+				<if propertyindex="5">
+					<UISmartProperty row="3" column="3" minvisiblewidth="100rp"/>
+				</if>
+				<UIProgressProperty row="4" columnspancount="2"/>
+			</if>
+		</style>
+		<style resid="smart.beta.2row">
+			<FadeElement background="20575" contentalign="topleft"/>
+			<PaintSurrogate background="20575" contentalign="topleft"/>
+			<UIProperty background="20575" contentalign="topleft"/>
+			<UISmartProperty background="20575" contentalign="topleft"/>
+			<UISmartPropertyCollection background="20575" contentalign="topleft"/>
+			<button background="20575" contentalign="topleft"/>
+			<clipper background="20575" contentalign="topleft"/>
+			<element background="20575" contentalign="topleft"/>
+			<UISmartProperty accessible="true" accrole="text"/>
+			<UISmartPropertyCollection columncount="1" maxwidth="900rp" contentalign="middleleft"/>
+			<UISmartProperty column="1" padding="rect(5rp,0,5rp,1rp)" contentalign="endellipsis" tooltip="true" tooltipmaxwidth="400"/>
+			<if id="atom(LabeledSmartProperty)">
+				<UISmartProperty accessible="false"/>
+			</if>
+			<UIProperty contentalign="endellipsis" tooltip="true" tooltipmaxwidth="400" accessible="true" accrole="text"/>
+			<if id="atom(PropertyLabel)">
+				<element foreground="themeable(gtc(ItemsView, 4, 1, 3803), windowtext)"/>
+				<if selected="true">
+					<element foreground="themeable(gtc(ItemsView, 4, 4, 3803), highlighttext)"/>
+				</if>
+			</if>
+			<unless propertyindex="0">
+				<UISmartProperty foreground="themeable(gtc(ItemsView, 0, 0, 3803), windowtext)"/>
+				<if selected="true">
+					<UISmartProperty foreground="themeable(gtc(ItemsView, 4, 3, 3803), highlighttext)"/>
+				</if>
+			</unless>
+			<if propertyindex="0">
+				<UISmartProperty IncreaseFontSize="true"/>
+			</if>
+			<UIProgressProperty column="1" height="10rp" contentalign="topleft"/>
+			<if id="atom(ProgressBar)">
+				<ModernProgressBar padding="rect(7rp,0rp,5rp,8rp)" foreground="themeable(gtc(ItemsView, 4, 13, 3803), buttontext)" background="themeable(gtc(ItemsView, 4, 13, 3802), buttonface)"/>
+			</if>
+			<if id="atom(SearchHit)">
+				<FadeElement background="themeable(dtb(ItemsView, 1, 2), argb(0,0,0,0))" initialbackground="themeable(dtb(ItemsView, 1, 1), argb(0,0,0,0))" bordercolor="themeable(argb(0,0,0,0), windowtext)" borderthickness="themeable(rect(0,0,0,0), rect(1,1,1,1))"/>
+				<if selected="true">
+					<FadeElement background="themeable(dtb(ItemsView, 1, 4), argb(0,0,0,0))" initialbackground="themeable(dtb(ItemsView, 1, 3), argb(0,0,0,0))" bordercolor="themeable(argb(0,0,0,0), highlighttext)" borderthickness="themeable(rect(0,0,0,0), rect(1,1,1,1))"/>
+				</if>
+			</if>
+			<UISmartPropertyCollection rowcount="4" widthpatternmap="0=0-350width,351=351-700width,701=701+width"/>
+			<if propertyindex="3">
+				<UISmartProperty foreground="themeable(gtc(ItemsView, 4, 1, 3803), windowtext)"/>
+				<if selected="true">
+					<UISmartProperty foreground="themeable(gtc(ItemsView, 4, 4, 3803), highlighttext)"/>
+				</if>
+			</if>
+			<if widthpattern="0-350width">
+				<if propertyindex="0">
+					<UISmartProperty row="1"/>
+				</if>
+				<if propertyindex="2">
+					<UISmartProperty row="2"/>
+				</if>
+				<if propertyindex="3">
+					<UISmartProperty row="3" rowspancount="2" contentalign="wrapleft|endellipsis|editcontrol" maxnumtextlines="2"/>
+				</if>
+				<UIProgressProperty row="2"/>
+			</if>
+			<if propwidthpattern="351-700width">
+				<UISmartPropertyCollection columncount="2" columnspercent="60"/>
+			</if>
+			<if widthpattern="351-700width">
+				<if propertyindex="0">
+					<UISmartProperty row="1"/>
+				</if>
+				<if propertyindex="1">
+					<UISmartProperty row="1" column="2" minvisiblewidth="100rp"/>
+				</if>
+				<if propertyindex="2">
+					<UISmartProperty row="2"/>
+				</if>
+				<if propertyindex="4">
+					<UISmartProperty row="2" column="2" minvisiblewidth="100rp"/>
+				</if>
+				<if propertyindex="3">
+					<UISmartProperty row="3" rowspancount="2" columnspancount="2" contentalign="wrapleft|endellipsis|editcontrol" maxnumtextlines="2"/>
+				</if>
+				<UIProgressProperty row="2"/>
+			</if>
+			<if propwidthpattern="701+width">
+				<UISmartPropertyCollection columncount="3" columnspercent="60;-1;40" columnsmax="300;300;300"/>
+			</if>
+			<if widthpattern="701+width">
+				<if propertyindex="0">
+					<UISmartProperty row="1" columnspancount="2"/>
+				</if>
+				<if propertyindex="1">
+					<UISmartProperty row="1" column="3" minvisiblewidth="100rp"/>
+				</if>
+				<if propertyindex="2">
+					<UISmartProperty row="2" columnspancount="2"/>
+				</if>
+				<if propertyindex="4">
+					<UISmartProperty row="2" column="3" minvisiblewidth="100rp"/>
+				</if>
+				<if propertyindex="3">
+					<UISmartProperty row="3" rowspancount="2" columnspancount="3" contentalign="wrapleft|endellipsis|editcontrol" maxnumtextlines="2"/>
+				</if>
+				<UIProgressProperty row="2" columnspancount="2"/>
+			</if>
+		</style>
+		<style resid="smart.gamma.2row">
+			<FadeElement background="20575" contentalign="topleft"/>
+			<PaintSurrogate background="20575" contentalign="topleft"/>
+			<UIProperty background="20575" contentalign="topleft"/>
+			<UISmartProperty background="20575" contentalign="topleft"/>
+			<UISmartPropertyCollection background="20575" contentalign="topleft"/>
+			<button background="20575" contentalign="topleft"/>
+			<clipper background="20575" contentalign="topleft"/>
+			<element background="20575" contentalign="topleft"/>
+			<UISmartProperty accessible="true" accrole="text"/>
+			<UISmartPropertyCollection columncount="1" maxwidth="900rp" contentalign="middleleft"/>
+			<UISmartProperty column="1" padding="rect(5rp,0,5rp,1rp)" contentalign="endellipsis" tooltip="true" tooltipmaxwidth="400"/>
+			<if id="atom(LabeledSmartProperty)">
+				<UISmartProperty accessible="false"/>
+			</if>
+			<UIProperty contentalign="endellipsis" tooltip="true" tooltipmaxwidth="400" accessible="true" accrole="text"/>
+			<if id="atom(PropertyLabel)">
+				<element foreground="themeable(gtc(ItemsView, 4, 1, 3803), windowtext)"/>
+				<if selected="true">
+					<element foreground="themeable(gtc(ItemsView, 4, 4, 3803), highlighttext)"/>
+				</if>
+			</if>
+			<unless propertyindex="0">
+				<UISmartProperty foreground="themeable(gtc(ItemsView, 0, 0, 3803), windowtext)"/>
+				<if selected="true">
+					<UISmartProperty foreground="themeable(gtc(ItemsView, 4, 3, 3803), highlighttext)"/>
+				</if>
+			</unless>
+			<if propertyindex="0">
+				<UISmartProperty IncreaseFontSize="true"/>
+			</if>
+			<UIProgressProperty column="1" height="10rp" contentalign="topleft"/>
+			<if id="atom(ProgressBar)">
+				<ModernProgressBar padding="rect(7rp,0rp,5rp,8rp)" foreground="themeable(gtc(ItemsView, 4, 13, 3803), buttontext)" background="themeable(gtc(ItemsView, 4, 13, 3802), buttonface)"/>
+			</if>
+			<if id="atom(SearchHit)">
+				<FadeElement background="themeable(dtb(ItemsView, 1, 2), argb(0,0,0,0))" initialbackground="themeable(dtb(ItemsView, 1, 1), argb(0,0,0,0))" bordercolor="themeable(argb(0,0,0,0), windowtext)" borderthickness="themeable(rect(0,0,0,0), rect(1,1,1,1))"/>
+				<if selected="true">
+					<FadeElement background="themeable(dtb(ItemsView, 1, 4), argb(0,0,0,0))" initialbackground="themeable(dtb(ItemsView, 1, 3), argb(0,0,0,0))" bordercolor="themeable(argb(0,0,0,0), highlighttext)" borderthickness="themeable(rect(0,0,0,0), rect(1,1,1,1))"/>
+				</if>
+			</if>
+			<UISmartPropertyCollection rowcount="2" widthpatternmap="0=0-350width,351=351-700width,701=701+width"/>
+			<if propertyindex="3">
+				<UISmartProperty foreground="themeable(gtc(ItemsView, 4, 1, 3803), windowtext)"/>
+				<if selected="true">
+					<UISmartProperty foreground="themeable(gtc(ItemsView, 4, 4, 3803), highlighttext)"/>
+				</if>
+			</if>
+			<if widthpattern="0-350width">
+				<if propertyindex="0">
+					<UISmartProperty row="1"/>
+				</if>
+				<if propertyindex="3">
+					<UISmartProperty row="2"/>
+				</if>
+				<UIProgressProperty row="2"/>
+			</if>
+			<if propwidthpattern="351-700width">
+				<UISmartPropertyCollection columncount="2" columnspercent="60"/>
+			</if>
+			<if widthpattern="351-700width">
+				<if propertyindex="0">
+					<UISmartProperty row="1"/>
+				</if>
+				<if propertyindex="1">
+					<UISmartProperty row="1" column="2" minvisiblewidth="100rp"/>
+				</if>
+				<if propertyindex="3">
+					<UISmartProperty row="2"/>
+				</if>
+				<if propertyindex="2">
+					<UISmartProperty row="2" column="2" minvisiblewidth="100rp"/>
+				</if>
+				<UIProgressProperty row="2"/>
+			</if>
+			<if propwidthpattern="701+width">
+				<UISmartPropertyCollection columncount="3" columnspercent="60;-1;40" columnsmax="300;300;300"/>
+			</if>
+			<if widthpattern="701+width">
+				<if propertyindex="0">
+					<UISmartProperty row="1" columnspancount="2"/>
+				</if>
+				<if propertyindex="1">
+					<UISmartProperty row="1" column="3" minvisiblewidth="100rp"/>
+				</if>
+				<if propertyindex="3">
+					<UISmartProperty row="2" columnspancount="2"/>
+				</if>
+				<if propertyindex="2">
+					<UISmartProperty row="2" column="3" minvisiblewidth="100rp"/>
+				</if>
+				<UIProgressProperty row="2" columnspancount="2"/>
+			</if>
+		</style>
+		<style resid="smart.delta.2row">
+			<FadeElement background="20575" contentalign="topleft"/>
+			<PaintSurrogate background="20575" contentalign="topleft"/>
+			<UIProperty background="20575" contentalign="topleft"/>
+			<UISmartProperty background="20575" contentalign="topleft"/>
+			<UISmartPropertyCollection background="20575" contentalign="topleft"/>
+			<button background="20575" contentalign="topleft"/>
+			<clipper background="20575" contentalign="topleft"/>
+			<element background="20575" contentalign="topleft"/>
+			<UISmartProperty accessible="true" accrole="text"/>
+			<UISmartPropertyCollection columncount="1" maxwidth="900rp" contentalign="middleleft"/>
+			<UISmartProperty column="1" padding="rect(5rp,0,5rp,1rp)" contentalign="endellipsis" tooltip="true" tooltipmaxwidth="400"/>
+			<if id="atom(LabeledSmartProperty)">
+				<UISmartProperty accessible="false"/>
+			</if>
+			<UIProperty contentalign="endellipsis" tooltip="true" tooltipmaxwidth="400" accessible="true" accrole="text"/>
+			<if id="atom(PropertyLabel)">
+				<element foreground="themeable(gtc(ItemsView, 4, 1, 3803), windowtext)"/>
+				<if selected="true">
+					<element foreground="themeable(gtc(ItemsView, 4, 4, 3803), highlighttext)"/>
+				</if>
+			</if>
+			<unless propertyindex="0">
+				<UISmartProperty foreground="themeable(gtc(ItemsView, 0, 0, 3803), windowtext)"/>
+				<if selected="true">
+					<UISmartProperty foreground="themeable(gtc(ItemsView, 4, 3, 3803), highlighttext)"/>
+				</if>
+			</unless>
+			<if propertyindex="0">
+				<UISmartProperty IncreaseFontSize="true"/>
+			</if>
+			<UIProgressProperty column="1" height="10rp" contentalign="topleft"/>
+			<if id="atom(ProgressBar)">
+				<ModernProgressBar padding="rect(7rp,0rp,5rp,8rp)" foreground="themeable(gtc(ItemsView, 4, 13, 3803), buttontext)" background="themeable(gtc(ItemsView, 4, 13, 3802), buttonface)"/>
+			</if>
+			<if id="atom(SearchHit)">
+				<FadeElement background="themeable(dtb(ItemsView, 1, 2), argb(0,0,0,0))" initialbackground="themeable(dtb(ItemsView, 1, 1), argb(0,0,0,0))" bordercolor="themeable(argb(0,0,0,0), windowtext)" borderthickness="themeable(rect(0,0,0,0), rect(1,1,1,1))"/>
+				<if selected="true">
+					<FadeElement background="themeable(dtb(ItemsView, 1, 4), argb(0,0,0,0))" initialbackground="themeable(dtb(ItemsView, 1, 3), argb(0,0,0,0))" bordercolor="themeable(argb(0,0,0,0), highlighttext)" borderthickness="themeable(rect(0,0,0,0), rect(1,1,1,1))"/>
+				</if>
+			</if>
+			<UISmartPropertyCollection rowcount="2" widthpatternmap="0=0-350width,351=351-700width,701=701+width"/>
+			<if widthpattern="0-350width">
+				<if propertyindex="0">
+					<UISmartProperty row="1"/>
+				</if>
+				<if propertyindex="1">
+					<UISmartProperty row="2"/>
+				</if>
+				<UIProgressProperty row="2"/>
+			</if>
+			<if propwidthpattern="351-700width">
+				<UISmartPropertyCollection columncount="2" columnspercent="60"/>
+			</if>
+			<if widthpattern="351-700width">
+				<if propertyindex="0">
+					<UISmartProperty row="1"/>
+				</if>
+				<if propertyindex="1">
+					<UISmartProperty row="2"/>
+				</if>
+				<if propertyindex="4">
+					<UISmartProperty row="1" column="2" minvisiblewidth="100rp"/>
+				</if>
+				<if propertyindex="5">
+					<UISmartProperty row="2" column="2" minvisiblewidth="100rp"/>
+				</if>
+				<UIProgressProperty row="2"/>
+			</if>
+			<if propwidthpattern="701+width">
+				<UISmartPropertyCollection columncount="3" columnspercent="60;-1;40" columnsmax="300;300;300"/>
+			</if>
+			<if widthpattern="701+width">
+				<if propertyindex="0">
+					<UISmartProperty row="1"/>
+				</if>
+				<if propertyindex="1">
+					<UISmartProperty row="2"/>
+				</if>
+				<if propertyindex="2">
+					<UISmartProperty row="1" column="2" minvisiblewidth="100rp"/>
+				</if>
+				<if propertyindex="3">
+					<UISmartProperty row="2" column="2" minvisiblewidth="100rp"/>
+				</if>
+				<if propertyindex="4">
+					<UISmartProperty row="1" column="3" minvisiblewidth="100rp"/>
+				</if>
+				<if propertyindex="5">
+					<UISmartProperty row="2" column="3" minvisiblewidth="100rp"/>
+				</if>
+				<UIProgressProperty row="2"/>
+			</if>
+		</style>
+		<style resid="smart.recent">
+			<FadeElement background="20575" contentalign="topleft"/>
+			<PaintSurrogate background="20575" contentalign="topleft"/>
+			<UIProperty background="20575" contentalign="topleft"/>
+			<UISmartProperty background="20575" contentalign="topleft"/>
+			<UISmartPropertyCollection background="20575" contentalign="topleft"/>
+			<button background="20575" contentalign="topleft"/>
+			<clipper background="20575" contentalign="topleft"/>
+			<element background="20575" contentalign="topleft"/>
+			<UISmartProperty accessible="true" accrole="text"/>
+			<UISmartPropertyCollection columncount="1" maxwidth="900rp" contentalign="middleleft"/>
+			<UISmartProperty column="1" padding="rect(5rp,0,5rp,1rp)" contentalign="endellipsis" tooltip="true" tooltipmaxwidth="400"/>
+			<if id="atom(LabeledSmartProperty)">
+				<UISmartProperty accessible="false"/>
+			</if>
+			<UIProperty contentalign="endellipsis" tooltip="true" tooltipmaxwidth="400" accessible="true" accrole="text"/>
+			<if id="atom(PropertyLabel)">
+				<element foreground="themeable(gtc(ItemsView, 4, 1, 3803), windowtext)"/>
+				<if selected="true">
+					<element foreground="themeable(gtc(ItemsView, 4, 4, 3803), highlighttext)"/>
+				</if>
+			</if>
+			<unless propertyindex="0">
+				<UISmartProperty foreground="themeable(gtc(ItemsView, 0, 0, 3803), windowtext)"/>
+				<if selected="true">
+					<UISmartProperty foreground="themeable(gtc(ItemsView, 4, 3, 3803), highlighttext)"/>
+				</if>
+			</unless>
+			<if propertyindex="0">
+				<UISmartProperty IncreaseFontSize="true"/>
+			</if>
+			<UIProgressProperty column="1" height="10rp" contentalign="topleft"/>
+			<if id="atom(ProgressBar)">
+				<ModernProgressBar padding="rect(7rp,0rp,5rp,8rp)" foreground="themeable(gtc(ItemsView, 4, 13, 3803), buttontext)" background="themeable(gtc(ItemsView, 4, 13, 3802), buttonface)"/>
+			</if>
+			<if id="atom(SearchHit)">
+				<FadeElement background="themeable(dtb(ItemsView, 1, 2), argb(0,0,0,0))" initialbackground="themeable(dtb(ItemsView, 1, 1), argb(0,0,0,0))" bordercolor="themeable(argb(0,0,0,0), windowtext)" borderthickness="themeable(rect(0,0,0,0), rect(1,1,1,1))"/>
+				<if selected="true">
+					<FadeElement background="themeable(dtb(ItemsView, 1, 4), argb(0,0,0,0))" initialbackground="themeable(dtb(ItemsView, 1, 3), argb(0,0,0,0))" bordercolor="themeable(argb(0,0,0,0), highlighttext)" borderthickness="themeable(rect(0,0,0,0), rect(1,1,1,1))"/>
+				</if>
+			</if>
+			<UISmartPropertyCollection rowcount="1" widthpatternmap="0=0-350width,351=351+width" maxwidth="956rp"/>
+			<if widthpattern="0-350width">
+				<if propertyindex="0">
+					<UISmartProperty row="1" IncreaseFontSize="false" contentalign="middleleft | endellipsis"/>
+				</if>
+			</if>
+			<if propwidthpattern="351+width">
+				<UISmartPropertyCollection columncount="2" columnspercent="50"/>
+			</if>
+			<if widthpattern="351+width">
+				<if propertyindex="0">
+					<UISmartProperty row="1" IncreaseFontSize="false" contentalign="middleleft | endellipsis"/>
+				</if>
+				<if propertyindex="1">
+					<UISmartProperty row="1" column="2" contentalign="middleleft | endellipsis"/>
+					<UISmartProperty foreground="themeable(gtc(ItemsView, 4, 1, 3803), windowtext)"/>
+					<if selected="true">
+						<UISmartProperty foreground="themeable(gtc(ItemsView, 4, 4, 3803), highlighttext)"/>
+					</if>
+				</if>
+			</if>
+		</style>
+		<style resid="smart.recent.thirdcolumn">
+			<FadeElement background="20575" contentalign="topleft"/>
+			<PaintSurrogate background="20575" contentalign="topleft"/>
+			<UIProperty background="20575" contentalign="topleft"/>
+			<UISmartProperty background="20575" contentalign="topleft"/>
+			<UISmartPropertyCollection background="20575" contentalign="topleft"/>
+			<button background="20575" contentalign="topleft"/>
+			<clipper background="20575" contentalign="topleft"/>
+			<element background="20575" contentalign="topleft"/>
+			<UISmartProperty accessible="true" accrole="text"/>
+			<UISmartPropertyCollection columncount="1" maxwidth="900rp" contentalign="middleleft"/>
+			<UISmartProperty column="1" padding="rect(5rp,0,5rp,1rp)" contentalign="endellipsis" tooltip="true" tooltipmaxwidth="400"/>
+			<if id="atom(LabeledSmartProperty)">
+				<UISmartProperty accessible="false"/>
+			</if>
+			<UIProperty contentalign="endellipsis" tooltip="true" tooltipmaxwidth="400" accessible="true" accrole="text"/>
+			<if id="atom(PropertyLabel)">
+				<element foreground="themeable(gtc(ItemsView, 4, 1, 3803), windowtext)"/>
+				<if selected="true">
+					<element foreground="themeable(gtc(ItemsView, 4, 4, 3803), highlighttext)"/>
+				</if>
+			</if>
+			<unless propertyindex="0">
+				<UISmartProperty foreground="themeable(gtc(ItemsView, 0, 0, 3803), windowtext)"/>
+				<if selected="true">
+					<UISmartProperty foreground="themeable(gtc(ItemsView, 4, 3, 3803), highlighttext)"/>
+				</if>
+			</unless>
+			<if propertyindex="0">
+				<UISmartProperty IncreaseFontSize="true"/>
+			</if>
+			<UIProgressProperty column="1" height="10rp" contentalign="topleft"/>
+			<if id="atom(ProgressBar)">
+				<ModernProgressBar padding="rect(7rp,0rp,5rp,8rp)" foreground="themeable(gtc(ItemsView, 4, 13, 3803), buttontext)" background="themeable(gtc(ItemsView, 4, 13, 3802), buttonface)"/>
+			</if>
+			<if id="atom(SearchHit)">
+				<FadeElement background="themeable(dtb(ItemsView, 1, 2), argb(0,0,0,0))" initialbackground="themeable(dtb(ItemsView, 1, 1), argb(0,0,0,0))" bordercolor="themeable(argb(0,0,0,0), windowtext)" borderthickness="themeable(rect(0,0,0,0), rect(1,1,1,1))"/>
+				<if selected="true">
+					<FadeElement background="themeable(dtb(ItemsView, 1, 4), argb(0,0,0,0))" initialbackground="themeable(dtb(ItemsView, 1, 3), argb(0,0,0,0))" bordercolor="themeable(argb(0,0,0,0), highlighttext)" borderthickness="themeable(rect(0,0,0,0), rect(1,1,1,1))"/>
+				</if>
+			</if>
+			<UISmartPropertyCollection rowcount="1" widthpatternmap="0=0-350width,351=351+width" maxwidth="956rp"/>
+			<if widthpattern="0-350width">
+				<if propertyindex="0">
+					<UISmartProperty row="1" IncreaseFontSize="false" contentalign="middleleft | endellipsis"/>
+				</if>
+			</if>
+			<if propwidthpattern="351+width">
+				<UISmartPropertyCollection columncount="3" columnspercent="40;40"/>
+			</if>
+			<if widthpattern="351+width">
+				<if propertyindex="0">
+					<UISmartProperty row="1" IncreaseFontSize="false" contentalign="middleleft | endellipsis"/>
+				</if>
+				<if propertyindex="1">
+					<UISmartProperty row="1" column="2" contentalign="middleleft | endellipsis"/>
+					<UISmartProperty foreground="themeable(gtc(ItemsView, 4, 1, 3803), windowtext)"/>
+					<if selected="true">
+						<UISmartProperty foreground="themeable(gtc(ItemsView, 4, 4, 3803), highlighttext)"/>
+					</if>
+				</if>
+				<if propertyindex="2">
+					<UISmartProperty row="1" column="3" contentalign="middleleft | endellipsis"/>
+					<UISmartProperty foreground="themeable(gtc(ItemsView, 4, 1, 3803), windowtext)"/>
+					<if selected="true">
+						<UISmartProperty foreground="themeable(gtc(ItemsView, 4, 4, 3803), highlighttext)"/>
+					</if>
+				</if>
+			</if>
+		</style>
+	</stylesheets>
+</duixml>

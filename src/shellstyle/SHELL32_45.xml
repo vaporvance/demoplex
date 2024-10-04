@@ -1,0 +1,8 @@
+<duixml>
+	<ViewControl resid="CommandElement" width="0" height="0" id="atom(ViewControl)" sheet="SplitButtonStylePlaceholder" layout="BorderLayout()" layoutpos="left" active="keyboard" accessible="true" accrole="splitbutton" accname="resstr(0x79A9, library(shell32.dll))" accdesc="resstr(0x7A41, library(shell32.dll))" accdefaction="resstr(0x79AC, library(shell32.dll))">
+		<Button3d id="atom(ActionButton)" class="ViewControl" active="mouse" layoutpos="left" layout="flowlayout(0)" accdesc="resstr(0x7A41, library(shell32.dll))" tooltip="true">
+			<Element id="atom(ActionButtonIcon)"/>
+		</Button3d>
+		<Button3d id="atom(SplitMenuButton)" accessible="true" accrole="buttondropdown" accname="resstr(0x79AB, library(shell32.dll))" accdesc="resstr(0x79B1, library(shell32.dll))" accdefaction="resstr(0x79AC, library(shell32.dll))" active="mouse" layoutpos="left" tooltip="true"/>
+	</ViewControl>
+</duixml>

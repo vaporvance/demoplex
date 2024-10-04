@@ -1,0 +1,9 @@
+<duixml>
+	<AJOSplitButton resid="CommandElement" sheet="SplitButtonStylePlaceholder" layout="BorderLayout()" layoutpos="top" accessible="true" accrole="splitbutton" accdefaction="Click" active="keyboard" animation="none">
+		<Button3d id="atom(ActionButton)" layoutpos="left" layout="BorderLayout()" active="mouse" tooltip="true" animation="none">
+			<Element id="atom(ActionButtonIcon)" layoutpos="left"/>
+			<Element id="atom(ActionButtonLabel)" layoutpos="left" shortcut="-1"/>
+		</Button3d>
+		<Button3d id="atom(SplitMenuButton)" animation="none" layoutpos="left" active="mouse" tooltip="true" accessible="true" accrole="buttondropdown" accname="resstr(0x79B0, library(shell32.dll))" accdesc="resstr(0x79B1, library(shell32.dll))" accdefaction="resstr(0x79AC, library(shell32.dll))"/>
+	</AJOSplitButton>
+</duixml>

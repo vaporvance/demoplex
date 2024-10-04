@@ -1,0 +1,17 @@
+<duixml>
+	<AJOSplitButton resid="CommandElement" sheet="TaskButtonStylePlaceholder" layout="BorderLayout()" layoutpos="top" animation="none" accessible="true" accrole="pushbutton" accdefaction="Click" active="keyboard">
+		<Button3d id="atom(ActionButton)" animation="none" layoutpos="left" layout="BorderLayout()" active="mouse" tooltip="true">
+			<Element layout="fillLayout()" layoutpos="left" background="argb(0,0,0,0)">
+				<Element id="atom(ReservedSpaceButtonIcon)" layoutpos="left"/>
+				<Element id="atom(ActionButtonIcon)" layoutpos="left"/>
+			</Element>
+			<Element id="atom(ActionButtonLabel)" layoutpos="left" shortcut="None"/>
+		</Button3d>
+	</AJOSplitButton>
+	<Element resid="TopViewPrefixElement" content="resstr(0xC602, library(shell32.dll))" layoutpos="left" contentalign="middleleft" padding="rect(3rp,0,0,0)" sheet="TopViewPrefix"/>
+	<stylesheets>
+		<style resid="TopViewPrefix">
+			<Element foreground="themeable(gtc(CommandModule, 3, 1, 3803), windowtext)"/>
+		</style>
+	</stylesheets>
+</duixml>

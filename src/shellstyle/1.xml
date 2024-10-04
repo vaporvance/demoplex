@@ -1,0 +1,2078 @@
+<duixml>
+	<stylesheets>
+		<style resid="main">
+			<if id="atom(listview)">
+				<DUIListView contentalign="middlecenter" font="IconFont"/>
+			</if>
+			<Element background="argb(0,0,0,0)"/>
+			<TemplateBackground background="ARGB(0, 0, 0, 0)"/>
+			<if id="atom(ReadingPane)">
+				<TemplateBackground background="themeable(gtc(ReadingPane, 1, 0, 3802), window)" font="gtf(TextStyle, 4, 0)"/>
+			</if>
+			<if id="atom(PreviewContainer)">
+				<TemplateBackground background="themeable(gtc(ItemsView, 0, 0, 3802), window)" font="gtf(TextStyle, 4, 0)"/>
+			</if>
+			<if id="atom(RPaneCoverSheet_NoSel)">
+				<Element foreground="themeable(gtc(ReadingPane, 2, 0, 3803), windowtext)" background="themeable(gtc(ReadingPane, 1, 0, 3802), window)"/>
+			</if>
+			<if id="atom(RPaneCoverSheet_Transition)">
+				<Element foreground="themeable(gtc(ReadingPane, 2, 0, 3803), windowtext)" background="themeable(gtc(ReadingPane, 1, 0, 3802), window)"/>
+			</if>
+		</style>
+		<style resid="documentslayoutstyle">
+			<if id="atom(PreviewContainer)">
+				<Element padding="rect(10rp, 8rp, 8rp, 8rp)"/>
+			</if>
+			<if id="atom(ReadingPane)">
+				<Element padding="rect(4rp, 4rp, 4rp, 4rp)"/>
+			</if>
+			<if id="atom(clientviewhost)">
+				<ViewHost foreground="windowtext" background="themeable(gtc(ItemsView, 0, 0, 3802), window)" sortcolumn="themeable(gtc(ItemsView, 0, 0, 3802), window)" subtext="ARGB(255, 139, 139, 139)"/>
+			</if>
+			<MetadataElement ThemeSubApp="DocumentsPreviewPaneControl"/>
+			<MetadataLabel foreground="themeable(gtc(PreviewPane, 6, 0, 3803), windowtext)"/>
+			<MetadataElement foreground="themeable(gtc(PreviewPane, 7, 1, 3803), windowtext)"/>
+			<if id="atom(PreviewMetadataControlEditable)">
+				<MetadataDisplayElement foreground="themeable(gtc(PreviewPane, 7, 2, 3803), windowtext)"/>
+			</if>
+			<if id="atom(PreviewMetadataEditControl)">
+				<InPlaceEdit foreground="themeable(gtc(PreviewPane, 7, 2, 3803), windowtext)"/>
+			</if>
+			<if id="atom(PreviewMetadataSubTitleControl)">
+				<MetadataElement foreground="themeable(gtc(PreviewPane, 6, 0, 3803), windowtext)"/>
+			</if>
+			<if id="atom(PreviewMetadataTitleControl)">
+				<MetadataElement foreground="themeable(gtc(PreviewPane, 5, 0, 3803), windowtext)"/>
+			</if>
+			<if id="atom(ItemCountLabel)">
+				<MetadataLabel foreground="themeable(gtc(PreviewPane, 7, 1, 3803), windowtext)"/>
+			</if>
+			<PreviewMetadata padding="Rect(10rp, 5rp, 10rp, 3rp)"/>
+			<MetadataDisplayElement contentalign="bottomleft | endellipsis"/>
+			<if id="atom(PreviewMetadataRow)">
+				<Element height="18rp"/>
+			</if>
+			<if id="atom(PreviewTitleSpacerInner)">
+				<Element height="18rp"/>
+			</if>
+			<if id="atom(PreviewSubTitleSpacerInner)">
+				<Element height="18rp"/>
+			</if>
+			<if id="atom(PreviewMetadataControlEditable)">
+				<MetadataDisplayElement cursor="ibeam" height="18rp"/>
+				<if KeyFocused="true">
+					<MetadataDisplayElement contentalign="focusrect | bottomleft | endellipsis"/>
+				</if>
+			</if>
+			<if id="atom(PreviewMetadataEditControl)">
+				<InplaceEdit contentalign="bottomleft | endellipsis"/>
+			</if>
+			<if id="atom(PreviewMetadataReadOnlyControl)">
+				<InplaceEdit contentalign="bottomleft | endellipsis"/>
+			</if>
+			<if id="atom(PreviewForceLoadMetadata)">
+				<Button background="themeable(dtb(PreviewPane, 2, 1), ARGB(0, 0, 0, 0))" foreground="gtc(FlyoutStyle, 3, 3, 3803)" cursor="hand" contentalign="bottomleft" font="gtf(TEXTSTYLE, 4, 0)" height="18rp"/>
+				<if MouseFocused="true">
+					<Button background="themeable(dtb(PreviewPane, 2, 2), ARGB(0, 0, 0, 0))"/>
+				</if>
+				<if KeyFocused="true">
+					<Button contentalign="focusrect | bottomleft"/>
+				</if>
+			</if>
+			<PreviewThumbnail padding="Rect(18rp, 4rp, 4rp, 4rp)" background="ARGB(0, 0, 0, 0)"/>
+			<if id="atom(PreviewMetadataTitleControl)">
+				<MetadataElement font="menufont;110%" height="18rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+			</if>
+			<if id="atom(PreviewMetadataSubTitleControl)">
+				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" height="18rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+			</if>
+			<if id="atom(PreviewMetadataControl)">
+				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis"/>
+			</if>
+			<if id="atom(ItemCountLabel)">
+				<MetadataLabel font="menufont;110%" contentalign="bottomleft | endellipsis" height="18rp" overhang="false"/>
+			</if>
+			<if id="atom(PreviewMetadataSpacer)">
+				<Element height="18rp"/>
+			</if>
+			<if id="atom(PreviewSelectionInvatation)">
+				<Element height="18rp" font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis"/>
+			</if>
+			<if id="atom(PreviewEditMetadata)">
+				<Element height="18rp"/>
+			</if>
+			<MetadataLabel padding="Rect(0rp, 0rp, 3rp, 0rp)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis" height="18rp"/>
+			<Sizer background="ARGB(0, 0, 0, 0)"/>
+			<if SlidesUpAndDown="true">
+				<Sizer height="5rp" cursor="sizens"/>
+			</if>
+			<if SlidesUpAndDown="false">
+				<Sizer width="3rp" cursor="sizewe"/>
+			</if>
+			<if id="atom(PreviewPaneSizer)">
+				<Sizer background="themeable(ARGB(0, 0, 0, 0), buttonface)"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer background="themeable(dtb(PreviewPane, 3, 0), buttonface)" borderthickness="rect(0rp,0rp,0rp,0rp)"/>
+			</if>
+			<if id="atom(ReadingPaneSizer)">
+				<Sizer background="themeable(dtb(PreviewPane, 4, 0), buttonface)" borderthickness="rect(0rp,0rp,0rp,0rp)"/>
+			</if>
+			<if id="atom(ProperTreeExpandoSizer)">
+				<Sizer background="buttonface" bordercolor="buttonhighlight" borderstyle="solid" borderthickness="rect(0rp,1rp,0rp,1rp)" height="4rp"/>
+			</if>
+			<if id="atom(PreviewPaneSizer)">
+				<Sizer InitialSize="53" MinSize="53" ReservedSpace="170" FramePersistType="2"/>
+			</if>
+			<if id="atom(CommonItemDialogSizer)">
+				<Sizer InitialSize="100" MinSize="100" FramePersistType="2"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer InitialSize="160" MinSize="60" ReservedSpace="132" FramePersistType="2"/>
+			</if>
+			<if id="atom(ProperTreeExpandoSizer)">
+				<Sizer InitialSize="120" ReservedSpace="26" FramePersistType="2" InitialMaxxedOut="true"/>
+			</if>
+			<if id="atom(PreviewPaneSizer)">
+				<Sizer ExplorerVisibility="{43abf98b-89b8-472d-b9ce-e69b8229f019}" DisablingPolicy="{17067f8d-981b-42c5-98f8-5bc016d4b073}"/>
+			</if>
+			<if id="atom(ReadingPaneSizer)">
+				<Sizer ExplorerVisibility="{893c63d1-45c8-4d17-be19-223be71be365}" DisablingPolicy="{33dcce8d-b6f8-4b7a-ac93-45e301f956aa}"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer ExplorerVisibility="{cb316b22-25f7-42b8-8a09-540d23a43c2f}"/>
+			</if>
+			<if id="atom(ReadingPaneSizer)">
+				<Sizer InitialSize="260" MinSize="68" ReservedSpace="202" GrowTargetFirst="true" ReservedMaster="atom(PageSpaceControlSizer)" FramePersistType="3" InitialVisibility="false"/>
+			</if>
+			<TemplateBackground background="ARGB(0, 0, 0, 0)"/>
+			<if id="atom(ReadingPane)">
+				<TemplateBackground background="themeable(gtc(ReadingPane, 1, 0, 3802), window)" font="gtf(TextStyle, 4, 0)"/>
+			</if>
+			<if id="atom(PreviewContainer)">
+				<TemplateBackground background="themeable(gtc(ItemsView, 0, 0, 3802), window)" font="gtf(TextStyle, 4, 0)"/>
+			</if>
+			<if id="atom(RPaneCoverSheet_NoSel)">
+				<Element foreground="themeable(gtc(ReadingPane, 2, 0, 3803), windowtext)" background="themeable(gtc(ReadingPane, 1, 0, 3802), window)"/>
+			</if>
+			<if id="atom(RPaneCoverSheet_Transition)">
+				<Element foreground="themeable(gtc(ReadingPane, 2, 0, 3803), windowtext)" background="themeable(gtc(ReadingPane, 1, 0, 3802), window)"/>
+			</if>
+			<if id="atom(PreviewShineLayer)">
+				<TemplateBackground background="themeable(dtb(PreviewPane, 1, 1), window)"/>
+			</if>
+			<if Vertical="true" id="atom(PreviewShineLayer)">
+				<TemplateBackground background="themeable(dtb(PreviewPane, 1, 2), window)"/>
+			</if>
+		</style>
+		<style resid="searchlayoutstyle">
+			<if id="atom(SearchPage)">
+				<Element padding="rect(16rp, 28rp, 16rp, 16rp)" font="gtf(TextStyle, 4, 0)" contentalign="wrapleft" background="themeable(gradient(gtc(Communications::Rebar, 0, 0, 3805), gtc(MediaStyle, 0, 0, 3821), gtc(ListViewStyle, 6, 0, 3823), 3), window)" foreground="themeable(gtc(TextStyle, 4, 0, 3803), windowtext)"/>
+			</if>
+			<if id="atom(SearchBackground)">
+				<Element background="themeable(dtb(SearchHome, 1, 0), argb(0,0,0,0))"/>
+			</if>
+			<if id="atom(header)">
+				<Element Background="argb(0, 0, 0, 0)" Font="gtf(TextStyle, 1, 0)" Foreground="gtc(TextStyle, 1, 0, 3803)" Overhang="false" Padding="rect(0rp, 0rp, 0rp, 6rp)"/>
+			</if>
+			<if id="atom(line)">
+				<Element background="themeable(dtb(SearchHome, 2, 0), windowtext)" width="535rp"/>
+			</if>
+			<if id="atom(footer)">
+				<Element padding="rect(0rp, 12rp, 0rp, 0rp)"/>
+			</if>
+			<SearchPageText background="argb(0,0,0,0)" contentalign="wrapcenter"/>
+		</style>
+		<style resid="barrierpagestyle">
+			<Element overhang="false" background="argb(0,0,0,0)"/>
+			<CCPushButton transparent="true" accessible="true" accdefaction="press" accrole="pushbutton" minsize="size(76rp,23rp)" font="gtf(CONTROLPANELSTYLE,14,0)" margin="rect(6rp,0rp,0rp,0rp)"/>
+			<CCSysLink transparent="true" accessible="true" font="gtf(CONTROLPANELSTYLE,6,0)" foreground='gtc(CONTROLPANELSTYLE,6,0,3803)' background='themeable(dtb(CONTROLPANEL,2,0), window)'/>
+			<if class="bp_pane">
+				<Element accessible="true" accrole="client" padding="rect(25rp, 23rp, 16rp, 16rp)" background="themeable(dtb(BarrierPage,1,0), window)" width="550rp"/>
+			</if>
+			<if class="bp_instruction">
+				<Element accessible="true" accRole="statictext" contentalign="wrapleft" Font="gtf(TextStyle, 1, 0)" foreground="gtc(CONTROLPANELSTYLE,5,0,3803)"/>
+			</if>
+			<if class="bp_text">
+				<Element accessible="true" accRole="statictext" Font="gtf(TextStyle, 2, 0)" Foreground="gtc(CONTROLPANELSTYLE,6,0,3803)" contentalign="wrapleft"/>
+			</if>
+			<if class="bp_divider_line">
+				<Element height="1rp" width="565rp" background="themeable(dtb(CONTROLPANEL,17,0),buttonshadow)"/>
+			</if>
+			<if class="bp_v_spacer">
+				<Element height="10rp"/>
+			</if>
+			<if class="bp_content_link">
+				<Button accessible="true" accRole="link" accdefaction="click" foreground="gtc(CONTROLPANELSTYLE,10,1,3803)" font="gtf(CONTROLPANELSTYLE,10,1)" overhang="false"/>
+				<Element accessible="true" accRole="link" accdefaction="click" foreground="gtc(CONTROLPANELSTYLE,10,1,3803)" font="gtf(CONTROLPANELSTYLE,10,1)" overhang="false"/>
+				<if keyfocused="true">
+					<Button contentalign="wrapleft | focusrect"/>
+					<Element contentalign="wrapleft | focusrect"/>
+				</if>
+				<if enabled="false">
+					<Button foreground="gtc(CONTROLPANELSTYLE,10,4,3803)" font="gtf(CONTROLPANELSTYLE,10,4)"/>
+					<Element foreground="gtc(CONTROLPANELSTYLE,10,4,3803)" font="gtf(CONTROLPANELSTYLE,10,4)"/>
+				</if>
+				<if mousefocused="true">
+					<Button cursor="hand" foreground="gtc(CONTROLPANELSTYLE,10,2,3803)" font="gtf(CONTROLPANELSTYLE,10,2)"/>
+					<Element cursor="hand" foreground="gtc(CONTROLPANELSTYLE,10,2,3803)" font="gtf(CONTROLPANELSTYLE,10,2)"/>
+				</if>
+			</if>
+		</style>
+		<style resid="gameslayoutstyle">
+			<if id="atom(PreviewContainer)">
+				<Element padding="rect(10rp, 8rp, 8rp, 8rp)"/>
+			</if>
+			<if id="atom(ReadingPane)">
+				<Element padding="rect(4rp, 4rp, 4rp, 4rp)"/>
+			</if>
+			<if id="atom(clientviewhost)">
+				<ViewHost foreground="windowtext" background="themeable(gtc(ItemsView, 0, 0, 3802), window)" sortcolumn="themeable(gtc(ItemsView, 0, 0, 3802), window)" subtext="ARGB(255, 139, 139, 139)"/>
+			</if>
+			<if id="atom(Rating)">
+				<Button cursor="hand"/>
+				<if keyfocused="true">
+					<Button contentalign="focusrect"/>
+				</if>
+			</if>
+			<if id="atom(GameName)">
+				<Element font="gtf(TEXTSTYLE, 3, 0)" foreground="gtc(TEXTSTYLE, 2, 0, 3803)" contentalign="middlecenter|wrapleft"/>
+			</if>
+			<if id="atom(RatingImage)">
+				<Element contentalign="topleft" padding="rect(5rp, 3rp, 0rp, 3rp)"/>
+			</if>
+			<if id="atom(RatingName)">
+				<Element font="gtf(TEXTSTYLE, 3, 0)" foreground="gtc(CONTROLPANELSTYLE,7,1,3803)" contentalign="topleft|endellipsis" padding="rect(5rp, 3rp, 5rp, 3rp)"/>
+				<if mousefocused="true">
+					<Element foreground="gtc(CONTROLPANELSTYLE,7,2,3803)" fontstyle="underline"/>
+				</if>
+			</if>
+			<if id="atom(RatingDescription)">
+				<Element font="gtf(TEXTSTYLE, 4, 0)" foreground="gtc(CONTROLPANELSTYLE,7,1,3803)" contentalign="wrapleft|endellipsis" padding="rect(5rp, 3rp, 5rp, 3rp)"/>
+				<if mousefocused="true">
+					<Element foreground="gtc(CONTROLPANELSTYLE,7,2,3803)" fontstyle="underline"/>
+				</if>
+			</if>
+			<MetadataLabel foreground="themeable(gtc(PreviewPane, 6, 0, 3803), windowtext)"/>
+			<MetadataElement foreground="themeable(gtc(PreviewPane, 7, 1, 3803), windowtext)"/>
+			<if id="atom(PreviewMetadataControlEditable)">
+				<MetadataDisplayElement foreground="themeable(gtc(PreviewPane, 7, 2, 3803), windowtext)"/>
+			</if>
+			<if id="atom(PreviewMetadataEditControl)">
+				<InPlaceEdit foreground="themeable(gtc(PreviewPane, 7, 2, 3803), windowtext)"/>
+			</if>
+			<if id="atom(PreviewMetadataSubTitleControl)">
+				<MetadataElement foreground="themeable(gtc(PreviewPane, 6, 0, 3803), windowtext)"/>
+			</if>
+			<if id="atom(PreviewMetadataTitleControl)">
+				<MetadataElement foreground="themeable(gtc(PreviewPane, 5, 0, 3803), windowtext)"/>
+			</if>
+			<if id="atom(ItemCountLabel)">
+				<MetadataLabel foreground="themeable(gtc(PreviewPane, 7, 1, 3803), windowtext)"/>
+			</if>
+			<PreviewMetadata padding="Rect(10rp, 5rp, 10rp, 3rp)"/>
+			<MetadataDisplayElement contentalign="bottomleft | endellipsis"/>
+			<if id="atom(PreviewMetadataRow)">
+				<Element height="18rp"/>
+			</if>
+			<if id="atom(PreviewTitleSpacerInner)">
+				<Element height="18rp"/>
+			</if>
+			<if id="atom(PreviewSubTitleSpacerInner)">
+				<Element height="18rp"/>
+			</if>
+			<if id="atom(PreviewMetadataControlEditable)">
+				<MetadataDisplayElement cursor="ibeam" height="18rp"/>
+				<if KeyFocused="true">
+					<MetadataDisplayElement contentalign="focusrect | bottomleft | endellipsis"/>
+				</if>
+			</if>
+			<if id="atom(PreviewMetadataEditControl)">
+				<InplaceEdit contentalign="bottomleft | endellipsis"/>
+			</if>
+			<if id="atom(PreviewMetadataReadOnlyControl)">
+				<InplaceEdit contentalign="bottomleft | endellipsis"/>
+			</if>
+			<if id="atom(PreviewForceLoadMetadata)">
+				<Button background="themeable(dtb(PreviewPane, 2, 1), ARGB(0, 0, 0, 0))" foreground="gtc(FlyoutStyle, 3, 3, 3803)" cursor="hand" contentalign="bottomleft" font="gtf(TEXTSTYLE, 4, 0)" height="18rp"/>
+				<if MouseFocused="true">
+					<Button background="themeable(dtb(PreviewPane, 2, 2), ARGB(0, 0, 0, 0))"/>
+				</if>
+				<if KeyFocused="true">
+					<Button contentalign="focusrect | bottomleft"/>
+				</if>
+			</if>
+			<PreviewThumbnail padding="Rect(18rp, 4rp, 4rp, 4rp)" background="ARGB(0, 0, 0, 0)"/>
+			<if id="atom(PreviewMetadataTitleControl)">
+				<MetadataElement font="menufont;110%" height="18rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+			</if>
+			<if id="atom(PreviewMetadataSubTitleControl)">
+				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" height="18rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+			</if>
+			<if id="atom(PreviewMetadataControl)">
+				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis"/>
+			</if>
+			<if id="atom(ItemCountLabel)">
+				<MetadataLabel font="menufont;110%" contentalign="bottomleft | endellipsis" height="18rp" overhang="false"/>
+			</if>
+			<if id="atom(PreviewMetadataSpacer)">
+				<Element height="18rp"/>
+			</if>
+			<if id="atom(PreviewSelectionInvatation)">
+				<Element height="18rp" font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis"/>
+			</if>
+			<if id="atom(PreviewEditMetadata)">
+				<Element height="18rp"/>
+			</if>
+			<MetadataLabel padding="Rect(0rp, 0rp, 3rp, 0rp)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis" height="18rp"/>
+			<Sizer background="ARGB(0, 0, 0, 0)"/>
+			<if SlidesUpAndDown="true">
+				<Sizer height="5rp" cursor="sizens"/>
+			</if>
+			<if SlidesUpAndDown="false">
+				<Sizer width="3rp" cursor="sizewe"/>
+			</if>
+			<if id="atom(PreviewPaneSizer)">
+				<Sizer background="themeable(ARGB(0, 0, 0, 0), buttonface)"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer background="themeable(dtb(PreviewPane, 3, 0), buttonface)" borderthickness="rect(0rp,0rp,0rp,0rp)"/>
+			</if>
+			<if id="atom(ReadingPaneSizer)">
+				<Sizer background="themeable(dtb(PreviewPane, 4, 0), buttonface)" borderthickness="rect(0rp,0rp,0rp,0rp)"/>
+			</if>
+			<if id="atom(ProperTreeExpandoSizer)">
+				<Sizer background="buttonface" bordercolor="buttonhighlight" borderstyle="solid" borderthickness="rect(0rp,1rp,0rp,1rp)" height="4rp"/>
+			</if>
+			<if id="atom(PreviewPaneSizer)">
+				<Sizer InitialSize="53" MinSize="53" ReservedSpace="170" FramePersistType="2"/>
+			</if>
+			<if id="atom(CommonItemDialogSizer)">
+				<Sizer InitialSize="100" MinSize="100" FramePersistType="2"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer InitialSize="160" MinSize="60" ReservedSpace="132" FramePersistType="2"/>
+			</if>
+			<if id="atom(ProperTreeExpandoSizer)">
+				<Sizer InitialSize="120" ReservedSpace="26" FramePersistType="2" InitialMaxxedOut="true"/>
+			</if>
+			<if id="atom(PreviewPaneSizer)">
+				<Sizer ExplorerVisibility="{43abf98b-89b8-472d-b9ce-e69b8229f019}" DisablingPolicy="{17067f8d-981b-42c5-98f8-5bc016d4b073}"/>
+			</if>
+			<if id="atom(ReadingPaneSizer)">
+				<Sizer ExplorerVisibility="{893c63d1-45c8-4d17-be19-223be71be365}" DisablingPolicy="{33dcce8d-b6f8-4b7a-ac93-45e301f956aa}"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer ExplorerVisibility="{cb316b22-25f7-42b8-8a09-540d23a43c2f}"/>
+			</if>
+			<if id="atom(ReadingPaneSizer)">
+				<Sizer InitialSize="260" MinSize="68" ReservedSpace="202" GrowTargetFirst="true" ReservedMaster="atom(PageSpaceControlSizer)" FramePersistType="3" InitialVisibility="false"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer ReservedMaster="atom(DetailsContainer)"/>
+			</if>
+			<if id="atom(DetailsContainerSizer)">
+				<Sizer background="themeable(dtb(PreviewPane, 4, 0), buttonface)" borderthickness="rect(0rp,0rp,0rp,0rp)" InitialSize="277" MinSize="277" ReservedSpace="202" ReservedMaster="atom(PageSpaceControlSizer)" PrioritySizer="atom(PageSpaceControlSizer)"/>
+			</if>
+			<TemplateBackground background="ARGB(0, 0, 0, 0)"/>
+			<if id="atom(ReadingPane)">
+				<TemplateBackground background="themeable(gtc(ReadingPane, 1, 0, 3802), window)" font="gtf(TextStyle, 4, 0)"/>
+			</if>
+			<if id="atom(PreviewContainer)">
+				<TemplateBackground background="themeable(gtc(ItemsView, 0, 0, 3802), window)" font="gtf(TextStyle, 4, 0)"/>
+			</if>
+			<if id="atom(RPaneCoverSheet_NoSel)">
+				<Element foreground="themeable(gtc(ReadingPane, 2, 0, 3803), windowtext)" background="themeable(gtc(ReadingPane, 1, 0, 3802), window)"/>
+			</if>
+			<if id="atom(RPaneCoverSheet_Transition)">
+				<Element foreground="themeable(gtc(ReadingPane, 2, 0, 3803), windowtext)" background="themeable(gtc(ReadingPane, 1, 0, 3802), window)"/>
+			</if>
+			<if id="atom(PreviewShineLayer)">
+				<TemplateBackground background="themeable(dtb(PreviewPane, 1, 1), window)"/>
+			</if>
+			<if Vertical="true" id="atom(PreviewShineLayer)">
+				<TemplateBackground background="themeable(dtb(PreviewPane, 1, 2), window)"/>
+			</if>
+		</style>
+		<style resid="commonitemdialoglayoutstyle">
+			<if id="atom(PreviewContainer)">
+				<Element padding="rect(10rp, 8rp, 8rp, 8rp)"/>
+			</if>
+			<MetadataElement ThemeSubApp="CommonItemDialogPreviewPaneControl"/>
+			<if id="atom(clientviewhost)">
+				<ViewHost foreground="windowtext" background="themeable(gtc(ItemsView, 0, 0, 3802), window)" sortcolumn="themeable(gtc(ItemsView, 0, 0, 3802), window)" subtext="ARGB(255, 139, 139, 139)"/>
+			</if>
+			<MetadataLabel foreground="themeable(gtc(PreviewPane, 6, 0, 3803), windowtext)"/>
+			<MetadataElement foreground="themeable(gtc(PreviewPane, 7, 1, 3803), windowtext)"/>
+			<if id="atom(PreviewMetadataControlEditable)">
+				<MetadataDisplayElement foreground="themeable(gtc(PreviewPane, 7, 2, 3803), windowtext)"/>
+			</if>
+			<if id="atom(PreviewMetadataEditControl)">
+				<InPlaceEdit foreground="themeable(gtc(PreviewPane, 7, 2, 3803), windowtext)"/>
+			</if>
+			<if id="atom(PreviewMetadataSubTitleControl)">
+				<MetadataElement foreground="themeable(gtc(PreviewPane, 6, 0, 3803), windowtext)"/>
+			</if>
+			<if id="atom(PreviewMetadataTitleControl)">
+				<MetadataElement foreground="themeable(gtc(PreviewPane, 5, 0, 3803), windowtext)"/>
+			</if>
+			<if id="atom(ItemCountLabel)">
+				<MetadataLabel foreground="themeable(gtc(PreviewPane, 7, 1, 3803), windowtext)"/>
+			</if>
+			<PreviewMetadata padding="Rect(10rp, 5rp, 10rp, 3rp)"/>
+			<MetadataDisplayElement contentalign="bottomleft | endellipsis"/>
+			<if id="atom(PreviewMetadataRow)">
+				<Element height="18rp"/>
+			</if>
+			<if id="atom(PreviewTitleSpacerInner)">
+				<Element height="18rp"/>
+			</if>
+			<if id="atom(PreviewSubTitleSpacerInner)">
+				<Element height="18rp"/>
+			</if>
+			<if id="atom(PreviewMetadataControlEditable)">
+				<MetadataDisplayElement cursor="ibeam" height="18rp"/>
+				<if KeyFocused="true">
+					<MetadataDisplayElement contentalign="focusrect | bottomleft | endellipsis"/>
+				</if>
+			</if>
+			<if id="atom(PreviewMetadataEditControl)">
+				<InplaceEdit contentalign="bottomleft | endellipsis"/>
+			</if>
+			<if id="atom(PreviewMetadataReadOnlyControl)">
+				<InplaceEdit contentalign="bottomleft | endellipsis"/>
+			</if>
+			<if id="atom(PreviewForceLoadMetadata)">
+				<Button background="themeable(dtb(PreviewPane, 2, 1), ARGB(0, 0, 0, 0))" foreground="gtc(FlyoutStyle, 3, 3, 3803)" cursor="hand" contentalign="bottomleft" font="gtf(TEXTSTYLE, 4, 0)" height="18rp"/>
+				<if MouseFocused="true">
+					<Button background="themeable(dtb(PreviewPane, 2, 2), ARGB(0, 0, 0, 0))"/>
+				</if>
+				<if KeyFocused="true">
+					<Button contentalign="focusrect | bottomleft"/>
+				</if>
+			</if>
+			<PreviewThumbnail padding="Rect(18rp, 4rp, 4rp, 4rp)" background="ARGB(0, 0, 0, 0)"/>
+			<if id="atom(PreviewMetadataTitleControl)">
+				<MetadataElement font="menufont;110%" height="18rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+			</if>
+			<if id="atom(PreviewMetadataSubTitleControl)">
+				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" height="18rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+			</if>
+			<if id="atom(PreviewMetadataControl)">
+				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis"/>
+			</if>
+			<if id="atom(ItemCountLabel)">
+				<MetadataLabel font="menufont;110%" contentalign="bottomleft | endellipsis" height="18rp" overhang="false"/>
+			</if>
+			<if id="atom(PreviewMetadataSpacer)">
+				<Element height="18rp"/>
+			</if>
+			<if id="atom(PreviewSelectionInvatation)">
+				<Element height="18rp" font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis"/>
+			</if>
+			<if id="atom(PreviewEditMetadata)">
+				<Element height="18rp"/>
+			</if>
+			<MetadataLabel padding="Rect(0rp, 0rp, 3rp, 0rp)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis" height="18rp"/>
+			<PreviewMetadata padding="Rect(10rp, 5rp, 10rp, 2rp)"/>
+			<Sizer background="ARGB(0, 0, 0, 0)"/>
+			<if SlidesUpAndDown="true">
+				<Sizer height="5rp" cursor="sizens"/>
+			</if>
+			<if SlidesUpAndDown="false">
+				<Sizer width="3rp" cursor="sizewe"/>
+			</if>
+			<if id="atom(PreviewPaneSizer)">
+				<Sizer background="themeable(ARGB(0, 0, 0, 0), buttonface)"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer background="themeable(dtb(PreviewPane, 3, 0), buttonface)" borderthickness="rect(0rp,0rp,0rp,0rp)"/>
+			</if>
+			<if id="atom(ReadingPaneSizer)">
+				<Sizer background="themeable(dtb(PreviewPane, 4, 0), buttonface)" borderthickness="rect(0rp,0rp,0rp,0rp)"/>
+			</if>
+			<if id="atom(ProperTreeExpandoSizer)">
+				<Sizer background="buttonface" bordercolor="buttonhighlight" borderstyle="solid" borderthickness="rect(0rp,1rp,0rp,1rp)" height="4rp"/>
+			</if>
+			<if id="atom(PreviewPaneSizer)">
+				<Sizer InitialSize="53" MinSize="53" ReservedSpace="170" FramePersistType="2"/>
+			</if>
+			<if id="atom(CommonItemDialogSizer)">
+				<Sizer InitialSize="100" MinSize="100" FramePersistType="2"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer InitialSize="160" MinSize="60" ReservedSpace="132" FramePersistType="2"/>
+			</if>
+			<if id="atom(ProperTreeExpandoSizer)">
+				<Sizer InitialSize="120" ReservedSpace="26" FramePersistType="2" InitialMaxxedOut="true"/>
+			</if>
+			<if id="atom(PreviewPaneSizer)">
+				<Sizer ExplorerVisibility="{43abf98b-89b8-472d-b9ce-e69b8229f019}" DisablingPolicy="{17067f8d-981b-42c5-98f8-5bc016d4b073}"/>
+			</if>
+			<if id="atom(ReadingPaneSizer)">
+				<Sizer ExplorerVisibility="{893c63d1-45c8-4d17-be19-223be71be365}" DisablingPolicy="{33dcce8d-b6f8-4b7a-ac93-45e301f956aa}"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer ExplorerVisibility="{cb316b22-25f7-42b8-8a09-540d23a43c2f}"/>
+			</if>
+			<if id="atom(ReadingPaneSizer)">
+				<Sizer InitialSize="260" MinSize="68" ReservedSpace="202" GrowTargetFirst="true" ReservedMaster="atom(PageSpaceControlSizer)" FramePersistType="3" InitialVisibility="false"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer ReservedMaster="atom(ReadingPane)"/>
+			</if>
+			<TemplateBackground background="ARGB(0, 0, 0, 0)"/>
+			<if id="atom(ReadingPane)">
+				<TemplateBackground background="themeable(gtc(ReadingPane, 1, 0, 3802), window)" font="gtf(TextStyle, 4, 0)"/>
+			</if>
+			<if id="atom(PreviewContainer)">
+				<TemplateBackground background="themeable(gtc(ItemsView, 0, 0, 3802), window)" font="gtf(TextStyle, 4, 0)"/>
+			</if>
+			<if id="atom(RPaneCoverSheet_NoSel)">
+				<Element foreground="themeable(gtc(ReadingPane, 2, 0, 3803), windowtext)" background="themeable(gtc(ReadingPane, 1, 0, 3802), window)"/>
+			</if>
+			<if id="atom(RPaneCoverSheet_Transition)">
+				<Element foreground="themeable(gtc(ReadingPane, 2, 0, 3803), windowtext)" background="themeable(gtc(ReadingPane, 1, 0, 3802), window)"/>
+			</if>
+			<if id="atom(PreviewShineLayer)">
+				<TemplateBackground background="themeable(dtb(PreviewPane, 1, 1), window)"/>
+			</if>
+			<if Vertical="true" id="atom(PreviewShineLayer)">
+				<TemplateBackground background="themeable(dtb(PreviewPane, 1, 2), window)"/>
+			</if>
+		</style>
+		<style resid="commonsavedialoglayoutstyle">
+			<if id="atom(PreviewContainer)">
+				<Element padding="rect(10rp, 8rp, 8rp, 8rp)"/>
+			</if>
+			<MetadataElement ThemeSubApp="CommonItemDialogPreviewPaneControl"/>
+			<if id="atom(clientviewhost)">
+				<ViewHost foreground="themeable(gtc(TextStyle, 4, 0, 3803), windowtext)" background="themeable(gtc(ItemsView, 0, 0, 3802), window)" sortcolumn="themeable(gtc(ItemsView, 0, 0, 3802), window)" subtext="ARGB(255, 139, 139, 139)"/>
+			</if>
+			<MetadataLabel foreground="themeable(gtc(PreviewPane, 8, 0, 3803), windowtext)"/>
+			<if id="atom(PreviewMetadataControlReadOnly)">
+				<MetadataDisplayElement foreground="themeable(gtc(PreviewPane, 9, 1, 3803), windowtext)"/>
+			</if>
+			<if id="atom(PreviewMetadataControlEditable)">
+				<MetadataDisplayElement foreground="themeable(gtc(PreviewPane, 9, 2, 3803), windowtext)"/>
+			</if>
+			<if id="atom(PreviewMetadataReadOnlyControl)">
+				<InPlaceEdit foreground="themeable(gtc(PreviewPane, 9, 1, 3803), windowtext)"/>
+			</if>
+			<if id="atom(PreviewMetadataEditControl)">
+				<InPlaceEdit foreground="themeable(gtc(PreviewPane, 9, 2, 3803), windowtext)"/>
+			</if>
+			<if id="atom(SaveDialogLabel)">
+				<Element foreground="themeable(gtc(PreviewPane, 8, 0, 3803), windowtext)"/>
+			</if>
+			<if id="atom(ControlValue)">
+				<Element foreground="themeable(gtc(PreviewPane, 9, 2, 3803), windowtext)"/>
+			</if>
+			<SaveControlsModule padding="Rect(10rp, 5rp, 5rp, 0rp)"/>
+			<SaveDialogPreviewMetadata padding="Rect(10rp, 4rp, 10rp, 5rp)"/>
+			<PreviewMetadata padding="Rect(10rp, 5rp, 10rp, 3rp)"/>
+			<MetadataDisplayElement contentalign="bottomleft | endellipsis"/>
+			<if id="atom(PreviewMetadataRow)">
+				<Element height="18rp"/>
+			</if>
+			<if id="atom(PreviewTitleSpacerInner)">
+				<Element height="18rp"/>
+			</if>
+			<if id="atom(PreviewSubTitleSpacerInner)">
+				<Element height="18rp"/>
+			</if>
+			<if id="atom(PreviewMetadataControlEditable)">
+				<MetadataDisplayElement cursor="ibeam" height="18rp"/>
+				<if KeyFocused="true">
+					<MetadataDisplayElement contentalign="focusrect | bottomleft | endellipsis"/>
+				</if>
+			</if>
+			<if id="atom(PreviewMetadataEditControl)">
+				<InplaceEdit contentalign="bottomleft | endellipsis"/>
+			</if>
+			<if id="atom(PreviewMetadataReadOnlyControl)">
+				<InplaceEdit contentalign="bottomleft | endellipsis"/>
+			</if>
+			<if id="atom(PreviewForceLoadMetadata)">
+				<Button background="themeable(dtb(PreviewPane, 2, 1), ARGB(0, 0, 0, 0))" foreground="gtc(FlyoutStyle, 3, 3, 3803)" cursor="hand" contentalign="bottomleft" font="gtf(TEXTSTYLE, 4, 0)" height="18rp"/>
+				<if MouseFocused="true">
+					<Button background="themeable(dtb(PreviewPane, 2, 2), ARGB(0, 0, 0, 0))"/>
+				</if>
+				<if KeyFocused="true">
+					<Button contentalign="focusrect | bottomleft"/>
+				</if>
+			</if>
+			<PreviewThumbnail padding="Rect(18rp, 4rp, 4rp, 4rp)" background="ARGB(0, 0, 0, 0)"/>
+			<if id="atom(PreviewMetadataTitleControl)">
+				<MetadataElement font="menufont;110%" height="18rp" width="250rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+			</if>
+			<if id="atom(PreviewMetadataSubTitleControl)">
+				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" height="18rp" width="250rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+			</if>
+			<if id="atom(PreviewMetadataControl)">
+				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis" width="135rp"/>
+			</if>
+			<if id="atom(ItemCountLabel)">
+				<MetadataLabel font="menufont;110%" contentalign="bottomleft | endellipsis" height="18rp" width="250rp" overhang="false"/>
+			</if>
+			<if id="atom(PreviewMetadataSpacer)">
+				<Element height="18rp" width="250rp"/>
+			</if>
+			<if id="atom(PreviewEditMetadata)">
+				<Element height="18rp" width="250rp"/>
+			</if>
+			<MetadataLabel padding="Rect(0rp, 0rp, 3rp, 0rp)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomright | endellipsis" height="18rp" width="115rp"/>
+			<PreviewMetadata padding="Rect(10rp, 5rp, 10rp, 2rp)"/>
+			<if id="atom(SaveDialogLabel)">
+				<CIDLabel padding="Rect(0rp, 0rp, 3rp, 0rp)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomright | endellipsis" height="18rp" width="115rp"/>
+			</if> \
+
+<if id="atom(ControlValue)">
+				<Element contentalign="bottomleft | endellipsis" font="gtf(TEXTSTYLE, 4, 0)" width="135rp"/>
+			</if>
+			<Sizer background="ARGB(0, 0, 0, 0)"/>
+			<if SlidesUpAndDown="true">
+				<Sizer height="5rp" cursor="sizens"/>
+			</if>
+			<if SlidesUpAndDown="false">
+				<Sizer width="3rp" cursor="sizewe"/>
+			</if>
+			<if id="atom(PreviewPaneSizer)">
+				<Sizer background="themeable(ARGB(0, 0, 0, 0), buttonface)"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer background="themeable(dtb(PreviewPane, 3, 0), buttonface)" borderthickness="rect(0rp,0rp,0rp,0rp)"/>
+			</if>
+			<if id="atom(ReadingPaneSizer)">
+				<Sizer background="themeable(dtb(PreviewPane, 4, 0), buttonface)" borderthickness="rect(0rp,0rp,0rp,0rp)"/>
+			</if>
+			<if id="atom(ProperTreeExpandoSizer)">
+				<Sizer background="buttonface" bordercolor="buttonhighlight" borderstyle="solid" borderthickness="rect(0rp,1rp,0rp,1rp)" height="4rp"/>
+			</if>
+			<if id="atom(PreviewPaneSizer)">
+				<Sizer InitialSize="53" MinSize="53" ReservedSpace="170" FramePersistType="2"/>
+			</if>
+			<if id="atom(CommonItemDialogSizer)">
+				<Sizer InitialSize="100" MinSize="100" FramePersistType="2"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer InitialSize="160" MinSize="60" ReservedSpace="132" FramePersistType="2"/>
+			</if>
+			<if id="atom(ProperTreeExpandoSizer)">
+				<Sizer InitialSize="120" ReservedSpace="26" FramePersistType="2" InitialMaxxedOut="true"/>
+			</if>
+			<if id="atom(PreviewPaneSizer)">
+				<Sizer ExplorerVisibility="{43abf98b-89b8-472d-b9ce-e69b8229f019}" DisablingPolicy="{17067f8d-981b-42c5-98f8-5bc016d4b073}"/>
+			</if>
+			<if id="atom(ReadingPaneSizer)">
+				<Sizer ExplorerVisibility="{893c63d1-45c8-4d17-be19-223be71be365}" DisablingPolicy="{33dcce8d-b6f8-4b7a-ac93-45e301f956aa}"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer ExplorerVisibility="{cb316b22-25f7-42b8-8a09-540d23a43c2f}"/>
+			</if>
+			<if id="atom(ReadingPaneSizer)">
+				<Sizer InitialSize="260" MinSize="68" ReservedSpace="202" GrowTargetFirst="true" ReservedMaster="atom(PageSpaceControlSizer)" FramePersistType="3" InitialVisibility="false"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer ReservedMaster="atom(DetailsContainer)"/>
+			</if>
+			<if id="atom(DetailsContainerSizer)">
+				<Sizer background="themeable(dtb(PreviewPane, 4, 0), buttonface)" borderthickness="rect(0rp,0rp,0rp,0rp)" InitialSize="277" MinSize="277" ReservedSpace="202" ReservedMaster="atom(PageSpaceControlSizer)" PrioritySizer="atom(PageSpaceControlSizer)"/>
+			</if>
+			<TemplateBackground background="buttonface"/>
+			<if id="atom(ReadingPane)">
+				<TemplateBackground background="themeable(gtc(ReadingPane, 1, 0, 3802), window)" font="gtf(TextStyle, 4, 0)"/>
+			</if>
+			<if id="atom(PreviewContainer)">
+				<TemplateBackground background="themeable(gtc(ItemsView, 0, 0, 3802), window)" font="gtf(TextStyle, 4, 0)"/>
+			</if>
+			<if id="atom(RPaneCoverSheet_NoSel)">
+				<Element foreground="themeable(gtc(ReadingPane, 2, 0, 3803), windowtext)" background="themeable(gtc(ReadingPane, 1, 0, 3802), window)"/>
+			</if>
+			<if id="atom(RPaneCoverSheet_Transition)">
+				<Element foreground="themeable(gtc(ReadingPane, 2, 0, 3803), windowtext)" background="themeable(gtc(ReadingPane, 1, 0, 3802), window)"/>
+			</if>
+			<if id="atom(PreviewContainerInnerElement)">
+				<element background="themeable(dtb(CommonItemsDialog, 1, 0), buttonface)"/>
+			</if>
+		</style>
+		<style resid="cidsaveinlayoutstyle">
+			<if id="atom(PreviewMetadataTitleControl)">
+				<MetadataElement font="menufont;110%" height="18rp" width="250rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+			</if>
+			<if id="atom(PreviewMetadataSubTitleControl)">
+				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" height="18rp" width="250rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+			</if>
+			<if id="atom(PreviewMetadataControl)">
+				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis" width="135rp"/>
+			</if>
+			<if id="atom(ItemCountLabel)">
+				<MetadataLabel font="menufont;110%" contentalign="bottomleft | endellipsis" height="18rp" width="250rp" overhang="false"/>
+			</if>
+			<if id="atom(PreviewMetadataSpacer)">
+				<Element height="18rp" width="250rp"/>
+			</if>
+			<if id="atom(PreviewEditMetadata)">
+				<Element height="18rp" width="250rp"/>
+			</if>
+			<MetadataLabel padding="Rect(0rp, 0rp, 3rp, 0rp)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomright | endellipsis" height="18rp" width="115rp"/>
+			<if id="atom(SaveDialogLabel)">
+				<CIDLabel padding="Rect(0rp, 0rp, 3rp, 0rp)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="middleright | endellipsis" height="18rp" width="115rp"/>
+			</if> \
+
+<AppControlHost font="gtf(TEXTSTYLE, 4, 0)"/>
+			<TemplateBackground background="ARGB(0, 0, 0, 0)"/>
+			<if id="atom(ReadingPane)">
+				<TemplateBackground background="themeable(gtc(ReadingPane, 1, 0, 3802), window)" font="gtf(TextStyle, 4, 0)"/>
+			</if>
+			<if id="atom(PreviewContainer)">
+				<TemplateBackground background="themeable(gtc(ItemsView, 0, 0, 3802), window)" font="gtf(TextStyle, 4, 0)"/>
+			</if>
+			<if id="atom(RPaneCoverSheet_NoSel)">
+				<Element foreground="themeable(gtc(ReadingPane, 2, 0, 3803), windowtext)" background="themeable(gtc(ReadingPane, 1, 0, 3802), window)"/>
+			</if>
+			<if id="atom(RPaneCoverSheet_Transition)">
+				<Element foreground="themeable(gtc(ReadingPane, 2, 0, 3803), windowtext)" background="themeable(gtc(ReadingPane, 1, 0, 3802), window)"/>
+			</if>
+			<if id="atom(PreviewShineLayer)">
+				<TemplateBackground background="themeable(dtb(PreviewPane, 1, 1), window)"/>
+			</if>
+			<if Vertical="true" id="atom(PreviewShineLayer)">
+				<TemplateBackground background="themeable(dtb(PreviewPane, 1, 2), window)"/>
+			</if>
+			<if id="atom(PreviewContainerInnerElement)">
+				<element background="themeable(dtb(CommonItemsDialog, 1, 0), buttonface)"/>
+			</if>
+		</style>
+		<style resid="genericlayoutstyle">
+			<if id="atom(PreviewContainer)">
+				<Element padding="rect(10rp, 8rp, 8rp, 8rp)"/>
+			</if>
+			<if id="atom(ReadingPane)">
+				<Element padding="rect(4rp, 4rp, 4rp, 4rp)"/>
+			</if>
+			<InfoPane background="themeable(gtc(ButtonStyle, 2, 0, 3821), window)"/>
+			<MetadataElement ThemeSubApp="GenericPreviewPaneControl"/>
+			<if id="atom(clientviewhost)">
+				<ViewHost foreground="windowtext" background="themeable(gtc(ItemsView, 0, 0, 3802), window)" sortcolumn="themeable(gtc(ItemsView, 0, 0, 3802), window)" subtext="ARGB(255, 139, 139, 139)"/>
+			</if>
+			<MetadataLabel foreground="themeable(gtc(PreviewPane, 6, 0, 3803), windowtext)"/>
+			<MetadataElement foreground="themeable(gtc(PreviewPane, 7, 1, 3803), windowtext)"/>
+			<if id="atom(PreviewMetadataControlEditable)">
+				<MetadataDisplayElement foreground="themeable(gtc(PreviewPane, 7, 2, 3803), windowtext)"/>
+			</if>
+			<if id="atom(PreviewMetadataEditControl)">
+				<InPlaceEdit foreground="themeable(gtc(PreviewPane, 7, 2, 3803), windowtext)"/>
+			</if>
+			<if id="atom(PreviewMetadataSubTitleControl)">
+				<MetadataElement foreground="themeable(gtc(PreviewPane, 6, 0, 3803), windowtext)"/>
+			</if>
+			<if id="atom(PreviewMetadataTitleControl)">
+				<MetadataElement foreground="themeable(gtc(PreviewPane, 5, 0, 3803), windowtext)"/>
+			</if>
+			<if id="atom(ItemCountLabel)">
+				<MetadataLabel foreground="themeable(gtc(PreviewPane, 7, 1, 3803), windowtext)"/>
+			</if>
+			<if id="atom(PreviewSelectionInvatation)">
+				<Element foreground="themeable(gtc(PreviewPane, 7, 1, 3803), windowtext)"/>
+			</if>
+			<PreviewMetadata padding="Rect(10rp, 5rp, 10rp, 3rp)"/>
+			<MetadataDisplayElement contentalign="bottomleft | endellipsis"/>
+			<if id="atom(PreviewMetadataRow)">
+				<Element height="18rp"/>
+			</if>
+			<if id="atom(PreviewTitleSpacerInner)">
+				<Element height="18rp"/>
+			</if>
+			<if id="atom(PreviewSubTitleSpacerInner)">
+				<Element height="18rp"/>
+			</if>
+			<if id="atom(PreviewMetadataControlEditable)">
+				<MetadataDisplayElement cursor="ibeam" height="18rp"/>
+				<if KeyFocused="true">
+					<MetadataDisplayElement contentalign="focusrect | bottomleft | endellipsis"/>
+				</if>
+			</if>
+			<if id="atom(PreviewMetadataEditControl)">
+				<InplaceEdit contentalign="bottomleft | endellipsis"/>
+			</if>
+			<if id="atom(PreviewMetadataReadOnlyControl)">
+				<InplaceEdit contentalign="bottomleft | endellipsis"/>
+			</if>
+			<if id="atom(PreviewForceLoadMetadata)">
+				<Button background="themeable(dtb(PreviewPane, 2, 1), ARGB(0, 0, 0, 0))" foreground="gtc(FlyoutStyle, 3, 3, 3803)" cursor="hand" contentalign="bottomleft" font="gtf(TEXTSTYLE, 4, 0)" height="18rp"/>
+				<if MouseFocused="true">
+					<Button background="themeable(dtb(PreviewPane, 2, 2), ARGB(0, 0, 0, 0))"/>
+				</if>
+				<if KeyFocused="true">
+					<Button contentalign="focusrect | bottomleft"/>
+				</if>
+			</if>
+			<PreviewThumbnail padding="Rect(18rp, 4rp, 4rp, 4rp)" background="ARGB(0, 0, 0, 0)"/>
+			<if id="atom(PreviewMetadataTitleControl)">
+				<MetadataElement font="menufont;110%" height="18rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+			</if>
+			<if id="atom(PreviewMetadataSubTitleControl)">
+				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" height="18rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+			</if>
+			<if id="atom(PreviewMetadataControl)">
+				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis"/>
+			</if>
+			<if id="atom(ItemCountLabel)">
+				<MetadataLabel font="menufont;110%" contentalign="bottomleft | endellipsis" height="18rp" overhang="false"/>
+			</if>
+			<if id="atom(PreviewMetadataSpacer)">
+				<Element height="18rp"/>
+			</if>
+			<if id="atom(PreviewSelectionInvatation)">
+				<Element height="18rp" font="menufont;110%" contentalign="bottomleft | endellipsis"/>
+			</if>
+			<if id="atom(PreviewEditMetadata)">
+				<Element height="18rp"/>
+			</if>
+			<MetadataLabel padding="Rect(0rp, 0rp, 3rp, 0rp)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis" height="18rp"/>
+			<Sizer background="ARGB(0, 0, 0, 0)"/>
+			<if SlidesUpAndDown="true">
+				<Sizer height="5rp" cursor="sizens"/>
+			</if>
+			<if SlidesUpAndDown="false">
+				<Sizer width="3rp" cursor="sizewe"/>
+			</if>
+			<if id="atom(PreviewPaneSizer)">
+				<Sizer background="themeable(ARGB(0, 0, 0, 0), buttonface)"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer background="themeable(dtb(PreviewPane, 3, 0), buttonface)" borderthickness="rect(0rp,0rp,0rp,0rp)"/>
+			</if>
+			<if id="atom(ReadingPaneSizer)">
+				<Sizer background="themeable(dtb(PreviewPane, 4, 0), buttonface)" borderthickness="rect(0rp,0rp,0rp,0rp)"/>
+			</if>
+			<if id="atom(ProperTreeExpandoSizer)">
+				<Sizer background="buttonface" bordercolor="buttonhighlight" borderstyle="solid" borderthickness="rect(0rp,1rp,0rp,1rp)" height="4rp"/>
+			</if>
+			<if id="atom(PreviewPaneSizer)">
+				<Sizer InitialSize="53" MinSize="53" ReservedSpace="170" FramePersistType="2"/>
+			</if>
+			<if id="atom(CommonItemDialogSizer)">
+				<Sizer InitialSize="100" MinSize="100" FramePersistType="2"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer InitialSize="160" MinSize="60" ReservedSpace="132" FramePersistType="2"/>
+			</if>
+			<if id="atom(ProperTreeExpandoSizer)">
+				<Sizer InitialSize="120" ReservedSpace="26" FramePersistType="2" InitialMaxxedOut="true"/>
+			</if>
+			<if id="atom(PreviewPaneSizer)">
+				<Sizer ExplorerVisibility="{43abf98b-89b8-472d-b9ce-e69b8229f019}" DisablingPolicy="{17067f8d-981b-42c5-98f8-5bc016d4b073}"/>
+			</if>
+			<if id="atom(ReadingPaneSizer)">
+				<Sizer ExplorerVisibility="{893c63d1-45c8-4d17-be19-223be71be365}" DisablingPolicy="{33dcce8d-b6f8-4b7a-ac93-45e301f956aa}"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer ExplorerVisibility="{cb316b22-25f7-42b8-8a09-540d23a43c2f}"/>
+			</if>
+			<if id="atom(ReadingPaneSizer)">
+				<Sizer InitialSize="260" MinSize="68" ReservedSpace="202" GrowTargetFirst="true" ReservedMaster="atom(PageSpaceControlSizer)" FramePersistType="3" InitialVisibility="false"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer ReservedMaster="atom(DetailsContainer)"/>
+			</if>
+			<if id="atom(DetailsContainerSizer)">
+				<Sizer background="themeable(dtb(PreviewPane, 4, 0), buttonface)" borderthickness="rect(0rp,0rp,0rp,0rp)" InitialSize="277" MinSize="277" ReservedSpace="202" ReservedMaster="atom(PageSpaceControlSizer)" PrioritySizer="atom(PageSpaceControlSizer)"/>
+			</if>
+			<TemplateBackground background="ARGB(0, 0, 0, 0)"/>
+			<if id="atom(ReadingPane)">
+				<TemplateBackground background="themeable(gtc(ReadingPane, 1, 0, 3802), window)" font="gtf(TextStyle, 4, 0)"/>
+			</if>
+			<if id="atom(PreviewContainer)">
+				<TemplateBackground background="themeable(gtc(ItemsView, 0, 0, 3802), window)" font="gtf(TextStyle, 4, 0)"/>
+			</if>
+			<if id="atom(RPaneCoverSheet_NoSel)">
+				<Element foreground="themeable(gtc(ReadingPane, 2, 0, 3803), windowtext)" background="themeable(gtc(ReadingPane, 1, 0, 3802), window)"/>
+			</if>
+			<if id="atom(RPaneCoverSheet_Transition)">
+				<Element foreground="themeable(gtc(ReadingPane, 2, 0, 3803), windowtext)" background="themeable(gtc(ReadingPane, 1, 0, 3802), window)"/>
+			</if>
+			<if id="atom(PreviewShineLayer)">
+				<TemplateBackground background="themeable(dtb(PreviewPane, 1, 1), window)"/>
+			</if>
+			<if Vertical="true" id="atom(PreviewShineLayer)">
+				<TemplateBackground background="themeable(dtb(PreviewPane, 1, 2), window)"/>
+			</if>
+		</style>
+		<style resid="musiclayoutstyle">
+			<if id="atom(PreviewContainer)">
+				<Element padding="rect(10rp, 8rp, 8rp, 8rp)"/>
+			</if>
+			<if id="atom(ReadingPane)">
+				<Element padding="rect(4rp, 4rp, 4rp, 4rp)"/>
+			</if>
+			<MetadataElement ThemeSubApp="MusicPreviewPaneControl"/>
+			<if id="atom(clientviewhost)">
+				<ViewHost foreground="windowtext" background="themeable(gtc(ItemsView, 0, 0, 3802), window)" sortcolumn="themeable(gtc(ItemsView, 0, 0, 3802), window)" subtext="ARGB(255, 139, 139, 139)"/>
+			</if>
+			<MetadataLabel foreground="themeable(gtc(PreviewPane, 6, 0, 3803), windowtext)"/>
+			<MetadataElement foreground="themeable(gtc(PreviewPane, 7, 1, 3803), windowtext)"/>
+			<if id="atom(PreviewMetadataControlEditable)">
+				<MetadataDisplayElement foreground="themeable(gtc(PreviewPane, 7, 2, 3803), windowtext)"/>
+			</if>
+			<if id="atom(PreviewMetadataEditControl)">
+				<InPlaceEdit foreground="themeable(gtc(PreviewPane, 7, 2, 3803), windowtext)"/>
+			</if>
+			<if id="atom(PreviewMetadataSubTitleControl)">
+				<MetadataElement foreground="themeable(gtc(PreviewPane, 6, 0, 3803), windowtext)"/>
+			</if>
+			<if id="atom(PreviewMetadataTitleControl)">
+				<MetadataElement foreground="themeable(gtc(PreviewPane, 5, 0, 3803), windowtext)"/>
+			</if>
+			<if id="atom(ItemCountLabel)">
+				<MetadataLabel foreground="themeable(gtc(PreviewPane, 7, 1, 3803), windowtext)"/>
+			</if>
+			<PreviewMetadata padding="Rect(10rp, 5rp, 10rp, 3rp)"/>
+			<MetadataDisplayElement contentalign="bottomleft | endellipsis"/>
+			<if id="atom(PreviewMetadataRow)">
+				<Element height="18rp"/>
+			</if>
+			<if id="atom(PreviewTitleSpacerInner)">
+				<Element height="18rp"/>
+			</if>
+			<if id="atom(PreviewSubTitleSpacerInner)">
+				<Element height="18rp"/>
+			</if>
+			<if id="atom(PreviewMetadataControlEditable)">
+				<MetadataDisplayElement cursor="ibeam" height="18rp"/>
+				<if KeyFocused="true">
+					<MetadataDisplayElement contentalign="focusrect | bottomleft | endellipsis"/>
+				</if>
+			</if>
+			<if id="atom(PreviewMetadataEditControl)">
+				<InplaceEdit contentalign="bottomleft | endellipsis"/>
+			</if>
+			<if id="atom(PreviewMetadataReadOnlyControl)">
+				<InplaceEdit contentalign="bottomleft | endellipsis"/>
+			</if>
+			<if id="atom(PreviewForceLoadMetadata)">
+				<Button background="themeable(dtb(PreviewPane, 2, 1), ARGB(0, 0, 0, 0))" foreground="gtc(FlyoutStyle, 3, 3, 3803)" cursor="hand" contentalign="bottomleft" font="gtf(TEXTSTYLE, 4, 0)" height="18rp"/>
+				<if MouseFocused="true">
+					<Button background="themeable(dtb(PreviewPane, 2, 2), ARGB(0, 0, 0, 0))"/>
+				</if>
+				<if KeyFocused="true">
+					<Button contentalign="focusrect | bottomleft"/>
+				</if>
+			</if>
+			<PreviewThumbnail padding="Rect(18rp, 4rp, 4rp, 4rp)" background="ARGB(0, 0, 0, 0)"/>
+			<if id="atom(PreviewMetadataTitleControl)">
+				<MetadataElement font="menufont;110%" height="18rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+			</if>
+			<if id="atom(PreviewMetadataSubTitleControl)">
+				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" height="18rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+			</if>
+			<if id="atom(PreviewMetadataControl)">
+				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis"/>
+			</if>
+			<if id="atom(ItemCountLabel)">
+				<MetadataLabel font="menufont;110%" contentalign="bottomleft | endellipsis" height="18rp" overhang="false"/>
+			</if>
+			<if id="atom(PreviewMetadataSpacer)">
+				<Element height="18rp"/>
+			</if>
+			<if id="atom(PreviewSelectionInvatation)">
+				<Element height="18rp" font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis"/>
+			</if>
+			<if id="atom(PreviewEditMetadata)">
+				<Element height="18rp"/>
+			</if>
+			<MetadataLabel padding="Rect(0rp, 0rp, 3rp, 0rp)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis" height="18rp"/>
+			<Sizer background="ARGB(0, 0, 0, 0)"/>
+			<if SlidesUpAndDown="true">
+				<Sizer height="5rp" cursor="sizens"/>
+			</if>
+			<if SlidesUpAndDown="false">
+				<Sizer width="3rp" cursor="sizewe"/>
+			</if>
+			<if id="atom(PreviewPaneSizer)">
+				<Sizer background="themeable(ARGB(0, 0, 0, 0), buttonface)"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer background="themeable(dtb(PreviewPane, 3, 0), buttonface)" borderthickness="rect(0rp,0rp,0rp,0rp)"/>
+			</if>
+			<if id="atom(ReadingPaneSizer)">
+				<Sizer background="themeable(dtb(PreviewPane, 4, 0), buttonface)" borderthickness="rect(0rp,0rp,0rp,0rp)"/>
+			</if>
+			<if id="atom(ProperTreeExpandoSizer)">
+				<Sizer background="buttonface" bordercolor="buttonhighlight" borderstyle="solid" borderthickness="rect(0rp,1rp,0rp,1rp)" height="4rp"/>
+			</if>
+			<if id="atom(PreviewPaneSizer)">
+				<Sizer InitialSize="53" MinSize="53" ReservedSpace="170" FramePersistType="2"/>
+			</if>
+			<if id="atom(CommonItemDialogSizer)">
+				<Sizer InitialSize="100" MinSize="100" FramePersistType="2"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer InitialSize="160" MinSize="60" ReservedSpace="132" FramePersistType="2"/>
+			</if>
+			<if id="atom(ProperTreeExpandoSizer)">
+				<Sizer InitialSize="120" ReservedSpace="26" FramePersistType="2" InitialMaxxedOut="true"/>
+			</if>
+			<if id="atom(PreviewPaneSizer)">
+				<Sizer ExplorerVisibility="{43abf98b-89b8-472d-b9ce-e69b8229f019}" DisablingPolicy="{17067f8d-981b-42c5-98f8-5bc016d4b073}"/>
+			</if>
+			<if id="atom(ReadingPaneSizer)">
+				<Sizer ExplorerVisibility="{893c63d1-45c8-4d17-be19-223be71be365}" DisablingPolicy="{33dcce8d-b6f8-4b7a-ac93-45e301f956aa}"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer ExplorerVisibility="{cb316b22-25f7-42b8-8a09-540d23a43c2f}"/>
+			</if>
+			<if id="atom(ReadingPaneSizer)">
+				<Sizer InitialSize="260" MinSize="68" ReservedSpace="202" GrowTargetFirst="true" ReservedMaster="atom(PageSpaceControlSizer)" FramePersistType="3" InitialVisibility="false"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer ReservedMaster="atom(DetailsContainer)"/>
+			</if>
+			<if id="atom(DetailsContainerSizer)">
+				<Sizer background="themeable(dtb(PreviewPane, 4, 0), buttonface)" borderthickness="rect(0rp,0rp,0rp,0rp)" InitialSize="277" MinSize="277" ReservedSpace="202" ReservedMaster="atom(PageSpaceControlSizer)" PrioritySizer="atom(PageSpaceControlSizer)"/>
+			</if>
+			<TemplateBackground background="ARGB(0, 0, 0, 0)"/>
+			<if id="atom(ReadingPane)">
+				<TemplateBackground background="themeable(gtc(ReadingPane, 1, 0, 3802), window)" font="gtf(TextStyle, 4, 0)"/>
+			</if>
+			<if id="atom(PreviewContainer)">
+				<TemplateBackground background="themeable(gtc(ItemsView, 0, 0, 3802), window)" font="gtf(TextStyle, 4, 0)"/>
+			</if>
+			<if id="atom(RPaneCoverSheet_NoSel)">
+				<Element foreground="themeable(gtc(ReadingPane, 2, 0, 3803), windowtext)" background="themeable(gtc(ReadingPane, 1, 0, 3802), window)"/>
+			</if>
+			<if id="atom(RPaneCoverSheet_Transition)">
+				<Element foreground="themeable(gtc(ReadingPane, 2, 0, 3803), windowtext)" background="themeable(gtc(ReadingPane, 1, 0, 3802), window)"/>
+			</if>
+			<if id="atom(PreviewShineLayer)">
+				<TemplateBackground background="themeable(dtb(PreviewPane, 1, 1), window)"/>
+			</if>
+			<if Vertical="true" id="atom(PreviewShineLayer)">
+				<TemplateBackground background="themeable(dtb(PreviewPane, 1, 2), window)"/>
+			</if>
+		</style>
+		<style resid="photolayoutstyle">
+			<if id="atom(PreviewContainer)">
+				<Element padding="rect(10rp, 8rp, 8rp, 8rp)"/>
+			</if>
+			<if id="atom(ReadingPane)">
+				<Element padding="rect(4rp, 4rp, 4rp, 4rp)"/>
+			</if>
+			<MetadataElement ThemeSubApp="PhotoPreviewPaneControl"/>
+			<if id="atom(clientviewhost)">
+				<ViewHost foreground="windowtext" background="themeable(gtc(ItemsView, 0, 0, 3802), window)" sortcolumn="themeable(gtc(ItemsView, 0, 0, 3802), window)" subtext="ARGB(255, 139, 139, 139)"/>
+			</if>
+			<MetadataLabel foreground="themeable(gtc(PreviewPane, 6, 0, 3803), windowtext)"/>
+			<MetadataElement foreground="themeable(gtc(PreviewPane, 7, 1, 3803), windowtext)"/>
+			<if id="atom(PreviewMetadataControlEditable)">
+				<MetadataDisplayElement foreground="themeable(gtc(PreviewPane, 7, 2, 3803), windowtext)"/>
+			</if>
+			<if id="atom(PreviewMetadataEditControl)">
+				<InPlaceEdit foreground="themeable(gtc(PreviewPane, 7, 2, 3803), windowtext)"/>
+			</if>
+			<if id="atom(PreviewMetadataSubTitleControl)">
+				<MetadataElement foreground="themeable(gtc(PreviewPane, 6, 0, 3803), windowtext)"/>
+			</if>
+			<if id="atom(PreviewMetadataTitleControl)">
+				<MetadataElement foreground="themeable(gtc(PreviewPane, 5, 0, 3803), windowtext)"/>
+			</if>
+			<if id="atom(ItemCountLabel)">
+				<MetadataLabel foreground="themeable(gtc(PreviewPane, 7, 1, 3803), windowtext)"/>
+			</if>
+			<PreviewMetadata padding="Rect(10rp, 5rp, 10rp, 3rp)"/>
+			<MetadataDisplayElement contentalign="bottomleft | endellipsis"/>
+			<if id="atom(PreviewMetadataRow)">
+				<Element height="18rp"/>
+			</if>
+			<if id="atom(PreviewTitleSpacerInner)">
+				<Element height="18rp"/>
+			</if>
+			<if id="atom(PreviewSubTitleSpacerInner)">
+				<Element height="18rp"/>
+			</if>
+			<if id="atom(PreviewMetadataControlEditable)">
+				<MetadataDisplayElement cursor="ibeam" height="18rp"/>
+				<if KeyFocused="true">
+					<MetadataDisplayElement contentalign="focusrect | bottomleft | endellipsis"/>
+				</if>
+			</if>
+			<if id="atom(PreviewMetadataEditControl)">
+				<InplaceEdit contentalign="bottomleft | endellipsis"/>
+			</if>
+			<if id="atom(PreviewMetadataReadOnlyControl)">
+				<InplaceEdit contentalign="bottomleft | endellipsis"/>
+			</if>
+			<if id="atom(PreviewForceLoadMetadata)">
+				<Button background="themeable(dtb(PreviewPane, 2, 1), ARGB(0, 0, 0, 0))" foreground="gtc(FlyoutStyle, 3, 3, 3803)" cursor="hand" contentalign="bottomleft" font="gtf(TEXTSTYLE, 4, 0)" height="18rp"/>
+				<if MouseFocused="true">
+					<Button background="themeable(dtb(PreviewPane, 2, 2), ARGB(0, 0, 0, 0))"/>
+				</if>
+				<if KeyFocused="true">
+					<Button contentalign="focusrect | bottomleft"/>
+				</if>
+			</if>
+			<PreviewThumbnail padding="Rect(18rp, 4rp, 4rp, 4rp)" background="ARGB(0, 0, 0, 0)"/>
+			<if id="atom(PreviewMetadataTitleControl)">
+				<MetadataElement font="menufont;110%" height="18rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+			</if>
+			<if id="atom(PreviewMetadataSubTitleControl)">
+				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" height="18rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+			</if>
+			<if id="atom(PreviewMetadataControl)">
+				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis"/>
+			</if>
+			<if id="atom(ItemCountLabel)">
+				<MetadataLabel font="menufont;110%" contentalign="bottomleft | endellipsis" height="18rp" overhang="false"/>
+			</if>
+			<if id="atom(PreviewMetadataSpacer)">
+				<Element height="18rp"/>
+			</if>
+			<if id="atom(PreviewSelectionInvatation)">
+				<Element height="18rp" font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis"/>
+			</if>
+			<if id="atom(PreviewEditMetadata)">
+				<Element height="18rp"/>
+			</if>
+			<MetadataLabel padding="Rect(0rp, 0rp, 3rp, 0rp)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis" height="18rp"/>
+			<Sizer background="ARGB(0, 0, 0, 0)"/>
+			<if SlidesUpAndDown="true">
+				<Sizer height="5rp" cursor="sizens"/>
+			</if>
+			<if SlidesUpAndDown="false">
+				<Sizer width="3rp" cursor="sizewe"/>
+			</if>
+			<if id="atom(PreviewPaneSizer)">
+				<Sizer background="themeable(ARGB(0, 0, 0, 0), buttonface)"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer background="themeable(dtb(PreviewPane, 3, 0), buttonface)" borderthickness="rect(0rp,0rp,0rp,0rp)"/>
+			</if>
+			<if id="atom(ReadingPaneSizer)">
+				<Sizer background="themeable(dtb(PreviewPane, 4, 0), buttonface)" borderthickness="rect(0rp,0rp,0rp,0rp)"/>
+			</if>
+			<if id="atom(ProperTreeExpandoSizer)">
+				<Sizer background="buttonface" bordercolor="buttonhighlight" borderstyle="solid" borderthickness="rect(0rp,1rp,0rp,1rp)" height="4rp"/>
+			</if>
+			<if id="atom(PreviewPaneSizer)">
+				<Sizer InitialSize="53" MinSize="53" ReservedSpace="170" FramePersistType="2"/>
+			</if>
+			<if id="atom(CommonItemDialogSizer)">
+				<Sizer InitialSize="100" MinSize="100" FramePersistType="2"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer InitialSize="160" MinSize="60" ReservedSpace="132" FramePersistType="2"/>
+			</if>
+			<if id="atom(ProperTreeExpandoSizer)">
+				<Sizer InitialSize="120" ReservedSpace="26" FramePersistType="2" InitialMaxxedOut="true"/>
+			</if>
+			<if id="atom(PreviewPaneSizer)">
+				<Sizer ExplorerVisibility="{43abf98b-89b8-472d-b9ce-e69b8229f019}" DisablingPolicy="{17067f8d-981b-42c5-98f8-5bc016d4b073}"/>
+			</if>
+			<if id="atom(ReadingPaneSizer)">
+				<Sizer ExplorerVisibility="{893c63d1-45c8-4d17-be19-223be71be365}" DisablingPolicy="{33dcce8d-b6f8-4b7a-ac93-45e301f956aa}"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer ExplorerVisibility="{cb316b22-25f7-42b8-8a09-540d23a43c2f}"/>
+			</if>
+			<if id="atom(ReadingPaneSizer)">
+				<Sizer InitialSize="260" MinSize="68" ReservedSpace="202" GrowTargetFirst="true" ReservedMaster="atom(PageSpaceControlSizer)" FramePersistType="3" InitialVisibility="false"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer ReservedMaster="atom(DetailsContainer)"/>
+			</if>
+			<if id="atom(DetailsContainerSizer)">
+				<Sizer background="themeable(dtb(PreviewPane, 4, 0), buttonface)" borderthickness="rect(0rp,0rp,0rp,0rp)" InitialSize="277" MinSize="277" ReservedSpace="202" ReservedMaster="atom(PageSpaceControlSizer)" PrioritySizer="atom(PageSpaceControlSizer)"/>
+			</if>
+			<TemplateBackground background="ARGB(0, 0, 0, 0)"/>
+			<if id="atom(ReadingPane)">
+				<TemplateBackground background="themeable(gtc(ReadingPane, 1, 0, 3802), window)" font="gtf(TextStyle, 4, 0)"/>
+			</if>
+			<if id="atom(PreviewContainer)">
+				<TemplateBackground background="themeable(gtc(ItemsView, 0, 0, 3802), window)" font="gtf(TextStyle, 4, 0)"/>
+			</if>
+			<if id="atom(RPaneCoverSheet_NoSel)">
+				<Element foreground="themeable(gtc(ReadingPane, 2, 0, 3803), windowtext)" background="themeable(gtc(ReadingPane, 1, 0, 3802), window)"/>
+			</if>
+			<if id="atom(RPaneCoverSheet_Transition)">
+				<Element foreground="themeable(gtc(ReadingPane, 2, 0, 3803), windowtext)" background="themeable(gtc(ReadingPane, 1, 0, 3802), window)"/>
+			</if>
+			<if id="atom(PreviewShineLayer)">
+				<TemplateBackground background="themeable(dtb(PreviewPane, 1, 1), window)"/>
+			</if>
+			<if Vertical="true" id="atom(PreviewShineLayer)">
+				<TemplateBackground background="themeable(dtb(PreviewPane, 1, 2), window)"/>
+			</if>
+		</style>
+		<style resid="propertreestyle">
+			<ProperTreeModule background="themeable(gtc(PROPERTREE, 2, 0, 3802), window)" foreground="themeable(gtc(TooltipStyle, 2, 0, 3803), windowtext)"/>
+			<ProperTreeHost font="IconFont" background="themeable(gtc(PROPERTREE, 2, 0, 3802), window)" foreground="windowtext"/>
+			<if id="atom(ProperTreeLinksHeader)">
+				<Element foreground="themeable(gtc(Button, 1, 4, 3803), windowtext)" background="themeable(gtc(Communications::Rebar, 0, 0, 3803), window)" padding="rect(9rp,9rp,0rp,7rp)" font="gtf(textstyle, 4, 0)"/>
+			</if>
+			<if id="atom(ProperTreeExpandoButtonCollapse)">
+				<Element padding="rect(0rp, 0rp, 9rp, 0rp)" background="argb(0,0,0,0)" contentalign="middleleft" content="graphic(122,2,-1,0,0,0,0)"/>
+			</if>
+			<if id="atom(ProperTreeExpandoButtonExpand)">
+				<Element padding="rect(0rp, 0rp, 9rp, 0rp)" background="argb(0,0,0,0)" contentalign="middleleft" content="graphic(121,2,-1,0,0,0,0)"/>
+			</if>
+			<if id="atom(ProperTreeHeader)">
+				<Element background="argb(0,0,0,0)" contentalign="middleleft" padding="rect(9rp, 0rp, 0rp, 0rp)"/>
+			</if>
+			<if id="atom(ProperTreeHeaderExpand)">
+				<Button background="themeable(dtb(PROPERTREE, 1, 1), window)" foreground="themeable(gtc(TextStyle, 2, 0, 3803), windowtext)" padding="rect(0rp, 6rp, 0rp, 5rp)"/>
+				<if mousefocused="true">
+					<Button background="themeable(dtb(PROPERTREE, 1, 2), highlight)" foreground="themeable(gtc(TextStyle, 2, 0, 3803), highlighttext)"/>
+				</if>
+				<if keyfocused="true">
+					<Button background="themeable(dtb(PROPERTREE, 1, 2), highlight)" foreground="themeable(gtc(TextStyle, 2, 0, 3803), highlighttext)"/>
+				</if>
+				<if pressed="true">
+					<Button background="themeable(dtb(PROPERTREE, 1, 3), hotlight)" foreground="themeable(gtc(TextStyle, 2, 0, 3803), highlighttext)"/>
+				</if>
+			</if>
+			<if id="atom(ProperTreeHeaderCollapse)">
+				<Button background="themeable(dtb(PROPERTREE, 1, 1), window)" foreground="themeable(gtc(TextStyle, 2, 0, 3803), windowtext)" padding="rect(0rp, 6rp, 0rp, 5rp)"/>
+				<if mousefocused="true">
+					<Button background="themeable(dtb(PROPERTREE, 1, 2), highlight)" foreground="themeable(gtc(TextStyle, 2, 0, 3803), highlighttext)"/>
+				</if>
+				<if keyfocused="true">
+					<Button background="themeable(dtb(PROPERTREE, 1, 2), highlight)" foreground="themeable(gtc(TextStyle, 2, 0, 3803), highlighttext)"/>
+				</if>
+				<if pressed="true">
+					<Button background="themeable(dtb(PROPERTREE, 1, 3), hotlight)" foreground="themeable(gtc(TextStyle, 2, 0, 3803), highlighttext)"/>
+				</if>
+			</if>
+			<if id="atom(ProperTreeHeaderFolders)">
+				<Button background="themeable(dtb(PROPERTREE, 1, 1), window)" foreground="themeable(gtc(TextStyle, 2, 0, 3803), windowtext)" padding="rect(0rp, 6rp, 0rp, 5rp)"/>
+				<if mousefocused="true">
+					<Button background="themeable(dtb(PROPERTREE, 1, 2), highlight)" foreground="themeable(gtc(TextStyle, 2, 0, 3803), highlighttext)"/>
+				</if>
+				<if keyfocused="true">
+					<Button background="themeable(dtb(PROPERTREE, 1, 2), highlight)" foreground="themeable(gtc(TextStyle, 2, 0, 3803), highlighttext)"/>
+				</if>
+				<if pressed="true">
+					<Button background="themeable(dtb(PROPERTREE, 1, 3), hotlight)" foreground="themeable(gtc(TextStyle, 2, 0, 3803), highlighttext)"/>
+				</if>
+			</if>
+			<if id="atom(ProperTreeHeaderLibraries)">
+				<Button background="themeable(dtb(PROPERTREE, 1, 1), window)" foreground="themeable(gtc(TextStyle, 2, 0, 3803), windowtext)" padding="rect(0rp, 6rp, 0rp, 5rp)"/>
+				<if mousefocused="true">
+					<Button background="themeable(dtb(PROPERTREE, 1, 2), highlight)" foreground="themeable(gtc(TextStyle, 2, 0, 3803), highlighttext)"/>
+				</if>
+				<if keyfocused="true">
+					<Button background="themeable(dtb(PROPERTREE, 1, 2), highlight)" foreground="themeable(gtc(TextStyle, 2, 0, 3803), highlighttext)"/>
+				</if>
+				<if pressed="true">
+					<Button background="themeable(dtb(PROPERTREE, 1, 3), hotlight)" foreground="themeable(gtc(TextStyle, 2, 0, 3803), highlighttext)"/>
+				</if>
+			</if>
+			<Sizer background="ARGB(0, 0, 0, 0)"/>
+			<if SlidesUpAndDown="true">
+				<Sizer height="5rp" cursor="sizens"/>
+			</if>
+			<if SlidesUpAndDown="false">
+				<Sizer width="3rp" cursor="sizewe"/>
+			</if>
+			<if id="atom(PreviewPaneSizer)">
+				<Sizer background="themeable(ARGB(0, 0, 0, 0), buttonface)"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer background="themeable(dtb(PreviewPane, 3, 0), buttonface)" borderthickness="rect(0rp,0rp,0rp,0rp)"/>
+			</if>
+			<if id="atom(ReadingPaneSizer)">
+				<Sizer background="themeable(dtb(PreviewPane, 4, 0), buttonface)" borderthickness="rect(0rp,0rp,0rp,0rp)"/>
+			</if>
+			<if id="atom(ProperTreeExpandoSizer)">
+				<Sizer background="buttonface" bordercolor="buttonhighlight" borderstyle="solid" borderthickness="rect(0rp,1rp,0rp,1rp)" height="4rp"/>
+			</if>
+			<if id="atom(PreviewPaneSizer)">
+				<Sizer InitialSize="53" MinSize="53" ReservedSpace="170" FramePersistType="2"/>
+			</if>
+			<if id="atom(CommonItemDialogSizer)">
+				<Sizer InitialSize="100" MinSize="100" FramePersistType="2"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer InitialSize="160" MinSize="60" ReservedSpace="132" FramePersistType="2"/>
+			</if>
+			<if id="atom(ProperTreeExpandoSizer)">
+				<Sizer InitialSize="120" ReservedSpace="26" FramePersistType="2" InitialMaxxedOut="true"/>
+			</if>
+			<if id="atom(PreviewPaneSizer)">
+				<Sizer ExplorerVisibility="{43abf98b-89b8-472d-b9ce-e69b8229f019}" DisablingPolicy="{17067f8d-981b-42c5-98f8-5bc016d4b073}"/>
+			</if>
+			<if id="atom(ReadingPaneSizer)">
+				<Sizer ExplorerVisibility="{893c63d1-45c8-4d17-be19-223be71be365}" DisablingPolicy="{33dcce8d-b6f8-4b7a-ac93-45e301f956aa}"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer ExplorerVisibility="{cb316b22-25f7-42b8-8a09-540d23a43c2f}"/>
+			</if>
+			<if id="atom(ReadingPaneSizer)">
+				<Sizer InitialSize="260" MinSize="68" ReservedSpace="202" GrowTargetFirst="true" ReservedMaster="atom(PageSpaceControlSizer)" FramePersistType="3" InitialVisibility="false"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer ReservedMaster="atom(DetailsContainer)"/>
+			</if>
+			<if id="atom(DetailsContainerSizer)">
+				<Sizer background="themeable(dtb(PreviewPane, 4, 0), buttonface)" borderthickness="rect(0rp,0rp,0rp,0rp)" InitialSize="277" MinSize="277" ReservedSpace="202" ReservedMaster="atom(PageSpaceControlSizer)" PrioritySizer="atom(PageSpaceControlSizer)"/>
+			</if>
+		</style>
+		<style resid="saveappcontrolsstyle">
+			<Element margin="rect(0rp, 4rp, 0rp, 4rp)"/>
+			<if id="atom(Label)">
+				<Element padding="Rect(0rp, 0rp, 3rp, 0rp)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="wrapright | endellipsis" width="115rp" foreground="themeable(gtc(MonthCal, 9, 2, 3803), windowtext)"/>
+			</if>
+			<if id="atom(Group)">
+				<Element width="135rp"/>
+			</if>
+			<CIDGroupControl margin="rect(0rp, 4rp, 0rp, 4rp)"/>
+			<AppControlHost background="themeable(argb(0,0,0,0), buttonface)" width="135rp" margin="rect(0rp, 4rp, 0rp, 4rp)" foreground="themeable(gtc(TextStyle, 4, 0, 3803), windowtext)"/>
+			<AppControlsModuleInner background="argb(0,0,0,0)" padding="rect(35rp, 0rp, 2rp, 0rp)" font="gtf(TEXTSTYLE, 4, 0)"/>
+			<AppControlsModule background="themeable(dtb(CommonItemsDialog, 1, 0), buttonface)"/>
+		</style>
+		<style resid="openappcontrolsstyle">
+			<Element margin="rect(0rp, 4rp, 0rp, 4rp)"/>
+			<if id="atom(Label)">
+				<Element padding="Rect(0rp, 0rp, 3rp, 0rp)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="wrapright | endellipsis" width="115rp" foreground="themeable(gtc(MonthCal, 9, 2, 3803), windowtext)"/>
+			</if>
+			<if id="atom(Group)">
+				<Element width="135rp"/>
+			</if>
+			<CIDGroupControl margin="rect(0rp, 4rp, 0rp, 4rp)"/>
+			<AppControlHost background="themeable(argb(0,0,0,0), buttonface)" width="135rp" margin="rect(0rp, 4rp, 0rp, 4rp)" foreground="themeable(gtc(TextStyle, 4, 0, 3803), windowtext)"/>
+			<AppControlsModuleInner background="argb(0,0,0,0)" padding="rect(21rp, 0rp, 2rp, 0rp)" font="gtf(TEXTSTYLE, 4, 0)"/>
+			<AppControlsModule background="themeable(dtb(CommonItemsDialog, 1, 0), buttonface)"/>
+		</style>
+		<style resid="FolderBandStyle">
+			<Element background="argb(0, 0, 0, 0)"/>
+			<TemplateBackground background="themeable(Gradient(gtc(CommandModule, 2, 0, 3810), gtc(CommandModule, 2, 0, 3811), gtc(CommandModule, 2, 0, 3812), 3), window)"/>
+			<if id="atom(FolderBandShineLayer)">
+				<TemplateBackground background="dtb(CommandModule, 1, 0)"/>
+			</if>
+			<!-- negative padding for hiding command bar in unmodded foldertype UIFILE -->
+			<FolderbandModule background="argb(0, 0, 0, 0)" padding="rect(0,-9999rp,0,0)"/>
+			<if id="atom(OverflowButton)">
+				<Button3d background="dtb(CommandModule, 3, 1)" content="dtb(CommandModule, 7, 1)" contentalign="middlecenter" font="gtf(TEXTSTYLE, 4, 0)" padding="rect(8rp, 0rp, 1rp, 1rp)" PressedPaddingShift="1rp"/>
+				<if keyfocused="true">
+					<Button3d background="dtb(CommandModule, 3, 4)"/>
+				</if>
+				<if mousefocused="true">
+					<Button3d background="dtb(CommandModule, 3, 2)"/>
+				</if>
+				<if pressed="true">
+					<Button3d background="dtb(CommandModule, 3, 3)"/>
+				</if>
+			</if>
+			<!-- Hiding Help and Preview buttons with zeroing width and height -->
+			<if id="atom(HelpButton)">
+				<Button3d width="0" height="0" visible="false" background="dtb(CommandModule, 3, 1)" content="icon(24, sysmetric(49), sysmetric(50), library(shell32.dll))" contentalign="middlecenter" font="gtf(TEXTSTYLE, 4, 0)" PressedPaddingShift="1rp"/>
+			</if>
+			<if id="atom(PreviewButton)">
+				<Button3d width="0" height="0" visible="false" background="dtb(CommandModule, 3, 1)" contentalign="middlecenter" font="gtf(TEXTSTYLE, 4, 0)" PressedPaddingShift="1rp"/>
+			</if>
+		</style>
+		<style resid="CPLFolderBandStyle">
+			<Element background="argb(0, 0, 0, 0)"/>
+			<TemplateBackground background="themeable(Gradient(gtc(CommandModule, 2, 0, 3810), gtc(CommandModule, 2, 0, 3811), gtc(CommandModule, 2, 0, 3812), 3), window)"/>
+			<if id="atom(MiddleLayer)">
+				<TemplateBackground background="dtb(CPLCommandModule::CommandModule, 1, 0)"/>
+			</if>
+			<if id="atom(FrontLayer)">
+				<TemplateBackground background="argb(0, 0, 0, 0)"/>
+			</if>
+			<!-- negative padding for hiding command bar in unmodded foldertype UIFILE -->
+			<FolderbandModule background="argb(0, 0, 0, 0)" padding="rect(0,-9999rp,0,0)"/>
+			<if id="atom(OverflowButton)">
+				<Button3d background="dtb(CPLCommandModule::CommandModule, 3, 1)" content="dtb(CPLCommandModule::CommandModule, 7, 1)" contentalign="middlecenter" font="gtf(TEXTSTYLE, 4, 0)" padding="rect(8rp, 0rp, 1rp, 1rp)" PressedPaddingShift="1rp"/>
+				<if keyfocused="true">
+					<Button3d background="dtb(CPLCommandModule::CommandModule, 3, 4)"/>
+				</if>
+				<if mousefocused="true">
+					<Button3d background="dtb(CPLCommandModule::CommandModule, 3, 2)"/>
+				</if>
+				<if pressed="true">
+					<Button3d background="dtb(CPLCommandModule::CommandModule, 3, 3)"/>
+				</if>
+			</if>
+			<if id="atom(HelpButton)">
+				<Button3d width="0" height="0" visible="false" background="dtb(CPLCommandModule::CommandModule, 3, 1)" content="icon(24, sysmetric(49), sysmetric(50), library(shell32.dll))" contentalign="middlecenter" font="gtf(TEXTSTYLE, 4, 0)" padding="rect(6rp, 5rp, 6rp, 5rp)" PressedPaddingShift="1rp"/>
+			</if>
+		</style>
+		<style resid="SplitButtonStyle">
+			<element background="argb(0,0,0,0)"/>
+			<button3d background="argb(0,0,0,0)"/>
+			<if id="atom(ActionButtonLabel)">
+				<Element background="argb(0, 0, 0, 0)" contentalign="topleft | wrapleft"/>
+			</if>
+			<if id="atom(ActionButtonIcon)">
+				<Element background="argb(0, 0, 0, 0)" contentalign="topleft" margin="rect(0, 0, 6rp, 0)"/>
+			</if>
+			<if id="atom(ActionButton)">
+				<Button3d background="argb(0, 0, 0, 0)" padding="rect(0, 4rp, 0, 3rp)" PressedPaddingShift="0" cursor="hand" font="gtf(TextStyle, 6, 0)" foreground="themeable(gtc(CommandModule, 4, 1, 3803), windowtext)"/>
+				<if enabled="false">
+					<Button3d height="0" width="0" visible="false"/>
+				</if>
+				<if keyfocused="true">
+					<Button3d contentalign="topleft | focusrect"/>
+				</if>
+				<if mousefocused="true">
+					<Button3d font="gtf(TextStyle, 6, 2)" foreground="themeable(gtc(CommandModule, 4, 1, 3803), highlight)"/>
+				</if>
+				<if pressed="true">
+					<Button3d font="gtf(TextStyle, 6, 2)" foreground="themeable(gtc(CommandModule, 4, 1, 3803), highlight)"/>
+				</if>
+			</if>
+			<if id="atom(SplitMenuButton)">
+				<Button3d background="argb(0, 0, 0, 0)" content="6" contentalign="topleft" fontface="Marlett" fontsize="8pt" padding="rect(0, 4rp, 0, 3rp)" PressedPaddingShift="0" foreground="themeable(gtc(CommandModule, 5, 1, 3803), windowtext)"/>
+				<if enabled="false">
+					<Button3d height="0" width="0" visible="false"/>
+				</if>
+				<if keyfocused="true">
+					<Button3d contentalign="topleft | focusrect"/>
+				</if>
+				<if mousefocused="true">
+					<Button3d fontstyle="underline" foreground="themeable(gtc(CommandModule, 5, 1, 3803), highlight)"/>
+				</if>
+				<if pressed="true">
+					<Button3d fontstyle="underline" foreground="themeable(gtc(CommandModule, 5, 1, 3803), highlight)"/>
+				</if>
+			</if>
+		</style>
+		<style resid="CPLSplitButtonStyle">
+			<element background="argb(0,0,0,0)"/>
+			<button3d background="argb(0,0,0,0)"/>
+			<if id="atom(ActionButtonLabel)">
+				<Element background="argb(0, 0, 0, 0)" contentalign="topleft | wrapleft"/>
+			</if>
+			<if id="atom(ActionButtonIcon)">
+				<Element background="argb(0, 0, 0, 0)" contentalign="topleft" margin="rect(0, 0, 6rp, 0)"/>
+			</if>
+			<if id="atom(ActionButton)">
+				<Button3d background="argb(0, 0, 0, 0)" padding="rect(0, 4rp, 0, 3rp)" PressedPaddingShift="0" cursor="hand" font="gtf(TextStyle, 6, 0)" foreground="themeable(gtc(CommandModule, 4, 1, 3803), windowtext)"/>
+				<if enabled="false">
+					<Button3d height="0" width="0" visible="false"/>
+				</if>
+				<if keyfocused="true">
+					<Button3d contentalign="topleft | focusrect"/>
+				</if>
+				<if mousefocused="true">
+					<Button3d font="gtf(TextStyle, 6, 2)" foreground="themeable(gtc(CommandModule, 4, 1, 3803), highlight)"/>
+				</if>
+				<if pressed="true">
+					<Button3d font="gtf(TextStyle, 6, 2)" foreground="themeable(gtc(CommandModule, 4, 1, 3803), highlight)"/>
+				</if>
+			</if>
+			<if id="atom(SplitMenuButton)">
+				<Button3d background="argb(0, 0, 0, 0)" content="6" contentalign="topleft" fontface="Marlett" fontsize="8pt" padding="rect(0, 4rp, 0, 3rp)" PressedPaddingShift="0" foreground="themeable(gtc(CommandModule, 5, 1, 3803), windowtext)"/>
+				<if enabled="false">
+					<Button3d height="0" width="0" visible="false"/>
+				</if>
+				<if keyfocused="true">
+					<Button3d contentalign="topleft | focusrect"/>
+				</if>
+				<if mousefocused="true">
+					<Button3d fontstyle="underline" foreground="themeable(gtc(CommandModule, 5, 1, 3803), highlight)"/>
+				</if>
+				<if pressed="true">
+					<Button3d fontstyle="underline" foreground="themeable(gtc(CommandModule, 5, 1, 3803), highlight)"/>
+				</if>
+			</if>
+		</style>
+		<style resid="TaskButtonStyle">
+			<element background="argb(0,0,0,0)"/>
+			<button3d background="argb(0,0,0,0)"/>
+			<if id="atom(ActionButtonLabel)">
+				<Element background="argb(0, 0, 0, 0)" contentalign="topleft | wrapleft"/>
+			</if>
+			<if id="atom(ActionButtonIcon)">
+				<Element background="argb(0, 0, 0, 0)" contentalign="topleft" margin="rect(0, 0, 6rp, 0)"/>
+			</if>
+			<if id="atom(ReservedSpaceButtonIcon)">
+				<Element background="argb(0, 0, 0, 0)" content="icon(50,sysmetric(49), sysmetric(50),library(shell32.dll))" contentalign="topleft" margin="rect(0, 0, 6rp, 0)"/>
+			</if>
+			<if id="atom(ActionButton)">
+				<Button3d background="argb(0, 0, 0, 0)" padding="rect(0, 4rp, 0, 3rp)" PressedPaddingShift="0" cursor="hand" font="gtf(TextStyle, 6, 0)" foreground="themeable(gtc(CommandModule, 3, 1, 3803), windowtext)"/>
+				<if enabled="false">
+					<Button3d height="0" width="0" visible="false"/>
+				</if>
+				<if keyfocused="true">
+					<Button3d contentalign="topleft | focusrect"/>
+				</if>
+				<if mousefocused="true">
+					<Button3d font="gtf(TextStyle, 6, 2)" foreground="themeable(gtc(CommandModule, 3, 1, 3803), highlight)"/>
+				</if>
+				<if pressed="true">
+					<Button3d font="gtf(TextStyle, 6, 2)" foreground="themeable(gtc(CommandModule, 3, 1, 3803), highlight)"/>
+				</if>
+			</if>
+			<if id="atom(ActionButton)">
+				<Button3d content="icon(2,sysmetric(49), sysmetric(50),library(imageres.dll))"/>
+				<!-- Icons for explorer command bar, accdesc = description aka tooltip strings, couldn't get it to work with accname -->
+				<!-- Explorer -->
+				<!-- "Organize" -->
+				<if accdesc="resstr(31412, library(shell32.dll))">
+					<Button3d content="icon(16753,sysmetric(49), sysmetric(50),library(shell32.dll))" />
+				</if>
+				<!-- "Open" -->
+				<if accdesc="resstr(12850, library(shell32.dll))">
+					<Button3d content="icon(16799,sysmetric(49), sysmetric(50),library(shell32.dll))"/>
+				</if>
+				<!-- "Open with" -->
+				<if accdesc="resstr(53330, library(ieframe.dll))">
+					<Button3d content="icon(16799,sysmetric(49), sysmetric(50),library(shell32.dll))"/>
+				</if>
+				<!-- "Empty the Recycle Bin" -->
+				<if accdesc="resstr(31332, library(shell32.dll))">
+					<Button3d content="icon(55,sysmetric(49), sysmetric(50),library(imageres.dll))"/>
+				</if>
+				<!-- "Restore all items" -->
+				<if accdesc="resstr(31337, library(shell32.dll))">
+					<Button3d content="icon(255,sysmetric(49), sysmetric(50),library(shell32.dll))"/>
+				</if>
+				<!-- "Restore the selected items" -->
+				<if accdesc="resstr(31336, library(shell32.dll))">
+					<Button3d content="icon(255,sysmetric(49), sysmetric(50),library(shell32.dll))"/>
+				</if>
+				<!-- "AutoPlay" -->
+				<if accdesc="resstr(31388, library(shell32.dll))">
+					<Button3d content="icon(16767,sysmetric(49), sysmetric(50),library(shell32.dll))"/>
+				</if>
+				<!-- "Network and Sharing Center" -->
+				<if accdesc="resstr(1039, library(NetworkExplorer.dll))">
+					<Button3d content="icon(16782,sysmetric(49), sysmetric(50),library(shell32.dll))"/>
+				</if>
+				<!-- "Add devices and printers" -->
+				<if accdesc="resstr(1051, library(NetworkExplorer.dll))">
+					<Button3d content="icon(129,sysmetric(49), sysmetric(50),library(NetworkExplorer.dll))"/>
+				</if>
+				<!-- "View printers" -->
+				<if accdesc="resstr(31354, library(shell32.dll))">
+					<Button3d content="icon(26,sysmetric(49), sysmetric(50),library(imageres.dll))"/>
+				</if>
+				<!-- "Open with..." -->
+				<if accdesc="resstr(5379, library(shell32.dll))">
+					<Button3d content="icon(16799,sysmetric(49), sysmetric(50),library(shell32.dll))"/>
+				</if>
+				<!-- "Eject" -->
+				<if accdesc="resstr(31376, library(shell32.dll))">
+					<Button3d content="icon(27,sysmetric(49), sysmetric(50),library(shell32.dll))"/>
+				</if>
+				<!-- "Properties" -->
+				<if accdesc="resstr(31299, library(shell32.dll))">
+					<Button3d content="icon(253,sysmetric(49), sysmetric(50),library(shell32.dll))"/>
+				</if>
+				<!-- "System properties" -->
+				<if accdesc="resstr(31295, library(shell32.dll))">
+					<Button3d content="icon(149,sysmetric(49), sysmetric(50),library(imageres.dll))"/>
+				</if>
+				<!-- "Uninstall or change a program" -->
+				<if accdesc="resstr(31328, library(shell32.dll))">
+					<Button3d content="icon(161,sysmetric(49), sysmetric(50),library(imageres.dll))"/>
+				</if>
+				<!-- "Map network drive" -->
+				<if accdesc="resstr(31301, library(shell32.dll))">
+					<Button3d content="icon(33,sysmetric(49), sysmetric(50),library(imageres.dll))"/>
+				</if>
+				<!-- "Open Control Panel" -->
+				<if accdesc="resstr(31361, library(shell32.dll))">
+					<Button3d content="icon(27,sysmetric(49), sysmetric(50),library(imageres.dll))"/>
+				</if>
+				<!-- "Include selected folder in library" -->
+				<if accdesc="resstr(31461, library(shell32.dll))">
+					<Button3d content="icon(1023,sysmetric(49), sysmetric(50),library(imageres.dll))"/>
+				</if>
+				<!-- "Give access to" -->
+				<if accdesc="resstr(5112, library(ntshrui.dll))">
+					<Button3d content="icon(178,sysmetric(49), sysmetric(50),library(imageres.dll))"/>
+				</if>
+				<!-- "Print" -->
+				<if accdesc="resstr(31251, library(shell32.dll))">
+					<Button3d content="icon(51,sysmetric(49), sysmetric(50),library(imageres.dll))"/>
+				</if>
+				<!-- "Email" -->
+				<if accdesc="resstr(31371, library(shell32.dll))">
+					<Button3d content="icon(265,sysmetric(49), sysmetric(50),library(shell32.dll))"/>
+				</if>
+				<!-- "New folder" -->
+				<if accdesc="resstr(31237, library(shell32.dll))">
+					<Button3d content="icon(319,sysmetric(49), sysmetric(50),library(shell32.dll))"/>
+				</if>
+				<!-- "New contact" -->
+				<if accdesc="resstr(71, library(res(%CommonProgramFiles%\system\wab32res.dll)))">
+					<Button3d content="icon(4,sysmetric(49), sysmetric(50),library(%ProgramFiles%\\Windows Mail\\wab.exe))"/>
+				</if>
+				<!-- "New contact group" -->
+				<if accdesc="resstr(73, library(%CommonProgramFiles%\system\wab32res.dll))">
+					<Button3d content="icon(5,sysmetric(49), sysmetric(50),library(%ProgramFiles%\\Windows Mail\\wab.exe))"/>
+				</if>
+				<!-- "Import" -->
+				<if accdesc="resstr(79, library(%CommonProgramFiles%\system\wab32res.dll))">
+					<Button3d content="icon(8,sysmetric(49), sysmetric(50),library(%ProgramFiles%\\Windows Mail\\wab.exe))"/>
+				</if>
+				<!-- "Export" -->
+				<if accdesc="resstr(81, library(%CommonProgramFiles%\system\wab32res.dll))">
+					<Button3d content="icon(9,sysmetric(49), sysmetric(50),library(%ProgramFiles%\\Windows Mail\\wab.exe))"/>
+				</if>
+				<!-- "Play" in video library -->
+				<if accdesc="resstr(31282, library(shell32.dll))">
+					<Button3d content="icon(246,sysmetric(49), sysmetric(50),library(shell32.dll))"/>
+				</if>
+				<!-- "Play" -->
+				<if accdesc="resstr(31283, library(shell32.dll))">
+					<Button3d content="icon(16799,sysmetric(49), sysmetric(50),library(shell32.dll))"/>
+				</if>
+				<!-- "Play all" -->
+				<if accdesc="resstr(31280, library(shell32.dll))">
+					<Button3d content="icon(246,sysmetric(49), sysmetric(50),library(shell32.dll))"/>
+				</if>
+				<!-- "Slide show" -->
+				<if accdesc="resstr(31288, library(shell32.dll))">
+					<Button3d content="icon(103,sysmetric(49), sysmetric(50),library(imageres.dll))"/>
+				</if>
+				<!-- "New library" -->
+				<if accdesc="resstr(31457, library(shell32.dll))">
+					<Button3d content="icon(1001,sysmetric(49), sysmetric(50),library(imageres.dll))"/>
+				</if>
+				<!-- Control Panel -->
+				<!-- Devices and Printers -->
+				<!-- "Add a device" -->
+				<if accdesc="resstr(520, library(DeviceCenter.dll))">
+					<Button3d content="icon(129,sysmetric(49), sysmetric(50),library(NetworkExplorer.dll))"/>
+				</if>
+				<!-- "Add a printer" -->
+				<if accdesc="resstr(523, library(DeviceCenter.dll))">
+					<Button3d content="icon(139,sysmetric(49), sysmetric(50),library(shell32.dll))"/>
+				</if>
+				<!-- "See what's printing" -->
+				<if accdesc="resstr(1300, library(fdprint.dll))">
+					<Button3d content="icon(1006,sysmetric(49), sysmetric(50),library(shell32.dll))"/>
+				</if>
+				<!-- "Print server properties" -->
+				<if accdesc="resstr(1304, library(fdprint.dll))">
+					<Button3d content="icon(1002,sysmetric(49), sysmetric(50),library(shell32.dll))"/>
+				</if>
+				<!-- "Print server properties" -->
+				<if accdesc="resstr(1304, library(fdprint.dll))">
+					<Button3d content="icon(1002,sysmetric(49), sysmetric(50),library(shell32.dll))"/>
+				</if>
+				<!-- "Remove device" -->
+				<if accdesc="resstr(1002, library(RemoveDeviceContextHandler.dll))">
+					<Button3d content="icon(89,sysmetric(49), sysmetric(50),library(imageres.dll))"/>
+				</if>
+				<!-- "AutoPlay" -->
+				<if accdesc="resstr(1005, library(StorageContextHandler.dll))">
+					<Button3d content="icon(16767,sysmetric(49), sysmetric(50),library(shell32.dll))"/>
+				</if>
+				<!-- "Browse files" -->
+				<if accdesc="resstr(1003, library(StorageContextHandler.dll))">
+					<Button3d content="icon(3,sysmetric(49), sysmetric(50),library(imageres.dll))"/>
+				</if>
+				<!-- "Troubleshoot" -->
+				<if accdesc="resstr(524, library(DeviceCenter.dll))">
+					<Button3d content="icon(121,sysmetric(49), sysmetric(50),library(imageres.dll))"/>
+				</if>
+				<!-- Fonts -->
+				<!-- "Preview" -->
+				<if accdesc="resstr(1289, library(fontext.dll))">
+					<Button3d content="icon(150,sysmetric(49), sysmetric(50),library(fontview.exe))"/>
+				</if>
+				<!-- "Delete" -->
+				<if accdesc="resstr(1292, library(fontext.dll))">
+					<Button3d content="icon(89,sysmetric(49), sysmetric(50),library(imageres.dll))"/>
+				</if>
+				<!-- "Hide" -->
+				<if accdesc="resstr(1297, library(fontext.dll))">
+					<Button3d content="icon(5314,sysmetric(49), sysmetric(50),library(imageres.dll))"/>
+				</if>
+				<!-- "Hide" -->
+				<if accdesc="resstr(1298, library(fontext.dll))">
+					<Button3d content="icon(5314,sysmetric(49), sysmetric(50),library(imageres.dll))"/>
+				</if>
+				<!-- Programs and Features -->
+				<!-- "Uninstall" -->
+				<if accdesc="resstr(166, library(appwiz.cpl))">
+					<Button3d content="icon(250,sysmetric(49), sysmetric(50),library(appwiz.cpl))"/>
+				</if>
+				<!-- "Change" -->
+				<if accdesc="resstr(168, library(appwiz.cpl))">
+					<Button3d content="icon(250,sysmetric(49), sysmetric(50),library(appwiz.cpl))"/>
+				</if>
+				<!-- "Repair" -->
+				<if accdesc="resstr(170, library(appwiz.cpl))">
+					<Button3d content="icon(250,sysmetric(49), sysmetric(50),library(appwiz.cpl))"/>
+				</if>
+				<!-- "Uninstall/Change" -->
+				<if accdesc="resstr(172, library(appwiz.cpl))">
+					<Button3d content="icon(250,sysmetric(49), sysmetric(50),library(appwiz.cpl))"/>
+				</if>
+				<!-- "Zip" -->
+				<!-- "Extract all files" -->
+				<if accdesc="resstr(10302, library(zipfldr.dll))">
+					<Button3d content="icon(101,sysmetric(49), sysmetric(50),library(zipfldr.dll))"/>
+				</if>
+				<!-- "Search Results" -->
+				<!-- "Save search" -->
+				<if accdesc="resstr(31408, library(shell32.dll))">
+					<Button3d content="icon(16761,sysmetric(49), sysmetric(50),library(shell32.dll))"/>
+				</if>
+				<!-- "Save search 2" -->
+				<if accdesc="resstr(9022, library(searchfolder.dll))">
+					<Button3d content="icon(16761,sysmetric(49), sysmetric(50),library(shell32.dll))"/>
+				</if>
+				<!-- "Burn" -->
+				<if accdesc="resstr(31383, library(shell32.dll))">
+					<Button3d content="icon(320,sysmetric(49), sysmetric(50),library(shell32.dll))"/>
+				</if>
+				<!-- Network Connections -->
+				<!-- "Connect To" -->
+				<if accdesc="resstr(2401, library(VAN.dll))">
+					<Button3d content="icon(171,sysmetric(49), sysmetric(50),library(imageres.dll))"/>
+				</if>
+				<!-- "Disable this network device" -->
+				<if accdesc="resstr(12017, library(netshell.dll))">
+					<Button3d content="icon(1608,sysmetric(49), sysmetric(50),library(netshell.dll))"/>
+				</if>
+				<!-- "Diagnose this connection" -->
+				<if accdesc="resstr(12023, library(netshell.dll))">
+					<Button3d content="icon(27,sysmetric(49), sysmetric(50),library(netcenter.dll))"/>
+				</if>
+				<!-- "Diagnose this connection" -->
+				<if accdesc="resstr(12023, library(netshell.dll))">
+					<Button3d content="icon(27,sysmetric(49), sysmetric(50),library(netcenter.dll))"/>
+				</if>
+				<!-- "Rename this connection" -->
+				<if accdesc="resstr(12007, library(netshell.dll))">
+					<Button3d content="icon(94,sysmetric(49), sysmetric(50),library(imageres.dll))"/>
+				</if>
+				<!-- "View status of this connection" -->
+				<if accdesc="resstr(12004, library(netshell.dll))">
+					<Button3d content="icon(195,sysmetric(49), sysmetric(50),library(imageres.dll))"/>
+				</if>
+				<!-- "Change settings of this connection" -->
+				<if accdesc="resstr(12008, library(netshell.dll))">
+					<Button3d content="icon(253,sysmetric(49), sysmetric(50),library(shell32.dll))"/>
+				</if>
+				<!-- "View Bluetooth network devices" -->
+				<if accdesc="resstr(12026, library(netshell.dll))">
+					<Button3d content="icon(151,sysmetric(49), sysmetric(50),library(bthprops.cpl))"/>
+				</if>
+				<!-- Manage Wireless Networks -->
+				<!-- "Add" - This icon doesn't exist in Windows 10, it's whatever because this CPL screen doesn't exist in Windows 10 -->
+				<!--<if accdesc="resstr(20036, library(wlanpref.dll))">
+						<Button3d content="icon(107,sysmetric(49), sysmetric(50),library(networkexplorer.dll))"/>
+					</if>-->
+				<!-- "Remove" - This icon doesn't exist in Windows 10, it's whatever because this CPL screen doesn't exist in Windows 10 -->
+				<!--<if accdesc="resstr(20038, library(wlanpref.dll))">
+						<Button3d content="icon(108,sysmetric(49), sysmetric(50),library(networkexplorer.dll))"/>
+					</if>-->
+				<!-- "Move up" -->
+				<if accdesc="resstr(20046, library(wlanpref.dll))">
+					<Button3d content="icon(2300,sysmetric(49), sysmetric(50),library(netshell.dll))"/>
+				</if>
+				<!-- "Move down" -->
+				<if accdesc="resstr(20048, library(wlanpref.dll))">
+					<Button3d content="icon(2301,sysmetric(49), sysmetric(50),library(netshell.dll))"/>
+				</if>
+				<!-- "Adapter properties" -->
+				<if accdesc="resstr(20042, library(wlanpref.dll))">
+					<Button3d content="icon(78,sysmetric(49), sysmetric(50),library(imageres.dll))"/>
+				</if>
+				<!-- "Profile types" -->
+				<if accdesc="resstr(20066, library(wlanpref.dll))">
+					<Button3d content="icon(1029,sysmetric(49), sysmetric(50),library(imageres.dll))"/>
+				</if>
+				<!-- "Network and Sharing Center" -->
+				<if accdesc="resstr(20044, library(wlanpref.dll))">
+					<Button3d content="icon(16782,sysmetric(49), sysmetric(50),library(shell32.dll))"/>
+				</if>
+				<!-- "Enable this network device" -->
+				<if accdesc="resstr(12016, library(netshell.dll))">
+					<Button3d content="icon(1607,sysmetric(49), sysmetric(50),library(netshell.dll))"/>
+				</if>
+			</if>
+			<if id="atom(MenuButtonGlyph)">
+				<Element background="argb(0, 0, 0, 0)" content="dtb(CommandModule, 6, 0)" contentalign="middlecenter" margin="rect(1rp, 0rp, 0rp, 0rp)"/>
+			</if>
+		</style>
+		<style resid="CPLTaskButtonStyle">
+			<element background="argb(0,0,0,0)"/>
+			<button3d background="argb(0,0,0,0)"/>
+			<if id="atom(ActionButtonLabel)">
+				<Element background="argb(0, 0, 0, 0)" contentalign="topleft | wrapleft"/>
+			</if>
+			<if id="atom(ActionButtonIcon)">
+				<Element background="argb(0, 0, 0, 0)" contentalign="topleft" margin="rect(0, 0, 6rp, 0)"/>
+			</if>
+			<if id="atom(ReservedSpaceButtonIcon)">
+				<Element background="argb(0, 0, 0, 0)" content="icon(50,sysmetric(49), sysmetric(50),library(shell32.dll))" contentalign="topleft" margin="rect(0, 0, 6rp, 0)"/>
+			</if>
+			<if id="atom(ActionButton)">
+				<Button3d background="argb(0, 0, 0, 0)" padding="rect(0, 4rp, 0, 3rp)" PressedPaddingShift="0" cursor="hand" font="gtf(TextStyle, 6, 0)" foreground="themeable(gtc(CommandModule, 3, 1, 3803), windowtext)"/>
+				<if enabled="false">
+					<Button3d height="0" width="0" visible="false"/>
+				</if>
+				<if keyfocused="true">
+					<Button3d contentalign="topleft | focusrect"/>
+				</if>
+				<if mousefocused="true">
+					<Button3d font="gtf(TextStyle, 6, 2)" foreground="themeable(gtc(CommandModule, 3, 1, 3803), highlight)"/>
+				</if>
+				<if pressed="true">
+					<Button3d font="gtf(TextStyle, 6, 2)" foreground="themeable(gtc(CommandModule, 3, 1, 3803), highlight)"/>
+				</if>
+			</if>
+			<if id="atom(ActionButton)">
+				<Button3d content="icon(2,sysmetric(49), sysmetric(50),library(imageres.dll))"/>
+				<!-- Icons for explorer command bar, accdesc = description aka tooltip strings, couldn't get it to work with accname -->
+				<!-- Explorer -->
+				<!-- "Organize" -->
+				<if accdesc="resstr(31412, library(shell32.dll))">
+					<Button3d content="icon(16753,sysmetric(49), sysmetric(50),library(shell32.dll))" />
+				</if>
+				<!-- Fonts -->
+				<!-- "Preview" -->
+				<if accdesc="resstr(1289, library(fontext.dll))">
+					<Button3d content="icon(150,sysmetric(49), sysmetric(50),library(fontview.exe))"/>
+				</if>
+				<!-- "Delete" -->
+				<if accdesc="resstr(1292, library(fontext.dll))">
+					<Button3d content="icon(89,sysmetric(49), sysmetric(50),library(imageres.dll))"/>
+				</if>
+				<!-- "Hide" -->
+				<!-- <if accdesc="resstr(1297, library(fontext.dll))">
+					<Button3d content="icon(5314,sysmetric(49), sysmetric(50),library(imageres.dll))"/>
+				</if> -->
+				<!-- "Hide" -->
+				<if accdesc="resstr(1298, library(fontext.dll))">
+					<Button3d content="icon(5314,sysmetric(49), sysmetric(50),library(imageres.dll))"/>
+				</if>
+				<!-- Programs and Features -->
+				<!-- "Uninstall" -->
+				<if accdesc="resstr(166, library(appwiz.cpl))">
+					<Button3d content="icon(250,sysmetric(49), sysmetric(50),library(appwiz.cpl))"/>
+				</if>
+				<!-- "Change" -->
+				<if accdesc="resstr(168, library(appwiz.cpl))">
+					<Button3d content="icon(250,sysmetric(49), sysmetric(50),library(appwiz.cpl))"/>
+				</if>
+				<!-- "Repair" -->
+				<if accdesc="resstr(170, library(appwiz.cpl))">
+					<Button3d content="icon(250,sysmetric(49), sysmetric(50),library(appwiz.cpl))"/>
+				</if>
+				<!-- "Uninstall/Change" -->
+				<if accdesc="resstr(172, library(appwiz.cpl))">
+					<Button3d content="icon(250,sysmetric(49), sysmetric(50),library(appwiz.cpl))"/>
+				</if>
+			</if>
+			<if id="atom(MenuButtonGlyph)">
+				<Element background="argb(0, 0, 0, 0)" content="dtb(CPLCommandModule::CommandModule, 6, 0)" contentalign="middlecenter" margin="rect(3rp, 0rp, 0rp, 0rp)"/>
+			</if>
+		</style>
+		<style resid="CPLTopViewButtonStyle">
+			<if id="atom(ActionButtonLabel)">
+				<Element background="argb(0, 0, 0, 0)" contentalign="middlecenter"/>
+			</if>
+			<if id="atom(ActionButtonIcon)">
+				<Element background="argb(0, 0, 0, 0)" contentalign="middlecenter" padding="rect(2rp, 0rp, 2rp, 0rp)"/>
+				<if enabled="false">
+					<Element alpha="55"/>
+				</if>
+			</if>
+			<if id="atom(TopViewPrefix)">
+				<Element foreground="argb(255, 90, 103, 121)"/>
+			</if>
+			<if id="atom(ActionButton)">
+				<Button3d background="dtb(CommandModule, 9, 1)" foreground="gtc(CommandModule, 9, 1, 3803)" padding="rect(9rp, 5rp, 9rp, 5rp)" PressedPaddingShift="1rp" font="gtf(TEXTSTYLE, 4, 0)"/>
+				<if enabled="false">
+					<Button3d foreground="gtc(CommandModule, 9, 6, 3803)"/>
+				</if>
+				<if keyfocused="true">
+					<Button3d background="dtb(CommandModule, 9, 4)"/>
+				</if>
+				<if mousefocused="true">
+					<Button3d foreground="gtc(CommandModule, 9, 2, 3803)" background="dtb(CommandModule, 9, 2)"/>
+				</if>
+				<if pressed="true">
+					<Button3d foreground="gtc(CommandModule, 9, 3, 3803)" background="dtb(CommandModule, 9, 3)"/>
+				</if>
+			</if>
+			<if id="atom(MenuButtonGlyph)">
+				<Element background="argb(0, 0, 0, 0)" content="dtb(CommandModule, 8, 1)" contentalign="middlecenter" margin="rect(1rp, 0rp, 0rp, 0rp)"/>
+				<if mousefocused="true">
+					<Element content="dtb(CommandModule, 8, 2)"/>
+				</if>
+			</if>
+		</style>
+		<style resid="infobarstyle">
+			<InfoBarHostModule background="argb(0, 0, 0, 0)"/>
+			<Element contentalign="middleleft" font="gtf(TEXTSTYLE, 4, 0)" foreground="gtc(CommandModule, 9, 2, 3803)" background="argb(0,0,0,0)"/>
+			<if id="atom(InfoBarRoot)">
+				<Button background="dtb(InfoBar, 1, 1)" padding="rect(6rp, 2rp, 2rp, 2rp)"/>
+				<if keyfocused="true">
+					<Button background="dtb(InfoBar, 1, 4)"/>
+				</if>
+				<if mousefocused="true">
+					<Button background="dtb(InfoBar, 1, 2)"/>
+				</if>
+				<if pressed="true">
+					<Button background="dtb(InfoBar, 1, 3)"/>
+				</if>
+			</if>
+			<if id="atom(Message)">
+				<Element contentalign="middleleft|endellipsis" foreground="gtc(InfoBar, 2, 1, 3803)"/>
+				<if keyfocused="true">
+					<Element foreground="gtc(InfoBar, 2, 4, 3803)"/>
+				</if>
+				<if mousefocused="true">
+					<Element foreground="gtc(InfoBar, 2, 2, 3803)"/>
+				</if>
+			</if>
+			<if id="atom(Close)">
+				<Button background="argb(0,0,0,0)" content="dtb(tooltip, 5, 1)" contentalign="middlecenter" padding="rect(6rp, 4rp, 6rp, 4rp)"/>
+				<if keyfocused="true">
+					<Button content="dtb(tooltip, 5, 2)"/>
+				</if>
+				<if mousefocused="true">
+					<Button content="dtb(tooltip, 5, 2)"/>
+				</if>
+				<if pressed="true">
+					<Button content="dtb(tooltip, 5, 3)"/>
+				</if>
+			</if>
+		</style>
+		<!-- Plex addition -->
+		<style resid="taskpane">
+			<Expando background="argb(0,0,0,0)" padding="rect(0,0,0,15rp)" animation="RectangleV|log|fast"/>
+			<button background="argb(0,0,0,0)"/>
+			<element background="argb(0,0,0,0)"/>
+			<viewer background="argb(0,0,0,0)"/>
+			<Button background="argb(0,0,0,0)"/>
+			<if class="groupheader">
+				<accessiblebutton padding="rect(8rp,12rp,3rp,0)" cursor="hand" contentalign="middleleft"/>
+			</if>
+			<if class="dropdownarrow">
+				<Button background="argb(0,0,0,0)" padding="rect(0rp,0rp,2rp,0rp)" content="themeable(dtb(ExplorerBar, 7, 1), '')"/>
+				<if MouseFocused="true">
+					<Button content="themeable(dtb(ExplorerBar, 7, 2), '')"/>
+				</if>
+				<if selected="true">
+					<button content="themeable(dtb(ExplorerBar, 6, 1), '')"/>
+					<if mousefocused="true">
+						<button content="themeable(dtb(ExplorerBar, 6, 2), '')"/>
+					</if>
+				</if>
+			</if>
+			<if class="groupbackground">
+				<element animation="RectangleV|log|fast" padding="rect(4rp,0rp,0rp,0rp)"/>
+			</if>
+			<if class="name">
+				<button fontface="Franklin Gothic Book" fontsize="14rp" foreground="rgb(0, 97, 186)" padding="rect(0, 0rp, 0, 0)"/>
+				<if MouseFocused="true">
+					<Button/>
+				</if>
+			</if>
+			<if class="task_item">
+				<viewer padding="rect(5rp,4rp,5rp,3rp)"/>
+				<element padding="rect(5rp,4rp,5rp,3rp)"/>
+				<navigatebutton padding="rect(5rp,4rp,5rp,3rp)"/>
+			</if>
+			<if class="icon">
+				<Button Background="argb(0,0,0,0)" cursor="hand" padding="rect(0,0,5rp,0)"/>
+			</if>
+			<if class="label_normal">
+				<Button fontface="Franklin Gothic Book" fontsize="9pt" foreground="rgb(103, 103, 103)" background="argb(0,0,0,0)" contentalign="topleft | wrapleft" cursor="hand"/>
+				<if MouseFocused="true">
+					<Button fontface="Franklin Gothic Book" fontstyle="underline" fontsize="9pt"/>
+				</if>
+			</if>
+			<if class="filterlink">
+				<button fontface="Franklin Gothic Book" fontsize="9pt" foreground="rgb(237, 171, 5)" background="argb(0,0,0,0)" contentalign="topleft | wrapleft" cursor="hand"/>
+				<if MouseFocused="true">
+					<button fontface="Franklin Gothic Book" fontstyle="underline" fontsize="9pt"/>
+				</if>
+			</if>
+			<if class="label">
+				<element fontface="Franklin Gothic Book" fontsize="9pt" foreground="rgb(103, 103, 103)" background="argb(0,0,0,0)" contentalign="topleft | wrapleft"/>
+			</if>
+		</style>
+		<style resid="taskpane2">
+			<Expando background="argb(0,0,0,0)" padding="rect(10rp,2rp,2rp,2rp)" animation="RectangleV|s|fast"/>
+			<button background="argb(0,0,0,0)"/>
+			<element background="argb(0,0,0,0)"/>
+			<viewer background="argb(0,0,0,0)"/>
+			<Button background="argb(0,0,0,0)"/>
+			
+			<if class="groupheader">
+				<accessiblebutton padding="rect(8rp,12rp,3rp,0)" cursor="hand" contentalign="middleleft"/>
+			</if>
+			<if class="groupbackground">
+				<element animation="RectangleV|s|fast" padding="rect(4rp,0rp,4rp,0rp)"/>
+			</if>
+			
+			<if class="dropdownArrow">
+				<Button background="argb(0,0,0,0)" padding="rect(0rp,0rp,2rp,0rp)" content="themeable(dtb(ExplorerBar, 7, 1), '')"/>
+				<if MouseFocused="true">
+					<Button content="themeable(dtb(ExplorerBar, 7, 2), '')"/>
+				</if>
+				<if selected="true">
+					<button content="themeable(dtb(ExplorerBar, 6, 1), '')"/>
+					<if mousefocused="true">
+						<button content="themeable(dtb(ExplorerBar, 6, 2), '')"/>
+					</if>
+				</if>
+			</if>
+			
+			
+			<if class="primaryGroupLabel">
+				<button font="iconfont;160%" foreground="rgb(107, 163, 231)" padding="rect(0, 0rp, 0, 0)"/>
+			</if>
+			<if class="secondaryGroupLabel">
+				<button font="iconfont;160%" foreground="rgb(0, 97, 186)" padding="rect(0, 0rp, 0, 0)"/>
+			</if>
+			
+			<if class="task_item">
+				<viewer padding="rect(0,4rp,0,3rp)" cursor="hand"/>
+				<element padding="rect(0,4rp,0,3rp)" cursor="hand"/>
+				<navigatebutton padding="rect(0,4rp,0,3rp)" cursor="hand"/>
+			</if>
+			<if class="icon">
+				<Button Background="argb(0,0,0,0)" cursor="hand" margin="rect(0,0,6rp,0)"/>
+			</if>
+			<if class="label_normal">
+				<Button fontface="Franklin Gothic Book" fontsize="9pt" foreground="rgb(103, 103, 103)" background="argb(0,0,0,0)" contentalign="topleft | wrapleft" cursor="hand"/>
+				<if MouseFocused="true">
+					<Button fontface="Franklin Gothic Book" fontstyle="underline" fontsize="9pt"/>
+				</if>
+			</if>
+			<if class="filterlink">
+				<button fontface="Franklin Gothic Book" fontsize="9pt" foreground="rgb(237, 171, 5)" background="argb(0,0,0,0)" contentalign="topleft | wrapleft" cursor="hand"/>
+				<if MouseFocused="true">
+					<button fontface="Franklin Gothic Book" fontstyle="underline" fontsize="9pt"/>
+				</if>
+			</if>
+			<if class="label">
+				<element fontface="Franklin Gothic Book" fontsize="9pt" foreground="rgb(103, 103, 103)" background="argb(0,0,0,0)" contentalign="topleft | wrapleft"/>
+			</if>
+		</style>
+		<style resid="fileheaderss">
+			<element background="argb(0,0,0,0)"/>
+			<button background="argb(0,0,0,0)"/>
+			<if class="headerbg">
+				<element  />
+			</if>
+			<if class="headerbutton">
+				<button padding="Rect(12rp,7rp,7rp,7rp)" />
+			</if>
+			<if class="primaryLabel">
+				<Element foreground="ARGB(255,31,87,133)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="middleleft" />
+			</if>
+			<if class="secondaryLabel">
+				<Element foreground="ARGB(255,130,183,251)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="middleleft" />
+			</if>
+			<if class="dropdownGlyph">
+				<Element content="6" contentalign="middleleft" fontface="Marlett" fontsize="8pt" foreground="ARGB(255,31,87,133)" fontstyle="shadow"/>
+			</if>
+			
+		</style>
+	</stylesheets>
+</duixml>

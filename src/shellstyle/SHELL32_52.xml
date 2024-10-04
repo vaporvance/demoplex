@@ -1,0 +1,8 @@
+<duixml>
+<Element resid="ProperTree" sheet="propertreestyle" layout="borderlayout()" animation="rectangle|s|fast">
+</Element>
+<Element resid="ProperTreeInner" sheet="propertreestyle" layout="filllayout()">
+<ProperTreeHost id="atom(ProperTreeHost)" width="170rp" layoutpos="client" padding="rect(1rp,0rp,3rp,0rp)" TopMargin="1" accessible="true" accname="resstr(0x8001, library(shell32.dll))"/>
+<Sizer id="atom(PageSpaceControlSizer)" sizingtarget="atom(ProperTreeModuleInner)" SlidesUpAndDown="false" FramePersistType="2" layoutpos="Right"/>
+</Element>
+</duixml>

@@ -1,0 +1,88 @@
+<duixml>
+  <element resid="ControlPanelNavPane" sheet="NavPanelStyle" layout="borderlayout()">
+    <element id="atom(NavPanel)" layoutpos="client" layout="filllayout()">
+	  <Viewer>
+		<Element id="atom(NavPanelWatermark)"/>
+	  </Viewer>
+      <element id="atom(NavPanelContent)" layout="borderlayout()">
+        <element id="atom(HomePageLink)" class="CategoryNavLink" layoutpos="top" layout="FlowLayout(0,0,0,0)">
+          <Viewer>
+            <element id="atom(Dot)" />
+          </Viewer>
+          <ControlPanelLink id="atom(CPLink)" class="link" content="resstr(0x7951, library(shell32.dll))" />
+        </element>
+        <element layout="filllayout()" class="TopList" layoutpos="top">
+          <element id="atom(CategoryList)" layout="verticalflowlayout(0,0,0,0)" layoutpos="top" />
+          <element id="atom(AppletTaskLinks)" layout="verticalflowlayout(0,0,0,0)" layoutpos="top" />
+        </element>
+        <element id="atom(AppletSeeAlsoSection)" layout="verticalflowlayout(0,0,0,0)" layoutpos="bottom">
+          <element id="atom(SeeAlsoText)" accrole="statictext" content="resstr(0x7973, library(shell32.dll))" />
+          <element id="atom(AppletSeeAlsoLinks)" layout="verticalflowlayout(0,0,0,0)" />
+        </element>
+      </element>
+    </element>
+  </element>
+  <element resid="NavPanelCategoryLink" sheet="NavPanelStyle" class="CategoryNavLink" layout="FlowLayout(0,0,0,0)">
+    <Viewer>
+      <element id="atom(Dot)" />
+    </Viewer>
+    <ControlPanelLink id="atom(CPLink)" class="link" />
+  </element>
+  <element resid="NavPanelTaskLink" sheet="NavPanelStyle" class="TaskNavLink" layout="FlowLayout(0,0,0,0)">
+    <Viewer>
+      <ControlPanelLink id="atom(LinkIcon)" visible="false" tooltip="false" accname="resstr(0x7972, library(shell32.dll))" />
+    </Viewer>
+    <ControlPanelLink id="atom(LinkText)" class="link" margin="rect(5rp,0rp,0rp,0rp)" tooltip="false" />
+  </element>
+  <stylesheets>
+    <style resid="NavPanelStyle">
+      <element background="20575" />
+      <if id="atom(NavPanel)">
+        <element background="themeable(dtb(CONTROLPANEL,1,1),window)" accessible="true" accname="CPNavPanel" accrole="pane" />
+      </if>
+	  <if id="atom(NavPanelWatermark)">
+	    <Element content="themeable(dtb(CONTROLPANEL,1,2),'')" width="200rp"/>
+	  </if>
+      <if id="atom(HomePageLink)">
+        <element padding="rect(5rp,14rp,3rp,0rp)" />
+      </if>
+      <if class="TopList">
+        <element margin="rect(8rp,8rp,8rp,8rp)" padding="rect(0rp,2rp,0rp,8rp)" />
+      </if>
+      <if class="CategoryNavLink">
+        <element padding="rect(5rp,5rp,3rp,0rp)" />
+      </if>
+      <if class="TaskNavLink">
+        <element padding="rect(6rp,8rp,4rp,0rp)" />
+      </if>
+      <if id="atom(Dot)">
+        <element content="themeable(icon(16799,sysmetric(49),sysmetric(50),library(shell32.dll)),icon(16800,sysmetric(49),sysmetric(50),library(shell32.dll)))" padding="themeable(rect(2rp,1rp,1rp,1rp),rect(2rp,0rp,1rp,1rp))" visible="false" />
+      </if>
+      <if id="atom(AppletSeeAlsoSection)">
+        <element padding="rect(0rp,5rp,0rp,20rp)" />
+      </if>
+      <ControlPanelLink background="20575" accessible="true" tooltip="true" cursor="hand" />
+      <if id="atom(LinkIcon)">
+        <ControlPanelLink width="sysmetric(49)" />
+        <if class="DisabledLink_Dot">
+          <ControlPanelLink content="themeable(icon(16799,sysmetric(49),sysmetric(50),library(shell32.dll)),icon(16800,sysmetric(49),sysmetric(50),library(shell32.dll)))" enabled="false" accessible="false" accrole="graphic" />
+        </if>
+      </if>
+      <if class="selected_link">
+        <ControlPanelLink foreground="gtc(ControlPanelStyle,8,1,3803)" font="gtf(ControlPanelStyle,8,5)" margin="rect(3rp,0rp,0rp,0rp)" contentalign="wrapleft" />
+      </if>
+      <if class="link">
+        <ControlPanelLink foreground="gtc(ControlPanelStyle,8,1,3803)" font="gtf(ControlPanelStyle,8,1)" margin="rect(3rp,0rp,0rp,0rp)" contentalign="wrapleft" />
+        <if keyfocused="true">
+          <ControlPanelLink contentalign="wrapleft | focusrect" />
+        </if>
+        <if mousefocused="true">
+          <ControlPanelLink foreground="gtc(ControlPanelStyle,8,2,3803)" font="gtf(ControlPanelStyle,8,2)" />
+        </if>
+      </if>
+      <if id="atom(SeeAlsoText)">
+        <element foreground="gtc(ControlPanelStyle,3,0,3803)" font="gtf(ControlPanelStyle,3,0)" padding="rect(27rp,0rp,4rp,0rp)" contentalign="wrapleft" accessible="true" />
+      </if>
+    </style>
+  </stylesheets>
+</duixml>
