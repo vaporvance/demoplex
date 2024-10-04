@@ -1,3 +1,5 @@
+## Please consider contributing in the main repo instead of this one
+
 windows 10 only
 
 copy demoplex.theme and demoplex folder to c:\windows\resources\themes\
