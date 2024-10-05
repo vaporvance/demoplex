@@ -1,88 +1,121 @@
 <duixml>
-  <element resid="ControlPanelNavPane" sheet="NavPanelStyle" layout="borderlayout()">
-    <element id="atom(NavPanel)" layoutpos="client" layout="filllayout()">
-	  <Viewer>
-		<Element id="atom(NavPanelWatermark)"/>
-	  </Viewer>
-      <element id="atom(NavPanelContent)" layout="borderlayout()">
-        <element id="atom(HomePageLink)" class="CategoryNavLink" layoutpos="top" layout="FlowLayout(0,0,0,0)">
-          <Viewer>
-            <element id="atom(Dot)" />
-          </Viewer>
-          <ControlPanelLink id="atom(CPLink)" class="link" content="resstr(0x7951, library(shell32.dll))" />
-        </element>
-        <element layout="filllayout()" class="TopList" layoutpos="top">
-          <element id="atom(CategoryList)" layout="verticalflowlayout(0,0,0,0)" layoutpos="top" />
-          <element id="atom(AppletTaskLinks)" layout="verticalflowlayout(0,0,0,0)" layoutpos="top" />
-        </element>
-        <element id="atom(AppletSeeAlsoSection)" layout="verticalflowlayout(0,0,0,0)" layoutpos="bottom">
-          <element id="atom(SeeAlsoText)" accrole="statictext" content="resstr(0x7973, library(shell32.dll))" />
-          <element id="atom(AppletSeeAlsoLinks)" layout="verticalflowlayout(0,0,0,0)" />
-        </element>
-      </element>
-    </element>
-  </element>
-  <element resid="NavPanelCategoryLink" sheet="NavPanelStyle" class="CategoryNavLink" layout="FlowLayout(0,0,0,0)">
-    <Viewer>
-      <element id="atom(Dot)" />
-    </Viewer>
-    <ControlPanelLink id="atom(CPLink)" class="link" />
-  </element>
-  <element resid="NavPanelTaskLink" sheet="NavPanelStyle" class="TaskNavLink" layout="FlowLayout(0,0,0,0)">
-    <Viewer>
-      <ControlPanelLink id="atom(LinkIcon)" visible="false" tooltip="false" accname="resstr(0x7972, library(shell32.dll))" />
-    </Viewer>
-    <ControlPanelLink id="atom(LinkText)" class="link" margin="rect(5rp,0rp,0rp,0rp)" tooltip="false" />
-  </element>
-  <stylesheets>
-    <style resid="NavPanelStyle">
-      <element background="20575" />
-      <if id="atom(NavPanel)">
-        <element background="themeable(dtb(CONTROLPANEL,1,1),window)" accessible="true" accname="CPNavPanel" accrole="pane" />
-      </if>
-	  <if id="atom(NavPanelWatermark)">
-	    <Element content="themeable(dtb(CONTROLPANEL,1,2),'')" width="200rp"/>
-	  </if>
-      <if id="atom(HomePageLink)">
-        <element padding="rect(5rp,14rp,3rp,0rp)" />
-      </if>
-      <if class="TopList">
-        <element margin="rect(8rp,8rp,8rp,8rp)" padding="rect(0rp,2rp,0rp,8rp)" />
-      </if>
-      <if class="CategoryNavLink">
-        <element padding="rect(5rp,5rp,3rp,0rp)" />
-      </if>
-      <if class="TaskNavLink">
-        <element padding="rect(6rp,8rp,4rp,0rp)" />
-      </if>
-      <if id="atom(Dot)">
-        <element content="themeable(icon(16799,sysmetric(49),sysmetric(50),library(shell32.dll)),icon(16800,sysmetric(49),sysmetric(50),library(shell32.dll)))" padding="themeable(rect(2rp,1rp,1rp,1rp),rect(2rp,0rp,1rp,1rp))" visible="false" />
-      </if>
-      <if id="atom(AppletSeeAlsoSection)">
-        <element padding="rect(0rp,5rp,0rp,20rp)" />
-      </if>
-      <ControlPanelLink background="20575" accessible="true" tooltip="true" cursor="hand" />
-      <if id="atom(LinkIcon)">
-        <ControlPanelLink width="sysmetric(49)" />
-        <if class="DisabledLink_Dot">
-          <ControlPanelLink content="themeable(icon(16799,sysmetric(49),sysmetric(50),library(shell32.dll)),icon(16800,sysmetric(49),sysmetric(50),library(shell32.dll)))" enabled="false" accessible="false" accrole="graphic" />
-        </if>
-      </if>
-      <if class="selected_link">
-        <ControlPanelLink foreground="gtc(ControlPanelStyle,8,1,3803)" font="gtf(ControlPanelStyle,8,5)" margin="rect(3rp,0rp,0rp,0rp)" contentalign="wrapleft" />
-      </if>
-      <if class="link">
-        <ControlPanelLink foreground="gtc(ControlPanelStyle,8,1,3803)" font="gtf(ControlPanelStyle,8,1)" margin="rect(3rp,0rp,0rp,0rp)" contentalign="wrapleft" />
-        <if keyfocused="true">
-          <ControlPanelLink contentalign="wrapleft | focusrect" />
-        </if>
-        <if mousefocused="true">
-          <ControlPanelLink foreground="gtc(ControlPanelStyle,8,2,3803)" font="gtf(ControlPanelStyle,8,2)" />
-        </if>
-      </if>
-      <if id="atom(SeeAlsoText)">
-        <element foreground="gtc(ControlPanelStyle,3,0,3803)" font="gtf(ControlPanelStyle,3,0)" padding="rect(27rp,0rp,4rp,0rp)" contentalign="wrapleft" accessible="true" />
-      </if>
-    </style>
-  </stylesheets>
+	<element resid="ControlPanelNavPane" sheet="NavPanelStyle" layout="borderlayout()">
+		<element id="atom(NavPanel)" layoutpos="client" layout="filllayout()">
+			<element id="atom(NavPanelContent)" layout="filllayout()">
+				<scrollviewer sheet="common" XScrollable="false">
+					<element sheet="taskpane2" class="sidepanel" layout="verticalflowlayout(0,0,0,0)">
+						<Expando layout="borderlayout()" Expanded="true">
+							<accessiblebutton id="atom(arrow)" class="groupheader" layoutpos="top" layout="flowlayout(0,2,0,2)">
+								<Button class="dropdownArrow" active="inactive"/>
+								<button class="primaryGroupLabel" active="inactive" content="control"/>
+								<button class="secondaryGroupLabel" active="inactive" content="panel"/>
+							</accessiblebutton>
+							<element id="atom(clipper)" class="groupbackground" layoutpos="top" layout="borderlayout()">
+								<element layoutpos="client" layout="verticalflowlayout(0,0,0,0)">
+									<element id="atom(HomePageLink)" sheet="NavPanelStyle" layout="borderlayout()">
+										<Viewer class="icon" layoutpos="left">
+											<element content="icon(22,sysmetric(49),sysmetric(50),library(shell32.dll))"/>
+										</Viewer>
+										<ControlPanelLink id="atom(CPLink)" layoutpos="left" class="link" content="resstr(0x7951, library(shell32.dll))"/>
+									</element>
+								</element>
+							</element>
+						</Expando>
+						<Expando layout="borderlayout()" Expanded="true">
+							<accessiblebutton id="atom(arrow)" class="groupheader" layoutpos="top" layout="flowlayout(0,2,0,2)">
+								<Button class="dropdownArrow" active="inactive"/>
+								<button class="primaryGroupLabel" active="inactive" content="related"/>
+								<button class="secondaryGroupLabel" active="inactive" content="tasks"/>
+							</accessiblebutton>
+							<element id="atom(clipper)" class="groupbackground" layoutpos="top" layout="borderlayout()">
+								<element layoutpos="client" layout="verticalflowlayout(0,0,0,0)">
+									<element id="atom(CategoryList)" sheet="NavPanelStyle" layout="verticalflowlayout(0,0,0,0)" height="0" width="0"/>
+									<element id="atom(AppletTaskLinks)" sheet="NavPanelStyle" layout="verticalflowlayout(0,0,0,0)"/>
+									<navigatebutton class="task_item" layout="borderlayout()" shellexecute="No task yet">
+										<Button class="icon" layoutpos="left" content="icon(50,sysmetric(49),sysmetric(50),library(shell32.dll))" accessible="true" accrole="pushbutton"/>
+										<Button class="label_normal" layoutpos="left" content="Get help" accessible="true" accrole="pushbutton"/>
+									</navigatebutton>
+								</element>
+							</element>
+						</Expando>
+						<element id="atom(AppletSeeAlsoSection)" layout="filllayout()" animation="RectangleV|s|fast">
+							<Expando layoutpos="top" layout="borderlayout()" Expanded="true">
+								<accessiblebutton id="atom(arrow)" class="groupheader" layoutpos="top" layout="flowlayout(0,2,0,2)">
+									<Button class="dropdownArrow" active="inactive"/>
+									<button class="primaryGroupLabel" active="inactive" content="see"/>
+									<button class="secondaryGroupLabel" active="inactive" content="also"/>
+								</accessiblebutton>
+								<element id="atom(clipper)" class="groupbackground" layoutpos="top" layout="borderlayout()">
+									<element layoutpos="client" layout="verticalflowlayout(0,0,0,0)">
+										<element id="atom(AppletSeeAlsoLinks)" layout="verticalflowlayout(0,0,0,0)" sheet="NavPanelStyle"/>
+									</element>
+								</element>
+							</Expando>
+						</element>
+					</element>
+				</scrollviewer>
+			</element>
+		</element>
+	</element>
+	<element resid="NavPanelCategoryLink" sheet="NavPanelStyle" class="CategoryNavLink" layout="FlowLayout(0,0,0,0)">
+		<Viewer class="icon">
+			<element id="atom(Dot)"/>
+		</Viewer>
+		<ControlPanelLink id="atom(CPLink)" class="link"/>
+	</element>
+	<element resid="NavPanelTaskLink" sheet="NavPanelStyle" class="TaskNavLink" layout="borderlayout()">
+		<Viewer class="icon" layoutpos="left">
+			<ControlPanelLink id="atom(LinkIcon)" visible="true" tooltip="false" accname="resstr(0x7972, library(shell32.dll))" content="icon(2,sysmetric(49), sysmetric(50),library(imageres.dll))"/>
+		</Viewer>
+		<ControlPanelLink id="atom(LinkText)" layoutpos="left" class="link" tooltip="false"/>
+	</element>
+	<stylesheets>
+		<style resid="NavPanelStyle">
+			<element background="argb(0,0,0,0)"/>
+			<if id="atom(NavPanel)">
+				<element background="window" accessible="true" accname="CPNavPanel" accrole="pane"/>
+			</if>
+			<if class="TopList">
+				<element margin="rect(8rp,8rp,8rp,8rp)" padding="rect(0rp,2rp,0rp,8rp)"/>
+			</if>
+			<if class="CategoryNavLink">
+				<element padding="rect(0,4rp,0,3rp)" contentalign="topleft"/>
+			</if>
+			<if class="TaskNavLink">
+				<element padding="rect(0,4rp,0,3rp)" contentalign="topleft"/>
+			</if>
+			<if id="atom(HomePageLink)">
+				<element padding="rect(0,4rp,0,3rp)" contentalign="topleft"/>
+			</if>
+			<if class="icon">
+				<viewer margin="rect(0,0,6rp,0)" cursor="hand"/>
+			</if>
+			<if id="atom(Dot)">
+				<element content="themeable(icon(16799,sysmetric(49),sysmetric(50),library(shell32.dll)),icon(16800,sysmetric(49),sysmetric(50),library(shell32.dll)))" visible="false"/>
+			</if>
+			<ControlPanelLink background="argb(0,0,0,0)" accessible="true" tooltip="true" cursor="hand"/>
+			<if id="atom(LinkIcon)">
+				<ControlPanelLink width="sysmetric(49)"/>
+				<if class="DisabledLink_Dot">
+					<ControlPanelLink content="themeable(icon(16799,sysmetric(49),sysmetric(50),library(shell32.dll)),icon(16800,sysmetric(49),sysmetric(50),library(shell32.dll)))" enabled="false" accessible="false" accrole="graphic"/>
+				</if>
+			</if>
+			<if class="selected_link">
+				<ControlPanelLink foreground="themeable(gtc(ControlPanelStyle,8,1,3803), windowtext)" font="themeable(gtf(ControlPanelStyle,8,5), gtf(TextStyle, 3, 0))" contentalign="topleft | wrapleft"/>
+			</if>
+			<if class="link">
+				<ControlPanelLink foreground="themeable(gtc(ControlPanelStyle,8,1,3803), windowtext)" font="themeable(gtf(ControlPanelStyle,8,1), gtf(TextStyle, 6, 0))" contentalign="topleft | wrapleft"/>
+				<if keyfocused="true">
+					<ControlPanelLink contentalign="topleft | wrapleft | focusrect"/>
+				</if>
+				<if mousefocused="true">
+					<ControlPanelLink foreground="themeable(gtc(ControlPanelStyle,8,2,3803), windowtext)" font="themeable(gtf(ControlPanelStyle,8,2), gtf(TextStyle, 6, 2))"/>
+				</if>
+			</if>
+			<if id="atom(SeeAlsoText)">
+				<element foreground="gtc(ControlPanelStyle,3,0,3803)" font="gtf(TextStyle, 4, 0)" padding="rect(27rp,0rp,4rp,0rp)" contentalign="wrapleft" accessible="true"/>
+			</if>
+		</style>
+	</stylesheets>
 </duixml>
+

@@ -301,10 +301,10 @@
 		</LineScroller>
 	</UIRootItem>
 	<UIItemsView resid="ItemsView" visible="true" layout="filllayout()" sheet="ItemsView" background="gradient(rgb(255, 255, 255),rgb(244, 245, 250),rgb(199, 215, 233),4)"/>
-	<UIColumnHeader resid="UIColumnHeader" layout="filllayout()" layoutpos="left">
-		<element id="atom(ContentContainer)" layout="borderlayout()">
-			<element id="atom(CheckboxSpace)" layoutpos="left"/>
-			<element id="atom(DropDownSpace)" layoutpos="right"/>
+	<UIColumnHeader resid="UIColumnHeader" layout="filllayout()" layoutpos="left" height="20rp">
+		<element id="atom(ContentContainer)" layout="flowlayout(0,2,2,2)">
+			<element id="atom(CheckboxSpace)" layoutpos="none"/>
+			<element id="atom(DropDownSpace)" layoutpos="none"/>
 			<element id="atom(ContentArrowContainer)" layoutpos="left" layout="borderlayout()">
 				<element id="atom(Content)" layoutpos="client" contentalign="middleleft|endellipsis"/>
 				<element id="atom(SortArrow)" layoutpos="right"/>
@@ -847,7 +847,7 @@
 				</if>
 			</if>
 			<if id="atom(ContentContainer)">
-				<element padding="themeable(rect(4rp,5rp,5rp,5rp), rect(4rp,5rp,4rp,5rp))"/>
+				<element padding="rect(0,0,0,0)"/>
 			</if>
 			<if id="atom(ContentArrowContainer)" keyfocused="true">
 				<element contentalign="themeable(topleft, focusrect)"/>

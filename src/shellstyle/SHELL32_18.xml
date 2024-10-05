@@ -1,0 +1,54 @@
+<!-- CPL Home page -->
+<duixml>
+	<Element resid="FolderLayout" layout="shellborderlayout()" background="gradient(rgb(255, 255, 255),rgb(244, 245, 250),rgb(199, 215, 233),4)">
+		<ControlPanelCategoryModule ModuleID="ControlPanelCategoryModule" layoutpos="client"/>
+		<scrollviewer layoutpos="left" sheet="common" XScrollable="false" width="200rp" background="argb(0,0,0,0)">
+			<element sheet="taskpane2" class="sidepanel" layout="borderlayout()" layoutpos="client">
+				<!--  links -->
+				<Expando layoutpos="top" layout="borderlayout()" Expanded="true">
+					<accessiblebutton id="atom(arrow)" class="groupheader" layoutpos="top" layout="flowlayout(0,2,0,2)">
+						<Button class="dropdownArrow" active="inactive"/>
+						<button class="primaryGroupLabel" active="inactive" content="control"/>
+						<button class="secondaryGroupLabel" active="inactive" content="panel"/>
+					</accessiblebutton>
+					<element id="atom(clipper)" class="groupbackground" layoutpos="top" layout="borderlayout()">
+						<element layoutpos="client" layout="verticalflowlayout(0,0,0,0)">
+							<navigatebutton class="task_item" layout="borderlayout()" navigationtargetroot="shell:::{26EE0668-A00A-44D7-9371-BEB064C98683}">
+								<Button class="icon" layoutpos="left" content="icon(22,sysmetric(49),sysmetric(50),library(shell32.dll))" accessible="true" accrole="pushbutton"/>
+								<Button class="label_normal" layoutpos="left" content="View by category" accessible="true" accrole="pushbutton"/>
+							</navigatebutton>
+							<navigatebutton class="task_item" layout="borderlayout()" navigationtargetroot="shell:::{26EE0668-A00A-44D7-9371-BEB064C98683}\0">
+								<Button class="icon" layoutpos="left" content="icon(22,sysmetric(49),sysmetric(50),library(shell32.dll))" accessible="true" accrole="pushbutton"/>
+								<Button class="label_normal" layoutpos="left" content="View by icons" accessible="true" accrole="pushbutton"/>
+							</navigatebutton>
+						</element>
+					</element>
+				</Expando>
+				<!-- links 2 -->
+				<Expando layoutpos="top" layout="borderlayout()" Expanded="true">
+					<accessiblebutton id="atom(arrow)" class="groupheader" layoutpos="top" layout="flowlayout(0,2,0,2)">
+						<Button class="dropdownArrow" active="inactive"/>
+						<button class="primaryGroupLabel" active="inactive" content="see"/>
+						<button class="secondaryGroupLabel" active="inactive" content="also"/>
+					</accessiblebutton>
+					<element id="atom(clipper)" class="groupbackground" layoutpos="top" layout="borderlayout()">
+						<element layoutpos="client" layout="verticalflowlayout(0,0,0,0)">
+							<navigatebutton class="task_item" layout="borderlayout()" navigationtargetroot="shell:::{26EE0668-A00A-44D7-9371-BEB064C98683}\1\::{36eef7db-88ad-4e81-ad49-0e313f0c35f8}">
+								<Button class="icon" layoutpos="left" content="icon(47,sysmetric(49),sysmetric(50),library(shell32.dll))" accessible="true" accrole="pushbutton"/>
+								<Button class="label_normal" layoutpos="left" content="Windows Update" accessible="true" accrole="pushbutton"/>
+							</navigatebutton>
+							<navigatebutton class="task_item" layout="borderlayout()" shellexecute="No task yet">
+								<Button class="icon" layoutpos="left" content="icon(24,sysmetric(49),sysmetric(50),library(shell32.dll))" accessible="true" accrole="pushbutton"/>
+								<Button class="label_normal" layoutpos="left" content="Help and Support" accessible="true" accrole="pushbutton"/>
+							</navigatebutton>
+							<navigatebutton class="task_item" layout="borderlayout()" navigationtargetroot="shell:::{ED7BA470-8E54-465E-825C-99712043E01C}">
+								<Button class="icon" layoutpos="left" content="icon(50,sysmetric(49),sysmetric(50),library(shell32.dll))" accessible="true" accrole="pushbutton"/>
+								<Button class="label_normal" layoutpos="left" content="All tasks" accessible="true" accrole="pushbutton"/>
+							</navigatebutton>
+						</element>
+					</element>
+				</Expando>
+			</element>
+		</scrollviewer>
+	</Element>
+</duixml>
