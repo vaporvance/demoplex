@@ -81,7 +81,7 @@
 			</if>
 			<PreviewThumbnail padding="Rect(21rp, 4rp, 4rp, 4rp)" background="ARGB(0, 0, 0, 0)"/>
 			<if id="atom(PreviewMetadataTitleControl)">
-				<MetadataElement font="16pt;normal;normal;Franklin Gothic Medium" height="21rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+				<MetadataElement font="menufont;175%" height="21rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
 			</if>
 			<if id="atom(PreviewMetadataSubTitleControl)">
 				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" height="21rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
@@ -90,7 +90,7 @@
 				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis"/>
 			</if>
 			<if id="atom(ItemCountLabel)">
-				<MetadataLabel font="16pt;normal;normal;Franklin Gothic Medium" contentalign="bottomleft | endellipsis" height="21rp" overhang="false"/>
+				<MetadataLabel font="menufont;175%" contentalign="bottomleft | endellipsis" height="21rp" overhang="false"/>
 			</if>
 			<if id="atom(PreviewMetadataSpacer)">
 				<Element height="21rp"/>
@@ -304,7 +304,7 @@
 			</if>
 			<PreviewThumbnail padding="Rect(21rp, 4rp, 4rp, 4rp)" background="ARGB(0, 0, 0, 0)"/>
 			<if id="atom(PreviewMetadataTitleControl)">
-				<MetadataElement font="16pt;normal;normal;Franklin Gothic Medium" height="21rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+				<MetadataElement font="menufont;175%" height="21rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
 			</if>
 			<if id="atom(PreviewMetadataSubTitleControl)">
 				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" height="21rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
@@ -313,7 +313,7 @@
 				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis"/>
 			</if>
 			<if id="atom(ItemCountLabel)">
-				<MetadataLabel font="16pt;normal;normal;Franklin Gothic Medium" contentalign="bottomleft | endellipsis" height="21rp" overhang="false"/>
+				<MetadataLabel font="menufont;175%" contentalign="bottomleft | endellipsis" height="21rp" overhang="false"/>
 			</if>
 			<if id="atom(PreviewMetadataSpacer)">
 				<Element height="21rp"/>
@@ -453,7 +453,7 @@
 			</if>
 			<PreviewThumbnail padding="Rect(21rp, 4rp, 4rp, 4rp)" background="ARGB(0, 0, 0, 0)"/>
 			<if id="atom(PreviewMetadataTitleControl)">
-				<MetadataElement font="16pt;normal;normal;Franklin Gothic Medium" height="21rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+				<MetadataElement font="menufont;175%" height="21rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
 			</if>
 			<if id="atom(PreviewMetadataSubTitleControl)">
 				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" height="21rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
@@ -462,7 +462,7 @@
 				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis"/>
 			</if>
 			<if id="atom(ItemCountLabel)">
-				<MetadataLabel font="16pt;normal;normal;Franklin Gothic Medium" contentalign="bottomleft | endellipsis" height="21rp" overhang="false"/>
+				<MetadataLabel font="menufont;175%" contentalign="bottomleft | endellipsis" height="21rp" overhang="false"/>
 			</if>
 			<if id="atom(PreviewMetadataSpacer)">
 				<Element height="21rp"/>
@@ -604,7 +604,7 @@
 			</if>
 			<PreviewThumbnail padding="Rect(21rp, 4rp, 4rp, 4rp)" background="ARGB(0, 0, 0, 0)"/>
 			<if id="atom(PreviewMetadataTitleControl)">
-				<MetadataElement font="16pt;normal;normal;Franklin Gothic Medium" height="21rp" width="250rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+				<MetadataElement font="menufont;175%" height="21rp" width="250rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
 			</if>
 			<if id="atom(PreviewMetadataSubTitleControl)">
 				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" height="21rp" width="250rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
@@ -613,7 +613,7 @@
 				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis" width="135rp"/>
 			</if>
 			<if id="atom(ItemCountLabel)">
-				<MetadataLabel font="16pt;normal;normal;Franklin Gothic Medium" contentalign="bottomleft | endellipsis" height="21rp" width="250rp" overhang="false"/>
+				<MetadataLabel font="menufont;175%" contentalign="bottomleft | endellipsis" height="21rp" width="250rp" overhang="false"/>
 			</if>
 			<if id="atom(PreviewMetadataSpacer)">
 				<Element height="21rp" width="250rp"/>
@@ -698,7 +698,7 @@
 		</style>
 		<style resid="cidsaveinlayoutstyle">
 			<if id="atom(PreviewMetadataTitleControl)">
-				<MetadataElement font="16pt;normal;normal;Franklin Gothic Medium" height="21rp" width="250rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+				<MetadataElement font="menufont;175%" height="21rp" width="250rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
 			</if>
 			<if id="atom(PreviewMetadataSubTitleControl)">
 				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" height="21rp" width="250rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
@@ -707,7 +707,7 @@
 				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis" width="135rp"/>
 			</if>
 			<if id="atom(ItemCountLabel)">
-				<MetadataLabel font="16pt;normal;normal;Franklin Gothic Medium" contentalign="bottomleft | endellipsis" height="21rp" width="250rp" overhang="false"/>
+				<MetadataLabel font="menufont;175%" contentalign="bottomleft | endellipsis" height="21rp" width="250rp" overhang="false"/>
 			</if>
 			<if id="atom(PreviewMetadataSpacer)">
 				<Element height="21rp" width="250rp"/>
@@ -810,7 +810,7 @@
 			</if>
 			<PreviewThumbnail padding="Rect(21rp, 4rp, 4rp, 4rp)" background="ARGB(0, 0, 0, 0)"/>
 			<if id="atom(PreviewMetadataTitleControl)">
-				<MetadataElement font="16pt;normal;normal;Franklin Gothic Medium" height="21rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+				<MetadataElement font="menufont;175%" height="21rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
 			</if>
 			<if id="atom(PreviewMetadataSubTitleControl)">
 				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" height="21rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
@@ -819,13 +819,13 @@
 				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis"/>
 			</if>
 			<if id="atom(ItemCountLabel)">
-				<MetadataLabel font="16pt;normal;normal;Franklin Gothic Medium" contentalign="bottomleft | endellipsis" height="21rp" overhang="false"/>
+				<MetadataLabel font="menufont;175%" contentalign="bottomleft | endellipsis" height="21rp" overhang="false"/>
 			</if>
 			<if id="atom(PreviewMetadataSpacer)">
 				<Element height="21rp"/>
 			</if>
 			<if id="atom(PreviewSelectionInvatation)">
-				<Element height="21rp" font="16pt;normal;normal;Franklin Gothic Medium" contentalign="bottomleft | endellipsis"/>
+				<Element height="21rp" font="menufont;175%" contentalign="bottomleft | endellipsis"/>
 			</if>
 			<if id="atom(PreviewEditMetadata)">
 				<Element height="21rp"/>
@@ -962,7 +962,7 @@
 			</if>
 			<PreviewThumbnail padding="Rect(21rp, 4rp, 4rp, 4rp)" background="ARGB(0, 0, 0, 0)"/>
 			<if id="atom(PreviewMetadataTitleControl)">
-				<MetadataElement font="16pt;normal;normal;Franklin Gothic Medium" height="21rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+				<MetadataElement font="menufont;175%" height="21rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
 			</if>
 			<if id="atom(PreviewMetadataSubTitleControl)">
 				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" height="21rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
@@ -971,7 +971,7 @@
 				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis"/>
 			</if>
 			<if id="atom(ItemCountLabel)">
-				<MetadataLabel font="16pt;normal;normal;Franklin Gothic Medium" contentalign="bottomleft | endellipsis" height="21rp" overhang="false"/>
+				<MetadataLabel font="menufont;175%" contentalign="bottomleft | endellipsis" height="21rp" overhang="false"/>
 			</if>
 			<if id="atom(PreviewMetadataSpacer)">
 				<Element height="21rp"/>
@@ -1114,7 +1114,7 @@
 			</if>
 			<PreviewThumbnail padding="Rect(21rp, 4rp, 4rp, 4rp)" background="ARGB(0, 0, 0, 0)"/>
 			<if id="atom(PreviewMetadataTitleControl)">
-				<MetadataElement font="16pt;normal;normal;Franklin Gothic Medium" height="21rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+				<MetadataElement font="menufont;175%" height="21rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
 			</if>
 			<if id="atom(PreviewMetadataSubTitleControl)">
 				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" height="21rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
@@ -1123,7 +1123,7 @@
 				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis"/>
 			</if>
 			<if id="atom(ItemCountLabel)">
-				<MetadataLabel font="16pt;normal;normal;Franklin Gothic Medium" contentalign="bottomleft | endellipsis" height="21rp" overhang="false"/>
+				<MetadataLabel font="menufont;175%" contentalign="bottomleft | endellipsis" height="21rp" overhang="false"/>
 			</if>
 			<if id="atom(PreviewMetadataSpacer)">
 				<Element height="21rp"/>
@@ -1408,7 +1408,7 @@
 				<Element background="argb(0, 0, 0, 0)" contentalign="topleft" margin="rect(0, 0, 6rp, 0)"/>
 			</if>
 			<if id="atom(ActionButton)">
-				<Button3d background="argb(0, 0, 0, 0)" padding="rect(0, 4rp, 0, 3rp)" PressedPaddingShift="0" cursor="hand" font="gtf(TextStyle, 6, 0)" foreground="themeable(gtc(CommandModule, 4, 1, 3803), windowtext)"/>
+				<Button3d background="argb(0, 0, 0, 0)" padding="rect(0, 3rp, 0, 3rp)" PressedPaddingShift="0" cursor="hand" font="gtf(TextStyle, 6, 0)" foreground="themeable(gtc(CommandModule, 4, 1, 3803), windowtext)"/>
 				<if enabled="false">
 					<Button3d height="0" width="0" visible="false"/>
 				</if>
@@ -1423,7 +1423,7 @@
 				</if>
 			</if>
 			<if id="atom(SplitMenuButton)">
-				<Button3d background="argb(0, 0, 0, 0)" content="6" contentalign="topleft" fontface="Marlett" fontsize="8pt" padding="rect(0, 4rp, 0, 3rp)" PressedPaddingShift="0" foreground="themeable(gtc(CommandModule, 5, 1, 3803), windowtext)"/>
+				<Button3d background="argb(0, 0, 0, 0)" content="6" contentalign="topleft" fontface="Marlett" fontsize="8pt" padding="rect(0, 3rp, 0, 3rp)" PressedPaddingShift="0" foreground="themeable(gtc(CommandModule, 5, 1, 3803), windowtext)"/>
 				<if enabled="false">
 					<Button3d height="0" width="0" visible="false"/>
 				</if>
@@ -1448,7 +1448,7 @@
 				<Element background="argb(0, 0, 0, 0)" contentalign="topleft" margin="rect(0, 0, 6rp, 0)"/>
 			</if>
 			<if id="atom(ActionButton)">
-				<Button3d background="argb(0, 0, 0, 0)" padding="rect(0, 4rp, 0, 3rp)" PressedPaddingShift="0" cursor="hand" font="gtf(TextStyle, 6, 0)" foreground="themeable(gtc(CommandModule, 4, 1, 3803), windowtext)"/>
+				<Button3d background="argb(0, 0, 0, 0)" padding="rect(0, 3rp, 0, 3rp)" PressedPaddingShift="0" cursor="hand" font="gtf(TextStyle, 6, 0)" foreground="themeable(gtc(CommandModule, 4, 1, 3803), windowtext)"/>
 				<if enabled="false">
 					<Button3d height="0" width="0" visible="false"/>
 				</if>
@@ -1463,7 +1463,7 @@
 				</if>
 			</if>
 			<if id="atom(SplitMenuButton)">
-				<Button3d background="argb(0, 0, 0, 0)" content="6" contentalign="topleft" fontface="Marlett" fontsize="8pt" padding="rect(0, 4rp, 0, 3rp)" PressedPaddingShift="0" foreground="themeable(gtc(CommandModule, 5, 1, 3803), windowtext)"/>
+				<Button3d background="argb(0, 0, 0, 0)" content="6" contentalign="topleft" fontface="Marlett" fontsize="8pt" padding="rect(0, 3rp, 0, 3rp)" PressedPaddingShift="0" foreground="themeable(gtc(CommandModule, 5, 1, 3803), windowtext)"/>
 				<if enabled="false">
 					<Button3d height="0" width="0" visible="false"/>
 				</if>
@@ -1491,7 +1491,7 @@
 				<Element background="argb(0, 0, 0, 0)" content="icon(50,sysmetric(49), sysmetric(50),library(shell32.dll))" contentalign="topleft" margin="rect(0, 0, 6rp, 0)"/>
 			</if>
 			<if id="atom(ActionButton)">
-				<Button3d background="argb(0, 0, 0, 0)" padding="rect(0, 4rp, 0, 3rp)" PressedPaddingShift="0" cursor="hand" font="gtf(TextStyle, 6, 0)" foreground="themeable(gtc(CommandModule, 3, 1, 3803), windowtext)"/>
+				<Button3d background="argb(0, 0, 0, 0)" padding="rect(0, 3rp, 0, 3rp)" PressedPaddingShift="0" cursor="hand" font="gtf(TextStyle, 6, 0)" foreground="themeable(gtc(CommandModule, 3, 1, 3803), windowtext)"/>
 				<if enabled="false">
 					<Button3d height="0" width="0" visible="false"/>
 				</if>
@@ -1807,7 +1807,7 @@
 				<Element background="argb(0, 0, 0, 0)" content="icon(50,sysmetric(49), sysmetric(50),library(shell32.dll))" contentalign="topleft" margin="rect(0, 0, 6rp, 0)"/>
 			</if>
 			<if id="atom(ActionButton)">
-				<Button3d background="argb(0, 0, 0, 0)" padding="rect(0, 4rp, 0, 3rp)" PressedPaddingShift="0" cursor="hand" font="gtf(TextStyle, 6, 0)" foreground="themeable(gtc(CommandModule, 3, 1, 3803), windowtext)"/>
+				<Button3d background="argb(0, 0, 0, 0)" padding="rect(0, 3rp, 0, 3rp)" PressedPaddingShift="0" cursor="hand" font="gtf(TextStyle, 6, 0)" foreground="themeable(gtc(CommandModule, 3, 1, 3803), windowtext)"/>
 				<if enabled="false">
 					<Button3d height="0" width="0" visible="false"/>
 				</if>
@@ -1948,7 +1948,7 @@
 			<viewer background="argb(0,0,0,0)"/>
 			
 			<if class="sidepanel">
-				<element padding="rect(14rp,14rp,20rp,14rp)"/>
+				<element padding="rect(14rp,14rp,20rp,0)"/>
 			</if>
 			<if class="groupheader">
 				<accessiblebutton padding="rect(0, 0, 0, 2rp)" cursor="hand" contentalign="middleleft"/>
@@ -1978,9 +1978,9 @@
 			</if>
 			
 			<if class="task_item">
-				<viewer padding="rect(0,4rp,0,3rp)" cursor="hand"/>
-				<element padding="rect(0,4rp,0,3rp)" cursor="hand"/>
-				<navigatebutton padding="rect(0,4rp,0,3rp)" cursor="hand"/>
+				<viewer padding="rect(0,3rp,0,3rp)" cursor="hand"/>
+				<element padding="rect(0,3rp,0,3rp)" cursor="hand"/>
+				<navigatebutton padding="rect(0,3rp,0,3rp)" cursor="hand"/>
 			</if>
 			<if class="icon">
 				<Button Background="argb(0,0,0,0)" cursor="hand" margin="rect(0,0,6rp,0)"/>

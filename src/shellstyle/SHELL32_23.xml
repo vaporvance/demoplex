@@ -79,13 +79,13 @@
 				<element margin="rect(8rp,8rp,8rp,8rp)" padding="rect(0rp,2rp,0rp,8rp)"/>
 			</if>
 			<if class="CategoryNavLink">
-				<element padding="rect(0,4rp,0,3rp)" contentalign="topleft"/>
+				<element padding="rect(0,3rp,0,3rp)" contentalign="topleft"/>
 			</if>
 			<if class="TaskNavLink">
-				<element padding="rect(0,4rp,0,3rp)" contentalign="topleft"/>
+				<element padding="rect(0,3rp,0,3rp)" contentalign="topleft"/>
 			</if>
 			<if id="atom(HomePageLink)">
-				<element padding="rect(0,4rp,0,3rp)" contentalign="topleft"/>
+				<element padding="rect(0,3rp,0,3rp)" contentalign="topleft"/>
 			</if>
 			<if class="icon">
 				<viewer margin="rect(0,0,6rp,0)" cursor="hand"/>
