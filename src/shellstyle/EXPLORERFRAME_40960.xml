@@ -57,7 +57,7 @@
 		</UIBase>
 	</UIItem>
 	<UICollection resid="collection.smallicons" layout="borderlayout()" UIItemCreationPropMap="item.smallicons">
-		<ItemGridLayout id="atom(UIItemsHost)" layoutpos="top" padding="rect(12rp,0,12rp,0)" columnwidth="308rp" itemspacing="size(1rp,1rp)"/>
+		<ItemGridLayout id="atom(UIItemsHost)" layoutpos="top" padding="rect(15rp,0,15rp,0)" columnwidth="308rp" itemspacing="size(1rp,1rp)"/>
 	</UICollection>
 	<UIRootItem resid="rootitem.smallicons" layout="filllayout()" UICollectionCreationPropMap="*=collection.smallicons,grouped=collection.general.grouped,grouped.location=collection.general.grouped.location">
 		<LineScroller>
@@ -89,10 +89,10 @@
 		<element id="atom(UICollectionHost)" layoutpos="client" layout="filllayout()"/>
 	</UIGroupItem>
 	<UICollection resid="collection.list.groups" LogicalImageSize="16" virtualdirection="horizontal" layout="borderlayout()" UIItemCreationPropMap="item.list.grouped" DevirtualizeItems="true">
-		<ItemRowLayout id="atom(UIItemsHost)" layoutpos="left" virtualdirection="horizontal" padding="rect(12rp,0,12rp,0)" SeparatorLineHeight="1rp" SeparatorPadding="rect(4rp,0rp,9rp,0rp)"/>
+		<ItemRowLayout id="atom(UIItemsHost)" layoutpos="left" virtualdirection="horizontal" padding="rect(15rp,0,15rp,0)" SeparatorLineHeight="1rp" SeparatorPadding="rect(4rp,0rp,9rp,0rp)"/>
 	</UICollection>
 	<UICollection resid="collection.list.ungrouped" LogicalImageSize="16" virtualdirection="horizontal" layout="borderlayout()" UIItemCreationPropMap="item.list">
-		<ItemGridLayout id="atom(UIItemsHost)" class="itemgridlayout.rowstylelayout" virtualdirection="horizontal" alignmentmode="none" layoutpos="left" padding="rect(12rp,0,12rp,0)" itemspacing="size(10rp,1rp)" itemminsize="size(60rp,0rp)" itemmaxsize="size(800rp,0rp)"/>
+		<ItemGridLayout id="atom(UIItemsHost)" class="itemgridlayout.rowstylelayout" virtualdirection="horizontal" alignmentmode="none" layoutpos="left" padding="rect(15rp,0,15rp,0)" itemspacing="size(10rp,1rp)" itemminsize="size(60rp,0rp)" itemmaxsize="size(800rp,0rp)"/>
 	</UICollection>
 	<UICollection resid="collection.list.insidegroup" LogicalImageSize="16" virtualdirection="horizontal" layout="borderlayout()" UIItemCreationPropMap="item.list">
 		<ItemGridLayout id="atom(UIItemsHost)" class="itemgridlayout.rowstylelayout" virtualdirection="horizontal" alignmentmode="none" layoutpos="client" itemspacing="size(10rp,1rp)" itemminsize="size(60rp,0rp)" itemmaxsize="size(800rp,0rp)"/>
@@ -115,7 +115,7 @@
 		<element id="atom(UICollectionHost)" layoutpos="client" layout="filllayout()"/>
 	</UIGroupItem>
 	<UICollection resid="collection.list.grouped.location" virtualdirection="horizontal" layout="borderlayout()" UIItemCreationPropMap="item.list.grouped.location" DevirtualizeItems="true" LogicalImageSize="16">
-		<ItemRowLayout layoutpos="left" id="atom(UIItemsHost)" virtualdirection="horizontal" padding="rect(12rp,0,12rp,0)"/>
+		<ItemRowLayout layoutpos="left" id="atom(UIItemsHost)" virtualdirection="horizontal" padding="rect(15rp,0,15rp,0)"/>
 	</UICollection>
 	<UIRootItem resid="rootitem.list" layout="filllayout()" UICollectionCreationPropMap="*=collection.list.ungrouped,grouped=collection.list.groups,grouped.location=collection.list.grouped.location">
 		<LineScroller virtualdirection="horizontal">
@@ -174,13 +174,13 @@
 		<UISmartPropertyCollection layoutpos="left" tooltip="false" sheet="smart.recent.thirdcolumn"/>
 	</UIItem>
 	<UICollection resid="collection.tiles" LogicalImageSize="48" layout="borderlayout()" UIItemCreationPropMap="item.tiles">
-		<ItemGridLayout id="atom(UIItemsHost)" layoutpos="top" padding="rect(12rp,0,12rp,0)" columnwidth="250rp" itemspacing="size(4rp,4rp)"/>
+		<ItemGridLayout id="atom(UIItemsHost)" layoutpos="top" padding="rect(15rp,0,15rp,0)" columnwidth="250rp" itemspacing="size(4rp,4rp)"/>
 	</UICollection>
 	<UICollection resid="collection.tiles.frequent" LogicalImageSize="48" layout="borderlayout()" UIItemCreationPropMap="item.tiles.frequent">
-		<ItemGridLayout id="atom(UIItemsHost)" layoutpos="top" padding="rect(12rp,0,12rp,0)" columnwidth="250rp" itemspacing="size(4rp,4rp)"/>
+		<ItemGridLayout id="atom(UIItemsHost)" layoutpos="top" padding="rect(15rp,0,15rp,0)" columnwidth="250rp" itemspacing="size(4rp,4rp)"/>
 	</UICollection>
 	<UICollection resid="collection.tiles.recent" LogicalImageSize="16" layout="borderlayout()" UIItemCreationPropMap="System.LayoutPattern.ContentViewModeForBrowse:*=item.tiles.recent,beta=item.tiles.recent.thirdcolumn">
-		<ItemRowLayout id="atom(UIItemsHost)" layoutpos="top" padding="rect(12rp,0,12rp,0)" class="collection.tiles.recent"/>
+		<ItemRowLayout id="atom(UIItemsHost)" layoutpos="top" padding="rect(15rp,0,15rp,0)" class="collection.tiles.recent"/>
 	</UICollection>
 	<UIRootItem resid="rootitem.tiles" layout="filllayout()" UICollectionCreationPropMap="*=collection.tiles,recent=collection.tiles.recent,frequent=collection.tiles.frequent,grouped=collection.general.grouped,grouped.location=collection.general.grouped.location">
 		<LineScroller>
@@ -204,7 +204,7 @@
 		<UIProgressProperty id="atom(footer)" propertycanonicalname="System.StorageProviderTransferProgress" layout="filllayout()" height="14rp" padding="rect(0rp,0rp,0rp,8rp)"/>
 	</UIItem>
 	<UICollection resid="collection.icons" layout="borderlayout()" UIItemCreationPropMap="item.icons">
-		<ItemGridLayout id="atom(UIItemsHost)" layoutpos="top" padding="rect(12rp,0,12rp,0)" alignmentmode="baseline|justify|jaggedbottom" minimumicontextwidth="74rp" itemspacing="size(1rp,1rp)"/>
+		<ItemGridLayout id="atom(UIItemsHost)" layoutpos="top" padding="rect(15rp,0,15rp,0)" alignmentmode="baseline|justify|jaggedbottom" minimumicontextwidth="74rp" itemspacing="size(1rp,1rp)"/>
 	</UICollection>
 	<UIRootItem resid="rootitem.icons" layout="filllayout()" UICollectionCreationPropMap="*=collection.icons,grouped=collection.general.grouped,grouped.location=collection.general.grouped.location">
 		<LineScroller>
@@ -226,7 +226,7 @@
 	<UIProperty resid="property.details.default" padding="rect(4rp,0,6rp,0)" active="keyboard"/>
 	<UIProperty resid="property.details.first" padding="rect(0,0,6rp,0)"/>
 	<UICollection resid="collection.details" LogicalImageSize="16" layout="borderlayout()" UIItemCreationPropMap="item.details">
-		<ItemRowLayout id="atom(UIItemsHost)" class="collection.details" layoutpos="top" padding="rect(12rp,0,12rp,0)" UseItemWidth="true"/>
+		<ItemRowLayout id="atom(UIItemsHost)" class="collection.details" layoutpos="top" padding="rect(15rp,0,15rp,0)" UseItemWidth="true"/>
 	</UICollection>
 	<UICollection resid="collection.details.grouped" LogicalImageSize="16" layout="borderlayout()" UIItemCreationPropMap="item.general.grouped" DevirtualizeItems="true">
 		<ItemRowLayout id="atom(UIItemsHost)" layoutpos="top"/>
@@ -287,10 +287,10 @@
 		<UISmartPropertyCollection layoutpos="left" sheet="smart.delta.2row" padding="rect(0,5rp,4rp,5rp)" tooltip="true"/>
 	</UIItem>
 	<UICollection resid="collection.smart.browse" LogicalImageSize="32" layout="borderlayout()" UIItemCreationPropMap="System.LayoutPattern.ContentViewModeForBrowse:*=item.smart.alpha,~=item.general.fetching,beta=item.smart.beta,gamma=item.smart.gamma,delta=item.smart.delta">
-		<ItemRowLayout id="atom(UIItemsHost)" class="collection.smart" layoutpos="top" padding="rect(12rp,0,12rp,0)"/>
+		<ItemRowLayout id="atom(UIItemsHost)" class="collection.smart" layoutpos="top" padding="rect(15rp,0,15rp,0)"/>
 	</UICollection>
 	<UICollection resid="collection.smart.search" LogicalImageSize="32" layout="borderlayout()" UIItemCreationPropMap="System.LayoutPattern.ContentViewModeForSearch:*=item.smart.alpha,~=item.general.fetching,beta=item.smart.beta,gamma=item.smart.gamma,delta=item.smart.delta">
-		<ItemRowLayout id="atom(UIItemsHost)" class="collection.smart" layoutpos="top" padding="rect(12rp,0,12rp,0)"/>
+		<ItemRowLayout id="atom(UIItemsHost)" class="collection.smart" layoutpos="top" padding="rect(15rp,0,15rp,0)"/>
 	</UICollection>
 	<UIRootItem resid="rootitem.smart" layout="filllayout()" UICollectionCreationPropMap="*=collection.smart.browse,sorted.search.*=collection.smart.search,grouped=collection.general.grouped,grouped.location=collection.general.grouped.location">
 		<LineScroller>
@@ -564,7 +564,7 @@
 					<ItemGridLayout columnwidth="20rp"/>
 				</if>
 			</if>
-			<UIGroupHeader padding="rect(20rp,5rp,5rp,5rp)" foreground="themeable(gtc(ItemsView::ListView, 6, 0, 3825), windowtext)"/>
+			<UIGroupHeader padding="rect(20rp,5rp,10rp,5rp)" foreground="themeable(gtc(ItemsView::ListView, 6, 0, 3825), windowtext)"/>
 			<if keyfocused="true">
 				<UIGroupHeader background="themeable(dtb(ItemsView, 3, 1), argb(0,0,0,0))" contentalign="themeable(topleft, focusrect)"/>
 			</if>

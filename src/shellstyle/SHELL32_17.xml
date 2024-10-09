@@ -8,8 +8,8 @@
 				<Expando layoutpos="top" layout="borderlayout()" Expanded="true">
 					<accessiblebutton id="atom(arrow)" class="groupheader" layoutpos="top" layout="flowlayout(0,2,0,2)">
 						<Button class="dropdownArrow" active="inactive"/>
-						<button class="primaryGroupLabel" active="inactive" content="all"/>
-						<button class="secondaryGroupLabel" active="inactive" content="categories"/>
+						<button class="primaryGroupLabel" active="inactive" content="control"/>
+						<button class="secondaryGroupLabel" active="inactive" content="panel"/>
 					</accessiblebutton>
 					<element id="atom(clipper)" class="groupbackground" layoutpos="top" layout="borderlayout()">
 						<element layoutpos="client" layout="verticalflowlayout(0,0,0,0)">

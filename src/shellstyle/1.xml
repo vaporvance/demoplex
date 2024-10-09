@@ -1882,25 +1882,16 @@
 				<Element foreground="argb(255, 90, 103, 121)"/>
 			</if>
 			<if id="atom(ActionButton)">
-				<Button3d background="dtb(CommandModule, 9, 1)" foreground="gtc(CommandModule, 9, 1, 3803)" padding="rect(9rp, 5rp, 9rp, 5rp)" PressedPaddingShift="1rp" font="gtf(TEXTSTYLE, 4, 0)"/>
-				<if enabled="false">
-					<Button3d foreground="gtc(CommandModule, 9, 6, 3803)"/>
-				</if>
-				<if keyfocused="true">
-					<Button3d background="dtb(CommandModule, 9, 4)"/>
-				</if>
+				<Button3d foreground="ARGB(255,107,170,250)" font="gtf(TEXTSTYLE, 6, 0)" PressedPaddingShift="0"/>
 				<if mousefocused="true">
-					<Button3d foreground="gtc(CommandModule, 9, 2, 3803)" background="dtb(CommandModule, 9, 2)"/>
+					<Button3d font="gtf(TEXTSTYLE, 6, 2)" />
 				</if>
 				<if pressed="true">
-					<Button3d foreground="gtc(CommandModule, 9, 3, 3803)" background="dtb(CommandModule, 9, 3)"/>
+					<Button3d font="gtf(TEXTSTYLE, 6, 2)" />
 				</if>
 			</if>
 			<if id="atom(MenuButtonGlyph)">
-				<Element background="argb(0, 0, 0, 0)" content="dtb(CommandModule, 8, 1)" contentalign="middlecenter" margin="rect(1rp, 0rp, 0rp, 0rp)"/>
-				<if mousefocused="true">
-					<Element content="dtb(CommandModule, 8, 2)"/>
-				</if>
+				<Element content="6" contentalign="middleleft" fontface="Marlett" fontsize="8pt" foreground="ARGB(255,77,118,170)" fontstyle="shadow" ShadowIntensity="32"/>
 			</if>
 		</style>
 		<style resid="infobarstyle">
@@ -1978,9 +1969,9 @@
 			</if>
 			
 			<if class="task_item">
-				<viewer padding="rect(0,3rp,0,3rp)" cursor="hand"/>
-				<element padding="rect(0,3rp,0,3rp)" cursor="hand"/>
-				<navigatebutton padding="rect(0,3rp,0,3rp)" cursor="hand"/>
+				<viewer padding="rect(0,3rp,0,3rp)"/>
+				<element padding="rect(0,3rp,0,3rp)"/>
+				<navigatebutton padding="rect(0,3rp,0,3rp)"/>
 			</if>
 			<if class="icon">
 				<Button Background="argb(0,0,0,0)" cursor="hand" margin="rect(0,0,6rp,0)"/>
@@ -2014,10 +2005,10 @@
 				<Element foreground="ARGB(255,31,87,133)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="middleleft"/>
 			</if>
 			<if class="secondaryLabel">
-				<Element foreground="ARGB(255,130,183,251)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="middleleft"/>
+				<Element foreground="ARGB(255,107,170,250)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="middleleft"/>
 			</if>
 			<if class="dropdownGlyph">
-				<Element content="6" contentalign="middleleft" fontface="Marlett" fontsize="8pt" foreground="ARGB(255,31,87,133)" fontstyle="shadow"/>
+				<Element content="6" contentalign="middleleft" fontface="Marlett" fontsize="8pt" foreground="ARGB(255,77,118,170)" fontstyle="shadow" ShadowIntensity="32"/>
 			</if>
 		</style>
 	</stylesheets>

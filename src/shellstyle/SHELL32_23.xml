@@ -4,6 +4,7 @@
 			<element id="atom(NavPanelContent)" layout="filllayout()">
 				<scrollviewer sheet="common" XScrollable="false">
 					<element sheet="taskpane2" class="sidepanel" layout="verticalflowlayout(0,0,0,0)">
+					
 						<Expando layout="borderlayout()" Expanded="true">
 							<accessiblebutton id="atom(arrow)" class="groupheader" layoutpos="top" layout="flowlayout(0,2,0,2)">
 								<Button class="dropdownArrow" active="inactive"/>
@@ -18,26 +19,12 @@
 										</Viewer>
 										<ControlPanelLink id="atom(CPLink)" layoutpos="left" class="link" content="resstr(0x7951, library(shell32.dll))"/>
 									</element>
-								</element>
-							</element>
-						</Expando>
-						<Expando layout="borderlayout()" Expanded="true">
-							<accessiblebutton id="atom(arrow)" class="groupheader" layoutpos="top" layout="flowlayout(0,2,0,2)">
-								<Button class="dropdownArrow" active="inactive"/>
-								<button class="primaryGroupLabel" active="inactive" content="related"/>
-								<button class="secondaryGroupLabel" active="inactive" content="tasks"/>
-							</accessiblebutton>
-							<element id="atom(clipper)" class="groupbackground" layoutpos="top" layout="borderlayout()">
-								<element layoutpos="client" layout="verticalflowlayout(0,0,0,0)">
 									<element id="atom(CategoryList)" sheet="NavPanelStyle" layout="verticalflowlayout(0,0,0,0)" height="0" width="0"/>
 									<element id="atom(AppletTaskLinks)" sheet="NavPanelStyle" layout="verticalflowlayout(0,0,0,0)"/>
-									<navigatebutton class="task_item" layout="borderlayout()" shellexecute="No task yet">
-										<Button class="icon" layoutpos="left" content="icon(50,sysmetric(49),sysmetric(50),library(shell32.dll))" accessible="true" accrole="pushbutton"/>
-										<Button class="label_normal" layoutpos="left" content="Get help" accessible="true" accrole="pushbutton"/>
-									</navigatebutton>
 								</element>
 							</element>
 						</Expando>
+						
 						<element id="atom(AppletSeeAlsoSection)" layout="filllayout()" animation="RectangleV|s|fast">
 							<Expando layoutpos="top" layout="borderlayout()" Expanded="true">
 								<accessiblebutton id="atom(arrow)" class="groupheader" layoutpos="top" layout="flowlayout(0,2,0,2)">
@@ -52,6 +39,7 @@
 								</element>
 							</Expando>
 						</element>
+						
 					</element>
 				</scrollviewer>
 			</element>

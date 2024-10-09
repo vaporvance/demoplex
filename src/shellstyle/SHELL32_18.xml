@@ -4,7 +4,7 @@
 		<ControlPanelCategoryModule ModuleID="ControlPanelCategoryModule" layoutpos="client"/>
 		<scrollviewer layoutpos="left" sheet="common" XScrollable="false" width="200rp" background="argb(0,0,0,0)">
 			<element sheet="taskpane2" class="sidepanel" layout="borderlayout()" layoutpos="client">
-				<!--  links -->
+				
 				<Expando layoutpos="top" layout="borderlayout()" Expanded="true">
 					<accessiblebutton id="atom(arrow)" class="groupheader" layoutpos="top" layout="flowlayout(0,2,0,2)">
 						<Button class="dropdownArrow" active="inactive"/>
@@ -24,7 +24,21 @@
 						</element>
 					</element>
 				</Expando>
-				<!-- links 2 -->
+				
+				<Expando layoutpos="top" layout="borderlayout()" Expanded="true">
+					<accessiblebutton id="atom(arrow)" class="groupheader" layoutpos="top" layout="flowlayout(0,2,0,2)">
+						<Button class="dropdownArrow" active="inactive"/>
+						<button class="primaryGroupLabel" active="inactive" content="find"/>
+						<button class="secondaryGroupLabel" active="inactive" content="tasks"/>
+					</accessiblebutton>
+					<element id="atom(clipper)" class="groupbackground" layoutpos="top" layout="borderlayout()">
+						<element layout="borderlayout()" layoutpos="client">
+							<element class="label" layoutpos="top" content="Search for:" padding="rect(3rp,3rp,3rp,3rp)"/>
+							<element background="themeable(dtb(SearchBox, 1, 0), '')" layoutpos="top" height="20rp"/>
+						</element>
+					</element>
+				</Expando>
+				
 				<Expando layoutpos="top" layout="borderlayout()" Expanded="true">
 					<accessiblebutton id="atom(arrow)" class="groupheader" layoutpos="top" layout="flowlayout(0,2,0,2)">
 						<Button class="dropdownArrow" active="inactive"/>
@@ -48,6 +62,7 @@
 						</element>
 					</element>
 				</Expando>
+				
 			</element>
 		</scrollviewer>
 	</Element>
