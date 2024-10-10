@@ -11,5 +11,6 @@
 	- UIFILE Override
 - [Aero Window Manager (AWM)](https://github.com/Dulappy/aero-window-manager) for resizing title bar buttons
 - StartIsBack++ or [RetroBar](https://github.com/dremin/RetroBar) for taskbar skinning
+- [Libre Franklin font](https://fonts.google.com/specimen/Libre+Franklin)
 ## Installing
 Copy **demoplex** folder and **demoplex.theme** to **C:\Windows\Resources\Themes**
