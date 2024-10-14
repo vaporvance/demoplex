@@ -18,6 +18,6 @@
 ## Installing
 Copy **demoplex** folder, **demoplex.theme** and **plex7.theme** to **C:\Windows\Resources\Themes**
 ## Credits
-[valkalyne](https://github.com/valkalyne) and [notzetkin](https://github.com/notzetkin) for original visual styles
-[Olive6841](https://github.com/Olive6841) for shellstyle (before I rework it)
-[ThePhantom6314](https://github.com/ThePhantom6314) their longhorn plex vector resources saving us time a lot
+- [valkalyne](https://github.com/valkalyne) and [notzetkin](https://github.com/notzetkin) for original visual styles
+- [Olive6841](https://github.com/Olive6841) for shellstyle (before I rework it)
+- [ThePhantom6314](https://github.com/ThePhantom6314) their longhorn plex vector resources saving us time a lot
