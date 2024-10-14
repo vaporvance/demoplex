@@ -1,10 +1,8 @@
-<!-- CPL Home page -->
 <duixml>
-	<Element resid="FolderLayout" layout="shellborderlayout()" background="gradient(rgb(255, 255, 255),rgb(244, 245, 250),rgb(199, 215, 233),4)">
+	<Element resid="FolderLayout" layout="shellborderlayout()" background="themeable(Gradient(gtc(CommandModule, 2, 0, 3810), gtc(CommandModule, 2, 0, 3811), gtc(CommandModule, 2, 0, 3812), 4), window)">
 		<ControlPanelCategoryModule ModuleID="ControlPanelCategoryModule" layoutpos="client"/>
 		<scrollviewer layoutpos="left" sheet="common" XScrollable="false" width="200rp" background="argb(0,0,0,0)">
 			<element sheet="taskpane2" class="sidepanel" layout="borderlayout()" layoutpos="client">
-				
 				<Expando layoutpos="top" layout="borderlayout()" Expanded="true">
 					<accessiblebutton id="atom(arrow)" class="groupheader" layoutpos="top" layout="flowlayout(0,2,0,2)">
 						<Button class="dropdownArrow" active="inactive"/>
@@ -24,7 +22,6 @@
 						</element>
 					</element>
 				</Expando>
-				
 				<Expando layoutpos="top" layout="borderlayout()" Expanded="true">
 					<accessiblebutton id="atom(arrow)" class="groupheader" layoutpos="top" layout="flowlayout(0,2,0,2)">
 						<Button class="dropdownArrow" active="inactive"/>
@@ -38,7 +35,6 @@
 						</element>
 					</element>
 				</Expando>
-				
 				<Expando layoutpos="top" layout="borderlayout()" Expanded="true">
 					<accessiblebutton id="atom(arrow)" class="groupheader" layoutpos="top" layout="flowlayout(0,2,0,2)">
 						<Button class="dropdownArrow" active="inactive"/>
@@ -62,7 +58,6 @@
 						</element>
 					</element>
 				</Expando>
-				
 			</element>
 		</scrollviewer>
 	</Element>

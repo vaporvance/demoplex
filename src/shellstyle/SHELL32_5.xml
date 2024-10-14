@@ -1,41 +1,45 @@
+<!-- Photos/Video folder type UIFILE -->
+<!-- To change sidebar's width. replace every instance of 200rp to your preferred value -->
 <duixml>
 	<Element resid="FolderLayout" layout="shellborderlayout()" sheet="photolayoutstyle">
 		<StatusBarModule ModuleID="StatusBarModule" layoutpos="bottom" layout="filllayout()"/>
 		<element layout="filllayout()" layoutpos="client">
 			<element layout="borderlayout()" padding="rect(0rp,0,0,0)" layoutpos="client">
-				<TemplateBackground id="atom(PreviewContainer)" height="53rp" layoutpos="top" layout="filllayout()" padding="rect(200rp,0,0,0)">
-					<TemplateBackground id="atom(PreviewShineLayer)"/>
-					<PreviewBackground id="atom(BackgroundClear)" background="ARGB(0, 0, 0, 0)" layout="borderlayout()" padding="rect(0,10rp,0,0)">
-						<PreviewThumbnail ModuleID="PreviewThumbnailModule" MaxThumbSize="256" layoutpos="Left"/>
-						<Element layoutpos="Client" layout="filllayout()">
-							<PreviewMetadata ModuleID="PreviewMetadataModule" NullSelectPropertyString="prop:System.FileCount;System.Volume.FileSystem;System.DateCreated;System.DateModified;System.FileAttributes;*System.OfflineStatus;*System.OfflineAvailability" NullSelectTitlePropertyString="prop:System.ItemNameDisplay;System.ItemTypeText" layoutpos="Client"/>
-						</Element>
-					</PreviewBackground>
-					<Sizer id="atom(PreviewPaneSizer)" sizingtarget="atom(PreviewContainer)" FramePersistType="2" SlidesUpAndDown="true" layoutpos="bottom" DownOrRightGrowsTarget="true" minsize="150"/>
-				</TemplateBackground>
+				<element layout="borderlayout()" layoutpos="top" padding="rect(200rp,0,0,0)">
+					<TemplateBackground id="atom(PreviewContainer)" height="53rp" layoutpos="top" layout="filllayout()" >
+						<TemplateBackground id="atom(PreviewShineLayer)"/>
+						<PreviewBackground id="atom(BackgroundClear)" background="ARGB(0, 0, 0, 0)" layout="borderlayout()" padding="rect(0,10rp,0,0)">
+							<PreviewThumbnail ModuleID="PreviewThumbnailModule" MaxThumbSize="256" layoutpos="Left"/>
+							<Element layoutpos="Client" layout="filllayout()">
+								<PreviewMetadata ModuleID="PreviewMetadataModule" NullSelectPropertyString="prop:System.FileCount;System.Volume.FileSystem;System.DateCreated;System.DateModified;System.FileAttributes;*System.OfflineStatus;*System.OfflineAvailability" NullSelectTitlePropertyString="prop:System.ItemNameDisplay;System.ItemTypeText" layoutpos="Client"/>
+							</Element>
+						</PreviewBackground>
+						<Sizer id="atom(PreviewPaneSizer)" sizingtarget="atom(PreviewContainer)" FramePersistType="2" SlidesUpAndDown="true" layoutpos="bottom" DownOrRightGrowsTarget="true" minsize="150"/>
+					</TemplateBackground>
+					<element sheet="fileheaderss" class="headerbg" layout="flowlayout(0,2,0,2)" layoutpos="top" >
+						<Button class="headerbutton" layout="flowlayout(0,2,0,2)">
+							<element class="primaryLabel" content="Group"/>
+							<element class="secondaryLabel" content="items by"/>
+							<element class="dropdownGlyph"/>
+						</Button>
+						<Button class="headerbutton" layout="flowlayout(0,2,0,2)">
+							<element class="primaryLabel" content="Sort"/>
+							<element class="secondaryLabel" content="items by"/>
+							<element class="dropdownGlyph"/>
+						</Button>
+						<Button class="headerbutton" layout="flowlayout(0,2,0,2)">
+							<element class="primaryLabel" content="View"/>
+							<element class="secondaryLabel" content="items by"/>
+							<element class="dropdownGlyph"/>
+						</Button>
+					</element>
+				</element>
 				<TemplateBackground id="atom(ReadingPane)" layout="filllayout()" layoutpos="right">
 					<PreviewThumbnail ModuleID="ReadingPaneThumbnailModule" HideProperty="PreviewHandlerRunning" Vertical="true" layoutpos="client" background="ARGB(0, 0, 0, 0)"/>
 					<ReadingPaneModule ModuleID="ReadingPaneModule" layoutpos="none"/>
 				</TemplateBackground>
 				<Sizer id="atom(ReadingPaneSizer)" sizingtarget="atom(ReadingPane)" GrowTargetFirst="true" SlidesUpAndDown="false" PrioritySizer="atom(PageSpaceControlSizer)" DownOrRightGrowsTarget="false" FramePersistType="2" layoutpos="Right"/>
-				<element sheet="fileheaderss" class="headerbg" layout="flowlayout(0,2,0,2)" layoutpos="top" padding="rect(200rp,0,0,0)">
-					<Button class="headerbutton" layout="flowlayout(0,2,0,2)">
-						<element class="primaryLabel" content="Group"/>
-						<element class="secondaryLabel" content="items by"/>
-						<element class="dropdownGlyph"/>
-					</Button>
-					<Button class="headerbutton" layout="flowlayout(0,2,0,2)">
-						<element class="primaryLabel" content="Sort"/>
-						<element class="secondaryLabel" content="items by"/>
-						<element class="dropdownGlyph"/>
-					</Button>
-					<Button class="headerbutton" layout="flowlayout(0,2,0,2)">
-						<element class="primaryLabel" content="View"/>
-						<element class="secondaryLabel" content="items by"/>
-						<element class="dropdownGlyph"/>
-					</Button>
-				</element>
-				<Element id="atom(ViewHostContainer)" layoutpos="Client" sheet="photolayoutstyle" layout="borderlayout()" padding="rect(200rp,0,0,0)" background="gradient(rgb(255, 255, 255),rgb(244, 245, 250),rgb(199, 215, 233),4)">
+				<Element id="atom(ViewHostContainer)" layoutpos="Client" sheet="photolayoutstyle" layout="borderlayout()" padding="rect(200rp,0,0,0)" background="themeable(Gradient(gtc(CommandModule, 2, 0, 3810), gtc(CommandModule, 2, 0, 3811), gtc(CommandModule, 2, 0, 3812), 4), window)">
 					<ViewHost id="atom(clientviewhost)" layout="borderlayout()" layoutpos="client"/>
 				</Element>
 			</element>

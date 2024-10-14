@@ -300,7 +300,7 @@
 			<element id="atom(UICollectionHost)" layout="filllayout()"/>
 		</LineScroller>
 	</UIRootItem>
-	<UIItemsView resid="ItemsView" visible="true" layout="filllayout()" sheet="ItemsView" background="gradient(rgb(255, 255, 255),rgb(244, 245, 250),rgb(199, 215, 233),4)"/>
+	<UIItemsView resid="ItemsView" visible="true" layout="filllayout()" sheet="ItemsView"/>
 	<UIColumnHeader resid="UIColumnHeader" layout="filllayout()" layoutpos="left" height="20rp">
 		<element id="atom(ContentContainer)" layout="flowlayout(0,2,2,2)">
 			<element id="atom(CheckboxSpace)" layoutpos="none"/>
@@ -446,7 +446,7 @@
 			<UIProperty tooltip="true" tooltipmaxwidth="400"/>
 			<LineHScrollBar layoutpos="ninebottom"/>
 			<LineVScrollBar layoutpos="nineright"/>
-			<UIItemsView background="themeable(gtc(ItemsView, 0, 0, 3802), window)" foreground="themeable(gtc(ItemsView, 0, 0, 3803), windowtext)"/>
+			<UIItemsView background="themeable(Gradient(gtc(CommandModule, 2, 0, 3810), gtc(CommandModule, 2, 0, 3811), gtc(CommandModule, 2, 0, 3812), 4), window)" foreground="themeable(gtc(ItemsView, 0, 0, 3803), windowtext)"/>
 			<UIRootItem font="iconfont"/>
 			<UIItem padding="rect(4rp,2rp,4rp,2rp)"/>
 			<if keyfocused="true">

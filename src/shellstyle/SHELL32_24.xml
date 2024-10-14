@@ -6,16 +6,15 @@
 		</Button>
 	</element>
 	<Button resid="HomePagePanel" layoutpos="client" layout="BorderLayout()" accessible="true" accname="CPCategoryPanel" active="mouse" accrole="pane" background="argb(0,0,0,0)">
-		<element sheet="CategoryPanelStyle" layout="FlowLayout(0,2,0,2)" layoutpos="top" padding="rect(12rp,0,0,0)" >
+		<element sheet="CategoryPanelStyle" layout="FlowLayout(0,2,0,2)" layoutpos="top" padding="rect(12rp,-10rp,0,-10rp)" >
 			<element class="primaryLabel" content="View"/>
 			<element class="secondaryLabel" content="items by"/>
 			<element id="atom(ViewSplitButton)"/>
 		</element>
-		<ScrollViewer sheet="common" layoutpos="client" xscrollable="false" >
+		<ScrollViewer sheet="common" layoutpos="client" xscrollable="false">
 			<element sheet="CategoryPanelStyle" layoutpos="client" layout="BorderLayout()">
-				
-				<element layout="FlowLayout(0,0,2,0)" layoutpos="top" background="themeable(dtb(ItemsView::ListView, 6, 1), argb(0,0,0,0))" padding="rect(15rp,10rp,15rp,0rp)" >
-					<element accrole="pane" layout="gridlayout(1,2)" >
+				<element layout="FlowLayout(0,0,2,0)" layoutpos="top" background="themeable(dtb(ItemsView::ListView, 6, 1), argb(0,0,0,0))" padding="rect(15rp,10rp,15rp,0rp)">
+					<element accrole="pane" layout="gridlayout(1,2)">
 						<element id="atom(PanelLeft)" layout="BorderLayout()" accrole="pane"/>
 						<element id="atom(PanelRight)" layout="BorderLayout()" accrole="pane"/>
 					</element>
@@ -24,33 +23,30 @@
 		</ScrollViewer>
 	</Button>
 	<Button resid="AppletPanel" layoutpos="client" layout="BorderLayout()" accessible="true" accrole="pane" accname="CPCategoryPanel" background="argb(0,0,0,0)">
-	
-		<element sheet="fileheaderss" class="headerbg" layout="flowlayout(0,2,0,2)" layoutpos="top">
-					<Button class="headerbutton" layout="flowlayout(0,2,0,2)">
-						<element class="primaryLabel" content="Group"/>
-						<element class="secondaryLabel" content="items by"/>
-						<element class="dropdownGlyph"/>
-					</Button>
-					<Button class="headerbutton" layout="flowlayout(0,2,0,2)">
-						<element class="primaryLabel" content="Sort"/>
-						<element class="secondaryLabel" content="items by"/>
-						<element class="dropdownGlyph"/>
-					</Button>
-					<Button class="headerbutton" layout="flowlayout(0,2,0,2)">
-						<element class="primaryLabel" content="View"/>
-						<element class="secondaryLabel" content="items by"/>
-						<element class="dropdownGlyph"/>
-					</Button>
-				</element>
-		
-		<ScrollViewer sheet="common" layoutpos="client" xscrollable="false" >
+		<element sheet="fileheaderss" class="headerbg" layout="flowlayout(0,2,0,2)" layoutpos="top" padding="rect(10rp,6rp,0,6rp)" >
+			<Button class="headerbutton" layout="flowlayout(0,2,0,2)">
+				<element class="primaryLabel" content="Group"/>
+				<element class="secondaryLabel" content="items by"/>
+				<element class="dropdownGlyph"/>
+			</Button>
+			<Button class="headerbutton" layout="flowlayout(0,2,0,2)">
+				<element class="primaryLabel" content="Sort"/>
+				<element class="secondaryLabel" content="items by"/>
+				<element class="dropdownGlyph"/>
+			</Button>
+			<Button class="headerbutton" layout="flowlayout(0,2,0,2)">
+				<element class="primaryLabel" content="View"/>
+				<element class="secondaryLabel" content="items by"/>
+				<element class="dropdownGlyph"/>
+			</Button>
+		</element>
+		<ScrollViewer sheet="common" layoutpos="client" xscrollable="false">
 			<element sheet="CategoryPanelStyle" layoutpos="client" layout="BorderLayout()">
-				<element layout="borderlayout()" layoutpos="top" background="themeable(dtb(ItemsView::ListView, 6, 1), argb(0,0,0,0))" padding="rect(15rp,10rp,15rp,0rp)" >
+				<element layout="borderlayout()" layoutpos="top" background="themeable(dtb(ItemsView::ListView, 6, 1), argb(0,0,0,0))" padding="rect(15rp,10rp,15rp,0rp)">
 					<Button id="atom(AppletContentPanel)" sheet="CategoryPanelStyle" layoutpos="client" layout="BorderLayout()" padding="rect(4rp,4rp,4rp,0rp)" active="mouse" accrole="pane" accessible="true" background="argb(0,0,0,0)"/>
 				</element>
 			</element>
 		</ScrollViewer>
-		
 	</Button>
 	<Button resid="NoResultsPanel" class="MainPanel" sheet="CategoryPanelStyle" layoutpos="client" layout="BorderLayout()" active="mouse" accrole="pane">
 		<element class="MessageText" layoutpos="top" content="resstr(0x3415, library(shell32.dll))" contentalign="topcenter" margin="rect(0rp,0rp,0rp,10rp)"/>
@@ -59,23 +55,20 @@
 		<element class="MessageText" content="resstr(0x7302, library(shell32.dll))"/>
 	</element>
 	<Button resid="AllItemsPanel" layoutpos="client" layout="BorderLayout()" accessible="true" accname="CPCategoryPanel" active="mouse" accrole="pane" background="argb(0,0,0,0)">
-		
-		<element sheet="CategoryPanelStyle" layout="FlowLayout(0,2,0,2)" layoutpos="top" padding="rect(12rp,0,0,0)" >
+		<element sheet="CategoryPanelStyle" layout="FlowLayout(0,2,0,2)" layoutpos="top"  padding="rect(12rp,-10rp,0,-10rp)" >
 			<element class="primaryLabel" content="View"/>
 			<element class="secondaryLabel" content="items by"/>
 			<element id="atom(ViewSplitButton)"/>
 		</element>
-		<ScrollViewer sheet="common" layoutpos="client" xscrollable="false" >
+		<ScrollViewer sheet="common" layoutpos="client" xscrollable="false">
 			<element sheet="CategoryPanelStyle" layoutpos="client" layout="BorderLayout()">
-				<element layout="borderlayout()" layoutpos="top" background="themeable(dtb(ItemsView::ListView, 6, 1), argb(0,0,0,0))" padding="rect(15rp,10rp,15rp,0rp)" >
+				<element layout="borderlayout()" layoutpos="top" background="themeable(dtb(ItemsView::ListView, 6, 1), argb(0,0,0,0))" padding="rect(15rp,10rp,15rp,0rp)">
 					<element id="atom(AllItemsContentPanel)" class="MainContentPanel" sheet="CategoryPanelStyle" layoutpos="client" layout="FlowLayout(0,0,3,0)" accrole="pane" background="argb(0,0,0,0)"/>
 				</element>
 			</element>
 		</ScrollViewer>
-		
-		
 	</Button>
-	<Button resid="AllItemsColumn" sheet="CategoryPanelStyle" layout="BorderLayout()" accrole="pane" active="mouse" padding="rect(2rp,12rp,5rp,0rp)" />
+	<Button resid="AllItemsColumn" sheet="CategoryPanelStyle" layout="BorderLayout()" accrole="pane" active="mouse" padding="rect(2rp,12rp,5rp,0rp)"/>
 	<ControlPanelLink resid="CategoryOrAppletSection" sheet="CategoryPanelStyle" class="section" active="mouse" layoutpos="top" layout="BorderLayout()">
 		<element layoutpos="left" id="atom(iconPane)" layout="FlowLayout()">
 			<Viewer>
@@ -256,14 +249,12 @@
 			<if id="atom(helpbar2)">
 				<element background="themeable(gtc(MonthCal, 7, 2, 3803), threedface)" width="1000rp" height="1rp"/>
 			</if>
-			
 			<if class="primaryLabel">
 				<Element foreground="ARGB(255,31,87,133)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="middleleft"/>
 			</if>
 			<if class="secondaryLabel">
 				<Element foreground="ARGB(255,107,170,250)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="middleleft"/>
 			</if>
-			
 		</style>
 	</stylesheets>
 </duixml>

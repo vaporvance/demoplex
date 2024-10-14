@@ -4,7 +4,6 @@
 			<element id="atom(NavPanelContent)" layout="filllayout()">
 				<scrollviewer sheet="common" XScrollable="false">
 					<element sheet="taskpane2" class="sidepanel" layout="verticalflowlayout(0,0,0,0)">
-					
 						<Expando layout="borderlayout()" Expanded="true">
 							<accessiblebutton id="atom(arrow)" class="groupheader" layoutpos="top" layout="flowlayout(0,2,0,2)">
 								<Button class="dropdownArrow" active="inactive"/>
@@ -15,7 +14,7 @@
 								<element layoutpos="client" layout="verticalflowlayout(0,0,0,0)">
 									<element id="atom(HomePageLink)" sheet="NavPanelStyle" layout="borderlayout()">
 										<Viewer class="icon" layoutpos="left">
-											<element content="icon(22,sysmetric(49),sysmetric(50),library(shell32.dll))"/>
+											<element content="icon(22,sysmetric(49),sysmetric(50),library(shell32.dll))" />
 										</Viewer>
 										<ControlPanelLink id="atom(CPLink)" layoutpos="left" class="link" content="resstr(0x7951, library(shell32.dll))"/>
 									</element>
@@ -24,7 +23,6 @@
 								</element>
 							</element>
 						</Expando>
-						
 						<element id="atom(AppletSeeAlsoSection)" layout="filllayout()" animation="RectangleV|s|fast">
 							<Expando layoutpos="top" layout="borderlayout()" Expanded="true">
 								<accessiblebutton id="atom(arrow)" class="groupheader" layoutpos="top" layout="flowlayout(0,2,0,2)">
@@ -39,7 +37,6 @@
 								</element>
 							</Expando>
 						</element>
-						
 					</element>
 				</scrollviewer>
 			</element>
@@ -53,7 +50,7 @@
 	</element>
 	<element resid="NavPanelTaskLink" sheet="NavPanelStyle" class="TaskNavLink" layout="borderlayout()">
 		<Viewer class="icon" layoutpos="left">
-			<ControlPanelLink id="atom(LinkIcon)" visible="true" tooltip="false" accname="resstr(0x7972, library(shell32.dll))" content="icon(2,sysmetric(49), sysmetric(50),library(imageres.dll))"/>
+			<ControlPanelLink id="atom(LinkIcon)" visible="true" tooltip="false" accname="resstr(0x7972, library(shell32.dll))"/>
 		</Viewer>
 		<ControlPanelLink id="atom(LinkText)" layoutpos="left" class="link" tooltip="false"/>
 	</element>
@@ -76,12 +73,12 @@
 				<element padding="rect(0,3rp,0,3rp)" contentalign="topleft"/>
 			</if>
 			<if class="icon">
-				<viewer margin="rect(0,0,6rp,0)" cursor="hand"/>
+				<viewer margin="rect(0,0,6rp,0)" />
 			</if>
 			<if id="atom(Dot)">
 				<element content="themeable(icon(16799,sysmetric(49),sysmetric(50),library(shell32.dll)),icon(16800,sysmetric(49),sysmetric(50),library(shell32.dll)))" visible="false"/>
 			</if>
-			<ControlPanelLink background="argb(0,0,0,0)" accessible="true" tooltip="true" cursor="hand"/>
+			<ControlPanelLink background="argb(0,0,0,0)" accessible="true" tooltip="true" />
 			<if id="atom(LinkIcon)">
 				<ControlPanelLink width="sysmetric(49)"/>
 				<if class="DisabledLink_Dot">
@@ -92,7 +89,7 @@
 				<ControlPanelLink foreground="themeable(gtc(ControlPanelStyle,8,1,3803), windowtext)" font="themeable(gtf(ControlPanelStyle,8,5), gtf(TextStyle, 3, 0))" contentalign="topleft | wrapleft"/>
 			</if>
 			<if class="link">
-				<ControlPanelLink foreground="themeable(gtc(ControlPanelStyle,8,1,3803), windowtext)" font="themeable(gtf(ControlPanelStyle,8,1), gtf(TextStyle, 6, 0))" contentalign="topleft | wrapleft"/>
+				<ControlPanelLink foreground="themeable(gtc(ControlPanelStyle,8,1,3803), windowtext)" font="themeable(gtf(ControlPanelStyle,8,1), gtf(TextStyle, 6, 0))" contentalign="topleft | wrapleft" cursor="hand"/>
 				<if keyfocused="true">
 					<ControlPanelLink contentalign="topleft | wrapleft | focusrect"/>
 				</if>

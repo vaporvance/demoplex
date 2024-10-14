@@ -1345,7 +1345,7 @@
 		</style>
 		<style resid="FolderBandStyle">
 			<Element background="argb(0, 0, 0, 0)"/>
-			<TemplateBackground background="themeable(Gradient(gtc(CommandModule, 2, 0, 3810), gtc(CommandModule, 2, 0, 3811), gtc(CommandModule, 2, 0, 3812), 3), window)"/>
+			<TemplateBackground background="argb(0, 0, 0, 0)"/>
 			<if id="atom(FolderBandShineLayer)">
 				<TemplateBackground background="dtb(CommandModule, 1, 0)"/>
 			</if>
@@ -1373,7 +1373,7 @@
 		</style>
 		<style resid="CPLFolderBandStyle">
 			<Element background="argb(0, 0, 0, 0)"/>
-			<TemplateBackground background="themeable(Gradient(gtc(CommandModule, 2, 0, 3810), gtc(CommandModule, 2, 0, 3811), gtc(CommandModule, 2, 0, 3812), 3), window)"/>
+			<TemplateBackground background="argb(0, 0, 0, 0)"/>
 			<if id="atom(MiddleLayer)">
 				<TemplateBackground background="dtb(CPLCommandModule::CommandModule, 1, 0)"/>
 			</if>
@@ -1869,6 +1869,7 @@
 			</if>
 		</style>
 		<style resid="CPLTopViewButtonStyle">
+			<Element background="argb(0, 0, 0, 0)" />
 			<if id="atom(ActionButtonLabel)">
 				<Element background="argb(0, 0, 0, 0)" contentalign="middlecenter"/>
 			</if>
@@ -1882,12 +1883,12 @@
 				<Element foreground="argb(255, 90, 103, 121)"/>
 			</if>
 			<if id="atom(ActionButton)">
-				<Button3d foreground="ARGB(255,107,170,250)" font="gtf(TEXTSTYLE, 6, 0)" PressedPaddingShift="0"/>
+				<Button3d foreground="ARGB(255,107,170,250)" background="themeable(dtb(CommandModule, 9, 1), argb(0,0,0,0))" font="gtf(TEXTSTYLE, 6, 0)" PressedPaddingShift="0" padding="rect(0rp, 3rp, 0rp, 3rp)"/>
 				<if mousefocused="true">
-					<Button3d font="gtf(TEXTSTYLE, 6, 2)" />
+					<Button3d font="gtf(TEXTSTYLE, 6, 0)" background="themeable(dtb(CommandModule, 9, 2), argb(0,0,0,0))" />
 				</if>
 				<if pressed="true">
-					<Button3d font="gtf(TEXTSTYLE, 6, 2)" />
+					<Button3d font="gtf(TEXTSTYLE, 6, 0)" background="themeable(dtb(CommandModule, 9, 3), argb(0,0,0,0))" />
 				</if>
 			</if>
 			<if id="atom(MenuButtonGlyph)">
@@ -1996,10 +1997,16 @@
 			<element background="argb(0,0,0,0)"/>
 			<button background="argb(0,0,0,0)"/>
 			<if class="headerbg">
-				<element/>
+				<element padding="rect(10rp,3rp,0,3rp)"/>
 			</if>
 			<if class="headerbutton">
-				<button padding="Rect(12rp,7rp,7rp,7rp)"/>
+				<button background="themeable(dtb(CommandModule, 9, 1), argb(0,0,0,0))" padding="Rect(7rp,3rp,7rp,3rp)" margin="Rect(0,0,9rp,0)"/>
+				<if mousefocused="true">
+					<Button background="themeable(dtb(CommandModule, 9, 2), argb(0,0,0,0))" />
+				</if>
+				<if pressed="true">
+					<button background="themeable(dtb(CommandModule, 9, 3), argb(0,0,0,0))"/>
+				</if>
 			</if>
 			<if class="primaryLabel">
 				<Element foreground="ARGB(255,31,87,133)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="middleleft"/>

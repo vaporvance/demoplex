@@ -52,7 +52,7 @@
 			<if id="atom(PropertyIcon)">
 				<Element padding="rect(2rp,1rp,2rp,1rp)"/>
 			</if>
-			<StatusBarModuleInner background="themeable(gtc(ExplorerStatusBar, 0, 0, 3802), window)" foreground="themeable(gtc(ExplorerStatusBar, 0, 0, 3803), windowtext)" textglowsize="4" CompositedText="true"/>
+			<StatusBarModuleInner background="themeable(gtc(ExplorerStatusBar, 0, 0, 3802), window)" foreground="themeable(gtc(ExplorerStatusBar, 0, 0, 3803), windowtext)" textglowsize="4" CompositedText="true" font="menufont;100%"/>
 			<SelectorButton background="themeable(dtb(Toolbar, 1, 1), argb(0, 0, 0, 0))" padding="rect(3rp, 3rp, 3rp, 3rp)" PressedPaddingShift="1rp" contentalign="middlecenter" tooltip="true"/>
 			<if keyfocused="true">
 				<SelectorButton background="themeable(dtb(Toolbar, 1, 2), argb(0, 0, 0, 0))" contentalign="themeable(middlecenter, middlecenter | focusrect)"/>
@@ -75,9 +75,6 @@
 			</if>
 			<if id="atom(FieldSeparator)">
 				<Element background="argb(0,0,0,0)" margin="themeable(rect(3rp, 0, 3rp, 0),rect(8rp, 0, 8rp, 0))" width="1rp"/>
-			</if>
-			<if id="atom(PropertyFieldList)">
-				<Element font="gtf(TEXTSTYLE, 4, 0)"/>
 			</if>
 			<if class="Separator">
 				<Element background="themeable(dtb(Status, 1, 0), window)"/>
