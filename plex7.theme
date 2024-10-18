@@ -42,10 +42,10 @@ DefaultValue=Windows Default
 DefaultValue.MUI=@main.cpl,-1020
 
 [Control Panel\Desktop]
-Path=%SystemRoot%\resources\Themes\demoplex\Shaft_of_light_in_slot_canyon.jpg
-TileWallpaper=0
-WallpaperStyle=10
+Wallpaper=%SystemRoot%\Resources\Themes\demoplex\Shaft_of_light_in_slot_canyon.jpg
 Pattern=
+MultimonBackgrounds=0
+PicturePosition=4
 
 [VisualStyles]
 Path=%SystemRoot%\resources\Themes\demoplex\plex7.msstyles
