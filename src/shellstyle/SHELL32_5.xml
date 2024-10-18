@@ -6,7 +6,7 @@
 		<element layout="filllayout()" layoutpos="client">
 			<element layout="borderlayout()" padding="rect(0rp,0,0,0)" layoutpos="client">
 				<element layout="borderlayout()" layoutpos="top" padding="rect(200rp,0,0,0)">
-					<TemplateBackground id="atom(PreviewContainer)" height="53rp" layoutpos="top" layout="filllayout()" >
+					<TemplateBackground id="atom(PreviewContainer)" height="53rp" layoutpos="top" layout="filllayout()">
 						<TemplateBackground id="atom(PreviewShineLayer)"/>
 						<PreviewBackground id="atom(BackgroundClear)" background="ARGB(0, 0, 0, 0)" layout="borderlayout()" padding="rect(0,10rp,0,0)">
 							<PreviewThumbnail ModuleID="PreviewThumbnailModule" MaxThumbSize="256" layoutpos="Left"/>
@@ -16,7 +16,7 @@
 						</PreviewBackground>
 						<Sizer id="atom(PreviewPaneSizer)" sizingtarget="atom(PreviewContainer)" FramePersistType="2" SlidesUpAndDown="true" layoutpos="bottom" DownOrRightGrowsTarget="true" minsize="150"/>
 					</TemplateBackground>
-					<element sheet="fileheaderss" class="headerbg" layout="flowlayout(0,2,0,2)" layoutpos="top" >
+					<element sheet="fileheaderss" class="headerbg" layout="flowlayout(0,2,0,2)" layoutpos="top">
 						<Button class="headerbutton" layout="flowlayout(0,2,0,2)">
 							<element class="primaryLabel" content="Group"/>
 							<element class="secondaryLabel" content="items by"/>
@@ -44,100 +44,89 @@
 				</Element>
 			</element>
 			<scrollviewer layoutpos="left" sheet="common" XScrollable="false" width="200rp" background="argb(0,0,0,0)">
-				<element sheet="taskpane2" class="sidepanel" layout="borderlayout()" layoutpos="client">
-					<Expando layoutpos="top" layout="borderlayout()" Expanded="true">
-						<accessiblebutton id="atom(arrow)" class="groupheader" layoutpos="top" layout="flowlayout(0,2,0,2)">
-							<Button class="dropdownArrow" active="inactive"/>
-							<button class="primaryGroupLabel" active="inactive" content="enjoy"/>
-							<button class="secondaryGroupLabel" active="inactive" content="pictures"/>
-						</accessiblebutton>
-						<element id="atom(clipper)" class="groupbackground" layoutpos="top" layout="borderlayout()">
-							<element layoutpos="client" layout="verticalflowlayout(0,0,0,0)">
-								<navigatebutton class="task_item" layout="borderlayout()" shellexecute="No task yet">
-									<Button class="icon" layoutpos="left" content="icon(2,sysmetric(49),sysmetric(50),library(imageres.dll))" accessible="true" accrole="pushbutton"/>
-									<Button class="label_normal" layoutpos="left" content="View slide show" accessible="true" accrole="pushbutton"/>
-								</navigatebutton>
-								<navigatebutton class="task_item" layout="borderlayout()" shellexecute="No task yet">
-									<Button class="icon" layoutpos="left" content="icon(2,sysmetric(49),sysmetric(50),library(imageres.dll))" accessible="true" accrole="pushbutton"/>
-									<Button class="label_normal" layoutpos="left" content="Create an Album" accessible="true" accrole="pushbutton"/>
-								</navigatebutton>
-								<navigatebutton class="task_item" layout="borderlayout()" shellexecute="No task yet">
-									<Button class="icon" layoutpos="left" content="icon(50,sysmetric(49),sysmetric(50),library(shell32.dll))" accessible="true" accrole="pushbutton"/>
-									<Button class="label_normal" layoutpos="left" content="Burn DVD" accessible="true" accrole="pushbutton"/>
-								</navigatebutton>
-								<navigatebutton class="task_item" layout="borderlayout()" shellexecute="No task yet">
-									<Button class="icon" layoutpos="left" content="icon(50,sysmetric(49),sysmetric(50),library(shell32.dll))" accessible="true" accrole="pushbutton"/>
-									<Button class="label_normal" layoutpos="left" content="Print pictures online" accessible="true" accrole="pushbutton"/>
-								</navigatebutton>
-							</element>
-						</element>
-					</Expando>
-					<Expando layoutpos="top" layout="borderlayout()" Expanded="true">
-						<accessiblebutton id="atom(arrow)" class="groupheader" layoutpos="top" layout="flowlayout(0,2,0,2)">
-							<Button class="dropdownArrow" active="inactive"/>
-							<button class="primaryGroupLabel" active="inactive" content="system"/>
-							<button class="secondaryGroupLabel" active="inactive" content="tasks"/>
-						</accessiblebutton>
-						<element id="atom(clipper)" class="groupbackground" layoutpos="top" layout="borderlayout()">
-							<element layoutpos="client" layout="borderlayout()">
-								<folderbandmodule layoutpos="top" ModuleID="FolderBandModule" padding="rect(0,0,0,0)"/>
-							</element>
-						</element>
-					</Expando>
-					<Expando layoutpos="top" layout="borderlayout()" Expanded="true">
-						<accessiblebutton id="atom(arrow)" class="groupheader" layoutpos="top" layout="flowlayout(0,2,0,2)">
-							<Button class="dropdownArrow" active="inactive"/>
-							<button class="primaryGroupLabel" active="inactive" content="find"/>
-							<button class="secondaryGroupLabel" active="inactive" content="pictures"/>
-						</accessiblebutton>
-						<element id="atom(clipper)" class="groupbackground" layoutpos="top" layout="borderlayout()">
-							<element layout="borderlayout()" layoutpos="client">
-								<element class="label" layoutpos="top" content="Search for:" padding="rect(3rp,3rp,3rp,3rp)"/>
-								<element background="themeable(dtb(SearchBox, 1, 0), '')" layoutpos="top" height="20rp"/>
-								<element class="label" layoutpos="top" content="Filter By:" padding="rect(3rp,3rp,3rp,3rp)"/>
-								<element class="label" layoutpos="top" content="Name" fontface="Franklin Gothic Medium" padding="rect(3rp,3rp,3rp,3rp)"/>
-								<element layoutpos="top" layout="flowlayout()" padding="rect(3rp,3rp,3rp,3rp)">
-									<button class="filterlink" layoutpos="left" content="0-9"/>
-									<element class="label" layoutpos="left" content="|"/>
-									<button class="filterlink" layoutpos="left" content="A-H"/>
-									<element class="label" layoutpos="left" content="|"/>
-									<button class="filterlink" layoutpos="left" content="I-P"/>
-									<element class="label" layoutpos="left" content="|"/>
-									<button class="filterlink" layoutpos="left" content="Q-Z"/>
-									<element class="label" layoutpos="left" content="|"/>
-									<button class="filterlink" layoutpos="left" content="Other"/>
+				<element layout="filllayout()" layoutpos="client">
+					<element sheet="taskpane2" class="sidepanel" layout="borderlayout()" layoutpos="client">
+						<Expando layoutpos="top" layout="borderlayout()" Expanded="true">
+							<accessiblebutton id="atom(arrow)" class="groupheader" layoutpos="top" layout="flowlayout(0,2,0,2)">
+								<Button class="dropdownArrow" active="inactive"/>
+								<button class="primaryGroupLabel" active="inactive" content="enjoy"/>
+								<button class="secondaryGroupLabel" active="inactive" content="pictures"/>
+							</accessiblebutton>
+							<element id="atom(clipper)" class="groupbackground" layoutpos="top" layout="borderlayout()">
+								<element layoutpos="client" layout="verticalflowlayout(0,0,0,0)">
+									<navigatebutton class="task_item" layout="borderlayout()" shellexecute="No task yet">
+										<Button class="icon" layoutpos="left" content="icon(2,sysmetric(49),sysmetric(50),library(imageres.dll))" accessible="true" accrole="pushbutton"/>
+										<Button class="label_normal" layoutpos="left" content="View slide show" accessible="true" accrole="pushbutton"/>
+									</navigatebutton>
+									<navigatebutton class="task_item" layout="borderlayout()" shellexecute="No task yet">
+										<Button class="icon" layoutpos="left" content="icon(2,sysmetric(49),sysmetric(50),library(imageres.dll))" accessible="true" accrole="pushbutton"/>
+										<Button class="label_normal" layoutpos="left" content="Create an Album" accessible="true" accrole="pushbutton"/>
+									</navigatebutton>
+									<navigatebutton class="task_item" layout="borderlayout()" shellexecute="No task yet">
+										<Button class="icon" layoutpos="left" content="icon(50,sysmetric(49),sysmetric(50),library(shell32.dll))" accessible="true" accrole="pushbutton"/>
+										<Button class="label_normal" layoutpos="left" content="Burn DVD" accessible="true" accrole="pushbutton"/>
+									</navigatebutton>
+									<navigatebutton class="task_item" layout="borderlayout()" shellexecute="No task yet">
+										<Button class="icon" layoutpos="left" content="icon(50,sysmetric(49),sysmetric(50),library(shell32.dll))" accessible="true" accrole="pushbutton"/>
+										<Button class="label_normal" layoutpos="left" content="Print pictures online" accessible="true" accrole="pushbutton"/>
+									</navigatebutton>
 								</element>
-								<button class="filterlink" layoutpos="left" content="More filters" fontface="Franklin Gothic Medium" padding="rect(3rp,3rp,3rp,3rp)"/>
 							</element>
-						</element>
-					</Expando>
-					<Expando layoutpos="top" layout="borderlayout()" Expanded="true">
-						<accessiblebutton id="atom(arrow)" class="groupheader" layoutpos="top" layout="flowlayout(0,2,0,2)">
-							<Button class="dropdownArrow" active="inactive"/>
-							<button class="primaryGroupLabel" active="inactive" content="other"/>
-							<button class="secondaryGroupLabel" active="inactive" content="places"/>
-						</accessiblebutton>
-						<element id="atom(clipper)" class="groupbackground" layoutpos="top" layout="borderlayout()">
-							<element layoutpos="client" layout="verticalflowlayout(0,0,0,0)">
-								<navigatebutton class="task_item" layout="borderlayout()" navigationtargetroot="shell:Desktop">
-									<Button class="icon" layoutpos="left" content="icon(110,sysmetric(49),sysmetric(50),library(imageres.dll))" accessible="true" accrole="pushbutton"/>
-									<Button class="label_normal" layoutpos="left" content="my Desktop" accessible="true" accrole="pushbutton"/>
-								</navigatebutton>
-								<navigatebutton class="task_item" layout="borderlayout()" navigationtargetroot="shell:MyComputerFolder">
-									<Button class="icon" layoutpos="left" content="icon(109,sysmetric(49),sysmetric(50),library(imageres.dll))" accessible="true" accrole="pushbutton"/>
-									<Button class="label_normal" layoutpos="left" content="my Computer" accessible="true" accrole="pushbutton"/>
-								</navigatebutton>
-								<navigatebutton class="task_item" layout="borderlayout()" navigationtargetroot="shell:::{26EE0668-A00A-44D7-9371-BEB064C98683}">
-									<Button class="icon" layoutpos="left" content="icon(27,sysmetric(49),sysmetric(50),library(imageres.dll))" accessible="true" accrole="pushbutton"/>
-									<Button class="label_normal" layoutpos="left" content="Control Panel" accessible="true" accrole="pushbutton"/>
-								</navigatebutton>
-								<navigatebutton class="task_item" layout="borderlayout()" navigationtargetroot="shell:Libraries">
-									<Button class="icon" layoutpos="left" content="icon(3,sysmetric(49),sysmetric(50),library(imageres.dll))" accessible="true" accrole="pushbutton"/>
-									<Button class="label_normal" layoutpos="left" content="Libraries" accessible="true" accrole="pushbutton"/>
-								</navigatebutton>
+						</Expando>
+						<Expando layoutpos="top" layout="borderlayout()" Expanded="true">
+							<accessiblebutton id="atom(arrow)" class="groupheader" layoutpos="top" layout="flowlayout(0,2,0,2)">
+								<Button class="dropdownArrow" active="inactive"/>
+								<button class="primaryGroupLabel" active="inactive" content="system"/>
+								<button class="secondaryGroupLabel" active="inactive" content="tasks"/>
+							</accessiblebutton>
+							<element id="atom(clipper)" class="groupbackground" layoutpos="top" layout="borderlayout()">
+								<element layoutpos="client" layout="borderlayout()">
+									<folderbandmodule layoutpos="top" ModuleID="FolderBandModule" padding="rect(0,0,0,0)"/>
+								</element>
 							</element>
-						</element>
-					</Expando>
+						</Expando>
+						<Expando layoutpos="top" layout="borderlayout()" Expanded="true">
+							<accessiblebutton id="atom(arrow)" class="groupheader" layoutpos="top" layout="flowlayout(0,2,0,2)">
+								<Button class="dropdownArrow" active="inactive"/>
+								<button class="primaryGroupLabel" active="inactive" content="find"/>
+								<button class="secondaryGroupLabel" active="inactive" content="pictures"/>
+							</accessiblebutton>
+							<element id="atom(clipper)" class="groupbackground" layoutpos="top" layout="borderlayout()">
+								<element layout="borderlayout()" layoutpos="client">
+									<element class="label" layoutpos="top" content="Search for:" padding="rect(3rp,3rp,3rp,3rp)"/>
+									<element background="themeable(dtb(SearchBox, 1, 0), '')" layoutpos="top" height="20rp"/>
+								</element>
+							</element>
+						</Expando>
+						<Expando layoutpos="top" layout="borderlayout()" Expanded="true">
+							<accessiblebutton id="atom(arrow)" class="groupheader" layoutpos="top" layout="flowlayout(0,2,0,2)">
+								<Button class="dropdownArrow" active="inactive"/>
+								<button class="primaryGroupLabel" active="inactive" content="other"/>
+								<button class="secondaryGroupLabel" active="inactive" content="places"/>
+							</accessiblebutton>
+							<element id="atom(clipper)" class="groupbackground" layoutpos="top" layout="borderlayout()">
+								<element layoutpos="client" layout="verticalflowlayout(0,0,0,0)">
+									<navigatebutton class="task_item" layout="borderlayout()" navigationtargetroot="shell:Desktop">
+										<Button class="icon" layoutpos="left" content="icon(110,sysmetric(49),sysmetric(50),library(imageres.dll))" accessible="true" accrole="pushbutton"/>
+										<Button class="label_normal" layoutpos="left" content="my Desktop" accessible="true" accrole="pushbutton"/>
+									</navigatebutton>
+									<navigatebutton class="task_item" layout="borderlayout()" navigationtargetroot="shell:MyComputerFolder">
+										<Button class="icon" layoutpos="left" content="icon(109,sysmetric(49),sysmetric(50),library(imageres.dll))" accessible="true" accrole="pushbutton"/>
+										<Button class="label_normal" layoutpos="left" content="my Computer" accessible="true" accrole="pushbutton"/>
+									</navigatebutton>
+									<navigatebutton class="task_item" layout="borderlayout()" navigationtargetroot="shell:::{26EE0668-A00A-44D7-9371-BEB064C98683}">
+										<Button class="icon" layoutpos="left" content="icon(27,sysmetric(49),sysmetric(50),library(imageres.dll))" accessible="true" accrole="pushbutton"/>
+										<Button class="label_normal" layoutpos="left" content="Control Panel" accessible="true" accrole="pushbutton"/>
+									</navigatebutton>
+									<navigatebutton class="task_item" layout="borderlayout()" navigationtargetroot="shell:Libraries">
+										<Button class="icon" layoutpos="left" content="icon(3,sysmetric(49),sysmetric(50),library(imageres.dll))" accessible="true" accrole="pushbutton"/>
+										<Button class="label_normal" layoutpos="left" content="Libraries" accessible="true" accrole="pushbutton"/>
+									</navigatebutton>
+								</element>
+							</element>
+						</Expando>
+					</element>
+					<ProperTreeModule id="atom(ProperTree)" ModuleID="ProperTreeModule" sheet="documentslayoutstyle" layoutpos="Left"/>
 				</element>
 			</scrollviewer>
 		</element>
