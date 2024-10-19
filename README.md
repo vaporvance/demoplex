@@ -15,9 +15,12 @@
 - StartIsBack++ or [RetroBar](https://github.com/dremin/RetroBar) for taskbar skinning
 - [Libre Franklin font](https://fonts.google.com/specimen/Libre+Franklin)
 - Franklin Gothic Book font
+- Custom [OldNewExplorer](https://cdn.discordapp.com/attachments/1274869087650058314/1297199936336822355/OldNewExplorer_plex.zip) with **alternate navigation buttons** option enabled 
+(Paste the link in any Discord chat and download it from there)
 ## Installing
 Copy **demoplex** folder, **demoplex.theme** and **plex7.theme** to **C:\Windows\Resources\Themes**
 ## Credits
 - [valkalyne](https://github.com/valkalyne) and [notzetkin](https://github.com/notzetkin) for original visual styles
 - [Olive6841](https://github.com/Olive6841) for shellstyle (before I rework it)
 - [ThePhantom6314](https://github.com/ThePhantom6314) their longhorn plex vector resources saving our time a lot
+- [ojask](https://github.com/ojask) for various msstyles resources from his MSX-02 project
