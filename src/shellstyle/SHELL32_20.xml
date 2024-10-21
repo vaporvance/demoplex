@@ -1,20 +1,20 @@
 <!-- Contacts folder type UIFILE -->
 <!-- To change sidebar's width. replace every instance of 200rp to your preferred value -->
 <duixml>
-	<Element resid="FolderLayout" layout="shellborderlayout()" sheet="documentslayoutstyle">
+	<Element resid="FolderLayout" layout="shellborderlayout()" sheet="contactslayoutstyle">
 		<StatusBarModule ModuleID="StatusBarModule" layoutpos="bottom" layout="filllayout()"/>
 		<element layout="filllayout()" layoutpos="client">
 			<element layout="borderlayout()" padding="rect(0rp,0,0,0)" layoutpos="client">
 				<element layout="borderlayout()" layoutpos="top" padding="rect(200rp,0,0,0)">
 					<TemplateBackground id="atom(PreviewContainer)" height="53rp" layoutpos="top" layout="filllayout()">
 						<TemplateBackground id="atom(PreviewShineLayer)"/>
-						<PreviewBackground id="atom(BackgroundClear)" background="ARGB(0, 0, 0, 0)" layout="borderlayout()" padding="rect(0,10rp,0,0)">
+						<PreviewBackground id="atom(BackgroundClear)" background="ARGB(0, 0, 0, 0)" layout="filllayout()">
 							<PreviewThumbnail ModuleID="PreviewThumbnailModule" MaxThumbSize="256" layoutpos="Left"/>
 							<Element layoutpos="Client" layout="filllayout()">
-								<PreviewMetadata ModuleID="PreviewMetadataModule" NullSelectPropertyString="prop:System.FileCount;System.Volume.FileSystem;System.DateCreated;System.DateModified;System.FileAttributes;*System.OfflineStatus;*System.OfflineAvailability" NullSelectTitlePropertyString="prop:System.ItemNameDisplay;System.ItemTypeText" layoutpos="Client"/>
+								<PreviewMetadata ModuleID="PreviewMetadataModule" NullSelectTitlePropertyString="prop:System.FileCount" layoutpos="Client"/>
 							</Element>
 						</PreviewBackground>
-						<Sizer id="atom(PreviewPaneSizer)" sizingtarget="atom(PreviewContainer)" FramePersistType="2" SlidesUpAndDown="true" layoutpos="bottom" DownOrRightGrowsTarget="true" minsize="150"/>
+						<Sizer id="atom(PreviewPaneSizer)" sizingtarget="atom(PreviewContainer)" FramePersistType="2" SlidesUpAndDown="true" layoutpos="bottom" DownOrRightGrowsTarget="true"/>
 					</TemplateBackground>
 					<element sheet="fileheaderss" class="headerbg" layout="flowlayout(0,2,0,2)" layoutpos="top">
 						<Button class="headerbutton" layout="flowlayout(0,2,0,2)">
@@ -39,17 +39,18 @@
 					<ReadingPaneModule ModuleID="ReadingPaneModule" layoutpos="none"/>
 				</TemplateBackground>
 				<Sizer id="atom(ReadingPaneSizer)" sizingtarget="atom(ReadingPane)" GrowTargetFirst="true" SlidesUpAndDown="false" PrioritySizer="atom(PageSpaceControlSizer)" DownOrRightGrowsTarget="false" FramePersistType="2" layoutpos="Right"/>
-				<Element id="atom(ViewHostContainer)" layoutpos="Client" sheet="documentslayoutstyle" layout="borderlayout()" padding="rect(200rp,0,0,0)" background="themeable(Gradient(gtc(CommandModule, 2, 0, 3810), gtc(CommandModule, 2, 0, 3811), gtc(CommandModule, 2, 0, 3812), 4), window)">
+				<Element id="atom(ViewHostContainer)" layoutpos="Client" sheet="contactslayoutstyle" layout="borderlayout()" padding="rect(200rp,0,0,0)" background="themeable(Gradient(gtc(CommandModule, 2, 0, 3810), gtc(CommandModule, 2, 0, 3811), gtc(CommandModule, 2, 0, 3812), 4), window)">
 					<ViewHost id="atom(clientviewhost)" layout="borderlayout()" layoutpos="client"/>
 				</Element>
 			</element>
-			<scrollviewer layoutpos="left" sheet="common" XScrollable="false" width="200rp" background="argb(0,0,0,0)">
-				<element layout="filllayout()" layoutpos="client">
+			<Element layout="filllayout()" background="argb(0,0,0,0)" layoutpos="left">
+				<ProperTreeModule id="atom(ProperTree)" background="argb(0,0,0,0)" width="200rp" ModuleID="ProperTreeModule" sheet="contactslayoutstyle"/>
+				<scrollviewer layoutpos="left" sheet="common" XScrollable="false" width="200rp" background="argb(0,0,0,0)">
 					<element sheet="taskpane2" class="sidepanel" layout="borderlayout()" layoutpos="client">
 						<Expando layoutpos="top" layout="borderlayout()" Expanded="true">
 							<accessiblebutton id="atom(arrow)" class="groupheader" layoutpos="top" layout="flowlayout(0,2,0,2)">
 								<Button class="dropdownArrow" active="inactive"/>
-								<button class="primaryGroupLabel" active="inactive" content="contact"/>
+								<button class="primaryGroupLabel" active="inactive" content="people"/>
 								<button class="secondaryGroupLabel" active="inactive" content="tasks"/>
 							</accessiblebutton>
 							<element id="atom(clipper)" class="groupbackground" layoutpos="top" layout="borderlayout()">
@@ -62,7 +63,7 @@
 							<accessiblebutton id="atom(arrow)" class="groupheader" layoutpos="top" layout="flowlayout(0,2,0,2)">
 								<Button class="dropdownArrow" active="inactive"/>
 								<button class="primaryGroupLabel" active="inactive" content="find"/>
-								<button class="secondaryGroupLabel" active="inactive" content="people"/>
+								<button class="secondaryGroupLabel" active="inactive" content="contacts"/>
 							</accessiblebutton>
 							<element id="atom(clipper)" class="groupbackground" layoutpos="top" layout="borderlayout()">
 								<element layout="borderlayout()" layoutpos="client">
@@ -99,9 +100,8 @@
 							</element>
 						</Expando>
 					</element>
-					<ProperTreeModule id="atom(ProperTree)" ModuleID="ProperTreeModule" sheet="documentslayoutstyle" layoutpos="Left"/>
-				</element>
-			</scrollviewer>
+				</scrollviewer>
+			</Element>
 		</element>
 	</Element>
 </duixml>

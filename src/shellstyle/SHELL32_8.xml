@@ -10,8 +10,52 @@
 	<Element resid="PreviewSelectionInvatation" id="atom(PreviewSelectionInvatation)" content="resstr(0x956B, library(shell32.dll))"/>
 	<Element resid="PreviewUSB3CanBeFaster" id="atom(PreviewUSB3CanBeFaster)" content="resstr(0x956C, library(shell32.dll))" contentalign="wrapleft" accessible="true" accrole="statictext"/>
 	<Element resid="PreviewUSB3Connected" id="atom(PreviewUSB3Connected)" content="resstr(0x956D, library(shell32.dll))" contentalign="wrapleft" accessible="true" accrole="statictext"/>
-	<Element resid="PreviewItemCountTitle" layout="borderlayout()">
+	<Element resid="PreviewItemCountTitle" layout="filllayout()">
 		<MetadataLabel layoutpos="left" id="atom(ItemCountLabel)" active="inactive"/>
+		<element class="musicbnr" padding="rect(263rp,176rp,0,0)" layout="borderlayout()" layoutpos="top">
+			<NavigateButton sheet="banner" class="Btn" layout="borderlayout()" layoutpos="left" shellexecute="%systemdrive%\\Program Files (x86)\\Windows Media Player\\wmplayer.exe">
+				<Button class="BtnLabel" content="Play Music" layoutpos="left" accessible="true" accrole="pushbutton"/>
+			</NavigateButton>
+			<NavigateButton sheet="banner" class="Btn" layout="borderlayout()" padding="rect(37rp,0,0,0)" layoutpos="left" shellexecute="%windir%\\system32\\burncd.exe">
+				<Button class="BtnLabel" content="Burn CD" layoutpos="left" accessible="true" accrole="pushbutton"/>
+			</NavigateButton>
+			<NavigateButton sheet="banner" class="Btn" layout="borderlayout()" padding="rect(43rp,0,0,0)" layoutpos="left" shellexecute="%windir%\\system32\\sharemusic.exe">
+				<Button class="BtnLabel" content="Share Music" layoutpos="left" accessible="true" accrole="pushbutton"/>
+			</NavigateButton>
+		</element>
+		<element class="picbnr" padding="rect(263rp,159rp,0,0)" layout="borderlayout()" layoutpos="top">
+			<NavigateButton sheet="banner" class="Btn" layout="borderlayout()" layoutpos="left" shellexecute="%windir%\\system32\\picvwr.exe">
+				<Button class="BtnLabel" content="View Slide Show" layoutpos="left" accessible="true" accrole="pushbutton"/>
+			</NavigateButton>
+			<NavigateButton sheet="banner" class="Btn" layout="borderlayout()" padding="rect(43rp,0,0,0)" layoutpos="left" shellexecute="%windir%\\system32\\picvwr.exe">
+				<Button class="BtnLabel" content="Create Album" layoutpos="left" accessible="true" accrole="pushbutton"/>
+			</NavigateButton>
+			<NavigateButton sheet="banner" class="Btn" layout="borderlayout()" padding="rect(48rp,0,0,0)" layoutpos="left" shellexecute="%windir%\\system32\\printpics.exe">
+				<Button class="BtnLabel" content="Print Pictures" layoutpos="left" accessible="true" accrole="pushbutton"/>
+			</NavigateButton>
+		</element>
+		<element class="docsbnr" padding="rect(245rp,155rp,0,0)" layout="borderlayout()" layoutpos="top">
+			<NavigateButton sheet="banner" class="Btn" layout="borderlayout()" layoutpos="left" shellexecute="%windir%\\notepad.exe">
+				<Button class="BtnLabel" content="Create a document" layoutpos="left" accessible="true" accrole="pushbutton"/>
+			</NavigateButton>
+			<NavigateButton sheet="banner" class="Btn" layout="borderlayout()" padding="rect(16rp,0,0,0)" layoutpos="left" shellexecute="%systemdrive%\\windows\\system32\\srchpg.exe">
+				<Button class="BtnLabel" content="Find a document" layoutpos="left" accessible="true" accrole="pushbutton"/>
+			</NavigateButton>
+			<NavigateButton sheet="banner" class="Btn" layout="borderlayout()" padding="rect(16rp,0,0,0)" layoutpos="left" shellexecute="%systemdrive%\\windows\\system32\\sharedoc.exe">
+				<Button class="BtnLabel" content="Share a document" layoutpos="left" accessible="true" accrole="pushbutton"/>
+			</NavigateButton>
+		</element>
+		<element class="cntbnr" padding="rect(243rp,168rp,0,0)" layout="borderlayout()" layoutpos="top">
+			<NavigateButton sheet="banner" class="Btn" layout="borderlayout()" layoutpos="left" shellexecute="%windir%\\system32\\crecnt.exe">
+				<Button class="BtnLabel" content="Create Contacts" layoutpos="left" accessible="true" accrole="pushbutton"/>
+			</NavigateButton>
+			<NavigateButton sheet="banner" class="Btn" layout="borderlayout()" padding="rect(16rp,0,0,0)" layoutpos="left">
+				<Button class="BtnLabel" content="Manage Contacts" layoutpos="left" accessible="true" accrole="pushbutton"/>
+			</NavigateButton>
+			<NavigateButton sheet="banner" class="Btn" layout="borderlayout()" padding="rect(16rp,0,0,0)" layoutpos="left">
+				<Button class="BtnLabel" content="Change Settings" layoutpos="left" accessible="true" accrole="pushbutton"/>
+			</NavigateButton>
+		</element>
 	</Element>
 	<Element resid="PreviewMetadataTitle" layout="borderlayout()">
 		<MetadataElement layoutpos="left" id="atom(PreviewMetadataTitleControl)" layout="borderlayout()"/>
@@ -21,7 +65,7 @@
 	</Element>
 	<Element resid="PreviewMetadataRow" id="atom(PreviewMetadataRow)" accessible="true" accname="resstr(0x9555, library(shell32.dll))" accrole="grouping" layout="borderlayout()">
 		<MetadataLabel layoutpos="left" id="atom(PreviewMetadataLabel)" active="mouse"/>
-		<MetadataElement layoutpos="left" id="atom(PreviewMetadataControl)" padding="rect(2rp, 0, 0, 0)" layout="borderlayout()"/>
+		<MetadataElement layoutpos="left" id="atom(PreviewMetadataControl)" padding="rect(8rp, 0, 0, 0)" layout="borderlayout()"/>
 	</Element>
 	<Element resid="PreviewMetadata"/>
 </duixml>

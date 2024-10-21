@@ -8,28 +8,28 @@
 				<element layout="borderlayout()" layoutpos="top" padding="rect(200rp,0,0,0)">
 					<TemplateBackground id="atom(PreviewContainer)" height="53rp" layoutpos="top" layout="filllayout()">
 						<TemplateBackground id="atom(PreviewShineLayer)"/>
-						<PreviewBackground id="atom(BackgroundClear)" background="ARGB(0, 0, 0, 0)" layout="borderlayout()" padding="rect(0,10rp,0,0)">
+						<PreviewBackground id="atom(BackgroundClear)" background="ARGB(0, 0, 0, 0)" layout="filllayout()">
 							<PreviewThumbnail ModuleID="PreviewThumbnailModule" MaxThumbSize="256" layoutpos="Left"/>
 							<Element layoutpos="Client" layout="filllayout()">
-								<PreviewMetadata ModuleID="PreviewMetadataModule" NullSelectPropertyString="prop:System.FileCount;System.Volume.FileSystem;System.DateCreated;System.DateModified;System.FileAttributes;*System.OfflineStatus;*System.OfflineAvailability" NullSelectTitlePropertyString="prop:System.ItemNameDisplay;System.ItemTypeText" layoutpos="Client"/>
+								<PreviewMetadata ModuleID="PreviewMetadataModule" NullSelectTitlePropertyString="prop:System.FileCount" layoutpos="Client"/>
 							</Element>
 						</PreviewBackground>
-						<Sizer id="atom(PreviewPaneSizer)" sizingtarget="atom(PreviewContainer)" FramePersistType="2" SlidesUpAndDown="true" layoutpos="bottom" DownOrRightGrowsTarget="true" minsize="150"/>
+						<Sizer id="atom(PreviewPaneSizer)" sizingtarget="atom(PreviewContainer)" FramePersistType="2" SlidesUpAndDown="true" layoutpos="bottom" DownOrRightGrowsTarget="true"/>
 					</TemplateBackground>
 					<element sheet="fileheaderss" class="headerbg" layout="flowlayout(0,2,0,2)" layoutpos="top">
 						<Button class="headerbutton" layout="flowlayout(0,2,0,2)">
 							<element class="primaryLabel" content="Group"/>
-							<element class="secondaryLabel" content="items by"/>
+							<element class="secondaryLabel" content="pictures by"/>
 							<element class="dropdownGlyph"/>
 						</Button>
 						<Button class="headerbutton" layout="flowlayout(0,2,0,2)">
 							<element class="primaryLabel" content="Sort"/>
-							<element class="secondaryLabel" content="items by"/>
+							<element class="secondaryLabel" content="pictures by"/>
 							<element class="dropdownGlyph"/>
 						</Button>
 						<Button class="headerbutton" layout="flowlayout(0,2,0,2)">
 							<element class="primaryLabel" content="View"/>
-							<element class="secondaryLabel" content="items by"/>
+							<element class="secondaryLabel" content="pictures by"/>
 							<element class="dropdownGlyph"/>
 						</Button>
 					</element>
@@ -43,8 +43,9 @@
 					<ViewHost id="atom(clientviewhost)" layout="borderlayout()" layoutpos="client"/>
 				</Element>
 			</element>
-			<scrollviewer layoutpos="left" sheet="common" XScrollable="false" width="200rp" background="argb(0,0,0,0)">
-				<element layout="filllayout()" layoutpos="client">
+			<Element layout="filllayout()" background="argb(0,0,0,0)" layoutpos="left">
+				<ProperTreeModule id="atom(ProperTree)" background="argb(0,0,0,0)" width="200rp" ModuleID="ProperTreeModule" sheet="photolayoutstyle"/>
+				<scrollviewer sheet="common" XScrollable="false" width="200rp" background="argb(0,0,0,0)">
 					<element sheet="taskpane2" class="sidepanel" layout="borderlayout()" layoutpos="client">
 						<Expando layoutpos="top" layout="borderlayout()" Expanded="true">
 							<accessiblebutton id="atom(arrow)" class="groupheader" layoutpos="top" layout="flowlayout(0,2,0,2)">
@@ -126,9 +127,8 @@
 							</element>
 						</Expando>
 					</element>
-					<ProperTreeModule id="atom(ProperTree)" ModuleID="ProperTreeModule" sheet="documentslayoutstyle" layoutpos="Left"/>
-				</element>
-			</scrollviewer>
+				</scrollviewer>
+			</Element>
 		</element>
 	</Element>
 </duixml>
