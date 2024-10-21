@@ -19,8 +19,9 @@
 (Paste the link in any Discord chat and download it from there)
 ## Installing
 - Patch your system with [UltraUXThemePatcher](https://mhoefs.eu/software_uxtheme.php?lang=en) or [SecureUXTheme](https://github.com/namazso/SecureUxTheme)
-- Copy 7 DLLs in extras/system32 folder to your System32 folder. **No need to register/regsvr32 or anything**
-- Copy **demoplex** folder, **demoplex.theme** and **plex7.theme** to **C:\Windows\Resources\Themes**
+- Copy 7 DLLs in `extras/system32` folder to your System32 folder. **No need to register/regsvr32 or anything**
+- Copy `demoplex` folder, `demoplex.theme` and `plex7.theme` to C:\Windows\Resources\Themes
+- Merge 8 registry files in `extras/Registry Files` folder. **Always make your backup first**
 ## Credits
 - [valkalyne](https://github.com/valkalyne) and [notzetkin](https://github.com/notzetkin) for original visual styles
 - [Olive6841](https://github.com/Olive6841) for shellstyle (before I rework it)
