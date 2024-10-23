@@ -1,20 +1,22 @@
 <!-- Improved modern file dialog a bit -->
 <duixml>
 	<hwndelement resid="idTileHost" sheet="idTileStyle" layout="filllayout()" visible="true" accessible="true" accrole="dialog">
-		<Element id="atom(eltRoot)" layout="borderlayout()" sheet="idTileStyle">
-			<Element id="atom(eltFooterArea)" layout="borderlayout()" layoutpos="bottom" background="themeable(dtb(TaskDialog, 8, 0), window)">
-				<Element layout="flowlayout(0)" layoutpos="bottom" padding="rect(26rp,11rp,26rp,11rp)">
-					<checkbutton id="atom(eltDisplayModeBtn)">
-						<Element id="atom(eltDisplayMode)" padding="rect(5rp,0rp,5rp,0rp)"/>
-					</checkbutton>
-					<checkbutton id="atom(eltDisplayModeBtnFocusHolder)" width="0" height="0" accessible="false"/>
+		<Element id="atom(eltRoot)" layout="filllayout()" sheet="idTileStyle">
+			<Element background="themeable(dtb(TaskDialog, 2, 1), argb(0,0,0,0))" layoutpos="client"/>
+			<Element layout="borderlayout()" layoutpos="client">
+				<Element id="atom(eltFooterArea)" layout="borderlayout()" layoutpos="bottom">
+					<Element layout="flowlayout(0)" layoutpos="bottom" padding="rect(26rp,11rp,26rp,11rp)">
+						<checkbutton id="atom(eltDisplayModeBtn)">
+							<Element id="atom(eltDisplayMode)" padding="rect(5rp,0rp,5rp,0rp)"/>
+						</checkbutton>
+						<checkbutton id="atom(eltDisplayModeBtnFocusHolder)" width="0" height="0" accessible="false"/>
+					</Element>
 				</Element>
-				<Element layoutpos="bottom" height="1rp" background="threedlightshadow"/>
-			</Element>
-			<Element id="atom(eltScrollArea)" layout="borderlayout()" layoutpos="top">
-				<scrollviewer id="atom(eltScroll)" YScrollable="true" XScrollable="false" YBarVisibility="AsNeeded" XBarVisibility="Never">
-					<operationtilearea id="atom(eltTileArea)" width="447rp" layout="borderlayout()"/>
-				</scrollviewer>
+				<Element id="atom(eltScrollArea)" layout="borderlayout()" layoutpos="top">
+					<scrollviewer id="atom(eltScroll)" YScrollable="true" XScrollable="false" YBarVisibility="AsNeeded" XBarVisibility="Never">
+						<operationtilearea id="atom(eltTileArea)" width="447rp" layout="borderlayout()"/>
+					</scrollviewer>
+				</Element>
 			</Element>
 		</Element>
 	</hwndelement>
@@ -257,10 +259,13 @@
 			<checkbutton background="20575" overhang="false" contentalign="middlecenter" accessible="true" accrole="checkbutton"/>
 			<pausebutton background="20575" overhang="false" contentalign="middlecenter" accessible="true" accrole="checkbutton"/>
 			<if id="atom(eltRoot)">
-				<Element background="themeable(dtb(TaskDialog, 1, 0), threedface)"/>
+				<Element background="themeable(Gradient(gtc(CommandModule, 2, 0, 3810), gtc(CommandModule, 2, 0, 3811), 1), window)"/>
+			</if>
+			<if id="atom(eltFooterArea)">
+				<Element background="argb(0,0,0,0)"/>
 			</if>
 			<if id="atom(eltScrollArea)">
-				<Element background="dtb(TaskDialog, 1, 0)"/>
+				<Element background="argb(0,0,0,0)"/>
 			</if>
 			<if class="ScrollViewer">
 				<CCHScrollBar layoutpos="ninebottom" accessible="true" accrole="scrollbar"/>

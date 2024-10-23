@@ -1,86 +1,83 @@
 <duixml>
 	<Element resid="main" id="atom(dialogroot)" layout="borderlayout()" sheet="ProgressDialog" width="400rp" accessible="true" background="themeable(dtb(TaskDialog, 1, 0), threedface)">
 		<!-- header -->
-		<Element layoutpos="top" layout="filllayout()">
-			<Element id="atom(header)" layout="filllayout()">
-				<movie id="atom(headeranimation)" height="40rp" width="400rp" SmoothingMode="high" repeat="true" AutoStart="false" AutoStop="false"/>
-				<Element background="themeable(dtb(TaskDialog, 2, 0), argb(0,0,0,0))"/>
-				<Element id="atom(HeaderText)" padding="rect(20rp,0,0,0)" contentalign="middleleft" background="20575" content="resstr(13576)" accessible="true" accrole="statictext"/>
-			</Element>
+		<Element id="atom(header)" layout="filllayout()" layoutpos="top" height="50rp">
+			<movie id="atom(headeranimation)" height="50rp" width="400rp" SmoothingMode="high" repeat="true" AutoStart="false" AutoStop="false"/>
+			<Element background="themeable(dtb(TaskDialog, 2, 2), argb(0,0,0,0))"/>
+			<Element background="themeable(dtb(TaskDialog, 2, 1), argb(0,0,0,0))"/>
+			<Element id="atom(HeaderText)" padding="rect(20rp,0,20rp,0)" contentalign="middleleft" background="20575" content="resstr(13576)" accessible="true" accrole="statictext"/>
 		</Element>
-		
-		<Element id="atom(content)" layoutpos="client" layout="borderlayout()" contentalign="topleft">
-			<Element layoutpos="top" layout="filllayout()" background="20575">
-				<Element id="atom(SummaryProgress)" layout="verticalflowlayout(0,0,0,0)" animation="alpha|s|fast" alpha="255">
-					<Element id="atom(locations)" background="themeable(dtb(TaskDialog, 1, 0), threedface)" width="400rp" layout="flowlayout(0)" animation="alpha|s|fast" contentalign="topleft"/>
-					<Element id="atom(SProgressTime)" layoutpos="top" animation="alpha|s|fast" content="resstr(13585)" accessible="true" accrole="statictext"/>
-				</Element>
-				<Element id="atom(ExpandedProgress)" layout="verticalflowlayout(0,0,0,0)" animation="alpha|s|fast" alpha="0">
-					<Element id="atom(ExpandedItem)" layout="rowlayout(1)">
-						<Element content="resstr(13631)" accessible="true" accrole="statictext" contentalign="topleft"/>
-						<Element id="atom(XLocItemDisplay)" accessible="true" accrole="statictext" contentalign="wordellipsis" animation="alpha|s|fast" direction="0"/>
+		<Element layoutpos="client" layout="borderlayout()" class="mainBackground">
+			<Element id="atom(content)" layoutpos="client" layout="borderlayout()" contentalign="topleft">
+				<Element layoutpos="top" layout="filllayout()" background="20575">
+					<Element id="atom(SummaryProgress)" layout="verticalflowlayout(0,0,0,0)" animation="alpha|s|fast" alpha="255">
+						<Element id="atom(locations)" width="400rp" layout="flowlayout(0)" animation="alpha|s|fast" contentalign="topleft"/>
+						<Element id="atom(SProgressTime)" layoutpos="top" animation="alpha|s|fast" content="resstr(13585)" accessible="true" accrole="statictext"/>
 					</Element>
-					<Element id="atom(ExpandedFrom)" layout="rowlayout(1)">
-						<Element content="resstr(13589)" accessible="true" accrole="statictext" contentalign="topleft"/>
-						<Element id="atom(XLocSourceFields)" layout="flowlayout(0)" animation="alpha|s|fast" width="300rp">
-							<Element id="atom(XLocSourceDisplay)" class="transferlocation" accessible="true" accrole="statictext"/>
-							<Element id="atom(XLocSourcePath)" content=" " accessible="true" accrole="statictext" contentalign="pathellipsis" width="200rp"/>
+					<Element id="atom(ExpandedProgress)" layout="verticalflowlayout(0,0,0,0)" animation="alpha|s|fast" alpha="0">
+						<Element id="atom(ExpandedItem)" layout="rowlayout(1)">
+							<Element content="resstr(13631)" accessible="true" accrole="statictext" contentalign="topleft"/>
+							<Element id="atom(XLocItemDisplay)" accessible="true" accrole="statictext" contentalign="wordellipsis" animation="alpha|s|fast" direction="0"/>
+						</Element>
+						<Element id="atom(ExpandedFrom)" layout="rowlayout(1)">
+							<Element content="resstr(13589)" accessible="true" accrole="statictext" contentalign="topleft"/>
+							<Element id="atom(XLocSourceFields)" layout="flowlayout(0)" animation="alpha|s|fast" width="300rp">
+								<Element id="atom(XLocSourceDisplay)" class="transferlocation" accessible="true" accrole="statictext"/>
+								<Element id="atom(XLocSourcePath)" content=" " accessible="true" accrole="statictext" contentalign="pathellipsis" width="200rp"/>
+							</Element>
+						</Element>
+						<Element id="atom(ExpandedTo)" layout="rowlayout(1)">
+							<Element id="atom(ExpandedToHeader)" content="resstr(13590)" accessible="true" accrole="statictext" contentalign="topleft"/>
+							<Element id="atom(XLocDestFields)" layout="flowlayout(0)" animation="alpha|s|fast" width="300rp">
+								<Element id="atom(XLocDestDisplay)" class="transferlocation" accessible="true" accrole="statictext"/>
+								<Element id="atom(XLocDestPath)" content=" " accessible="true" accrole="statictext" contentalign="pathellipsis" width="200rp"/>
+							</Element>
+						</Element>
+						<Element layout="rowlayout(1)">
+							<Element id="atom(XProgressTimeLabel)" animation="alpha|s|fast" content="resstr(13579)" accessible="true" accrole="statictext" contentalign="topleft"/>
+							<Element id="atom(XProgressTime)" animation="alpha|s|fast" content="resstr(13580)" accessible="true" accrole="statictext" width="400rp"/>
+						</Element>
+						<Element id="atom(XItemsCount)" layout="rowlayout(1)">
+							<Element content="resstr(13581)" accessible="true" accrole="statictext" contentalign="topleft"/>
+							<Element id="atom(XProgressItems)" content="resstr(13582)" accessible="true" accrole="statictext" width="400rp"/>
+						</Element>
+						<Element layout="rowlayout(1)">
+							<Element id="atom(XProgressSpeedLabel)" content="resstr(13583)" accessible="true" accrole="statictext" contentalign="topleft"/>
+							<Element id="atom(XProgressSpeed)" content="resstr(13584)" accessible="true" accrole="statictext" width="400rp"/>
 						</Element>
 					</Element>
-					<Element id="atom(ExpandedTo)" layout="rowlayout(1)">
-						<Element id="atom(ExpandedToHeader)" content="resstr(13590)" accessible="true" accrole="statictext" contentalign="topleft"/>
-						<Element id="atom(XLocDestFields)" layout="flowlayout(0)" animation="alpha|s|fast" width="300rp">
-							<Element id="atom(XLocDestDisplay)" class="transferlocation" accessible="true" accrole="statictext"/>
-							<Element id="atom(XLocDestPath)" content=" " accessible="true" accrole="statictext" contentalign="pathellipsis" width="200rp"/>
+				</Element>
+			</Element>
+			<Element id="atom(buttonzone)" layout="filllayout()" layoutpos="bottom">
+				<Element background="20575" layout="borderlayout()">
+					<Element id="atom(buttonpane)" layout="borderlayout()" layoutpos="top">
+						<Element id="atom(ExpandButtonArea)" layoutpos="left" layout="borderlayout()">
+							<accessiblebutton id="atom(expandbutton)" layoutpos="left" layout="flowlayout(0,0,0,2)" accessible="true" accrole="pushbutton" accname="resstr(0x80E0)">
+								<button layoutpos="left" layout="borderlayout()" active="inactive">
+									<button id="atom(expandImage)" layoutpos="top" active="inactive"/>
+								</button>
+								<Element id="atom(expandotextExpand)" class="ExpandoText" content="resstr(13586)" layoutpos="left"/>
+							</accessiblebutton>
+						</Element>
+						<Element id="atom(CollapseButtonArea)" layoutpos="none" layout="borderlayout()">
+							<accessiblebutton id="atom(collapsebutton)" layoutpos="left" layout="flowlayout(0,0,0,2)" accname="resstr(0x80E1)" accrole="pushbutton" accessible="true">
+								<button layoutpos="left" layout="borderlayout()" active="inactive">
+									<button id="atom(collapseImage)" layoutpos="top" active="inactive"/>
+								</button>
+								<Element id="atom(expandotextCollapse)" class="ExpandoText" content="resstr(13587)" layoutpos="left"/>
+							</accessiblebutton>
+						</Element>
+						<Element layoutpos="right" layout="borderlayout()">
+							<ccpushbutton id="atom(PauseButton)" layoutpos="left" content="resstr(0x8096)" minsize="size(75rp, 25rp)" accessible="true"/>
+							<ccpushbutton id="atom(CancelButton)" layoutpos="left" content="resstr(13588)" minsize="size(75rp, 25rp)" selected="true" accessible="true"/>
 						</Element>
 					</Element>
-					<Element layout="rowlayout(1)">
-						<Element id="atom(XProgressTimeLabel)" animation="alpha|s|fast" content="resstr(13579)" accessible="true" accrole="statictext" contentalign="topleft"/>
-						<Element id="atom(XProgressTime)" animation="alpha|s|fast" content="resstr(13580)" accessible="true" accrole="statictext" width="400rp"/>
-					</Element>
-					<Element id="atom(XItemsCount)" layout="rowlayout(1)">
-						<Element content="resstr(13581)" accessible="true" accrole="statictext" contentalign="topleft"/>
-						<Element id="atom(XProgressItems)" content="resstr(13582)" accessible="true" accrole="statictext" width="400rp"/>
-					</Element>
-					<Element layout="rowlayout(1)">
-						<Element id="atom(XProgressSpeedLabel)" content="resstr(13583)" accessible="true" accrole="statictext" contentalign="topleft"/>
-						<Element id="atom(XProgressSpeed)" content="resstr(13584)" accessible="true" accrole="statictext" width="400rp"/>
-					</Element>
 				</Element>
 			</Element>
-		</Element>
-		
-		<Element id="atom(buttonzone)" layout="filllayout()" layoutpos="bottom">
-			<Element background="20575" layout="borderlayout()">
-				<Element id="atom(buttonpane)" layout="borderlayout()" layoutpos="top">
-					<Element id="atom(ExpandButtonArea)" layoutpos="left" layout="borderlayout()">
-						<accessiblebutton id="atom(expandbutton)" layoutpos="left" layout="flowlayout(0,0,0,2)" accessible="true" accrole="pushbutton" accname="resstr(0x80E0)">
-							<button layoutpos="left" layout="borderlayout()" active="inactive">
-								<button id="atom(expandImage)" layoutpos="top" active="inactive"/>
-							</button>
-							<Element id="atom(expandotextExpand)" class="ExpandoText" content="resstr(13586)" layoutpos="left"/>
-						</accessiblebutton>
-					</Element>
-					<Element id="atom(CollapseButtonArea)" layoutpos="none" layout="borderlayout()">
-						<accessiblebutton id="atom(collapsebutton)" layoutpos="left" layout="flowlayout(0,0,0,2)" accname="resstr(0x80E1)" accrole="pushbutton" accessible="true">
-							<button layoutpos="left" layout="borderlayout()" active="inactive">
-								<button id="atom(collapseImage)" layoutpos="top" active="inactive"/>
-							</button>
-							<Element id="atom(expandotextCollapse)" class="ExpandoText" content="resstr(13587)" layoutpos="left"/>
-						</accessiblebutton>
-					</Element>
-					<Element layoutpos="right" layout="borderlayout()">
-						<ccpushbutton id="atom(PauseButton)" layoutpos="left" content="resstr(0x8096)" minsize="size(75rp, 25rp)" accessible="true"/>
-						<ccpushbutton id="atom(CancelButton)" layoutpos="left" content="resstr(13588)" minsize="size(75rp, 25rp)" selected="true" accessible="true"/>
-					</Element>
-				</Element>
+			<Element layoutpos="bottom" layout="filllayout()" margin="rect(0rp, 0rp, 0rp, 5rp)" padding="rect(22rp, 0rp, 23rp, 10rp)">
+				<ccprogressbar id="atom(progressbar)" height="15rp" width="200rp" accessible="true" active="inactive" accname="resstr(0x80DF)"/>
 			</Element>
 		</Element>
-		
-		<Element layoutpos="bottom" layout="filllayout()" margin="rect(0rp, 0rp, 0rp, 5rp)" padding="rect(22rp, 0rp, 23rp, 10rp)" background="themeable(dtb(TaskDialog, 1, 0), threedface)">
-			<ccprogressbar id="atom(progressbar)" height="15rp" width="200rp" accessible="true" active="inactive" accname="resstr(0x80DF)"/>
-		</Element>
-		
 	</Element>
 	<Element resid="LocLabel1" id="atom(LocLabel1)" content="resstr(13577)" accessible="true" accrole="statictext"/>
 	<Element resid="LocSourceDisplay" id="atom(LocSourceDisplay)" class="transferlocation" contentalign="endellipsis" accessible="true" accrole="statictext"/>
@@ -90,21 +87,24 @@
 	<Element resid="LocDestPath" id="atom(LocDestPath)" contentalign="pathellipsis" accessible="true" accrole="statictext"/>
 	<stylesheets>
 		<style resid="ProgressDialog">
-			<Element font="gtf(TaskDialogStyle, 4, 0)"/>
+			<Element font="gtf(TaskDialogStyle, 4, 0)" background="argb(0,0,0,0)"/>
+			<if class="mainBackground">
+				<Element background="themeable(Gradient(gtc(CommandModule, 2, 0, 3810), gtc(CommandModule, 2, 0, 3811), 1), window)"/>
+			</if>
 			<if class="transferlocation">
 				<Element font="gtf(TEXTSTYLE, 3, 0)"/>
 			</if>
 			<if id="atom(content)">
-				<Element font="gtf(TaskDialogStyle, 4, 0)" foreground="gtc(TaskDialogStyle, 4, 0, 3803)" background="themeable(dtb(TaskDialog, 1, 0), threedface)" padding="rect(20rp,10rp,20rp,10rp)"/>
+				<Element font="gtf(TaskDialogStyle, 4, 0)" foreground="gtc(TaskDialogStyle, 4, 0, 3803)" background="argb(0,0,0,0)" padding="rect(20rp,10rp,20rp,10rp)"/>
 			</if>
 			<if id="atom(header)">
-				<Element background="Gradient(rgb(9, 49, 102), rgb(29, 66, 122), rgb(50, 83, 141), 4)" foreground="gtc(TaskDialogStyle, 4, 0, 3803)" height="50rp" font="gtf(TaskDialogStyle, 2, 0)"/>
+				<Element background="Gradient(rgb(9, 49, 102), rgb(29, 66, 122), rgb(50, 83, 141), 4)" foreground="gtc(TaskDialogStyle, 4, 0, 3803)" font="gtf(TaskDialogStyle, 2, 0)"/>
 			</if>
 			<if id="atom(headerText)">
 				<Element font="gtf(TaskDialogStyle, 2, 0)" foreground="white"/>
 			</if>
 			<if id="atom(buttonzone)">
-				<Element foreground="gtc(TaskDialogStyle, 4, 0, 3803)" background="themeable(dtb(TaskDialog, 8, 0), threedface)" padding="themeable(rect(22rp,9rp,22rp,9rp), rect(21rp,9rp,23rp,9rp))"/>
+				<Element foreground="gtc(TaskDialogStyle, 4, 0, 3803)" background="argb(0,0,0,0)" padding="rect(20rp,8rp,20rp,16rp)"/>
 			</if>
 			<if id="atom(ExpandImage)">
 				<button height="themeable(gtmet(TaskDialog, 13, 0, 2417), '21rp')" width="themeable(gtmet(TaskDialog, 13, 0, 2416), '18rp')" background="themeable(dtb(TaskDialog, 13, 1), dfc(3, 0x0001))" accessible="true" accrole="pushbutton"/>
