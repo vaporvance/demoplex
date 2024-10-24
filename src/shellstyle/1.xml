@@ -20,18 +20,34 @@
 			</if>
 		</style>
 		<style resid="documentslayoutstyle">
+			<if class="devbnr">
+				<element visible="false"/>
+			</if>
+			<if class="cntbnr">
+				<element visible="false"/>
+			</if>
+			<if class="musicbnr">
+				<element visible="false"/>
+			</if>
+			<if class="picbnr">
+				<element visible="false"/>
+			</if>
+			<if class="progbnr">
+				<element visible="false"/>
+			</if>
 			<if id="atom(PreviewContainer)">
 				<Element padding="rect(10rp, 8rp, 8rp, 8rp)"/>
 			</if>
 			<if id="atom(ReadingPane)">
 				<Element padding="rect(4rp, 4rp, 4rp, 4rp)"/>
 			</if>
+			<InfoPane background="themeable(gtc(ButtonStyle, 2, 0, 3821), window)"/>
+			<MetadataElement ThemeSubApp="DocumentsPreviewPaneControl"/>
 			<if id="atom(clientviewhost)">
 				<ViewHost foreground="windowtext" background="themeable(gtc(ItemsView, 0, 0, 3802), window)" sortcolumn="themeable(gtc(ItemsView, 0, 0, 3802), window)" subtext="ARGB(255, 139, 139, 139)"/>
 			</if>
-			<MetadataElement ThemeSubApp="DocumentsPreviewPaneControl"/>
-			<MetadataLabel foreground="themeable(gtc(PreviewPane, 6, 0, 3803), windowtext)"/>
-			<MetadataElement foreground="themeable(gtc(PreviewPane, 7, 1, 3803), windowtext)"/>
+			<MetadataLabel foreground="themeable(gtc(PreviewPane, 6, 0, 3803), windowtext)" height="18rp"/>
+			<MetadataElement foreground="themeable(gtc(PreviewPane, 7, 1, 3803), windowtext)" height="18rp"/>
 			<if id="atom(PreviewMetadataControlEditable)">
 				<MetadataDisplayElement foreground="themeable(gtc(PreviewPane, 7, 2, 3803), windowtext)"/>
 			</if>
@@ -45,30 +61,33 @@
 				<MetadataElement foreground="themeable(gtc(PreviewPane, 5, 0, 3803), windowtext)"/>
 			</if>
 			<if id="atom(ItemCountLabel)">
-				<MetadataLabel foreground="themeable(gtc(PreviewPane, 7, 1, 3803), windowtext)"/>
+				<MetadataLabel font="9;Normal;none;Franklin Gothic Book" background="resbmp(13,0,0,0,0,0,0,library(windows.MyDocLib.dll))" contentalign="bottomleft | endellipsis" height="360rp" width="679rp" padding="rect(-1000rp, 0rp, 0rp, 0rp)"/>
 			</if>
-			<PreviewMetadata padding="Rect(10rp, 5rp, 10rp, 3rp)"/>
+			<if id="atom(PreviewSelectionInvatation)">
+				<Element foreground="themeable(gtc(PreviewPane, 5, 0, 3803), windowtext)"/>
+			</if>
+			<PreviewMetadata padding="Rect(20rp, 20rp, 15rp, -500rp)"/>
 			<MetadataDisplayElement contentalign="bottomleft | endellipsis"/>
 			<if id="atom(PreviewMetadataRow)">
-				<Element height="21rp"/>
+				<Element padding="rect(280rp, 0rp, 0rp, 0rp)" height="18rp"/>
 			</if>
 			<if id="atom(PreviewTitleSpacerInner)">
-				<Element height="21rp"/>
+				<Element height="18rp"/>
 			</if>
 			<if id="atom(PreviewSubTitleSpacerInner)">
-				<Element height="21rp"/>
+				<Element height="18rp"/>
 			</if>
 			<if id="atom(PreviewMetadataControlEditable)">
-				<MetadataDisplayElement cursor="ibeam" height="21rp"/>
+				<MetadataDisplayElement cursor="ibeam" height="18rp"/>
 				<if KeyFocused="true">
 					<MetadataDisplayElement contentalign="focusrect | bottomleft | endellipsis"/>
 				</if>
 			</if>
 			<if id="atom(PreviewMetadataEditControl)">
-				<InplaceEdit contentalign="bottomleft | endellipsis"/>
+				<InplaceEdit contentalign="bottomleft | endellipsis" height="18rp"/>
 			</if>
 			<if id="atom(PreviewMetadataReadOnlyControl)">
-				<InplaceEdit contentalign="bottomleft | endellipsis"/>
+				<InplaceEdit contentalign="bottomleft | endellipsis" height="18rp"/>
 			</if>
 			<if id="atom(PreviewForceLoadMetadata)">
 				<Button background="themeable(dtb(PreviewPane, 2, 1), ARGB(0, 0, 0, 0))" foreground="gtc(FlyoutStyle, 3, 3, 3803)" cursor="hand" contentalign="bottomleft" font="gtf(TEXTSTYLE, 4, 0)" height="21rp"/>
@@ -79,35 +98,32 @@
 					<Button contentalign="focusrect | bottomleft"/>
 				</if>
 			</if>
-			<PreviewThumbnail padding="Rect(21rp, 4rp, 4rp, 4rp)" background="ARGB(0, 0, 0, 0)"/>
+			<PreviewThumbnail padding="Rect(20rp, 20rp, 0rp, 0rp)" background="ARGB(0, 0, 0, 0)"/>
 			<if id="atom(PreviewMetadataTitleControl)">
-				<MetadataElement font="menufont;175%" height="21rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+				<MetadataElement font="menufont;175%" height="21rp" width="325rp" padding="rect(282rp, 0rp, 0rp, 0rp)"/>
 			</if>
 			<if id="atom(PreviewMetadataSubTitleControl)">
-				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" height="21rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" height="18rp" width="325rp" padding="rect(282rp, 0rp, 0rp, 0rp)"/>
 			</if>
 			<if id="atom(PreviewMetadataControl)">
-				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis"/>
-			</if>
-			<if id="atom(ItemCountLabel)">
-				<MetadataLabel font="menufont;175%" contentalign="bottomleft | endellipsis" height="21rp" overhang="false"/>
+				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis" height="18rp" width="135rp"/>
 			</if>
 			<if id="atom(PreviewMetadataSpacer)">
-				<Element height="21rp"/>
+				<Element height="18rp" width="225rp"/>
 			</if>
 			<if id="atom(PreviewSelectionInvatation)">
-				<Element height="21rp" font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis"/>
+				<Element height="24rp" width="135rp" font="menufont;175%" contentalign="bottomleft | endellipsis"/>
 			</if>
 			<if id="atom(PreviewEditMetadata)">
-				<Element height="21rp"/>
+				<Element height="18rp" width="225rp"/>
 			</if>
-			<MetadataLabel padding="Rect(0rp, 0rp, 3rp, 0rp)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis" height="21rp"/>
+			<MetadataLabel padding="Rect(0rp, 0rp, 3rp, 0rp)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis" height="18rp" width="160rp"/>
 			<Sizer background="ARGB(0, 0, 0, 0)"/>
 			<if SlidesUpAndDown="true">
-				<Sizer height="5rp" cursor="sizens"/>
+				<Sizer height="2rp" cursor="sizens"/>
 			</if>
 			<if SlidesUpAndDown="false">
-				<Sizer width="3rp" cursor="sizewe"/>
+				<Sizer width="2rp" cursor="sizewe"/>
 			</if>
 			<if id="atom(PreviewPaneSizer)">
 				<Sizer background="themeable(ARGB(0, 0, 0, 0), buttonface)"/>
@@ -122,7 +138,7 @@
 				<Sizer background="buttonface" bordercolor="buttonhighlight" borderstyle="solid" borderthickness="rect(0rp,1rp,0rp,1rp)" height="4rp"/>
 			</if>
 			<if id="atom(PreviewPaneSizer)">
-				<Sizer InitialSize="53" MinSize="53" ReservedSpace="170" FramePersistType="2"/>
+				<Sizer InitialSize="265" MinSize="265" ReservedSpace="170" FramePersistType="2"/>
 			</if>
 			<if id="atom(CommonItemDialogSizer)">
 				<Sizer InitialSize="100" MinSize="100" FramePersistType="2"/>
@@ -144,6 +160,180 @@
 			</if>
 			<if id="atom(ReadingPaneSizer)">
 				<Sizer InitialSize="260" MinSize="68" ReservedSpace="202" GrowTargetFirst="true" ReservedMaster="atom(PageSpaceControlSizer)" FramePersistType="3" InitialVisibility="false"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer ReservedMaster="atom(DetailsContainer)"/>
+			</if>
+			<if id="atom(DetailsContainerSizer)">
+				<Sizer background="themeable(dtb(PreviewPane, 4, 0), buttonface)" borderthickness="rect(0rp,0rp,0rp,0rp)" InitialSize="277" MinSize="277" ReservedSpace="202" ReservedMaster="atom(PageSpaceControlSizer)" PrioritySizer="atom(PageSpaceControlSizer)"/>
+			</if>
+			<TemplateBackground background="ARGB(0, 0, 0, 0)"/>
+			<if id="atom(ReadingPane)">
+				<TemplateBackground background="themeable(gtc(ReadingPane, 1, 0, 3802), window)" font="gtf(TextStyle, 4, 0)"/>
+			</if>
+			<if id="atom(PreviewContainer)">
+				<TemplateBackground background="themeable(gtc(ItemsView, 0, 0, 3802), window)" font="gtf(TextStyle, 4, 0)"/>
+			</if>
+			<if id="atom(RPaneCoverSheet_NoSel)">
+				<Element foreground="themeable(gtc(ReadingPane, 2, 0, 3803), windowtext)" background="themeable(gtc(ReadingPane, 1, 0, 3802), window)"/>
+			</if>
+			<if id="atom(RPaneCoverSheet_Transition)">
+				<Element foreground="themeable(gtc(ReadingPane, 2, 0, 3803), windowtext)" background="themeable(gtc(ReadingPane, 1, 0, 3802), window)"/>
+			</if>
+			<if id="atom(PreviewShineLayer)">
+				<TemplateBackground background="themeable(dtb(PreviewPane, 1, 1), window)"/>
+			</if>
+			<if Vertical="true" id="atom(PreviewShineLayer)">
+				<TemplateBackground background="themeable(dtb(PreviewPane, 1, 2), window)"/>
+			</if>
+		</style>
+		<style resid="contactslayoutstyle">
+			<if class="docsbnr">
+				<element visible="false"/>
+			</if>
+			<if class="devbnr">
+				<element visible="false"/>
+			</if>
+			<if class="musicbnr">
+				<element visible="false"/>
+			</if>
+			<if class="picbnr">
+				<element visible="false"/>
+			</if>
+			<if class="progbnr">
+				<element visible="false"/>
+			</if>
+			<if id="atom(PreviewContainer)">
+				<Element padding="rect(10rp, 8rp, 8rp, 8rp)"/>
+			</if>
+			<if id="atom(ReadingPane)">
+				<Element padding="rect(4rp, 4rp, 4rp, 4rp)"/>
+			</if>
+			<InfoPane background="themeable(gtc(ButtonStyle, 2, 0, 3821), window)"/>
+			<MetadataElement ThemeSubApp="DocumentsPreviewPaneControl"/>
+			<if id="atom(clientviewhost)">
+				<ViewHost foreground="windowtext" background="themeable(gtc(ItemsView, 0, 0, 3802), window)" sortcolumn="themeable(gtc(ItemsView, 0, 0, 3802), window)" subtext="ARGB(255, 139, 139, 139)"/>
+			</if>
+			<MetadataLabel foreground="themeable(gtc(PreviewPane, 6, 0, 3803), windowtext)" height="18rp"/>
+			<MetadataElement foreground="themeable(gtc(PreviewPane, 7, 1, 3803), windowtext)" height="18rp"/>
+			<if id="atom(PreviewMetadataControlEditable)">
+				<MetadataDisplayElement foreground="themeable(gtc(PreviewPane, 7, 2, 3803), windowtext)"/>
+			</if>
+			<if id="atom(PreviewMetadataEditControl)">
+				<InPlaceEdit foreground="themeable(gtc(PreviewPane, 7, 2, 3803), windowtext)"/>
+			</if>
+			<if id="atom(PreviewMetadataSubTitleControl)">
+				<MetadataElement foreground="themeable(gtc(PreviewPane, 6, 0, 3803), windowtext)"/>
+			</if>
+			<if id="atom(PreviewMetadataTitleControl)">
+				<MetadataElement foreground="themeable(gtc(PreviewPane, 5, 0, 3803), windowtext)"/>
+			</if>
+			<if id="atom(ItemCountLabel)">
+				<MetadataLabel font="9;Normal;none;Franklin Gothic Book" background="resbmp(13,0,0,0,0,0,0,library(windows.MyPPLRPC.dll))" contentalign="bottomleft | endellipsis" height="360rp" width="679rp" padding="rect(-1000rp, 0rp, 0rp, 0rp)"/>
+			</if>
+			<if id="atom(PreviewSelectionInvatation)">
+				<Element foreground="themeable(gtc(PreviewPane, 5, 0, 3803), windowtext)"/>
+			</if>
+			<PreviewMetadata padding="Rect(20rp, 20rp, 15rp, -500rp)"/>
+			<MetadataDisplayElement contentalign="bottomleft | endellipsis"/>
+			<if id="atom(PreviewMetadataRow)">
+				<Element padding="rect(280rp, 0rp, 0rp, 0rp)" height="18rp"/>
+			</if>
+			<if id="atom(PreviewTitleSpacerInner)">
+				<Element height="18rp"/>
+			</if>
+			<if id="atom(PreviewSubTitleSpacerInner)">
+				<Element height="18rp"/>
+			</if>
+			<if id="atom(PreviewMetadataControlEditable)">
+				<MetadataDisplayElement cursor="ibeam" height="18rp"/>
+				<if KeyFocused="true">
+					<MetadataDisplayElement contentalign="focusrect | bottomleft | endellipsis"/>
+				</if>
+			</if>
+			<if id="atom(PreviewMetadataEditControl)">
+				<InplaceEdit contentalign="bottomleft | endellipsis" height="18rp"/>
+			</if>
+			<if id="atom(PreviewMetadataReadOnlyControl)">
+				<InplaceEdit contentalign="bottomleft | endellipsis" height="18rp"/>
+			</if>
+			<if id="atom(PreviewForceLoadMetadata)">
+				<Button background="themeable(dtb(PreviewPane, 2, 1), ARGB(0, 0, 0, 0))" foreground="gtc(FlyoutStyle, 3, 3, 3803)" cursor="hand" contentalign="bottomleft" font="gtf(TEXTSTYLE, 4, 0)" height="21rp"/>
+				<if MouseFocused="true">
+					<Button background="themeable(dtb(PreviewPane, 2, 2), ARGB(0, 0, 0, 0))"/>
+				</if>
+				<if KeyFocused="true">
+					<Button contentalign="focusrect | bottomleft"/>
+				</if>
+			</if>
+			<PreviewThumbnail padding="Rect(20rp, 20rp, 0rp, 0rp)" background="ARGB(0, 0, 0, 0)"/>
+			<if id="atom(PreviewMetadataTitleControl)">
+				<MetadataElement font="menufont;175%" height="21rp" width="325rp" padding="rect(282rp, 0rp, 0rp, 0rp)"/>
+			</if>
+			<if id="atom(PreviewMetadataSubTitleControl)">
+				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" height="18rp" width="325rp" padding="rect(282rp, 0rp, 0rp, 0rp)"/>
+			</if>
+			<if id="atom(PreviewMetadataControl)">
+				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis" height="18rp" width="135rp"/>
+			</if>
+			<if id="atom(PreviewMetadataSpacer)">
+				<Element height="18rp" width="225rp"/>
+			</if>
+			<if id="atom(PreviewSelectionInvatation)">
+				<Element height="24rp" width="135rp" font="menufont;175%" contentalign="bottomleft | endellipsis"/>
+			</if>
+			<if id="atom(PreviewEditMetadata)">
+				<Element height="18rp" width="225rp"/>
+			</if>
+			<MetadataLabel padding="Rect(0rp, 0rp, 3rp, 0rp)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis" height="18rp" width="160rp"/>
+			<Sizer background="ARGB(0, 0, 0, 0)"/>
+			<if SlidesUpAndDown="true">
+				<Sizer height="2rp" cursor="sizens"/>
+			</if>
+			<if SlidesUpAndDown="false">
+				<Sizer width="2rp" cursor="sizewe"/>
+			</if>
+			<if id="atom(PreviewPaneSizer)">
+				<Sizer background="themeable(ARGB(0, 0, 0, 0), buttonface)"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer background="themeable(dtb(PreviewPane, 3, 0), buttonface)" borderthickness="rect(0rp,0rp,0rp,0rp)"/>
+			</if>
+			<if id="atom(ReadingPaneSizer)">
+				<Sizer background="themeable(dtb(PreviewPane, 4, 0), buttonface)" borderthickness="rect(0rp,0rp,0rp,0rp)"/>
+			</if>
+			<if id="atom(ProperTreeExpandoSizer)">
+				<Sizer background="buttonface" bordercolor="buttonhighlight" borderstyle="solid" borderthickness="rect(0rp,1rp,0rp,1rp)" height="4rp"/>
+			</if>
+			<if id="atom(PreviewPaneSizer)">
+				<Sizer InitialSize="265" MinSize="265" ReservedSpace="170" FramePersistType="2"/>
+			</if>
+			<if id="atom(CommonItemDialogSizer)">
+				<Sizer InitialSize="100" MinSize="100" FramePersistType="2"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer InitialSize="160" MinSize="60" ReservedSpace="132" FramePersistType="2"/>
+			</if>
+			<if id="atom(ProperTreeExpandoSizer)">
+				<Sizer InitialSize="120" ReservedSpace="26" FramePersistType="2" InitialMaxxedOut="true"/>
+			</if>
+			<if id="atom(PreviewPaneSizer)">
+				<Sizer ExplorerVisibility="{43abf98b-89b8-472d-b9ce-e69b8229f019}" DisablingPolicy="{17067f8d-981b-42c5-98f8-5bc016d4b073}"/>
+			</if>
+			<if id="atom(ReadingPaneSizer)">
+				<Sizer ExplorerVisibility="{893c63d1-45c8-4d17-be19-223be71be365}" DisablingPolicy="{33dcce8d-b6f8-4b7a-ac93-45e301f956aa}"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer ExplorerVisibility="{cb316b22-25f7-42b8-8a09-540d23a43c2f}"/>
+			</if>
+			<if id="atom(ReadingPaneSizer)">
+				<Sizer InitialSize="260" MinSize="68" ReservedSpace="202" GrowTargetFirst="true" ReservedMaster="atom(PageSpaceControlSizer)" FramePersistType="3" InitialVisibility="false"/>
+			</if>
+			<if id="atom(PageSpaceControlSizer)">
+				<Sizer ReservedMaster="atom(DetailsContainer)"/>
+			</if>
+			<if id="atom(DetailsContainerSizer)">
+				<Sizer background="themeable(dtb(PreviewPane, 4, 0), buttonface)" borderthickness="rect(0rp,0rp,0rp,0rp)" InitialSize="277" MinSize="277" ReservedSpace="202" ReservedMaster="atom(PageSpaceControlSizer)" PrioritySizer="atom(PageSpaceControlSizer)"/>
 			</if>
 			<TemplateBackground background="ARGB(0, 0, 0, 0)"/>
 			<if id="atom(ReadingPane)">
@@ -171,7 +361,7 @@
 			</if>
 			<if id="atom(SearchBackground)">
 				<Element background="themeable(dtb(SearchHome, 1, 0), argb(0,0,0,0))"/>
-			</if>
+			</if>	
 			<if id="atom(header)">
 				<Element Background="argb(0, 0, 0, 0)" Font="gtf(TextStyle, 1, 0)" Foreground="gtc(TextStyle, 1, 0, 3803)" Overhang="false" Padding="rect(0rp, 0rp, 0rp, 6rp)"/>
 			</if>
@@ -696,6 +886,17 @@
 				<element background="themeable(dtb(CommonItemsDialog, 1, 0), buttonface)"/>
 			</if>
 		</style>
+		<style resid="banner">
+			<if class="Btn">
+				<NavigateButton cursor="hand"/>
+			</if>
+			<if class="BtnLabel">
+				<button font="9;Normal;none;Franklin Gothic Book" foreground="rgb(23, 92, 173)"/>
+				<if MouseFocused="true">
+					<Button font="gtf(TextStyle, 6, 2)"/>
+				</if>
+			</if>
+		</style>
 		<style resid="cidsaveinlayoutstyle">
 			<if id="atom(PreviewMetadataTitleControl)">
 				<MetadataElement font="menufont;175%" height="21rp" width="250rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
@@ -718,7 +919,7 @@
 			<MetadataLabel padding="Rect(0rp, 0rp, 3rp, 0rp)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomright | endellipsis" height="21rp" width="115rp"/>
 			<if id="atom(SaveDialogLabel)">
 				<CIDLabel padding="Rect(0rp, 0rp, 3rp, 0rp)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="middleright | endellipsis" height="21rp" width="115rp"/>
-			</if> \
+			</if>
 
 <AppControlHost font="gtf(TEXTSTYLE, 4, 0)"/>
 			<TemplateBackground background="ARGB(0, 0, 0, 0)"/>
@@ -745,6 +946,24 @@
 			</if>
 		</style>
 		<style resid="genericlayoutstyle">
+			<if class="docsbnr">
+				<element visible="false"/>
+			</if>
+			<if class="devbnr">
+				<element visible="false"/>
+			</if>
+			<if class="cntbnr">
+				<element visible="false"/>
+			</if>
+			<if class="musicbnr">
+				<element visible="false"/>
+			</if>
+			<if class="picbnr">
+				<element visible="false"/>
+			</if>
+			<if class="progbnr">
+				<element visible="false"/>
+			</if>
 			<if id="atom(PreviewContainer)">
 				<Element padding="rect(10rp, 8rp, 8rp, 8rp)"/>
 			</if>
@@ -756,8 +975,8 @@
 			<if id="atom(clientviewhost)">
 				<ViewHost foreground="windowtext" background="themeable(gtc(ItemsView, 0, 0, 3802), window)" sortcolumn="themeable(gtc(ItemsView, 0, 0, 3802), window)" subtext="ARGB(255, 139, 139, 139)"/>
 			</if>
-			<MetadataLabel foreground="themeable(gtc(PreviewPane, 6, 0, 3803), windowtext)"/>
-			<MetadataElement foreground="themeable(gtc(PreviewPane, 7, 1, 3803), windowtext)"/>
+			<MetadataLabel foreground="themeable(gtc(PreviewPane, 6, 0, 3803), windowtext)" height="18rp"/>
+			<MetadataElement foreground="themeable(gtc(PreviewPane, 7, 1, 3803), windowtext)" height="18rp"/>
 			<if id="atom(PreviewMetadataControlEditable)">
 				<MetadataDisplayElement foreground="themeable(gtc(PreviewPane, 7, 2, 3803), windowtext)"/>
 			</if>
@@ -771,33 +990,33 @@
 				<MetadataElement foreground="themeable(gtc(PreviewPane, 5, 0, 3803), windowtext)"/>
 			</if>
 			<if id="atom(ItemCountLabel)">
-				<MetadataLabel foreground="themeable(gtc(PreviewPane, 7, 1, 3803), windowtext)"/>
+				<MetadataLabel foreground="themeable(gtc(PreviewPane, 5, 0, 3803), windowtext)"/>
 			</if>
 			<if id="atom(PreviewSelectionInvatation)">
-				<Element foreground="themeable(gtc(PreviewPane, 7, 1, 3803), windowtext)"/>
+				<Element foreground="themeable(gtc(PreviewPane, 5, 0, 3803), windowtext)"/>
 			</if>
-			<PreviewMetadata padding="Rect(10rp, 5rp, 10rp, 3rp)"/>
+			<PreviewMetadata padding="Rect(20rp, 20rp, 15rp, 5rp)"/>
 			<MetadataDisplayElement contentalign="bottomleft | endellipsis"/>
 			<if id="atom(PreviewMetadataRow)">
-				<Element height="21rp"/>
+				<Element height="18rp"/>
 			</if>
 			<if id="atom(PreviewTitleSpacerInner)">
-				<Element height="21rp"/>
+				<Element height="18rp"/>
 			</if>
 			<if id="atom(PreviewSubTitleSpacerInner)">
-				<Element height="21rp"/>
+				<Element height="18rp"/>
 			</if>
 			<if id="atom(PreviewMetadataControlEditable)">
-				<MetadataDisplayElement cursor="ibeam" height="21rp"/>
+				<MetadataDisplayElement cursor="ibeam" height="18rp"/>
 				<if KeyFocused="true">
 					<MetadataDisplayElement contentalign="focusrect | bottomleft | endellipsis"/>
 				</if>
 			</if>
 			<if id="atom(PreviewMetadataEditControl)">
-				<InplaceEdit contentalign="bottomleft | endellipsis"/>
+				<InplaceEdit contentalign="bottomleft | endellipsis" height="18rp"/>
 			</if>
 			<if id="atom(PreviewMetadataReadOnlyControl)">
-				<InplaceEdit contentalign="bottomleft | endellipsis"/>
+				<InplaceEdit contentalign="bottomleft | endellipsis" height="18rp"/>
 			</if>
 			<if id="atom(PreviewForceLoadMetadata)">
 				<Button background="themeable(dtb(PreviewPane, 2, 1), ARGB(0, 0, 0, 0))" foreground="gtc(FlyoutStyle, 3, 3, 3803)" cursor="hand" contentalign="bottomleft" font="gtf(TEXTSTYLE, 4, 0)" height="21rp"/>
@@ -808,35 +1027,35 @@
 					<Button contentalign="focusrect | bottomleft"/>
 				</if>
 			</if>
-			<PreviewThumbnail padding="Rect(21rp, 4rp, 4rp, 4rp)" background="ARGB(0, 0, 0, 0)"/>
+			<PreviewThumbnail padding="Rect(20rp, 20rp, 0rp, 0rp)" background="ARGB(0, 0, 0, 0)"/>
 			<if id="atom(PreviewMetadataTitleControl)">
-				<MetadataElement font="menufont;175%" height="21rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+				<MetadataElement font="menufont;175%" height="21rp" width="325rp" padding="Rect(2rp, 0rp, 0rp, 0rp)"/>
 			</if>
 			<if id="atom(PreviewMetadataSubTitleControl)">
-				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" height="21rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" height="18rp" width="325rp" padding="Rect(2rp, 0rp, 0rp, 0rp)"/>
 			</if>
 			<if id="atom(PreviewMetadataControl)">
-				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis"/>
+				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis" height="18rp" width="135rp"/>
 			</if>
 			<if id="atom(ItemCountLabel)">
-				<MetadataLabel font="menufont;175%" contentalign="bottomleft | endellipsis" height="21rp" overhang="false"/>
+				<MetadataLabel font="menufont;175%" contentalign="bottomleft | endellipsis" height="18rp" width="325rp" padding="rect(-2rp, 0rp, 0rp, 24rp)" overhang="false"/>
 			</if>
 			<if id="atom(PreviewMetadataSpacer)">
-				<Element height="21rp"/>
+				<Element height="18rp" width="225rp"/>
 			</if>
 			<if id="atom(PreviewSelectionInvatation)">
-				<Element height="21rp" font="menufont;175%" contentalign="bottomleft | endellipsis"/>
+				<Element height="24rp" width="135rp" font="menufont;175%" contentalign="bottomleft | endellipsis"/>
 			</if>
 			<if id="atom(PreviewEditMetadata)">
-				<Element height="21rp"/>
+				<Element height="18rp" width="225rp"/>
 			</if>
-			<MetadataLabel padding="Rect(0rp, 0rp, 3rp, 0rp)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis" height="21rp"/>
+			<MetadataLabel padding="Rect(0rp, 0rp, 3rp, 0rp)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis" height="18rp" width="160rp"/>
 			<Sizer background="ARGB(0, 0, 0, 0)"/>
 			<if SlidesUpAndDown="true">
-				<Sizer height="5rp" cursor="sizens"/>
+				<Sizer height="2rp" cursor="sizens"/>
 			</if>
 			<if SlidesUpAndDown="false">
-				<Sizer width="3rp" cursor="sizewe"/>
+				<Sizer width="2rp" cursor="sizewe"/>
 			</if>
 			<if id="atom(PreviewPaneSizer)">
 				<Sizer background="themeable(ARGB(0, 0, 0, 0), buttonface)"/>
@@ -851,7 +1070,7 @@
 				<Sizer background="buttonface" bordercolor="buttonhighlight" borderstyle="solid" borderthickness="rect(0rp,1rp,0rp,1rp)" height="4rp"/>
 			</if>
 			<if id="atom(PreviewPaneSizer)">
-				<Sizer InitialSize="53" MinSize="53" ReservedSpace="170" FramePersistType="2"/>
+				<Sizer InitialSize="265" MinSize="265" ReservedSpace="170" FramePersistType="2"/>
 			</if>
 			<if id="atom(CommonItemDialogSizer)">
 				<Sizer InitialSize="100" MinSize="100" FramePersistType="2"/>
@@ -901,55 +1120,74 @@
 			</if>
 		</style>
 		<style resid="musiclayoutstyle">
+			<if class="docsbnr">
+				<element visible="false"/>
+			</if>
+			<if class="devbnr">
+				<element visible="false"/>
+			</if>
+			<if class="cntbnr">
+				<element visible="false"/>
+			</if>
+			<if class="picbnr">
+				<element visible="false"/>
+			</if>
+			<if class="progbnr">
+				<element visible="false"/>
+			</if>
 			<if id="atom(PreviewContainer)">
 				<Element padding="rect(10rp, 8rp, 8rp, 8rp)"/>
 			</if>
 			<if id="atom(ReadingPane)">
 				<Element padding="rect(4rp, 4rp, 4rp, 4rp)"/>
 			</if>
+			<InfoPane background="themeable(gtc(ButtonStyle, 2, 0, 3821), window)"/>
 			<MetadataElement ThemeSubApp="MusicPreviewPaneControl"/>
 			<if id="atom(clientviewhost)">
 				<ViewHost foreground="windowtext" background="themeable(gtc(ItemsView, 0, 0, 3802), window)" sortcolumn="themeable(gtc(ItemsView, 0, 0, 3802), window)" subtext="ARGB(255, 139, 139, 139)"/>
 			</if>
-			<MetadataLabel foreground="themeable(gtc(PreviewPane, 6, 0, 3803), windowtext)"/>
-			<MetadataElement foreground="themeable(gtc(PreviewPane, 7, 1, 3803), windowtext)"/>
+			<MetadataLabel foreground="themeable(gtc(PreviewPane, 6, 0, 3803), windowtext)" height="18rp"/>
+			<MetadataElement foreground="themeable(gtc(PreviewPane, 7, 1, 3803), windowtext)" height="18rp"/>
 			<if id="atom(PreviewMetadataControlEditable)">
-				<MetadataDisplayElement foreground="themeable(gtc(PreviewPane, 7, 2, 3803), windowtext)"/>
+				<MetadataDisplayElement foreground="themeable(ARGB(255, 66, 171, 240), windowtext)"/>
 			</if>
 			<if id="atom(PreviewMetadataEditControl)">
-				<InPlaceEdit foreground="themeable(gtc(PreviewPane, 7, 2, 3803), windowtext)"/>
+				<InPlaceEdit foreground="themeable(ARGB(255, 66, 171, 240), windowtext)"/>
 			</if>
 			<if id="atom(PreviewMetadataSubTitleControl)">
 				<MetadataElement foreground="themeable(gtc(PreviewPane, 6, 0, 3803), windowtext)"/>
 			</if>
 			<if id="atom(PreviewMetadataTitleControl)">
-				<MetadataElement foreground="themeable(gtc(PreviewPane, 5, 0, 3803), windowtext)"/>
+				<MetadataElement foreground="themeable(ARGB(255, 200, 85, 36), windowtext)"/>
 			</if>
 			<if id="atom(ItemCountLabel)">
-				<MetadataLabel foreground="themeable(gtc(PreviewPane, 7, 1, 3803), windowtext)"/>
+				<MetadataLabel font="9;Normal;none;Franklin Gothic Book" background="resbmp(13,0,0,0,0,0,0,library(windows.MyMusicLib.dll))" contentalign="bottomleft | endellipsis" height="360rp" width="679rp" padding="rect(-1000rp, 0rp, 0rp, 0rp)"/>
 			</if>
-			<PreviewMetadata padding="Rect(10rp, 5rp, 10rp, 3rp)"/>
+			<if id="atom(PreviewSelectionInvatation)">
+				<Element foreground="themeable(gtc(PreviewPane, 5, 0, 3803), windowtext)"/>
+			</if>
+			<PreviewMetadata padding="Rect(20rp, 20rp, 15rp, -500rp)"/>
 			<MetadataDisplayElement contentalign="bottomleft | endellipsis"/>
 			<if id="atom(PreviewMetadataRow)">
-				<Element height="21rp"/>
+				<Element padding="rect(280rp, 0rp, 0rp, 0rp)" height="18rp"/>
 			</if>
 			<if id="atom(PreviewTitleSpacerInner)">
-				<Element height="21rp"/>
+				<Element height="18rp"/>
 			</if>
 			<if id="atom(PreviewSubTitleSpacerInner)">
-				<Element height="21rp"/>
+				<Element height="18rp"/>
 			</if>
 			<if id="atom(PreviewMetadataControlEditable)">
-				<MetadataDisplayElement cursor="ibeam" height="21rp"/>
+				<MetadataDisplayElement cursor="ibeam" height="18rp"/>
 				<if KeyFocused="true">
 					<MetadataDisplayElement contentalign="focusrect | bottomleft | endellipsis"/>
 				</if>
 			</if>
 			<if id="atom(PreviewMetadataEditControl)">
-				<InplaceEdit contentalign="bottomleft | endellipsis"/>
+				<InplaceEdit contentalign="bottomleft | endellipsis" height="18rp"/>
 			</if>
 			<if id="atom(PreviewMetadataReadOnlyControl)">
-				<InplaceEdit contentalign="bottomleft | endellipsis"/>
+				<InplaceEdit contentalign="bottomleft | endellipsis" height="18rp"/>
 			</if>
 			<if id="atom(PreviewForceLoadMetadata)">
 				<Button background="themeable(dtb(PreviewPane, 2, 1), ARGB(0, 0, 0, 0))" foreground="gtc(FlyoutStyle, 3, 3, 3803)" cursor="hand" contentalign="bottomleft" font="gtf(TEXTSTYLE, 4, 0)" height="21rp"/>
@@ -960,35 +1198,32 @@
 					<Button contentalign="focusrect | bottomleft"/>
 				</if>
 			</if>
-			<PreviewThumbnail padding="Rect(21rp, 4rp, 4rp, 4rp)" background="ARGB(0, 0, 0, 0)"/>
+			<PreviewThumbnail padding="Rect(20rp, 20rp, 0rp, 0rp)" background="ARGB(0, 0, 0, 0)"/>
 			<if id="atom(PreviewMetadataTitleControl)">
-				<MetadataElement font="menufont;175%" height="21rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+				<MetadataElement font="menufont;175%" height="21rp" width="325rp" padding="rect(282rp, 0rp, 0rp, 0rp)"/>
 			</if>
 			<if id="atom(PreviewMetadataSubTitleControl)">
-				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" height="21rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" height="18rp" width="325rp" padding="rect(282rp, 0rp, 0rp, 0rp)"/>
 			</if>
 			<if id="atom(PreviewMetadataControl)">
-				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis"/>
-			</if>
-			<if id="atom(ItemCountLabel)">
-				<MetadataLabel font="menufont;175%" contentalign="bottomleft | endellipsis" height="21rp" overhang="false"/>
+				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis" height="18rp" width="135rp"/>
 			</if>
 			<if id="atom(PreviewMetadataSpacer)">
-				<Element height="21rp"/>
+				<Element height="18rp" width="225rp"/>
 			</if>
 			<if id="atom(PreviewSelectionInvatation)">
-				<Element height="21rp" font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis"/>
+				<Element height="24rp" width="135rp" font="menufont;175%" contentalign="bottomleft | endellipsis"/>
 			</if>
 			<if id="atom(PreviewEditMetadata)">
-				<Element height="21rp"/>
+				<Element height="18rp" width="225rp"/>
 			</if>
-			<MetadataLabel padding="Rect(0rp, 0rp, 3rp, 0rp)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis" height="21rp"/>
+			<MetadataLabel padding="Rect(0rp, 0rp, 3rp, 0rp)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis" height="18rp" width="160rp"/>
 			<Sizer background="ARGB(0, 0, 0, 0)"/>
 			<if SlidesUpAndDown="true">
-				<Sizer height="5rp" cursor="sizens"/>
+				<Sizer height="2rp" cursor="sizens"/>
 			</if>
 			<if SlidesUpAndDown="false">
-				<Sizer width="3rp" cursor="sizewe"/>
+				<Sizer width="2rp" cursor="sizewe"/>
 			</if>
 			<if id="atom(PreviewPaneSizer)">
 				<Sizer background="themeable(ARGB(0, 0, 0, 0), buttonface)"/>
@@ -1003,7 +1238,7 @@
 				<Sizer background="buttonface" bordercolor="buttonhighlight" borderstyle="solid" borderthickness="rect(0rp,1rp,0rp,1rp)" height="4rp"/>
 			</if>
 			<if id="atom(PreviewPaneSizer)">
-				<Sizer InitialSize="53" MinSize="53" ReservedSpace="170" FramePersistType="2"/>
+				<Sizer InitialSize="265" MinSize="265" ReservedSpace="170" FramePersistType="2"/>
 			</if>
 			<if id="atom(CommonItemDialogSizer)">
 				<Sizer InitialSize="100" MinSize="100" FramePersistType="2"/>
@@ -1053,18 +1288,34 @@
 			</if>
 		</style>
 		<style resid="photolayoutstyle">
+			<if class="docsbnr">
+				<element visible="false"/>
+			</if>
+			<if class="devbnr">
+				<element visible="false"/>
+			</if>
+			<if class="cntbnr">
+				<element visible="false"/>
+			</if>
+			<if class="musicbnr">
+				<element visible="false"/>
+			</if>
+			<if class="progbnr">
+				<element visible="false"/>
+			</if>
 			<if id="atom(PreviewContainer)">
 				<Element padding="rect(10rp, 8rp, 8rp, 8rp)"/>
 			</if>
 			<if id="atom(ReadingPane)">
 				<Element padding="rect(4rp, 4rp, 4rp, 4rp)"/>
 			</if>
+			<InfoPane background="themeable(gtc(ButtonStyle, 2, 0, 3821), window)"/>
 			<MetadataElement ThemeSubApp="PhotoPreviewPaneControl"/>
 			<if id="atom(clientviewhost)">
 				<ViewHost foreground="windowtext" background="themeable(gtc(ItemsView, 0, 0, 3802), window)" sortcolumn="themeable(gtc(ItemsView, 0, 0, 3802), window)" subtext="ARGB(255, 139, 139, 139)"/>
 			</if>
-			<MetadataLabel foreground="themeable(gtc(PreviewPane, 6, 0, 3803), windowtext)"/>
-			<MetadataElement foreground="themeable(gtc(PreviewPane, 7, 1, 3803), windowtext)"/>
+			<MetadataLabel foreground="themeable(gtc(PreviewPane, 6, 0, 3803), windowtext)" height="18rp"/>
+			<MetadataElement foreground="themeable(gtc(PreviewPane, 7, 1, 3803), windowtext)" height="18rp"/>
 			<if id="atom(PreviewMetadataControlEditable)">
 				<MetadataDisplayElement foreground="themeable(gtc(PreviewPane, 7, 2, 3803), windowtext)"/>
 			</if>
@@ -1078,30 +1329,33 @@
 				<MetadataElement foreground="themeable(gtc(PreviewPane, 5, 0, 3803), windowtext)"/>
 			</if>
 			<if id="atom(ItemCountLabel)">
-				<MetadataLabel foreground="themeable(gtc(PreviewPane, 7, 1, 3803), windowtext)"/>
+				<MetadataLabel font="9;Normal;none;Franklin Gothic Book" background="resbmp(13,0,0,0,0,0,0,library(windows.MyPicLib.dll))" contentalign="bottomleft | endellipsis" height="360rp" width="679rp" padding="rect(-1000rp, 0rp, 0rp, 0rp)"/>
 			</if>
-			<PreviewMetadata padding="Rect(10rp, 5rp, 10rp, 3rp)"/>
+			<if id="atom(PreviewSelectionInvatation)">
+				<Element foreground="themeable(gtc(PreviewPane, 5, 0, 3803), windowtext)"/>
+			</if>
+			<PreviewMetadata padding="Rect(20rp, 20rp, 15rp, -500rp)"/>
 			<MetadataDisplayElement contentalign="bottomleft | endellipsis"/>
 			<if id="atom(PreviewMetadataRow)">
-				<Element height="21rp"/>
+				<Element padding="rect(280rp, 0rp, 0rp, 0rp)" height="18rp"/>
 			</if>
 			<if id="atom(PreviewTitleSpacerInner)">
-				<Element height="21rp"/>
+				<Element height="18rp"/>
 			</if>
 			<if id="atom(PreviewSubTitleSpacerInner)">
-				<Element height="21rp"/>
+				<Element height="18rp"/>
 			</if>
 			<if id="atom(PreviewMetadataControlEditable)">
-				<MetadataDisplayElement cursor="ibeam" height="21rp"/>
+				<MetadataDisplayElement cursor="ibeam" height="18rp"/>
 				<if KeyFocused="true">
 					<MetadataDisplayElement contentalign="focusrect | bottomleft | endellipsis"/>
 				</if>
 			</if>
 			<if id="atom(PreviewMetadataEditControl)">
-				<InplaceEdit contentalign="bottomleft | endellipsis"/>
+				<InplaceEdit contentalign="bottomleft | endellipsis" height="18rp"/>
 			</if>
 			<if id="atom(PreviewMetadataReadOnlyControl)">
-				<InplaceEdit contentalign="bottomleft | endellipsis"/>
+				<InplaceEdit contentalign="bottomleft | endellipsis" height="18rp"/>
 			</if>
 			<if id="atom(PreviewForceLoadMetadata)">
 				<Button background="themeable(dtb(PreviewPane, 2, 1), ARGB(0, 0, 0, 0))" foreground="gtc(FlyoutStyle, 3, 3, 3803)" cursor="hand" contentalign="bottomleft" font="gtf(TEXTSTYLE, 4, 0)" height="21rp"/>
@@ -1112,35 +1366,32 @@
 					<Button contentalign="focusrect | bottomleft"/>
 				</if>
 			</if>
-			<PreviewThumbnail padding="Rect(21rp, 4rp, 4rp, 4rp)" background="ARGB(0, 0, 0, 0)"/>
+			<PreviewThumbnail padding="Rect(20rp, 20rp, 0rp, 0rp)" background="ARGB(0, 0, 0, 0)"/>
 			<if id="atom(PreviewMetadataTitleControl)">
-				<MetadataElement font="menufont;175%" height="21rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+				<MetadataElement font="menufont;175%" height="21rp" width="325rp" padding="rect(282rp, 0rp, 0rp, 0rp)"/>
 			</if>
 			<if id="atom(PreviewMetadataSubTitleControl)">
-				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" height="21rp" padding="Rect(0rp, 0rp, 4rp, 0rp)"/>
+				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" height="18rp" width="325rp" padding="rect(282rp, 0rp, 0rp, 0rp)"/>
 			</if>
 			<if id="atom(PreviewMetadataControl)">
-				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis"/>
-			</if>
-			<if id="atom(ItemCountLabel)">
-				<MetadataLabel font="menufont;175%" contentalign="bottomleft | endellipsis" height="21rp" overhang="false"/>
+				<MetadataElement font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis" height="18rp" width="135rp"/>
 			</if>
 			<if id="atom(PreviewMetadataSpacer)">
-				<Element height="21rp"/>
+				<Element height="18rp" width="225rp"/>
 			</if>
 			<if id="atom(PreviewSelectionInvatation)">
-				<Element height="21rp" font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis"/>
+				<Element height="24rp" width="135rp" font="menufont;175%" contentalign="bottomleft | endellipsis"/>
 			</if>
 			<if id="atom(PreviewEditMetadata)">
-				<Element height="21rp"/>
+				<Element height="18rp" width="225rp"/>
 			</if>
-			<MetadataLabel padding="Rect(0rp, 0rp, 3rp, 0rp)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis" height="21rp"/>
+			<MetadataLabel padding="Rect(0rp, 0rp, 3rp, 0rp)" font="gtf(TEXTSTYLE, 4, 0)" contentalign="bottomleft | endellipsis" height="18rp" width="160rp"/>
 			<Sizer background="ARGB(0, 0, 0, 0)"/>
 			<if SlidesUpAndDown="true">
-				<Sizer height="5rp" cursor="sizens"/>
+				<Sizer height="2rp" cursor="sizens"/>
 			</if>
 			<if SlidesUpAndDown="false">
-				<Sizer width="3rp" cursor="sizewe"/>
+				<Sizer width="2rp" cursor="sizewe"/>
 			</if>
 			<if id="atom(PreviewPaneSizer)">
 				<Sizer background="themeable(ARGB(0, 0, 0, 0), buttonface)"/>
@@ -1155,7 +1406,7 @@
 				<Sizer background="buttonface" bordercolor="buttonhighlight" borderstyle="solid" borderthickness="rect(0rp,1rp,0rp,1rp)" height="4rp"/>
 			</if>
 			<if id="atom(PreviewPaneSizer)">
-				<Sizer InitialSize="53" MinSize="53" ReservedSpace="170" FramePersistType="2"/>
+				<Sizer InitialSize="265" MinSize="265" ReservedSpace="170" FramePersistType="2"/>
 			</if>
 			<if id="atom(CommonItemDialogSizer)">
 				<Sizer InitialSize="100" MinSize="100" FramePersistType="2"/>
@@ -1345,7 +1596,7 @@
 		</style>
 		<style resid="FolderBandStyle">
 			<Element background="argb(0, 0, 0, 0)"/>
-			<TemplateBackground background="argb(0, 0, 0, 0)"/>
+			<TemplateBackground background="themeable(Gradient(gtc(CommandModule, 2, 0, 3810), gtc(CommandModule, 2, 0, 3811), gtc(CommandModule, 2, 0, 3812), 3), window)"/>
 			<if id="atom(FolderBandShineLayer)">
 				<TemplateBackground background="dtb(CommandModule, 1, 0)"/>
 			</if>
@@ -1373,7 +1624,7 @@
 		</style>
 		<style resid="CPLFolderBandStyle">
 			<Element background="argb(0, 0, 0, 0)"/>
-			<TemplateBackground background="argb(0, 0, 0, 0)"/>
+			<TemplateBackground background="themeable(Gradient(gtc(CommandModule, 2, 0, 3810), gtc(CommandModule, 2, 0, 3811), gtc(CommandModule, 2, 0, 3812), 3), window)"/>
 			<if id="atom(MiddleLayer)">
 				<TemplateBackground background="dtb(CPLCommandModule::CommandModule, 1, 0)"/>
 			</if>
@@ -1997,7 +2248,7 @@
 			<element background="argb(0,0,0,0)"/>
 			<button background="argb(0,0,0,0)"/>
 			<if class="headerbg">
-				<element padding="rect(10rp,3rp,0,3rp)"/>
+				<element background="rgb(255,255,255)" padding="rect(10rp,3rp,0,3rp)"/>
 			</if>
 			<if class="headerbutton">
 				<button background="themeable(dtb(CommandModule, 9, 1), argb(0,0,0,0))" padding="Rect(7rp,3rp,7rp,3rp)" margin="Rect(0,0,9rp,0)"/>
